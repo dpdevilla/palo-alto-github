@@ -611,12 +611,12 @@ if (response.ok) {
   const cartResponse = await fetch('/cart.js');
   const cart = await cartResponse.json();
 
-  // Fire event so theme updates drawer with full cart
-  document.dispatchEvent(new CustomEvent('cart:updated', {
+  // Fire the refresh event Cascade usually listens for
+  document.dispatchEvent(new CustomEvent('cart:refresh', {
     detail: { cart }
   }));
 
-  // Open drawer
+  // Or directly update drawer if function exists
   if (typeof openCartDrawer === 'function') {
     openCartDrawer();
   } else {
@@ -628,6 +628,7 @@ if (response.ok) {
     button.disabled = false;
   }, 2000);
 }
+
 
  else {
                 throw new Error('Failed to add to cart');
