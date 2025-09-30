@@ -695,11 +695,12 @@
         "button_Y9qmwk",
         "scrolling_text_BnBirD"
       ],
+      "disabled": true,
       "name": "Image with scrolling text",
       "settings": {
         "overlay_type": "disabled",
         "message_spacing": 10,
-        "marquee_speed": 100,
+        "marquee_speed": 75,
         "height": "six-fifty-height",
         "enable_mobile_height": false,
         "mobile_height": "four-fifty-height-mobile",
@@ -708,7 +709,7 @@
         "enable_card_scrolling": false,
         "increase_border_radius": true,
         "text_align": "align--middle",
-        "scrolling_text_color": "#fff",
+        "scrolling_text_color": "#ffffff",
         "text_caps": false,
         "type_font": "space_mono_n4",
         "size": 100,
@@ -716,7 +717,7 @@
         "letter_spacing": 0,
         "scrolling_align": "align--middle",
         "direction": "ticker-ltr",
-        "color_scheme": "",
+        "color_scheme": "scheme-3",
         "padding_top": 0,
         "padding_bottom": 0
       }
