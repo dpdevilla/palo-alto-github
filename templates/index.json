@@ -656,6 +656,70 @@
         "padding_top": 0,
         "padding_bottom": 0
       }
+    },
+    "section_hero_scrolling_wkByXN": {
+      "type": "section-hero-scrolling",
+      "blocks": {
+        "text_z96FNc": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Share information about your brand, describe a product, share announcements, or welcome customers to your store.</p>",
+            "size": 100
+          }
+        },
+        "button_Y9qmwk": {
+          "type": "button",
+          "settings": {
+            "stacked_button": false,
+            "button_1_text": "Shop All",
+            "button_1_link": "shopify://collections/all",
+            "button_1_color": "btn--white",
+            "button_1_style": "btn--solid-border",
+            "button_1_size": "btn--medium",
+            "button_2_text": "",
+            "button_2_link": "",
+            "button_2_color": "btn--black",
+            "button_2_style": "btn--solid",
+            "button_2_size": "btn--medium"
+          }
+        },
+        "scrolling_text_BnBirD": {
+          "type": "scrolling_text",
+          "settings": {
+            "text": "<p><strong>Make an announcement</strong> | More info</p>"
+          }
+        }
+      },
+      "block_order": [
+        "text_z96FNc",
+        "button_Y9qmwk",
+        "scrolling_text_BnBirD"
+      ],
+      "name": "Image with scrolling text",
+      "settings": {
+        "overlay_type": "disabled",
+        "message_spacing": 10,
+        "marquee_speed": 100,
+        "height": "six-fifty-height",
+        "enable_mobile_height": false,
+        "mobile_height": "four-fifty-height-mobile",
+        "transition": "zoom-out",
+        "enable_zoom_animation": true,
+        "enable_card_scrolling": false,
+        "increase_border_radius": true,
+        "text_align": "align--middle",
+        "scrolling_text_color": "#fff",
+        "text_caps": false,
+        "type_font": "space_mono_n4",
+        "size": 100,
+        "size_mobile": 80,
+        "letter_spacing": 0,
+        "scrolling_align": "align--middle",
+        "direction": "ticker-ltr",
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
     }
   },
   "order": [
@@ -667,6 +731,7 @@
     "1659332056dfbb5a2d",
     "1659332360d2fd47e7",
     "1659368106d6f5d880",
-    "section_banner_text_columns_6bbkJf"
+    "section_banner_text_columns_6bbkJf",
+    "section_hero_scrolling_wkByXN"
   ]
 }
