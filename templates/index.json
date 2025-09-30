@@ -1,1 +1,672 @@
-{"sections":{"section_slideshow_wjdEGR":{"type":"section-slideshow","blocks":{"image_Edybwy":{"type":"image","settings":{"image":"shopify:\/\/shop_images\/Web_Banner_August_6.png","image_mobile":"shopify:\/\/shop_images\/Mobile_Banner_September_9.png","overlay_type":"disabled","video_link_bg":"","content_width":80,"text_position":"center","text_alignment":"text-center","subheading":"","title":"","heading_size":150,"heading_highlight_type":"underline-hand-drawn","highlight_color":"#000000","highlight_text_color":"","text":"","text_size":100,"show_text_background":false,"bg_color":"","text_color":"","stacked_button":false,"button_1_text":"","button_1_link":"shopify:\/\/collections\/all","button_1_color":"btn--white","button_1_style":"btn--solid-border","button_1_size":"btn--medium","button_2_text":"","button_2_link":"","button_2_color":"btn--black","button_2_style":"btn--solid","button_2_size":"btn--medium","video_text":"","video_link":""}},"image_Nar9Ep":{"type":"image","disabled":true,"settings":{"overlay_type":"disabled","video_link_bg":"","content_width":80,"text_position":"center","text_alignment":"text-center","subheading":"","title":"<p>Welcome to Palo Alto<\/p>","heading_size":150,"heading_highlight_type":"underline-hand-drawn","highlight_color":"#000000","highlight_text_color":"","text":"Add more info or delete this text","text_size":100,"show_text_background":false,"bg_color":"","text_color":"","stacked_button":false,"button_1_text":"Shop All","button_1_link":"shopify:\/\/collections\/all","button_1_color":"btn--white","button_1_style":"btn--solid-border","button_1_size":"btn--medium","button_2_text":"","button_2_link":"","button_2_color":"btn--black","button_2_style":"btn--solid","button_2_size":"btn--medium","video_text":"","video_link":""}}},"block_order":["image_Edybwy","image_Nar9Ep"],"name":"Slideshow","settings":{"slide_height":"two-thirds-height","enable_mobile_height":false,"mobile_slide_height":"five-fifty-height-mobile","show_nav_dots":true,"show_nav_arrows":false,"show_arrow_down":false,"autoplay":false,"duration":4,"transition":"wipe","enable_zoom_animation":true,"enable_card_scrolling":false,"increase_border_radius":true,"color_scheme":""}},"16593247592f08dc83":{"type":"section-image-accordions","blocks":{"1659324758980b651c-1":{"type":"image","settings":{"image":"shopify:\/\/shop_images\/DESKTOP_CREAMS.png","image_mobile":"shopify:\/\/shop_images\/MOBILE_CREAMS.png","overlay_type":"disabled","text_width":"full","text_position":"bottom-left","title":"Heavy on moisture, lightweight on your skin.","text":"Luxuriate in the most hydrating, antioxidant-rich Pili and Elemi Oils and hardworking botanicals that target every skin concern.","button_1_text":"","button_1_link":"","button_1_color":"btn--white","button_1_style":"btn--solid-border","button_1_size":"btn--medium","button_2_text":"","button_2_link":"","button_2_color":"btn--black","button_2_style":"btn--solid","button_2_size":"btn--medium"}},"10d3297c-9d3d-4a16-ba17-f9e7bcb01f64":{"type":"image","settings":{"image":"shopify:\/\/shop_images\/CNT_BANNER_1.png","overlay_type":"disabled","text_width":"full","text_position":"bottom-left","title":"Your Best Skin Starts Here.","text":"Refresh with our Gentle Facial Cleanser & Purifying Toner.","button_1_text":"","button_1_link":"","button_1_color":"btn--white","button_1_style":"btn--solid-border","button_1_size":"btn--medium","button_2_text":"","button_2_link":"","button_2_color":"btn--black","button_2_style":"btn--solid","button_2_size":"btn--medium"}},"2e7f90f9-7e8e-45ba-a8f0-93c42e4e13d5":{"type":"image","settings":{"image":"shopify:\/\/shop_images\/Accordion-Slider-SCNRO.png","overlay_type":"disabled","text_width":"normal","text_position":"bottom-left","title":"Mini in size. Mighty in overnight skin recovery.","text":"Supercharged with antioxidant-rich Pili Oil and a skin-loving blend of botanical extracts. Now in a 15ml bottle!","button_1_text":"","button_1_link":"","button_1_color":"btn--white","button_1_style":"btn--solid-border","button_1_size":"btn--medium","button_2_text":"","button_2_link":"","button_2_color":"btn--black","button_2_style":"btn--solid","button_2_size":"btn--medium"}}},"block_order":["1659324758980b651c-1","10d3297c-9d3d-4a16-ba17-f9e7bcb01f64","2e7f90f9-7e8e-45ba-a8f0-93c42e4e13d5"],"disabled":true,"settings":{"accordion_height":"five-fifty-height","enable_mobile_height":false,"mobile_section_height":"five-fifty-height-mobile","heading_size":75,"color_scheme":"","width":"wrapper--full","padding_top":0,"padding_bottom":0}},"166088552470924e52":{"type":"section-press","blocks":{"16608855243802c805-2":{"type":"press","settings":{"text":"<p>\"This Filipino Beauty Brand Has Something You Didn’t Know Your Evening Routine Needed\"<\/p>","link":"https:\/\/www.lofficielph.com\/21789521\/this-filipino-beauty-brand-has-something-you-didnt-know-your-evening-routine-needed","press_logo":"shopify:\/\/shop_images\/Press-Logo-LO.png","logo_width":120}},"16608855243802c805-1":{"type":"press","settings":{"text":"<p>\"World, meet Pili Ani’s Self-care Night Recovery Oil. Still made with the same commitment to keep it clean, green and local, Pili Oil and Elemi Oil remain mainstays in this hope in a bottle.\"<\/p>","link":"https:\/\/wonder.ph\/style\/pili-ani-self-care-night-recovery-oil\/","press_logo":"shopify:\/\/shop_images\/Press-Logo-WN.png","logo_width":120}},"16608855243802c805-0":{"type":"press","settings":{"text":"<p>\"This small bottle [of Self-care Night Recovery Oil] can do a lot! It helps soften the skin and reduce the appearance of fine lines.\"<\/p>","link":"https:\/\/www.cosmo.ph\/lifestyle\/jupiter-retrograde-self-care-productivity-routine-a1014-20210821?utm_source=Facebook-Cosmo&utm_medium=Ownshare&utm_campaign=20210821-fbnp-lifestyle-jupiter-retrograde-self-care-productivity-routine-a1014-20210821-fbfirst","press_logo":"shopify:\/\/shop_images\/Press-Logo-CP.png","logo_width":120}},"d73da826-cc4f-4abc-9603-2c02d1d79566":{"type":"press","settings":{"text":"<p>\"Give the gift of calm and relaxation through Pili Ani’s essential oils made with a blend of pure Pili Oils.\"<\/p>","link":"https:\/\/brideandbreakfast.ph\/2021\/02\/18\/local-gifts-for-principal-sponsors\/","press_logo":"shopify:\/\/shop_images\/Press-Logo-BNB.png","logo_width":120}},"e28b2a37-35a7-4501-98ba-15f6e2f2a882":{"type":"press","settings":{"text":"<p>\"Pili Ani’s Self-Care Night Recovery Oil Is Every Skin’s Bestie\"<\/p>","link":"https:\/\/www.parcinq.com\/post\/pili-ani-s-self-care-night-recovery-oil-is-every-skin-s-bestie","press_logo":"shopify:\/\/shop_images\/Press-Logo-PC.png","logo_width":120}},"98c149f1-9d25-4509-84e5-daacd3b5092e":{"type":"press","settings":{"text":"<p>\"...why look at oils sourced abroad when we have two special oils available locally that delivers just as well—maybe even better?\"<\/p>","link":"https:\/\/metro.style\/beauty\/skincare\/pili-ani-self-care-night-recovery-oil\/30894","press_logo":"shopify:\/\/shop_images\/Press-Logo-MS.png","logo_width":120}},"f739b744-74d4-4b80-a111-b7f68ecfe16d":{"type":"press","settings":{"text":"<p>\"Filipino beauty product Pili Ani debuted on the American Home Shopping Network (HSN), marking a milestone first for the Philippines.\"<\/p>","link":"https:\/\/s3-ap-southeast-1.amazonaws.com\/mediameter\/uploads\/archive\/Dailies\/2021\/Mar\/08\/Business%20Mirror\/Bulletin%20Board\/B-6\/bw1.png","press_logo":"shopify:\/\/shop_images\/Press-Logo-BM.png","logo_width":120}},"3f08f30a-a9a2-42fa-8e18-57cb2a10c0ad":{"type":"press","settings":{"text":"<p>\"Gently pat it on at the end of your routine and wake up to a soothed, glowing complexion.\"<\/p>","link":"https:\/\/www.preview.ph\/beauty\/local-overnight-skin-treatments-a2058-20210730","press_logo":"shopify:\/\/shop_images\/Press-Logo-PR.png","logo_width":120}},"760ee557-3877-4db8-a0dd-0cbb43624872":{"type":"press","settings":{"text":"<p>\"The Lip Butter I have provides good color payoff not only on the lips, but also on the cheeks as blush.\"<\/p>","link":"http:\/\/www.projectvanity.com\/projectvanity\/pili-ani","press_logo":"shopify:\/\/shop_images\/Press-Logo-PV.png","logo_width":120}},"3a6dd238-01dd-4724-884e-450f72edaa55":{"type":"press","settings":{"text":"<p>\"This brand and milestone are not just for the company and the farmers. It is also something that we hope the country can be proud of.\"<\/p>","link":"http:\/\/www.goodnewspilipinas.com\/bicols-pride-pili-ani-is-1st-filipino-beauty-product-to-join-home-shopping-network-america\/","press_logo":"shopify:\/\/shop_images\/Press-Logo-GNP.png","logo_width":120}}},"block_order":["16608855243802c805-2","16608855243802c805-1","16608855243802c805-0","d73da826-cc4f-4abc-9603-2c02d1d79566","e28b2a37-35a7-4501-98ba-15f6e2f2a882","98c149f1-9d25-4509-84e5-daacd3b5092e","f739b744-74d4-4b80-a111-b7f68ecfe16d","3f08f30a-a9a2-42fa-8e18-57cb2a10c0ad","760ee557-3877-4db8-a0dd-0cbb43624872","3a6dd238-01dd-4724-884e-450f72edaa55"],"settings":{"title":"Press","show_quotations":true,"show_rounded_corners":false,"logo_opacity":50,"autoplay":true,"duration":4,"color_scheme":"","enable_slider_mobile":true,"width":"wrapper--narrow","padding_top":60,"padding_bottom":60}},"1659331412e92e9982":{"type":"section-image-with-text","settings":{"show_accordion_divider":true,"increase_border_radius":false,"section_height":"six-fifty-height","enable_mobile_height":false,"mobile_height":"four-fifty-height-mobile","layout":"inline","image_location":"left","image_width":"standard","image":"shopify:\/\/shop_images\/PAStory.png","block_bg_color":"","color_scheme":"","section_width":"wrapper","add_gutter":true,"padding_top":60,"padding_bottom":60}},"16593319187b25d871":{"type":"section-tab-collections","blocks":{"16593319175013cc88-0":{"type":"collection","settings":{"title":"Bestsellers","tab_collection":"best-sellers","number_of_products":6,"show_image":true,"image":"shopify:\/\/shop_images\/Tab-Collection1.png","overlay_type":"disabled","heading":"","heading_size":100,"text_color":"","button_text":"View All","button_link":"","button_color":"btn--white","button_style":"primary btn--small","button_size":"btn--medium"}},"16593319175013cc88-1":{"type":"collection","settings":{"title":"Fresh Picks","tab_collection":"fresh-picks","number_of_products":6,"show_image":true,"image":"shopify:\/\/shop_images\/Tab-Collection2_90e8b13a-54be-4c11-980a-d247ff53ddc6.png","overlay_type":"disabled","heading":"","heading_size":100,"text_color":"","button_text":"View All","button_link":"","button_color":"btn--white","button_style":"primary btn--small","button_size":"btn--medium"}},"5a9aeeea-ae3e-4a67-89c5-b9b1d09d5bf2":{"type":"collection","settings":{"title":"Our Faves","tab_collection":"our-faves","number_of_products":6,"show_image":true,"image":"shopify:\/\/shop_images\/Tab-Collection3.png","overlay_type":"disabled","heading":"","heading_size":100,"text_color":"","button_text":"View All","button_link":"","button_color":"btn--white","button_style":"primary btn--small","button_size":"btn--medium"}}},"block_order":["16593319175013cc88-0","16593319175013cc88-1","5a9aeeea-ae3e-4a67-89c5-b9b1d09d5bf2"],"settings":{"columns_mobile":"1","image_aspect_ratio":1.3,"text_alignment":"text-center","title":"Explore our Harvest","heading_size":100,"text":"Our favorite picks for the season","text_size":100,"type_style":"subheading-text","tab_heading_size":100,"button_position":"top","show_buttons":true,"collection_button_text":"Shop Now","collection_button_color":"btn--black","collection_button_style":"btn--solid","collection_button_size":"btn--medium","color_scheme":"","width":"wrapper--full-padded","padding_top":60,"padding_bottom":60}},"1659332056dfbb5a2d":{"type":"apps","blocks":{"6b879faf-367d-47b0-ae30-4f09ae553609":{"type":"shopify:\/\/apps\/loox-reviews\/blocks\/loox-card-carousel-section\/5c3b337f-fd14-4df5-b1d6-80ec13e6e28e","settings":{"maxWidth":1100,"borderRadius":8,"itemsPerView":4,"mobileItemsPerView":1,"maxNumberOfCharacters":100,"imageRatio":"0.72","reviewerNameColor":"#000000","textColor":"#000000","itemBackgroundColor":"#ffffff","starsColor":"","starsBackgroundColor":"#ffffff","arrows_backgroundColor":"#ffffff","arrows_iconColor":"#9a9a9a","shadow":"offset-dark","border_active":false,"border_width":2,"border_color":"#000000","productIds":""}}},"block_order":["6b879faf-367d-47b0-ae30-4f09ae553609"],"settings":{"color_scheme":"","width":"wrapper","padding_top":60,"padding_bottom":60}},"1659332360d2fd47e7":{"type":"section-shoppable-blog","blocks":{"16593323606309dafe-2":{"type":"article","settings":{"article":"news\/essential-oil-infused-alco-santizers","product_list":["pili-ani-clean-green-alco-sanitizer-rise-shine-50ml","pili-ani-clean-green-alco-sanitizer-stress-away-50ml","pili-ani-clean-green-alco-sanitizer-sweet-dreams-50ml"]}},"16593323606309dafe-3":{"type":"article","settings":{"article":"news\/lips-are-better-with-butter-get-more-moisturized-lips-in-3-days-with-pili-ani-s-multi-tasking-lip-butters","product_list":["pili-ani-moisturizing-pili-lip-butter-color-kit-1","pili-ani-moisturizing-tinted-pili-lip-butter"]}},"16593323606309dafe-0":{"type":"article","settings":{"article":"news\/face-oils-101-what-they-are-how-to-use-them-and-how-to-pick-what-s-right-for-you","product_list":["pili-ani-ageless-concentrate","pili-ani-self-care-night-recovery-oil-antioxidant-rich-facial-oil"]}},"16593323606309dafe-1":{"type":"article","settings":{"article":"news\/why-we-re-ditching-our-other-skincare-items-for-this-multitasking-face-cream","product_list":["pili-ani-intense-hydrating-cream","pili-ani-natural-radiance-cream","pili-ani-youthful-glow-facial-cream"]}}},"block_order":["16593323606309dafe-2","16593323606309dafe-3","16593323606309dafe-0","16593323606309dafe-1"],"settings":{"columns_mobile":"1","title":"Read our Blog","show_tags":true,"overlay_type":"disabled","color_scheme":"","width":"wrapper","padding_top":60,"padding_bottom":60}},"1659368106d6f5d880":{"type":"section-custom-content","blocks":{"1659368106275a5820-0":{"type":"image","settings":{"text_position":"middle-center","image":"shopify:\/\/shop_images\/Pili_Ani_Self-care_Night_Recovery_Oil_40ml_1.jpg","overlay_type":"disabled","title":"","heading_size":100,"image_text":"","text_size":100,"show_text_background":false,"bg_color":"","text_color":"","button_text":"","button_link":"https:\/\/www.youtube.com\/watch?v=BF0W9yRbsUI","button_color":"btn--white","button_style":"primary","button_size":"btn--medium"}},"1659368106275a5820-1":{"type":"text","settings":{"text_position":"left","top_image_width":500,"subheading":"","title":"Boost your skin’s radiance while you sleep","heading_size":100,"text":"<p>Just two to three drops of our Self-care Night Recovery Oil is all it takes to wake up to visibly youthful, luminous skin in the morning.<\/p><p>Infused with Pili oil, Elemi oil, Philippine jasmine, evening primrose, and lavender, this Self-care Night Recovery Oil works overtime, overnight.<\/p>","text_size":100,"button_text":"Shop Now","button_link":"shopify:\/\/products\/pili-ani-self-care-night-recovery-oil-antioxidant-rich-facial-oil","button_color":"btn--black","button_style":"primary","button_size":"btn--medium","button_2_text":"","button_2_link":"","button_2_color":"btn--white","button_2_style":"btn--solid-border","button_2_size":"btn--medium","bg_color":""}}},"block_order":["1659368106275a5820-0","1659368106275a5820-1"],"settings":{"height":"four-fifty-height","enable_mobile_height":false,"mobile_height":"six-fifty-height-mobile","color_scheme":"","reverse_blocks":false,"width":"wrapper","add_gutter":false,"padding_top":60,"padding_bottom":60}},"section_banner_text_columns_6bbkJf":{"type":"section-banner-text-columns","blocks":{"column_q6ezGV":{"type":"column","settings":{"image":"shopify:\/\/shop_images\/012724_Web_Banneer_-_Cleanser_Toner_1920x600px.jpg","overlay_type":"disabled","subheading":"","heading":"","text":"","button_text":"Cleanser & Toner","button_link":""}},"column_6eqgKq":{"type":"column","settings":{"overlay_type":"disabled","subheading":"Add a subheading","heading":"Add a heading","text":"","button_text":"","button_link":""}},"column_giXwbW":{"type":"column","settings":{"overlay_type":"disabled","subheading":"Add a subheading","heading":"Add a heading","text":"","button_text":"","button_link":""}},"column_f9wbPT":{"type":"column","settings":{"overlay_type":"disabled","subheading":"Add a subheading","heading":"Add a heading","text":"","button_text":"","button_link":""}}},"block_order":["column_q6ezGV","column_6eqgKq","column_giXwbW","column_f9wbPT"],"disabled":true,"name":"Banner with text columns","settings":{"appearance":"columns","content_alignment":"center","text_alignment":"text-center","section_height":"six-fifty-height","enable_mobile_height":false,"mobile_section_height":"five-fifty-height-mobile","color_scheme":"","button_color":"btn--white","button_style":"btn--text","button_size":"btn--medium","show_single_image":false,"heading_size":100,"width":"wrapper","padding_top":0,"padding_bottom":0}}},"order":["section_slideshow_wjdEGR","16593247592f08dc83","166088552470924e52","1659331412e92e9982","16593319187b25d871","1659332056dfbb5a2d","1659332360d2fd47e7","1659368106d6f5d880","section_banner_text_columns_6bbkJf"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "section_slideshow_wjdEGR": {
+      "type": "section-slideshow",
+      "blocks": {
+        "image_Edybwy": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Web_Banner_August_6.png",
+            "image_mobile": "shopify://shop_images/Mobile_Banner_September_9.png",
+            "overlay_type": "disabled",
+            "video_link_bg": "",
+            "content_width": 80,
+            "text_position": "center",
+            "text_alignment": "text-center",
+            "subheading": "",
+            "title": "",
+            "heading_size": 150,
+            "heading_highlight_type": "underline-hand-drawn",
+            "highlight_color": "#000000",
+            "highlight_text_color": "",
+            "text": "",
+            "text_size": 100,
+            "show_text_background": false,
+            "bg_color": "",
+            "text_color": "",
+            "stacked_button": false,
+            "button_1_text": "",
+            "button_1_link": "shopify://collections/all",
+            "button_1_color": "btn--white",
+            "button_1_style": "btn--solid-border",
+            "button_1_size": "btn--medium",
+            "button_2_text": "",
+            "button_2_link": "",
+            "button_2_color": "btn--black",
+            "button_2_style": "btn--solid",
+            "button_2_size": "btn--medium",
+            "video_text": "",
+            "video_link": ""
+          }
+        },
+        "image_Nar9Ep": {
+          "type": "image",
+          "disabled": true,
+          "settings": {
+            "overlay_type": "disabled",
+            "video_link_bg": "",
+            "content_width": 80,
+            "text_position": "center",
+            "text_alignment": "text-center",
+            "subheading": "",
+            "title": "<p>Welcome to Palo Alto</p>",
+            "heading_size": 150,
+            "heading_highlight_type": "underline-hand-drawn",
+            "highlight_color": "#000000",
+            "highlight_text_color": "",
+            "text": "Add more info or delete this text",
+            "text_size": 100,
+            "show_text_background": false,
+            "bg_color": "",
+            "text_color": "",
+            "stacked_button": false,
+            "button_1_text": "Shop All",
+            "button_1_link": "shopify://collections/all",
+            "button_1_color": "btn--white",
+            "button_1_style": "btn--solid-border",
+            "button_1_size": "btn--medium",
+            "button_2_text": "",
+            "button_2_link": "",
+            "button_2_color": "btn--black",
+            "button_2_style": "btn--solid",
+            "button_2_size": "btn--medium",
+            "video_text": "",
+            "video_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_Edybwy",
+        "image_Nar9Ep"
+      ],
+      "name": "Slideshow",
+      "settings": {
+        "slide_height": "two-thirds-height",
+        "enable_mobile_height": false,
+        "mobile_slide_height": "five-fifty-height-mobile",
+        "show_nav_dots": true,
+        "show_nav_arrows": false,
+        "show_arrow_down": false,
+        "autoplay": false,
+        "duration": 4,
+        "transition": "wipe",
+        "enable_zoom_animation": true,
+        "enable_card_scrolling": false,
+        "increase_border_radius": true,
+        "color_scheme": ""
+      }
+    },
+    "16593247592f08dc83": {
+      "type": "section-image-accordions",
+      "blocks": {
+        "1659324758980b651c-1": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/DESKTOP_CREAMS.png",
+            "image_mobile": "shopify://shop_images/MOBILE_CREAMS.png",
+            "overlay_type": "disabled",
+            "text_width": "full",
+            "text_position": "bottom-left",
+            "title": "Heavy on moisture, lightweight on your skin.",
+            "text": "Luxuriate in the most hydrating, antioxidant-rich Pili and Elemi Oils and hardworking botanicals that target every skin concern.",
+            "button_1_text": "",
+            "button_1_link": "",
+            "button_1_color": "btn--white",
+            "button_1_style": "btn--solid-border",
+            "button_1_size": "btn--medium",
+            "button_2_text": "",
+            "button_2_link": "",
+            "button_2_color": "btn--black",
+            "button_2_style": "btn--solid",
+            "button_2_size": "btn--medium"
+          }
+        },
+        "10d3297c-9d3d-4a16-ba17-f9e7bcb01f64": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/CNT_BANNER_1.png",
+            "overlay_type": "disabled",
+            "text_width": "full",
+            "text_position": "bottom-left",
+            "title": "Your Best Skin Starts Here.",
+            "text": "Refresh with our Gentle Facial Cleanser & Purifying Toner.",
+            "button_1_text": "",
+            "button_1_link": "",
+            "button_1_color": "btn--white",
+            "button_1_style": "btn--solid-border",
+            "button_1_size": "btn--medium",
+            "button_2_text": "",
+            "button_2_link": "",
+            "button_2_color": "btn--black",
+            "button_2_style": "btn--solid",
+            "button_2_size": "btn--medium"
+          }
+        },
+        "2e7f90f9-7e8e-45ba-a8f0-93c42e4e13d5": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Accordion-Slider-SCNRO.png",
+            "overlay_type": "disabled",
+            "text_width": "normal",
+            "text_position": "bottom-left",
+            "title": "Mini in size. Mighty in overnight skin recovery.",
+            "text": "Supercharged with antioxidant-rich Pili Oil and a skin-loving blend of botanical extracts. Now in a 15ml bottle!",
+            "button_1_text": "",
+            "button_1_link": "",
+            "button_1_color": "btn--white",
+            "button_1_style": "btn--solid-border",
+            "button_1_size": "btn--medium",
+            "button_2_text": "",
+            "button_2_link": "",
+            "button_2_color": "btn--black",
+            "button_2_style": "btn--solid",
+            "button_2_size": "btn--medium"
+          }
+        }
+      },
+      "block_order": [
+        "1659324758980b651c-1",
+        "10d3297c-9d3d-4a16-ba17-f9e7bcb01f64",
+        "2e7f90f9-7e8e-45ba-a8f0-93c42e4e13d5"
+      ],
+      "disabled": true,
+      "settings": {
+        "accordion_height": "five-fifty-height",
+        "enable_mobile_height": false,
+        "mobile_section_height": "five-fifty-height-mobile",
+        "heading_size": 75,
+        "color_scheme": "",
+        "width": "wrapper--full",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "166088552470924e52": {
+      "type": "section-press",
+      "blocks": {
+        "16608855243802c805-2": {
+          "type": "press",
+          "settings": {
+            "text": "<p>\"This Filipino Beauty Brand Has Something You Didn’t Know Your Evening Routine Needed\"</p>",
+            "link": "https://www.lofficielph.com/21789521/this-filipino-beauty-brand-has-something-you-didnt-know-your-evening-routine-needed",
+            "press_logo": "shopify://shop_images/Press-Logo-LO.png",
+            "logo_width": 120
+          }
+        },
+        "16608855243802c805-1": {
+          "type": "press",
+          "settings": {
+            "text": "<p>\"World, meet Pili Ani’s Self-care Night Recovery Oil. Still made with the same commitment to keep it clean, green and local, Pili Oil and Elemi Oil remain mainstays in this hope in a bottle.\"</p>",
+            "link": "https://wonder.ph/style/pili-ani-self-care-night-recovery-oil/",
+            "press_logo": "shopify://shop_images/Press-Logo-WN.png",
+            "logo_width": 120
+          }
+        },
+        "16608855243802c805-0": {
+          "type": "press",
+          "settings": {
+            "text": "<p>\"This small bottle [of Self-care Night Recovery Oil] can do a lot! It helps soften the skin and reduce the appearance of fine lines.\"</p>",
+            "link": "https://www.cosmo.ph/lifestyle/jupiter-retrograde-self-care-productivity-routine-a1014-20210821?utm_source=Facebook-Cosmo&utm_medium=Ownshare&utm_campaign=20210821-fbnp-lifestyle-jupiter-retrograde-self-care-productivity-routine-a1014-20210821-fbfirst",
+            "press_logo": "shopify://shop_images/Press-Logo-CP.png",
+            "logo_width": 120
+          }
+        },
+        "d73da826-cc4f-4abc-9603-2c02d1d79566": {
+          "type": "press",
+          "settings": {
+            "text": "<p>\"Give the gift of calm and relaxation through Pili Ani’s essential oils made with a blend of pure Pili Oils.\"</p>",
+            "link": "https://brideandbreakfast.ph/2021/02/18/local-gifts-for-principal-sponsors/",
+            "press_logo": "shopify://shop_images/Press-Logo-BNB.png",
+            "logo_width": 120
+          }
+        },
+        "e28b2a37-35a7-4501-98ba-15f6e2f2a882": {
+          "type": "press",
+          "settings": {
+            "text": "<p>\"Pili Ani’s Self-Care Night Recovery Oil Is Every Skin’s Bestie\"</p>",
+            "link": "https://www.parcinq.com/post/pili-ani-s-self-care-night-recovery-oil-is-every-skin-s-bestie",
+            "press_logo": "shopify://shop_images/Press-Logo-PC.png",
+            "logo_width": 120
+          }
+        },
+        "98c149f1-9d25-4509-84e5-daacd3b5092e": {
+          "type": "press",
+          "settings": {
+            "text": "<p>\"...why look at oils sourced abroad when we have two special oils available locally that delivers just as well—maybe even better?\"</p>",
+            "link": "https://metro.style/beauty/skincare/pili-ani-self-care-night-recovery-oil/30894",
+            "press_logo": "shopify://shop_images/Press-Logo-MS.png",
+            "logo_width": 120
+          }
+        },
+        "f739b744-74d4-4b80-a111-b7f68ecfe16d": {
+          "type": "press",
+          "settings": {
+            "text": "<p>\"Filipino beauty product Pili Ani debuted on the American Home Shopping Network (HSN), marking a milestone first for the Philippines.\"</p>",
+            "link": "https://s3-ap-southeast-1.amazonaws.com/mediameter/uploads/archive/Dailies/2021/Mar/08/Business%20Mirror/Bulletin%20Board/B-6/bw1.png",
+            "press_logo": "shopify://shop_images/Press-Logo-BM.png",
+            "logo_width": 120
+          }
+        },
+        "3f08f30a-a9a2-42fa-8e18-57cb2a10c0ad": {
+          "type": "press",
+          "settings": {
+            "text": "<p>\"Gently pat it on at the end of your routine and wake up to a soothed, glowing complexion.\"</p>",
+            "link": "https://www.preview.ph/beauty/local-overnight-skin-treatments-a2058-20210730",
+            "press_logo": "shopify://shop_images/Press-Logo-PR.png",
+            "logo_width": 120
+          }
+        },
+        "760ee557-3877-4db8-a0dd-0cbb43624872": {
+          "type": "press",
+          "settings": {
+            "text": "<p>\"The Lip Butter I have provides good color payoff not only on the lips, but also on the cheeks as blush.\"</p>",
+            "link": "http://www.projectvanity.com/projectvanity/pili-ani",
+            "press_logo": "shopify://shop_images/Press-Logo-PV.png",
+            "logo_width": 120
+          }
+        },
+        "3a6dd238-01dd-4724-884e-450f72edaa55": {
+          "type": "press",
+          "settings": {
+            "text": "<p>\"This brand and milestone are not just for the company and the farmers. It is also something that we hope the country can be proud of.\"</p>",
+            "link": "http://www.goodnewspilipinas.com/bicols-pride-pili-ani-is-1st-filipino-beauty-product-to-join-home-shopping-network-america/",
+            "press_logo": "shopify://shop_images/Press-Logo-GNP.png",
+            "logo_width": 120
+          }
+        }
+      },
+      "block_order": [
+        "16608855243802c805-2",
+        "16608855243802c805-1",
+        "16608855243802c805-0",
+        "d73da826-cc4f-4abc-9603-2c02d1d79566",
+        "e28b2a37-35a7-4501-98ba-15f6e2f2a882",
+        "98c149f1-9d25-4509-84e5-daacd3b5092e",
+        "f739b744-74d4-4b80-a111-b7f68ecfe16d",
+        "3f08f30a-a9a2-42fa-8e18-57cb2a10c0ad",
+        "760ee557-3877-4db8-a0dd-0cbb43624872",
+        "3a6dd238-01dd-4724-884e-450f72edaa55"
+      ],
+      "settings": {
+        "title": "Press",
+        "show_quotations": true,
+        "show_rounded_corners": false,
+        "logo_opacity": 50,
+        "autoplay": true,
+        "duration": 4,
+        "color_scheme": "",
+        "enable_slider_mobile": true,
+        "width": "wrapper--narrow",
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
+    "1659331412e92e9982": {
+      "type": "section-image-with-text",
+      "disabled": true,
+      "settings": {
+        "show_accordion_divider": true,
+        "increase_border_radius": false,
+        "section_height": "six-fifty-height",
+        "enable_mobile_height": false,
+        "mobile_height": "four-fifty-height-mobile",
+        "layout": "inline",
+        "image_location": "left",
+        "image_width": "standard",
+        "image": "shopify://shop_images/PAStory.png",
+        "block_bg_color": "",
+        "color_scheme": "",
+        "section_width": "wrapper",
+        "add_gutter": true,
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
+    "16593319187b25d871": {
+      "type": "section-tab-collections",
+      "blocks": {
+        "16593319175013cc88-0": {
+          "type": "collection",
+          "settings": {
+            "title": "Bestsellers",
+            "tab_collection": "best-sellers",
+            "number_of_products": 6,
+            "show_image": true,
+            "image": "shopify://shop_images/Tab-Collection1.png",
+            "overlay_type": "disabled",
+            "heading": "",
+            "heading_size": 100,
+            "text_color": "",
+            "button_text": "View All",
+            "button_link": "",
+            "button_color": "btn--white",
+            "button_style": "primary btn--small",
+            "button_size": "btn--medium"
+          }
+        },
+        "16593319175013cc88-1": {
+          "type": "collection",
+          "settings": {
+            "title": "Fresh Picks",
+            "tab_collection": "fresh-picks",
+            "number_of_products": 6,
+            "show_image": true,
+            "image": "shopify://shop_images/Tab-Collection2_90e8b13a-54be-4c11-980a-d247ff53ddc6.png",
+            "overlay_type": "disabled",
+            "heading": "",
+            "heading_size": 100,
+            "text_color": "",
+            "button_text": "View All",
+            "button_link": "",
+            "button_color": "btn--white",
+            "button_style": "primary btn--small",
+            "button_size": "btn--medium"
+          }
+        },
+        "5a9aeeea-ae3e-4a67-89c5-b9b1d09d5bf2": {
+          "type": "collection",
+          "settings": {
+            "title": "Our Faves",
+            "tab_collection": "our-faves",
+            "number_of_products": 6,
+            "show_image": true,
+            "image": "shopify://shop_images/Tab-Collection3.png",
+            "overlay_type": "disabled",
+            "heading": "",
+            "heading_size": 100,
+            "text_color": "",
+            "button_text": "View All",
+            "button_link": "",
+            "button_color": "btn--white",
+            "button_style": "primary btn--small",
+            "button_size": "btn--medium"
+          }
+        }
+      },
+      "block_order": [
+        "16593319175013cc88-0",
+        "16593319175013cc88-1",
+        "5a9aeeea-ae3e-4a67-89c5-b9b1d09d5bf2"
+      ],
+      "settings": {
+        "columns_mobile": "1",
+        "image_aspect_ratio": 1.3,
+        "text_alignment": "text-center",
+        "title": "Explore our Harvest",
+        "heading_size": 100,
+        "text": "Our favorite picks for the season",
+        "text_size": 100,
+        "type_style": "subheading-text",
+        "tab_heading_size": 100,
+        "button_position": "top",
+        "show_buttons": true,
+        "collection_button_text": "Shop Now",
+        "collection_button_color": "btn--black",
+        "collection_button_style": "btn--solid",
+        "collection_button_size": "btn--medium",
+        "color_scheme": "",
+        "width": "wrapper--full-padded",
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
+    "1659332056dfbb5a2d": {
+      "type": "apps",
+      "blocks": {
+        "6b879faf-367d-47b0-ae30-4f09ae553609": {
+          "type": "shopify://apps/loox-reviews/blocks/loox-card-carousel-section/5c3b337f-fd14-4df5-b1d6-80ec13e6e28e",
+          "settings": {
+            "maxWidth": 1100,
+            "borderRadius": 8,
+            "itemsPerView": 4,
+            "mobileItemsPerView": 1,
+            "maxNumberOfCharacters": 100,
+            "imageRatio": "0.72",
+            "reviewerNameColor": "#000000",
+            "textColor": "#000000",
+            "itemBackgroundColor": "#ffffff",
+            "starsColor": "",
+            "starsBackgroundColor": "#ffffff",
+            "arrows_backgroundColor": "#ffffff",
+            "arrows_iconColor": "#9a9a9a",
+            "shadow": "offset-dark",
+            "border_active": false,
+            "border_width": 2,
+            "border_color": "#000000",
+            "productIds": ""
+          }
+        }
+      },
+      "block_order": [
+        "6b879faf-367d-47b0-ae30-4f09ae553609"
+      ],
+      "settings": {
+        "color_scheme": "",
+        "width": "wrapper",
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
+    "1659332360d2fd47e7": {
+      "type": "section-shoppable-blog",
+      "blocks": {
+        "16593323606309dafe-2": {
+          "type": "article",
+          "settings": {
+            "article": "news/essential-oil-infused-alco-santizers",
+            "product_list": [
+              "pili-ani-clean-green-alco-sanitizer-rise-shine-50ml",
+              "pili-ani-clean-green-alco-sanitizer-stress-away-50ml",
+              "pili-ani-clean-green-alco-sanitizer-sweet-dreams-50ml"
+            ]
+          }
+        },
+        "16593323606309dafe-3": {
+          "type": "article",
+          "settings": {
+            "article": "news/lips-are-better-with-butter-get-more-moisturized-lips-in-3-days-with-pili-ani-s-multi-tasking-lip-butters",
+            "product_list": [
+              "pili-ani-moisturizing-pili-lip-butter-color-kit-1",
+              "pili-ani-moisturizing-tinted-pili-lip-butter"
+            ]
+          }
+        },
+        "16593323606309dafe-0": {
+          "type": "article",
+          "settings": {
+            "article": "news/face-oils-101-what-they-are-how-to-use-them-and-how-to-pick-what-s-right-for-you",
+            "product_list": [
+              "pili-ani-ageless-concentrate",
+              "pili-ani-self-care-night-recovery-oil-antioxidant-rich-facial-oil"
+            ]
+          }
+        },
+        "16593323606309dafe-1": {
+          "type": "article",
+          "settings": {
+            "article": "news/why-we-re-ditching-our-other-skincare-items-for-this-multitasking-face-cream",
+            "product_list": [
+              "pili-ani-intense-hydrating-cream",
+              "pili-ani-natural-radiance-cream",
+              "pili-ani-youthful-glow-facial-cream"
+            ]
+          }
+        }
+      },
+      "block_order": [
+        "16593323606309dafe-2",
+        "16593323606309dafe-3",
+        "16593323606309dafe-0",
+        "16593323606309dafe-1"
+      ],
+      "settings": {
+        "columns_mobile": "1",
+        "title": "Read our Blog",
+        "show_tags": true,
+        "overlay_type": "disabled",
+        "color_scheme": "",
+        "width": "wrapper",
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
+    "1659368106d6f5d880": {
+      "type": "section-custom-content",
+      "blocks": {
+        "1659368106275a5820-0": {
+          "type": "image",
+          "settings": {
+            "text_position": "middle-center",
+            "image": "shopify://shop_images/Pili_Ani_Self-care_Night_Recovery_Oil_40ml_1.jpg",
+            "overlay_type": "disabled",
+            "title": "",
+            "heading_size": 100,
+            "image_text": "",
+            "text_size": 100,
+            "show_text_background": false,
+            "bg_color": "",
+            "text_color": "",
+            "button_text": "",
+            "button_link": "https://www.youtube.com/watch?v=BF0W9yRbsUI",
+            "button_color": "btn--white",
+            "button_style": "primary",
+            "button_size": "btn--medium"
+          }
+        },
+        "1659368106275a5820-1": {
+          "type": "text",
+          "settings": {
+            "text_position": "left",
+            "top_image_width": 500,
+            "subheading": "",
+            "title": "Boost your skin’s radiance while you sleep",
+            "heading_size": 100,
+            "text": "<p>Just two to three drops of our Self-care Night Recovery Oil is all it takes to wake up to visibly youthful, luminous skin in the morning.</p><p>Infused with Pili oil, Elemi oil, Philippine jasmine, evening primrose, and lavender, this Self-care Night Recovery Oil works overtime, overnight.</p>",
+            "text_size": 100,
+            "button_text": "Shop Now",
+            "button_link": "shopify://products/pili-ani-self-care-night-recovery-oil-antioxidant-rich-facial-oil",
+            "button_color": "btn--black",
+            "button_style": "primary",
+            "button_size": "btn--medium",
+            "button_2_text": "",
+            "button_2_link": "",
+            "button_2_color": "btn--white",
+            "button_2_style": "btn--solid-border",
+            "button_2_size": "btn--medium",
+            "bg_color": ""
+          }
+        }
+      },
+      "block_order": [
+        "1659368106275a5820-0",
+        "1659368106275a5820-1"
+      ],
+      "settings": {
+        "height": "four-fifty-height",
+        "enable_mobile_height": false,
+        "mobile_height": "six-fifty-height-mobile",
+        "color_scheme": "",
+        "reverse_blocks": false,
+        "width": "wrapper",
+        "add_gutter": false,
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
+    "section_banner_text_columns_6bbkJf": {
+      "type": "section-banner-text-columns",
+      "blocks": {
+        "column_q6ezGV": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/012724_Web_Banneer_-_Cleanser_Toner_1920x600px.jpg",
+            "overlay_type": "disabled",
+            "subheading": "",
+            "heading": "",
+            "text": "",
+            "button_text": "Cleanser & Toner",
+            "button_link": ""
+          }
+        },
+        "column_6eqgKq": {
+          "type": "column",
+          "settings": {
+            "overlay_type": "disabled",
+            "subheading": "Add a subheading",
+            "heading": "Add a heading",
+            "text": "",
+            "button_text": "",
+            "button_link": ""
+          }
+        },
+        "column_giXwbW": {
+          "type": "column",
+          "settings": {
+            "overlay_type": "disabled",
+            "subheading": "Add a subheading",
+            "heading": "Add a heading",
+            "text": "",
+            "button_text": "",
+            "button_link": ""
+          }
+        },
+        "column_f9wbPT": {
+          "type": "column",
+          "settings": {
+            "overlay_type": "disabled",
+            "subheading": "Add a subheading",
+            "heading": "Add a heading",
+            "text": "",
+            "button_text": "",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_q6ezGV",
+        "column_6eqgKq",
+        "column_giXwbW",
+        "column_f9wbPT"
+      ],
+      "disabled": true,
+      "name": "Banner with text columns",
+      "settings": {
+        "appearance": "columns",
+        "content_alignment": "center",
+        "text_alignment": "text-center",
+        "section_height": "six-fifty-height",
+        "enable_mobile_height": false,
+        "mobile_section_height": "five-fifty-height-mobile",
+        "color_scheme": "",
+        "button_color": "btn--white",
+        "button_style": "btn--text",
+        "button_size": "btn--medium",
+        "show_single_image": false,
+        "heading_size": 100,
+        "width": "wrapper",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    }
+  },
+  "order": [
+    "section_slideshow_wjdEGR",
+    "16593247592f08dc83",
+    "166088552470924e52",
+    "1659331412e92e9982",
+    "16593319187b25d871",
+    "1659332056dfbb5a2d",
+    "1659332360d2fd47e7",
+    "1659368106d6f5d880",
+    "section_banner_text_columns_6bbkJf"
+  ]
+}
