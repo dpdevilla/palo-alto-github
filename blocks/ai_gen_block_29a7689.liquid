@@ -602,35 +602,16 @@
               });
               
 if (response.ok) {
-  const item = await response.json();
-  console.log("Item added:", item);
-
   button.textContent = 'Added!';
 
-  // Fetch updated cart
-  const cartResponse = await fetch('/cart.js');
-  const cart = await cartResponse.json();
-
-  // Update the drawer content
-  if (window.CartDrawer && typeof window.CartDrawer.renderContents === 'function') {
-    window.CartDrawer.renderContents(cart);
-
-    // Slide out drawer
-    window.CartDrawer.open();
-    
-    // Auto-close on click outside
-    const drawer = document.querySelector('.cart-drawer'); // adjust class to your theme
-    const overlay = document.querySelector('.drawer-overlay'); // adjust class to your theme
-    
-    if (overlay) {
-      const closeDrawer = () => {
-        window.CartDrawer.close(); // slide out
-        overlay.removeEventListener('click', closeDrawer);
-      };
-      overlay.addEventListener('click', closeDrawer);
-    }
-
-  } else {
+  document.dispatchEvent(new CustomEvent('cart:refresh'));
+  
+  setTimeout(() => {
+    button.textContent = originalText;
+    button.disabled = false;
+  }, 2000);
+}
+ else {
     // Fallback
     document.dispatchEvent(new CustomEvent('cart:refresh', { detail: { cart } }));
     document.body.classList.add('js-drawer-open', 'js-drawer-open-cart');
