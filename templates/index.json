@@ -731,6 +731,80 @@
         "padding_top": 0,
         "padding_bottom": 0
       }
+    },
+    "section_banner_text_columns_HcgkB7": {
+      "type": "section-banner-text-columns",
+      "blocks": {
+        "column_mtHPRY": {
+          "type": "column",
+          "settings": {
+            "overlay_type": "disabled",
+            "subheading": "Add a subheading",
+            "heading": "Add a heading",
+            "text": "",
+            "button_text": "",
+            "button_link": ""
+          }
+        },
+        "column_JXTDMx": {
+          "type": "column",
+          "settings": {
+            "overlay_type": "disabled",
+            "subheading": "Add a subheading",
+            "heading": "Add a heading",
+            "text": "",
+            "button_text": "",
+            "button_link": ""
+          }
+        },
+        "column_UjanXd": {
+          "type": "column",
+          "settings": {
+            "overlay_type": "disabled",
+            "subheading": "Add a subheading",
+            "heading": "Add a heading",
+            "text": "",
+            "button_text": "",
+            "button_link": ""
+          }
+        },
+        "column_BHYFiN": {
+          "type": "column",
+          "settings": {
+            "overlay_type": "disabled",
+            "subheading": "Add a subheading",
+            "heading": "Add a heading",
+            "text": "",
+            "button_text": "",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_mtHPRY",
+        "column_JXTDMx",
+        "column_UjanXd",
+        "column_BHYFiN"
+      ],
+      "disabled": true,
+      "name": "Banner with text columns",
+      "settings": {
+        "appearance": "columns",
+        "content_alignment": "center",
+        "text_alignment": "text-center",
+        "section_height": "six-fifty-height",
+        "enable_mobile_height": false,
+        "mobile_section_height": "five-fifty-height-mobile",
+        "color_scheme": "",
+        "button_color": "btn--white",
+        "button_style": "btn--text",
+        "button_size": "btn--medium",
+        "show_single_image": false,
+        "heading_size": 100,
+        "width": "wrapper",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
     }
   },
   "order": [
@@ -744,6 +818,7 @@
     "1659332360d2fd47e7",
     "1659368106d6f5d880",
     "section_banner_text_columns_6bbkJf",
-    "section_hero_scrolling_wkByXN"
+    "section_hero_scrolling_wkByXN",
+    "section_banner_text_columns_HcgkB7"
   ]
 }
