@@ -607,19 +607,18 @@ if (response.ok) {
 
   button.textContent = 'Added!';
 
-  // 🔑 Get the updated full cart
+  // 🔑 Fetch the updated cart
   const cartResponse = await fetch('/cart.js');
   const cart = await cartResponse.json();
 
-  // Fire the refresh event Cascade usually listens for
-  document.dispatchEvent(new CustomEvent('cart:refresh', {
-    detail: { cart }
-  }));
-
-  // Or directly update drawer if function exists
-  if (typeof openCartDrawer === 'function') {
-    openCartDrawer();
+  // 🔄 Force the theme to re-render the cart drawer
+  if (window.CartDrawer && typeof window.CartDrawer.renderContents === 'function') {
+    // Cascade theme usually has a global CartDrawer object
+    window.CartDrawer.renderContents(cart);
+    window.CartDrawer.open(); // open drawer
   } else {
+    // Fallback: dispatch event for older setups
+    document.dispatchEvent(new CustomEvent('cart:refresh', { detail: { cart } }));
     document.body.classList.add('js-drawer-open', 'js-drawer-open-cart');
   }
 
@@ -628,7 +627,6 @@ if (response.ok) {
     button.disabled = false;
   }, 2000);
 }
-
 
  else {
                 throw new Error('Failed to add to cart');
