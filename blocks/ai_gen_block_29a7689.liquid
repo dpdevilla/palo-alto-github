@@ -602,18 +602,26 @@
               });
               
 if (response.ok) {
-  const result = await response.json();
-  console.log("Added to cart:", result);
+  const item = await response.json();
+  console.log("Item added:", item);
 
   button.textContent = 'Added!';
 
-  // Force cart update + drawer open
+  // 🔑 Get the updated full cart
+  const cartResponse = await fetch('/cart.js');
+  const cart = await cartResponse.json();
+
+  // Fire event so theme updates drawer with full cart
   document.dispatchEvent(new CustomEvent('cart:updated', {
-    detail: { cart: result }
+    detail: { cart }
   }));
 
-  document.querySelector('body').classList.add('js-drawer-open'); 
-  document.querySelector('body').classList.add('js-drawer-open-cart'); 
+  // Open drawer
+  if (typeof openCartDrawer === 'function') {
+    openCartDrawer();
+  } else {
+    document.body.classList.add('js-drawer-open', 'js-drawer-open-cart');
+  }
 
   setTimeout(() => {
     button.textContent = originalText;
@@ -1031,3 +1039,4 @@ if (response.ok) {
   ]
 }
 {% endschema %}
+
