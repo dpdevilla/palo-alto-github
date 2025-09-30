@@ -563,3 +563,62 @@
     </div>
   </template>
 </cart-element>
+
+<script>
+  async function addToCart(variantId, quantity = 1, button) {
+  const originalText = button.textContent;
+  button.disabled = true;
+
+  try {
+    // 1️⃣ Add item to cart
+    const response = await fetch('/cart/add.js', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ id: variantId, quantity })
+    });
+
+    if (!response.ok) throw new Error('Failed to add item');
+
+    const item = await response.json();
+    console.log('Item added:', item);
+
+    button.textContent = 'Added!';
+
+    // 2️⃣ Fetch the full updated cart
+    const cartResponse = await fetch('/cart.js');
+    const cart = await cartResponse.json();
+
+    // 3️⃣ Render the drawer if CartDrawer exists
+    if (window.CartDrawer && typeof window.CartDrawer.renderContents === 'function') {
+      window.CartDrawer.renderContents(cart);
+      window.CartDrawer.open();
+
+      // Auto-close on overlay click
+      const overlay = document.querySelector('.drawer-overlay');
+      if (overlay) {
+        const closeDrawer = () => {
+          window.CartDrawer.close();
+          overlay.removeEventListener('click', closeDrawer);
+        };
+        overlay.addEventListener('click', closeDrawer);
+      }
+
+    } else {
+      // Fallback for older themes
+      document.dispatchEvent(new CustomEvent('cart:refresh', { detail: { cart } }));
+      document.body.classList.add('js-drawer-open', 'js-drawer-open-cart');
+    }
+
+  } catch (error) {
+    console.error(error);
+    alert('Something went wrong, please try again.');
+  } finally {
+    // Restore button
+    setTimeout(() => {
+      button.textContent = originalText;
+      button.disabled = false;
+    }, 2000);
+  }
+}
+
+</script>
