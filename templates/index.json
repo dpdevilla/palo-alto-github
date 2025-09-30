@@ -358,7 +358,7 @@
           "settings": {
             "title": "Fresh Picks",
             "tab_collection": "fresh-picks",
-            "number_of_products": 6,
+            "number_of_products": 7,
             "show_image": true,
             "image": "shopify://shop_images/Tab-Collection2_90e8b13a-54be-4c11-980a-d247ff53ddc6.png",
             "overlay_type": "disabled",
