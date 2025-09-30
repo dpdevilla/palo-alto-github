@@ -28,6 +28,8 @@
     "show_payment_button": false,
     "enable_subscriptions_selectors": false,
     "cart_type": "drawer",
+    "enable_cart_animation": true,
+    "enable_discounts": true,
     "enable_additional_buttons": false,
     "empty_cart_buttons": "shop",
     "free_shipping_limit": "1000",
