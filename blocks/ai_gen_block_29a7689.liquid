@@ -607,21 +607,36 @@ if (response.ok) {
 
   button.textContent = 'Added!';
 
-  // 🔑 Fetch the updated cart
+  // Fetch updated cart
   const cartResponse = await fetch('/cart.js');
   const cart = await cartResponse.json();
 
-  // 🔄 Force the theme to re-render the cart drawer
+  // Update the drawer content
   if (window.CartDrawer && typeof window.CartDrawer.renderContents === 'function') {
-    // Cascade theme usually has a global CartDrawer object
     window.CartDrawer.renderContents(cart);
-    window.CartDrawer.open(); // open drawer
+
+    // Slide out drawer
+    window.CartDrawer.open();
+    
+    // Auto-close on click outside
+    const drawer = document.querySelector('.cart-drawer'); // adjust class to your theme
+    const overlay = document.querySelector('.drawer-overlay'); // adjust class to your theme
+    
+    if (overlay) {
+      const closeDrawer = () => {
+        window.CartDrawer.close(); // slide out
+        overlay.removeEventListener('click', closeDrawer);
+      };
+      overlay.addEventListener('click', closeDrawer);
+    }
+
   } else {
-    // Fallback: dispatch event for older setups
+    // Fallback
     document.dispatchEvent(new CustomEvent('cart:refresh', { detail: { cart } }));
     document.body.classList.add('js-drawer-open', 'js-drawer-open-cart');
   }
 
+  // Restore button
   setTimeout(() => {
     button.textContent = originalText;
     button.disabled = false;
