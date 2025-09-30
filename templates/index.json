@@ -307,7 +307,7 @@
         "3a6dd238-01dd-4724-884e-450f72edaa55"
       ],
       "settings": {
-        "title": "Press",
+        "title": "",
         "show_quotations": true,
         "show_rounded_corners": false,
         "logo_opacity": 50,
@@ -316,8 +316,8 @@
         "color_scheme": "scheme-1",
         "enable_slider_mobile": true,
         "width": "wrapper--narrow",
-        "padding_top": 60,
-        "padding_bottom": 60
+        "padding_top": 0,
+        "padding_bottom": 32
       }
     },
     "1659331412e92e9982": {
