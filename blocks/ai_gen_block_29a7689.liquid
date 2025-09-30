@@ -1020,3 +1020,24 @@
   ]
 }
 {% endschema %}
+
+<script>
+if (response.ok) {
+  button.textContent = 'Added!';
+
+  // Update cart + open drawer
+  const cartDrawer = document.querySelector('cart-drawer');
+  if (cartDrawer && typeof cartDrawer.open === 'function') {
+    cartDrawer.open(); // most Shopify 2.0 themes support this
+  } else {
+    document.dispatchEvent(new CustomEvent('cart:refresh')); 
+  }
+
+  setTimeout(() => {
+    button.textContent = originalText;
+    button.disabled = false;
+  }, 2000);
+}
+
+
+</script>
