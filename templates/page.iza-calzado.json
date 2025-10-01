@@ -267,8 +267,8 @@
         "button_color": "btn--black",
         "button_style": "btn--solid",
         "button_size": "btn--medium",
-        "image_aspect_ratio": 1,
-        "color_scheme": "",
+        "image_aspect_ratio": 1.1,
+        "color_scheme": "scheme-1",
         "width": "wrapper",
         "padding_top": 60,
         "padding_bottom": 60
