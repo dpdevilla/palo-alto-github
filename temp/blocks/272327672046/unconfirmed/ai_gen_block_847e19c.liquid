@@ -32,18 +32,18 @@
 {% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
 
 {% style %}
-  .ai-before-after-{{ ai_gen_id }} {
+  .ai-social-proof-{{ ai_gen_id }} {
     padding: {{ block.settings.section_padding_top }}px 20px {{ block.settings.section_padding_bottom }}px;
     background-color: {{ block.settings.background_color }};
   }
 
-  .ai-before-after-container-{{ ai_gen_id }} {
+  .ai-social-proof-container-{{ ai_gen_id }} {
     max-width: {{ block.settings.container_width }}px;
     margin: 0 auto;
     text-align: center;
   }
 
-  .ai-before-after-heading-{{ ai_gen_id }} {
+  .ai-social-proof-heading-{{ ai_gen_id }} {
     font-size: {{ block.settings.heading_size }}px;
     font-weight: 700;
     line-height: 1.2;
@@ -51,7 +51,7 @@
     color: {{ block.settings.text_color }};
   }
 
-  .ai-before-after-subheading-{{ ai_gen_id }} {
+  .ai-social-proof-subheading-{{ ai_gen_id }} {
     font-size: {{ block.settings.subheading_size }}px;
     line-height: 1.5;
     margin: 0 0 50px;
@@ -59,352 +59,261 @@
     opacity: 0.8;
   }
 
-  .ai-before-after-comparison-{{ ai_gen_id }} {
-    position: relative;
-    max-width: 800px;
-    margin: 0 auto 40px;
-    border-radius: {{ block.settings.image_border_radius }}px;
-    overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  .ai-social-proof-reviews-{{ ai_gen_id }} {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 50px;
   }
 
-  .ai-before-after-images-{{ ai_gen_id }} {
-    position: relative;
-    width: 100%;
-    height: 400px;
-    overflow: hidden;
+  .ai-social-proof-review-{{ ai_gen_id }} {
+    background-color: {{ block.settings.review_bg_color }};
+    padding: 30px;
+    border-radius: {{ block.settings.review_border_radius }}px;
+    text-align: left;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease;
   }
 
-  .ai-before-after-image-{{ ai_gen_id }} {
-    position: absolute;
-    top: 0;
+  .ai-social-proof-review-{{ ai_gen_id }}:hover {
+    transform: translateY(-5px);
+  }
+
+  .ai-social-proof-stars-{{ ai_gen_id }} {
+    display: flex;
+    gap: 2px;
+    margin-bottom: 15px;
+  }
+
+  .ai-social-proof-star-{{ ai_gen_id }} {
+    width: 16px;
+    height: 16px;
+    color: {{ block.settings.star_color }};
+  }
+
+  .ai-social-proof-review-text-{{ ai_gen_id }} {
+    font-size: {{ block.settings.review_text_size }}px;
+    line-height: 1.6;
+    margin: 0 0 20px;
+    color: {{ block.settings.text_color }};
+    font-style: italic;
+  }
+
+  .ai-social-proof-reviewer-{{ ai_gen_id }} {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .ai-social-proof-reviewer-avatar-{{ ai_gen_id }} {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: {{ block.settings.accent_color }};
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 600;
+    font-size: 16px;
+  }
+
+  .ai-social-proof-reviewer-info-{{ ai_gen_id }} {
+    flex: 1;
+  }
+
+  .ai-social-proof-reviewer-name-{{ ai_gen_id }} {
+    font-size: {{ block.settings.reviewer_name_size }}px;
+    font-weight: 600;
+    margin: 0 0 2px;
+    color: {{ block.settings.text_color }};
+  }
+
+  .ai-social-proof-reviewer-location-{{ ai_gen_id }} {
+    font-size: {{ block.settings.reviewer_location_size }}px;
+    color: {{ block.settings.text_color }};
+    opacity: 0.6;
+  }
+
+  .ai-social-proof-ugc-{{ ai_gen_id }} {
+    margin-top: 40px;
+  }
+
+  .ai-social-proof-ugc-heading-{{ ai_gen_id }} {
+    font-size: {{ block.settings.ugc_heading_size }}px;
+    font-weight: 600;
+    margin: 0 0 30px;
+    color: {{ block.settings.text_color }};
+  }
+
+  .ai-social-proof-ugc-grid-{{ ai_gen_id }} {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+  }
+
+  .ai-social-proof-ugc-item-{{ ai_gen_id }} {
+    position: relative;
+    aspect-ratio: 1;
+    border-radius: {{ block.settings.ugc_border_radius }}px;
+    overflow: hidden;
+    background-color: #f4f4f4;
+  }
+
+  .ai-social-proof-ugc-image-{{ ai_gen_id }} {
     width: 100%;
     height: 100%;
     object-fit: cover;
   }
 
-  .ai-before-image-{{ ai_gen_id }} {
-    left: 0;
-    clip-path: inset(0 50% 0 0);
-  }
-
-  .ai-after-image-{{ ai_gen_id }} {
-    right: 0;
-    clip-path: inset(0 0 0 50%);
-  }
-
-  .ai-before-after-slider-{{ ai_gen_id }} {
+  .ai-social-proof-ugc-overlay-{{ ai_gen_id }} {
     position: absolute;
     top: 0;
-    left: 50%;
-    width: 4px;
-    height: 100%;
-    background-color: {{ block.settings.slider_color }};
-    cursor: ew-resize;
-    transform: translateX(-50%);
-    z-index: 3;
-  }
-
-  .ai-before-after-handle-{{ ai_gen_id }} {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 40px;
-    height: 40px;
-    background-color: {{ block.settings.slider_color }};
-    border: 3px solid white;
-    border-radius: 50%;
-    transform: translate(-50%, -50%);
-    cursor: ew-resize;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-  }
-
-  .ai-before-after-handle-{{ ai_gen_id }}::before,
-  .ai-before-after-handle-{{ ai_gen_id }}::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 0;
-    border-style: solid;
-  }
-
-  .ai-before-after-handle-{{ ai_gen_id }}::before {
-    border-width: 6px 8px 6px 0;
-    border-color: transparent white transparent transparent;
-    left: 10px;
-  }
-
-  .ai-before-after-handle-{{ ai_gen_id }}::after {
-    border-width: 6px 0 6px 8px;
-    border-color: transparent transparent transparent white;
-    right: 10px;
-  }
-
-  .ai-before-after-labels-{{ ai_gen_id }} {
-    position: absolute;
-    top: 20px;
     left: 0;
     right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, rgba(0,0,0,0.3), transparent);
     display: flex;
-    justify-content: space-between;
-    padding: 0 20px;
-    z-index: 2;
+    align-items: flex-end;
+    padding: 15px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
   }
 
-  .ai-before-after-label-{{ ai_gen_id }} {
-    background-color: {{ block.settings.label_bg_color }};
-    color: {{ block.settings.label_text_color }};
-    padding: 8px 16px;
-    border-radius: {{ block.settings.label_border_radius }}px;
-    font-size: {{ block.settings.label_size }}px;
+  .ai-social-proof-ugc-item-{{ ai_gen_id }}:hover .ai-social-proof-ugc-overlay-{{ ai_gen_id }} {
+    opacity: 1;
+  }
+
+  .ai-social-proof-ugc-username-{{ ai_gen_id }} {
+    color: white;
+    font-size: 12px;
     font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 1px;
   }
 
-  .ai-before-after-results-{{ ai_gen_id }} {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 30px;
-    margin-top: 40px;
-  }
-
-  .ai-before-after-result-{{ ai_gen_id }} {
-    text-align: center;
-  }
-
-  .ai-before-after-stat-{{ ai_gen_id }} {
-    font-size: {{ block.settings.stat_size }}px;
-    font-weight: 700;
-    color: {{ block.settings.accent_color }};
-    margin: 0 0 8px;
-  }
-
-  .ai-before-after-stat-label-{{ ai_gen_id }} {
-    font-size: {{ block.settings.stat_label_size }}px;
-    color: {{ block.settings.text_color }};
-    opacity: 0.8;
-  }
-
-  .ai-before-after-placeholder-{{ ai_gen_id }} {
+  .ai-social-proof-placeholder-{{ ai_gen_id }} {
     width: 100%;
-    height: 400px;
+    height: 100%;
     background-color: #f4f4f4;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: {{ block.settings.image_border_radius }}px;
-    position: relative;
-  }
-
-  .ai-before-after-empty-state-{{ ai_gen_id }} {
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    padding: 12px 20px;
-    font-size: 14px;
-    color: #666;
-    text-align: center;
-    pointer-events: none;
+    border-radius: {{ block.settings.ugc_border_radius }}px;
   }
 
   @media screen and (max-width: 768px) {
-    .ai-before-after-images-{{ ai_gen_id }} {
-      height: 300px;
-    }
-
-    .ai-before-after-heading-{{ ai_gen_id }} {
-      font-size: {{ block.settings.heading_size | times: 0.8 }}px;
-    }
-
-    .ai-before-after-results-{{ ai_gen_id }} {
-      grid-template-columns: 1fr 1fr;
+    .ai-social-proof-reviews-{{ ai_gen_id }} {
+      grid-template-columns: 1fr;
       gap: 20px;
     }
 
-    .ai-before-after-labels-{{ ai_gen_id }} {
-      padding: 0 15px;
+    .ai-social-proof-ugc-grid-{{ ai_gen_id }} {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .ai-social-proof-heading-{{ ai_gen_id }} {
+      font-size: {{ block.settings.heading_size | times: 0.8 }}px;
     }
   }
 {% endstyle %}
 
-<before-after-slider-{{ ai_gen_id }} class="ai-before-after-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
-  <div class="ai-before-after-container-{{ ai_gen_id }}">
+<div class="ai-social-proof-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  <div class="ai-social-proof-container-{{ ai_gen_id }}">
     {% if block.settings.heading != blank %}
-      <h2 class="ai-before-after-heading-{{ ai_gen_id }}">{{ block.settings.heading }}</h2>
+      <h2 class="ai-social-proof-heading-{{ ai_gen_id }}">{{ block.settings.heading }}</h2>
     {% endif %}
 
     {% if block.settings.subheading != blank %}
-      <div class="ai-before-after-subheading-{{ ai_gen_id }}">{{ block.settings.subheading }}</div>
+      <div class="ai-social-proof-subheading-{{ ai_gen_id }}">{{ block.settings.subheading }}</div>
     {% endif %}
 
-    <div class="ai-before-after-comparison-{{ ai_gen_id }}">
-      {% if block.settings.before_image and block.settings.after_image %}
-        <div class="ai-before-after-images-{{ ai_gen_id }}">
-          <img
-            src="{{ block.settings.before_image | image_url: width: 800 }}"
-            alt="Before"
-            class="ai-before-after-image-{{ ai_gen_id }} ai-before-image-{{ ai_gen_id }}"
-            loading="lazy"
-          >
-          <img
-            src="{{ block.settings.after_image | image_url: width: 800 }}"
-            alt="After"
-            class="ai-before-after-image-{{ ai_gen_id }} ai-after-image-{{ ai_gen_id }}"
-            loading="lazy"
-          >
-          
-          <div class="ai-before-after-slider-{{ ai_gen_id }}">
-            <div class="ai-before-after-handle-{{ ai_gen_id }}"></div>
-          </div>
+    <div class="ai-social-proof-reviews-{{ ai_gen_id }}">
+      {% for i in (1..3) %}
+        {% liquid
+          assign review_text_key = 'review_' | append: i | append: '_text'
+          assign reviewer_name_key = 'review_' | append: i | append: '_name'
+          assign reviewer_location_key = 'review_' | append: i | append: '_location'
+          assign review_rating_key = 'review_' | append: i | append: '_rating'
 
-          <div class="ai-before-after-labels-{{ ai_gen_id }}">
-            <div class="ai-before-after-label-{{ ai_gen_id }}">{{ block.settings.before_label }}</div>
-            <div class="ai-before-after-label-{{ ai_gen_id }}">{{ block.settings.after_label }}</div>
+          assign review_text = block.settings[review_text_key]
+          assign reviewer_name = block.settings[reviewer_name_key]
+          assign reviewer_location = block.settings[reviewer_location_key]
+          assign review_rating = block.settings[review_rating_key]
+        %}
+
+        {% if review_text != blank %}
+          <div class="ai-social-proof-review-{{ ai_gen_id }}">
+            <div class="ai-social-proof-stars-{{ ai_gen_id }}">
+              {% for star in (1..5) %}
+                <svg class="ai-social-proof-star-{{ ai_gen_id }}" viewBox="0 0 24 24" fill="{% if star <= review_rating %}currentColor{% else %}none{% endif %}" stroke="currentColor" stroke-width="2">
+                  <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"></polygon>
+                </svg>
+              {% endfor %}
+            </div>
+
+            <div class="ai-social-proof-review-text-{{ ai_gen_id }}">{{ review_text }}</div>
+
+            <div class="ai-social-proof-reviewer-{{ ai_gen_id }}">
+              <div class="ai-social-proof-reviewer-avatar-{{ ai_gen_id }}">
+                {{ reviewer_name | slice: 0 }}
+              </div>
+              <div class="ai-social-proof-reviewer-info-{{ ai_gen_id }}">
+                <div class="ai-social-proof-reviewer-name-{{ ai_gen_id }}">{{ reviewer_name }}</div>
+                {% if reviewer_location != blank %}
+                  <div class="ai-social-proof-reviewer-location-{{ ai_gen_id }}">{{ reviewer_location }}</div>
+                {% endif %}
+              </div>
+            </div>
           </div>
-        </div>
-      {% else %}
-        <div class="ai-before-after-placeholder-{{ ai_gen_id }}">
-          {{ 'image' | placeholder_svg_tag }}
-          <div class="ai-before-after-empty-state-{{ ai_gen_id }}">
-            Add before and after images
-          </div>
-        </div>
-      {% endif %}
+        {% endif %}
+      {% endfor %}
     </div>
 
-    {% if block.settings.stat_1 != blank or block.settings.stat_2 != blank or block.settings.stat_3 != blank %}
-      <div class="ai-before-after-results-{{ ai_gen_id }}">
-        {% if block.settings.stat_1 != blank %}
-          <div class="ai-before-after-result-{{ ai_gen_id }}">
-            <div class="ai-before-after-stat-{{ ai_gen_id }}">{{ block.settings.stat_1 }}</div>
-            <div class="ai-before-after-stat-label-{{ ai_gen_id }}">{{ block.settings.stat_1_label }}</div>
-          </div>
+    {% if block.settings.show_ugc %}
+      <div class="ai-social-proof-ugc-{{ ai_gen_id }}">
+        {% if block.settings.ugc_heading != blank %}
+          <h3 class="ai-social-proof-ugc-heading-{{ ai_gen_id }}">{{ block.settings.ugc_heading }}</h3>
         {% endif %}
 
-        {% if block.settings.stat_2 != blank %}
-          <div class="ai-before-after-result-{{ ai_gen_id }}">
-            <div class="ai-before-after-stat-{{ ai_gen_id }}">{{ block.settings.stat_2 }}</div>
-            <div class="ai-before-after-stat-label-{{ ai_gen_id }}">{{ block.settings.stat_2_label }}</div>
-          </div>
-        {% endif %}
+        <div class="ai-social-proof-ugc-grid-{{ ai_gen_id }}">
+          {% for i in (1..6) %}
+            {% liquid
+              assign ugc_image_key = 'ugc_image_' | append: i
+              assign ugc_username_key = 'ugc_username_' | append: i
 
-        {% if block.settings.stat_3 != blank %}
-          <div class="ai-before-after-result-{{ ai_gen_id }}">
-            <div class="ai-before-after-stat-{{ ai_gen_id }}">{{ block.settings.stat_3 }}</div>
-            <div class="ai-before-after-stat-label-{{ ai_gen_id }}">{{ block.settings.stat_3_label }}</div>
-          </div>
-        {% endif %}
+              assign ugc_image = block.settings[ugc_image_key]
+              assign ugc_username = block.settings[ugc_username_key]
+            %}
+
+            <div class="ai-social-proof-ugc-item-{{ ai_gen_id }}">
+              {% if ugc_image %}
+                <img
+                  src="{{ ugc_image | image_url: width: 300 }}"
+                  alt="User generated content"
+                  loading="lazy"
+                  class="ai-social-proof-ugc-image-{{ ai_gen_id }}"
+                >
+                {% if ugc_username != blank %}
+                  <div class="ai-social-proof-ugc-overlay-{{ ai_gen_id }}">
+                    <div class="ai-social-proof-ugc-username-{{ ai_gen_id }}">@{{ ugc_username }}</div>
+                  </div>
+                {% endif %}
+              {% else %}
+                <div class="ai-social-proof-placeholder-{{ ai_gen_id }}">
+                  {{ 'image' | placeholder_svg_tag }}
+                </div>
+              {% endif %}
+            </div>
+          {% endfor %}
+        </div>
       </div>
     {% endif %}
   </div>
-</before-after-slider-{{ ai_gen_id }}>
-
-<script>
-  (function() {
-    class BeforeAfterSlider{{ ai_gen_id }} extends HTMLElement {
-      constructor() {
-        super();
-      }
-
-      connectedCallback() {
-        this.slider = this.querySelector('.ai-before-after-slider-{{ ai_gen_id }}');
-        this.beforeImage = this.querySelector('.ai-before-image-{{ ai_gen_id }}');
-        this.afterImage = this.querySelector('.ai-after-image-{{ ai_gen_id }}');
-        this.container = this.querySelector('.ai-before-after-images-{{ ai_gen_id }}');
-
-        if (this.slider && this.beforeImage && this.afterImage && this.container) {
-          this.setupEventListeners();
-        }
-      }
-
-      setupEventListeners() {
-        let isDragging = false;
-
-        const updateSlider = (clientX) => {
-          const rect = this.container.getBoundingClientRect();
-          const x = clientX - rect.left;
-          const percentage = Math.max(0, Math.min(100, (x / rect.width) * 100));
-          
-          this.slider.style.left = percentage + '%';
-          this.beforeImage.style.clipPath = `inset(0 ${100 - percentage}% 0 0)`;
-          this.afterImage.style.clipPath = `inset(0 0 0 ${percentage}%)`;
-        };
-
-        this.slider.addEventListener('mousedown', (e) => {
-          isDragging = true;
-          e.preventDefault();
-        });
-
-        document.addEventListener('mousemove', (e) => {
-          if (isDragging) {
-            updateSlider(e.clientX);
-          }
-        });
-
-        document.addEventListener('mouseup', () => {
-          isDragging = false;
-        });
-
-        this.slider.addEventListener('touchstart', (e) => {
-          isDragging = true;
-          e.preventDefault();
-        });
-
-        document.addEventListener('touchmove', (e) => {
-          if (isDragging) {
-            updateSlider(e.touches[0].clientX);
-          }
-        });
-
-        document.addEventListener('touchend', () => {
-          isDragging = false;
-        });
-
-        this.container.addEventListener('click', (e) => {
-          if (!isDragging) {
-            updateSlider(e.clientX);
-          }
-        });
-      }
-    }
-
-    customElements.define('before-after-slider-{{ ai_gen_id }}', BeforeAfterSlider{{ ai_gen_id }});
-  })();
-</script>
+</div>
 
 {% schema %}
 {
-  "name": "Before & after results",
+  "name": "Social proof",
   "settings": [
-    {
-      "type": "header",
-      "content": "Images"
-    },
-    {
-      "type": "image_picker",
-      "id": "before_image",
-      "label": "Before image"
-    },
-    {
-      "type": "image_picker",
-      "id": "after_image",
-      "label": "After image"
-    },
-    {
-      "type": "range",
-      "id": "image_border_radius",
-      "min": 0,
-      "max": 30,
-      "step": 2,
-      "unit": "px",
-      "label": "Image border radius",
-      "default": 12
-    },
     {
       "type": "header",
       "content": "Content"
@@ -413,65 +322,182 @@
       "type": "text",
       "id": "heading",
       "label": "Heading",
-      "default": "Real Results in 7 Days"
+      "default": "What Our Customers Say"
     },
     {
       "type": "textarea",
       "id": "subheading",
       "label": "Subheading",
-      "default": "See the dramatic transformation our customers experience with consistent use"
-    },
-    {
-      "type": "text",
-      "id": "before_label",
-      "label": "Before label",
-      "default": "Before"
-    },
-    {
-      "type": "text",
-      "id": "after_label",
-      "label": "After label",
-      "default": "After"
+      "default": "Join thousands of satisfied customers who have transformed their skin"
     },
     {
       "type": "header",
-      "content": "Statistics"
+      "content": "Review 1"
+    },
+    {
+      "type": "textarea",
+      "id": "review_1_text",
+      "label": "Review text",
+      "default": "This product completely changed my skincare routine! I saw results in just one week and my skin has never looked better."
     },
     {
       "type": "text",
-      "id": "stat_1",
-      "label": "Statistic 1",
-      "default": "95%"
+      "id": "review_1_name",
+      "label": "Reviewer name",
+      "default": "Maria Santos"
     },
     {
       "type": "text",
-      "id": "stat_1_label",
-      "label": "Statistic 1 label",
-      "default": "Saw visible improvement"
+      "id": "review_1_location",
+      "label": "Reviewer location",
+      "default": "Manila, Philippines"
+    },
+    {
+      "type": "range",
+      "id": "review_1_rating",
+      "min": 1,
+      "max": 5,
+      "step": 1,
+      "label": "Rating",
+      "default": 5
+    },
+    {
+      "type": "header",
+      "content": "Review 2"
+    },
+    {
+      "type": "textarea",
+      "id": "review_2_text",
+      "label": "Review text",
+      "default": "Amazing quality and fast shipping! The results speak for themselves. Highly recommend to anyone looking for effective skincare."
     },
     {
       "type": "text",
-      "id": "stat_2",
-      "label": "Statistic 2",
-      "default": "7 Days"
+      "id": "review_2_name",
+      "label": "Reviewer name",
+      "default": "Ana Rodriguez"
     },
     {
       "type": "text",
-      "id": "stat_2_label",
-      "label": "Statistic 2 label",
-      "default": "To see results"
+      "id": "review_2_location",
+      "label": "Reviewer location",
+      "default": "Cebu, Philippines"
+    },
+    {
+      "type": "range",
+      "id": "review_2_rating",
+      "min": 1,
+      "max": 5,
+      "step": 1,
+      "label": "Rating",
+      "default": 5
+    },
+    {
+      "type": "header",
+      "content": "Review 3"
+    },
+    {
+      "type": "textarea",
+      "id": "review_3_text",
+      "label": "Review text",
+      "default": "I was skeptical at first, but this product delivered exactly what it promised. My friends keep asking what I'm using!"
     },
     {
       "type": "text",
-      "id": "stat_3",
-      "label": "Statistic 3",
-      "default": "100%"
+      "id": "review_3_name",
+      "label": "Reviewer name",
+      "default": "Carmen Dela Cruz"
     },
     {
       "type": "text",
-      "id": "stat_3_label",
-      "label": "Statistic 3 label",
-      "default": "Would recommend"
+      "id": "review_3_location",
+      "label": "Reviewer location",
+      "default": "Davao, Philippines"
+    },
+    {
+      "type": "range",
+      "id": "review_3_rating",
+      "min": 1,
+      "max": 5,
+      "step": 1,
+      "label": "Rating",
+      "default": 4
+    },
+    {
+      "type": "header",
+      "content": "User generated content"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_ugc",
+      "label": "Show user generated content",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "ugc_heading",
+      "label": "UGC heading",
+      "default": "See It In Action"
+    },
+    {
+      "type": "image_picker",
+      "id": "ugc_image_1",
+      "label": "UGC image 1"
+    },
+    {
+      "type": "text",
+      "id": "ugc_username_1",
+      "label": "Username 1"
+    },
+    {
+      "type": "image_picker",
+      "id": "ugc_image_2",
+      "label": "UGC image 2"
+    },
+    {
+      "type": "text",
+      "id": "ugc_username_2",
+      "label": "Username 2"
+    },
+    {
+      "type": "image_picker",
+      "id": "ugc_image_3",
+      "label": "UGC image 3"
+    },
+    {
+      "type": "text",
+      "id": "ugc_username_3",
+      "label": "Username 3"
+    },
+    {
+      "type": "image_picker",
+      "id": "ugc_image_4",
+      "label": "UGC image 4"
+    },
+    {
+      "type": "text",
+      "id": "ugc_username_4",
+      "label": "Username 4"
+    },
+    {
+      "type": "image_picker",
+      "id": "ugc_image_5",
+      "label": "UGC image 5"
+    },
+    {
+      "type": "text",
+      "id": "ugc_username_5",
+      "label": "Username 5"
+    },
+    {
+      "type": "image_picker",
+      "id": "ugc_image_6",
+      "label": "UGC image 6"
+    },
+    {
+      "type": "text",
+      "id": "ugc_username_6",
+      "label": "Username 6"
     },
     {
       "type": "header",
@@ -508,6 +534,26 @@
       "default": 80
     },
     {
+      "type": "range",
+      "id": "review_border_radius",
+      "min": 0,
+      "max": 30,
+      "step": 2,
+      "unit": "px",
+      "label": "Review border radius",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "ugc_border_radius",
+      "min": 0,
+      "max": 20,
+      "step": 2,
+      "unit": "px",
+      "label": "UGC border radius",
+      "default": 8
+    },
+    {
       "type": "header",
       "content": "Typography"
     },
@@ -533,33 +579,43 @@
     },
     {
       "type": "range",
-      "id": "label_size",
-      "min": 10,
-      "max": 16,
-      "step": 1,
-      "unit": "px",
-      "label": "Label size",
-      "default": 12
-    },
-    {
-      "type": "range",
-      "id": "stat_size",
-      "min": 24,
-      "max": 48,
-      "step": 2,
-      "unit": "px",
-      "label": "Statistic size",
-      "default": 32
-    },
-    {
-      "type": "range",
-      "id": "stat_label_size",
-      "min": 12,
+      "id": "review_text_size",
+      "min": 14,
       "max": 18,
       "step": 1,
       "unit": "px",
-      "label": "Statistic label size",
+      "label": "Review text size",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "reviewer_name_size",
+      "min": 14,
+      "max": 18,
+      "step": 1,
+      "unit": "px",
+      "label": "Reviewer name size",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "reviewer_location_size",
+      "min": 12,
+      "max": 16,
+      "step": 1,
+      "unit": "px",
+      "label": "Reviewer location size",
       "default": 14
+    },
+    {
+      "type": "range",
+      "id": "ugc_heading_size",
+      "min": 18,
+      "max": 32,
+      "step": 2,
+      "unit": "px",
+      "label": "UGC heading size",
+      "default": 24
     },
     {
       "type": "header",
@@ -569,7 +625,7 @@
       "type": "color",
       "id": "background_color",
       "label": "Background color",
-      "default": "#fff7f2"
+      "default": "#ffffff"
     },
     {
       "type": "color",
@@ -585,36 +641,20 @@
     },
     {
       "type": "color",
-      "id": "slider_color",
-      "label": "Slider color",
+      "id": "review_bg_color",
+      "label": "Review background color",
       "default": "#ffffff"
     },
     {
       "type": "color",
-      "id": "label_bg_color",
-      "label": "Label background color",
-      "default": "#000000"
-    },
-    {
-      "type": "color",
-      "id": "label_text_color",
-      "label": "Label text color",
-      "default": "#ffffff"
-    },
-    {
-      "type": "range",
-      "id": "label_border_radius",
-      "min": 0,
-      "max": 20,
-      "step": 1,
-      "unit": "px",
-      "label": "Label border radius",
-      "default": 4
+      "id": "star_color",
+      "label": "Star color",
+      "default": "#ffd700"
     }
   ],
   "presets": [
     {
-      "name": "Before & after results"
+      "name": "Social proof"
     }
   ]
 }
