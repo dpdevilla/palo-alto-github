@@ -131,12 +131,38 @@
             "mobile_images_first": true
           },
           "blocks": {}
+        },
+        "ai_gen_block_e7bc182_UXLJzq": {
+          "type": "ai_gen_block_e7bc182",
+          "settings": {
+            "before_image": "shopify://shop_images/Pili_Ani_Moisturizing_Lipstick_crimson_jane_main002.jpg",
+            "after_image": "shopify://shop_images/Pili_Ani_Moisturizing_Lipstick_crimson_jane_main002.jpg",
+            "max_width": 800,
+            "container_height": 500,
+            "background_color": "#ffffff",
+            "slider_color": "#ffffff",
+            "handle_size": 50,
+            "handle_border_color": "#ffffff",
+            "handle_icon_color": "#000000",
+            "show_labels": true,
+            "before_label": "Before",
+            "after_label": "After",
+            "label_font_size": 14,
+            "label_uppercase": true,
+            "label_letter_spacing": 1,
+            "label_position_x": 20,
+            "label_position_y": 20,
+            "label_bg_color": "#000000",
+            "label_text_color": "#ffffff"
+          },
+          "blocks": {}
         }
       },
       "block_order": [
         "ai_gen_block_102b8bc_bmaajD",
         "ai_gen_block_ea4ed4b_88TDcM",
-        "ai_gen_block_67d1001_m43p6a"
+        "ai_gen_block_67d1001_m43p6a",
+        "ai_gen_block_e7bc182_UXLJzq"
       ],
       "settings": {}
     },
