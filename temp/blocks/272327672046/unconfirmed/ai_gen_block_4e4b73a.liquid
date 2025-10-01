@@ -1,6 +1,355 @@
+{% doc %}
+  @prompt
+    Key Ingredients with alternate layout
+    circle image (left), sample text ingredients on the (right side)
+    then setting options to choose right or left position, Key Ingredients with alternate layout
+    2 column layout
+    circle image (left), sample text benefits on the (right side)
+    then setting options to choose right or left position
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-key-ingredients-{{ ai_gen_id }} {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: {{ block.settings.content_gap }}px;
+    align-items: center;
+    padding: {{ block.settings.section_padding }}px;
+    background-color: {{ block.settings.background_color }};
+    border-radius: {{ block.settings.border_radius }}px;
+    max-width: 100%;
+  }
+
+  .ai-key-ingredients-{{ ai_gen_id }}--reverse {
+    direction: rtl;
+  }
+
+  .ai-key-ingredients-{{ ai_gen_id }}--reverse > * {
+    direction: ltr;
+  }
+
+  .ai-key-ingredients-image-{{ ai_gen_id }} {
+    width: {{ block.settings.image_size }}px;
+    height: {{ block.settings.image_size }}px;
+    border-radius: 50%;
+    overflow: hidden;
+    background-color: #f4f4f4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  .ai-key-ingredients-image-{{ ai_gen_id }} img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .ai-key-ingredients-image-placeholder-{{ ai_gen_id }} {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f4f4f4;
+    position: relative;
+  }
+
+  .ai-key-ingredients-image-placeholder-{{ ai_gen_id }} svg {
+    width: 60%;
+    height: 60%;
+    opacity: 0.5;
+  }
+
+  .ai-key-ingredients-content-{{ ai_gen_id }} {
+    min-width: 0;
+  }
+
+  .ai-key-ingredients-title-{{ ai_gen_id }} {
+    font-size: {{ block.settings.title_size }}px;
+    font-weight: {{ block.settings.title_weight }};
+    color: {{ block.settings.title_color }};
+    margin: 0 0 {{ block.settings.title_margin }}px 0;
+    line-height: 1.2;
+  }
+
+  .ai-key-ingredients-benefits-{{ ai_gen_id }} {
+    font-size: {{ block.settings.benefits_size }}px;
+    color: {{ block.settings.benefits_color }};
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  .ai-key-ingredients-benefits-{{ ai_gen_id }} p {
+    margin: 0 0 12px 0;
+  }
+
+  .ai-key-ingredients-benefits-{{ ai_gen_id }} p:last-child {
+    margin-bottom: 0;
+  }
+
+  .ai-key-ingredients-benefits-{{ ai_gen_id }} ul {
+    margin: 0;
+    padding-left: 20px;
+  }
+
+  .ai-key-ingredients-benefits-{{ ai_gen_id }} li {
+    margin-bottom: 8px;
+  }
+
+  .ai-key-ingredients-benefits-{{ ai_gen_id }} li:last-child {
+    margin-bottom: 0;
+  }
+
+  .ai-key-ingredients-empty-state-{{ ai_gen_id }} {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 12px;
+    color: #999;
+    text-align: center;
+    pointer-events: none;
+    white-space: nowrap;
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-key-ingredients-{{ ai_gen_id }} {
+      grid-template-columns: 1fr;
+      gap: {{ block.settings.content_gap | times: 0.75 }}px;
+      text-align: center;
+      padding: {{ block.settings.section_padding | times: 0.75 }}px;
+    }
+
+    .ai-key-ingredients-{{ ai_gen_id }}--reverse {
+      direction: ltr;
+    }
+
+    .ai-key-ingredients-image-{{ ai_gen_id }} {
+      width: {{ block.settings.image_size | times: 0.8 }}px;
+      height: {{ block.settings.image_size | times: 0.8 }}px;
+    }
+
+    .ai-key-ingredients-title-{{ ai_gen_id }} {
+      font-size: {{ block.settings.title_size | times: 0.9 }}px;
+    }
+
+    .ai-key-ingredients-benefits-{{ ai_gen_id }} {
+      font-size: {{ block.settings.benefits_size | times: 0.9 }}px;
+    }
+
+    .ai-key-ingredients-benefits-{{ ai_gen_id }} ul {
+      text-align: left;
+      display: inline-block;
+    }
+  }
+{% endstyle %}
+
+<div
+  class="ai-key-ingredients-{{ ai_gen_id }} {% if block.settings.layout_position == 'right' %}ai-key-ingredients-{{ ai_gen_id }}--reverse{% endif %}"
+  {{ block.shopify_attributes }}
+>
+  <div class="ai-key-ingredients-image-{{ ai_gen_id }}">
+    {% if block.settings.ingredient_image %}
+      <img
+        src="{{ block.settings.ingredient_image | image_url: width: 400 }}"
+        alt="{{ block.settings.ingredient_image.alt | escape }}"
+        loading="lazy"
+        width="{{ block.settings.image_size }}"
+        height="{{ block.settings.image_size }}"
+      >
+    {% else %}
+      <div class="ai-key-ingredients-image-placeholder-{{ ai_gen_id }}">
+        {{ 'image' | placeholder_svg_tag }}
+        <div class="ai-key-ingredients-empty-state-{{ ai_gen_id }}">
+          Add ingredient image
+        </div>
+      </div>
+    {% endif %}
+  </div>
+
+  <div class="ai-key-ingredients-content-{{ ai_gen_id }}">
+    {% if block.settings.ingredient_title != blank %}
+      <h3 class="ai-key-ingredients-title-{{ ai_gen_id }}">{{ block.settings.ingredient_title }}</h3>
+    {% endif %}
+
+    {% if block.settings.ingredient_benefits != blank %}
+      <div class="ai-key-ingredients-benefits-{{ ai_gen_id }}">
+        {{ block.settings.ingredient_benefits }}
+      </div>
+    {% endif %}
+  </div>
+</div>
+
 {% schema %}
- {
-   "name": "AI_Block",
-   "tag": "shopify-ai-generated-block"
- }
+{
+  "name": "Key ingredients",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "image_picker",
+      "id": "ingredient_image",
+      "label": "Ingredient image"
+    },
+    {
+      "type": "text",
+      "id": "ingredient_title",
+      "label": "Ingredient title",
+      "default": "Vitamin C"
+    },
+    {
+      "type": "richtext",
+      "id": "ingredient_benefits",
+      "label": "Benefits",
+      "default": "<ul><li>Brightens skin tone and reduces dark spots</li><li>Boosts collagen production for firmer skin</li><li>Provides powerful antioxidant protection</li><li>Helps even out skin texture</li></ul>"
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "select",
+      "id": "layout_position",
+      "label": "Image position",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "left"
+    },
+    {
+      "type": "range",
+      "id": "image_size",
+      "label": "Image size",
+      "min": 100,
+      "max": 250,
+      "step": 10,
+      "unit": "px",
+      "default": 150
+    },
+    {
+      "type": "range",
+      "id": "content_gap",
+      "label": "Content gap",
+      "min": 20,
+      "max": 80,
+      "step": 5,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "section_padding",
+      "label": "Section padding",
+      "min": 20,
+      "max": 80,
+      "step": 5,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "border_radius",
+      "label": "Border radius",
+      "min": 0,
+      "max": 30,
+      "step": 2,
+      "unit": "px",
+      "default": 12
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#fff7f2"
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Title color",
+      "default": "#0b0b0b"
+    },
+    {
+      "type": "color",
+      "id": "benefits_color",
+      "label": "Benefits color",
+      "default": "#0b0b0b"
+    },
+    {
+      "type": "header",
+      "content": "Typography"
+    },
+    {
+      "type": "range",
+      "id": "title_size",
+      "label": "Title size",
+      "min": 16,
+      "max": 36,
+      "step": 2,
+      "unit": "px",
+      "default": 24
+    },
+    {
+      "type": "select",
+      "id": "title_weight",
+      "label": "Title weight",
+      "options": [
+        {
+          "value": "400",
+          "label": "Normal"
+        },
+        {
+          "value": "600",
+          "label": "Semi-bold"
+        },
+        {
+          "value": "700",
+          "label": "Bold"
+        }
+      ],
+      "default": "600"
+    },
+    {
+      "type": "range",
+      "id": "title_margin",
+      "label": "Title bottom margin",
+      "min": 4,
+      "max": 24,
+      "step": 2,
+      "unit": "px",
+      "default": 10
+    },
+    {
+      "type": "range",
+      "id": "benefits_size",
+      "label": "Benefits size",
+      "min": 12,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "default": 15
+    }
+  ],
+  "presets": [
+    {
+      "name": "Key ingredients"
+    }
+  ]
+}
 {% endschema %}
