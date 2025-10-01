@@ -32,374 +32,434 @@
 {% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
 
 {% style %}
-  .ai-final-cta-{{ ai_gen_id }} {
-    position: relative;
-    width: 100%;
-    min-height: {{ block.settings.section_height }}px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
+  .ai-sticky-cart-{{ ai_gen_id }} {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
     background-color: {{ block.settings.background_color }};
+    border-top: 1px solid {{ block.settings.border_color }};
+    padding: {{ block.settings.padding_vertical }}px {{ block.settings.padding_horizontal }}px;
+    z-index: 1000;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.1);
   }
 
-  .ai-final-cta-media-{{ ai_gen_id }} {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
+  .ai-sticky-cart-{{ ai_gen_id }}.visible {
+    transform: translateY(0);
   }
 
-  .ai-final-cta-media-{{ ai_gen_id }} img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-  .ai-final-cta-overlay-{{ ai_gen_id }} {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: {{ block.settings.overlay_color }};
-    z-index: 2;
-  }
-
-  .ai-final-cta-content-{{ ai_gen_id }} {
-    position: relative;
-    z-index: 3;
-    text-align: center;
-    max-width: {{ block.settings.content_width }}px;
-    padding: 40px 20px;
-    color: {{ block.settings.text_color }};
-  }
-
-  .ai-final-cta-badge-{{ ai_gen_id }} {
-    display: inline-block;
-    background-color: {{ block.settings.badge_bg_color }};
-    color: {{ block.settings.badge_text_color }};
-    padding: 8px 20px;
-    border-radius: {{ block.settings.badge_border_radius }}px;
-    font-size: {{ block.settings.badge_size }}px;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-bottom: 20px;
-  }
-
-  .ai-final-cta-headline-{{ ai_gen_id }} {
-    font-size: {{ block.settings.headline_size }}px;
-    font-weight: 700;
-    line-height: 1.2;
-    margin: 0 0 20px;
-    color: {{ block.settings.text_color }};
-  }
-
-  .ai-final-cta-subheading-{{ ai_gen_id }} {
-    font-size: {{ block.settings.subheading_size }}px;
-    line-height: 1.4;
-    margin: 0 0 30px;
-    color: {{ block.settings.text_color }};
-    opacity: 0.9;
-  }
-
-  .ai-final-cta-buttons-{{ ai_gen_id }} {
+  .ai-sticky-cart-container-{{ ai_gen_id }} {
+    max-width: {{ block.settings.container_width }}px;
+    margin: 0 auto;
     display: flex;
+    align-items: center;
+    justify-content: space-between;
     gap: 20px;
-    justify-content: center;
+  }
+
+  .ai-sticky-cart-product-{{ ai_gen_id }} {
+    display: flex;
     align-items: center;
-    flex-wrap: wrap;
+    gap: 15px;
+    flex: 1;
+    min-width: 0;
   }
 
-  .ai-final-cta-primary-{{ ai_gen_id }} {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: {{ block.settings.primary_button_padding_vertical }}px {{ block.settings.primary_button_padding_horizontal }}px;
-    background-color: {{ block.settings.primary_button_bg_color }};
-    color: {{ block.settings.primary_button_text_color }};
-    text-decoration: none;
-    font-size: {{ block.settings.primary_button_text_size }}px;
-    font-weight: 700;
-    border-radius: {{ block.settings.primary_button_border_radius }}px;
-    transition: all 0.3s ease;
-    text-transform: {% if block.settings.primary_button_uppercase %}uppercase{% else %}none{% endif %};
-    letter-spacing: {% if block.settings.primary_button_uppercase %}1px{% else %}0{% endif %};
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    position: relative;
-    overflow: hidden;
+  .ai-sticky-cart-image-{{ ai_gen_id }} {
+    width: {{ block.settings.image_size }}px;
+    height: {{ block.settings.image_size }}px;
+    border-radius: {{ block.settings.image_border_radius }}px;
+    object-fit: cover;
+    flex-shrink: 0;
   }
 
-  .ai-final-cta-primary-{{ ai_gen_id }}::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-    transition: left 0.5s;
+  .ai-sticky-cart-info-{{ ai_gen_id }} {
+    flex: 1;
+    min-width: 0;
   }
 
-  .ai-final-cta-primary-{{ ai_gen_id }}:hover::before {
-    left: 100%;
-  }
-
-  .ai-final-cta-primary-{{ ai_gen_id }}:hover {
-    background-color: {{ block.settings.primary_button_hover_bg_color }};
-    color: {{ block.settings.primary_button_hover_text_color }};
-    transform: translateY(-3px);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
-  }
-
-  .ai-final-cta-secondary-{{ ai_gen_id }} {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: {{ block.settings.secondary_button_padding_vertical }}px {{ block.settings.secondary_button_padding_horizontal }}px;
-    background-color: {{ block.settings.secondary_button_bg_color }};
-    color: {{ block.settings.secondary_button_text_color }};
-    text-decoration: none;
-    font-size: {{ block.settings.secondary_button_text_size }}px;
+  .ai-sticky-cart-title-{{ ai_gen_id }} {
+    font-size: {{ block.settings.title_size }}px;
     font-weight: 600;
-    border: 2px solid {{ block.settings.secondary_button_border_color }};
-    border-radius: {{ block.settings.secondary_button_border_radius }}px;
-    transition: all 0.3s ease;
-    text-transform: {% if block.settings.secondary_button_uppercase %}uppercase{% else %}none{% endif %};
-    letter-spacing: {% if block.settings.secondary_button_uppercase %}1px{% else %}0{% endif %};
-  }
-
-  .ai-final-cta-secondary-{{ ai_gen_id }}:hover {
-    background-color: {{ block.settings.secondary_button_hover_bg_color }};
-    color: {{ block.settings.secondary_button_hover_text_color }};
-    border-color: {{ block.settings.secondary_button_hover_border_color }};
-    transform: translateY(-2px);
-  }
-
-  .ai-final-cta-guarantee-{{ ai_gen_id }} {
-    margin-top: 30px;
-    font-size: {{ block.settings.guarantee_size }}px;
     color: {{ block.settings.text_color }};
-    opacity: 0.8;
+    margin: 0 0 5px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .ai-sticky-cart-price-{{ ai_gen_id }} {
+    font-size: {{ block.settings.price_size }}px;
+    font-weight: 700;
+    color: {{ block.settings.price_color }};
+    margin: 0;
+  }
+
+  .ai-sticky-cart-compare-price-{{ ai_gen_id }} {
+    font-size: {{ block.settings.price_size | times: 0.85 }}px;
+    color: {{ block.settings.text_color }};
+    opacity: 0.6;
+    text-decoration: line-through;
+    margin-right: 8px;
+  }
+
+  .ai-sticky-cart-actions-{{ ai_gen_id }} {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-shrink: 0;
+  }
+
+  .ai-sticky-cart-quantity-{{ ai_gen_id }} {
+    display: flex;
+    align-items: center;
+    background-color: {{ block.settings.quantity_bg_color }};
+    border-radius: {{ block.settings.quantity_border_radius }}px;
+    border: 1px solid {{ block.settings.quantity_border_color }};
+  }
+
+  .ai-sticky-cart-quantity-btn-{{ ai_gen_id }} {
+    width: 36px;
+    height: 36px;
+    background: none;
+    border: none;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 8px;
+    cursor: pointer;
+    color: {{ block.settings.text_color }};
+    font-size: 18px;
+    font-weight: 600;
+    transition: background-color 0.2s ease;
   }
 
-  .ai-final-cta-guarantee-icon-{{ ai_gen_id }} {
-    width: 20px;
-    height: 20px;
-    color: {{ block.settings.guarantee_icon_color }};
+  .ai-sticky-cart-quantity-btn-{{ ai_gen_id }}:hover {
+    background-color: {{ block.settings.quantity_hover_color }};
   }
 
-  .ai-final-cta-placeholder-{{ ai_gen_id }} {
-    width: 100%;
-    height: 100%;
-    background-color: #f4f4f4;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-  }
-
-  .ai-final-cta-empty-state-{{ ai_gen_id }} {
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    padding: 12px 20px;
-    font-size: 14px;
-    color: #666;
+  .ai-sticky-cart-quantity-input-{{ ai_gen_id }} {
+    width: 50px;
+    height: 36px;
+    border: none;
+    background: none;
     text-align: center;
-    pointer-events: none;
+    font-size: {{ block.settings.quantity_text_size }}px;
+    font-weight: 600;
+    color: {{ block.settings.text_color }};
+  }
+
+  .ai-sticky-cart-button-{{ ai_gen_id }} {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: {{ block.settings.button_padding_vertical }}px {{ block.settings.button_padding_horizontal }}px;
+    background-color: {{ block.settings.button_bg_color }};
+    color: {{ block.settings.button_text_color }};
+    text-decoration: none;
+    font-size: {{ block.settings.button_text_size }}px;
+    font-weight: 700;
+    border: none;
+    border-radius: {{ block.settings.button_border_radius }}px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: {% if block.settings.button_uppercase %}uppercase{% else %}none{% endif %};
+    letter-spacing: {% if block.settings.button_uppercase %}1px{% else %}0{% endif %};
+    white-space: nowrap;
+  }
+
+  .ai-sticky-cart-button-{{ ai_gen_id }}:hover {
+    background-color: {{ block.settings.button_hover_bg_color }};
+    color: {{ block.settings.button_hover_text_color }};
+    transform: translateY(-1px);
+  }
+
+  .ai-sticky-cart-close-{{ ai_gen_id }} {
+    width: 32px;
+    height: 32px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: {{ block.settings.text_color }};
+    opacity: 0.6;
+    transition: opacity 0.2s ease;
+    flex-shrink: 0;
+  }
+
+  .ai-sticky-cart-close-{{ ai_gen_id }}:hover {
+    opacity: 1;
+  }
+
+  .ai-sticky-cart-placeholder-{{ ai_gen_id }} {
+    width: {{ block.settings.image_size }}px;
+    height: {{ block.settings.image_size }}px;
+    background-color: #f4f4f4;
+    border-radius: {{ block.settings.image_border_radius }}px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .ai-sticky-cart-placeholder-{{ ai_gen_id }} svg {
+    width: 24px;
+    height: 24px;
+    color: #999;
   }
 
   @media screen and (max-width: 768px) {
-    .ai-final-cta-{{ ai_gen_id }} {
-      min-height: {{ block.settings.mobile_height }}px;
-    }
-
-    .ai-final-cta-headline-{{ ai_gen_id }} {
-      font-size: {{ block.settings.headline_size | times: 0.8 }}px;
-    }
-
-    .ai-final-cta-subheading-{{ ai_gen_id }} {
-      font-size: {{ block.settings.subheading_size | times: 0.9 }}px;
-    }
-
-    .ai-final-cta-content-{{ ai_gen_id }} {
-      padding: 20px 15px;
-      max-width: 100%;
-    }
-
-    .ai-final-cta-buttons-{{ ai_gen_id }} {
-      flex-direction: column;
+    .ai-sticky-cart-container-{{ ai_gen_id }} {
       gap: 15px;
     }
 
-    .ai-final-cta-primary-{{ ai_gen_id }},
-    .ai-final-cta-secondary-{{ ai_gen_id }} {
-      width: 100%;
-      max-width: 300px;
+    .ai-sticky-cart-product-{{ ai_gen_id }} {
+      gap: 10px;
+    }
+
+    .ai-sticky-cart-title-{{ ai_gen_id }} {
+      font-size: {{ block.settings.title_size | times: 0.9 }}px;
+    }
+
+    .ai-sticky-cart-actions-{{ ai_gen_id }} {
+      gap: 10px;
+    }
+
+    .ai-sticky-cart-quantity-{{ ai_gen_id }} {
+      display: none;
+    }
+  }
+
+  @media screen and (max-width: 480px) {
+    .ai-sticky-cart-info-{{ ai_gen_id }} {
+      display: none;
+    }
+
+    .ai-sticky-cart-button-{{ ai_gen_id }} {
+      flex: 1;
     }
   }
 {% endstyle %}
 
-<div class="ai-final-cta-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
-  {% if block.settings.background_image %}
-    <div class="ai-final-cta-media-{{ ai_gen_id }}">
-      <img
-        src="{{ block.settings.background_image | image_url: width: 2000 }}"
-        alt="{{ block.settings.background_image.alt | escape }}"
-        loading="lazy"
-        width="{{ block.settings.background_image.width }}"
-        height="{{ block.settings.background_image.height }}"
-      >
-    </div>
-  {% else %}
-    <div class="ai-final-cta-placeholder-{{ ai_gen_id }}">
-      {{ 'hero-apparel-1' | placeholder_svg_tag }}
-      <div class="ai-final-cta-empty-state-{{ ai_gen_id }}">
-        Add a background image
-      </div>
-    </div>
-  {% endif %}
-
-  {% if block.settings.show_overlay %}
-    <div class="ai-final-cta-overlay-{{ ai_gen_id }}"></div>
-  {% endif %}
-
-  <div class="ai-final-cta-content-{{ ai_gen_id }}">
-    {% if block.settings.badge_text != blank %}
-      <div class="ai-final-cta-badge-{{ ai_gen_id }}">{{ block.settings.badge_text }}</div>
-    {% endif %}
-
-    {% if block.settings.headline != blank %}
-      <h2 class="ai-final-cta-headline-{{ ai_gen_id }}">{{ block.settings.headline }}</h2>
-    {% endif %}
-
-    {% if block.settings.subheading != blank %}
-      <div class="ai-final-cta-subheading-{{ ai_gen_id }}">{{ block.settings.subheading }}</div>
-    {% endif %}
-
-    <div class="ai-final-cta-buttons-{{ ai_gen_id }}">
-      {% if block.settings.primary_button_text != blank %}
-        <a
-          href="{{ block.settings.primary_button_link }}"
-          class="ai-final-cta-primary-{{ ai_gen_id }}"
+<sticky-add-to-cart-{{ ai_gen_id }} class="ai-sticky-cart-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  <div class="ai-sticky-cart-container-{{ ai_gen_id }}">
+    <div class="ai-sticky-cart-product-{{ ai_gen_id }}">
+      {% if block.settings.product_image %}
+        <img
+          src="{{ block.settings.product_image | image_url: width: 200 }}"
+          alt="{{ block.settings.product_image.alt | escape }}"
+          loading="lazy"
+          class="ai-sticky-cart-image-{{ ai_gen_id }}"
         >
-          {{ block.settings.primary_button_text }}
-        </a>
+      {% else %}
+        <div class="ai-sticky-cart-placeholder-{{ ai_gen_id }}">
+          {{ 'product-apparel-1' | placeholder_svg_tag }}
+        </div>
       {% endif %}
 
-      {% if block.settings.secondary_button_text != blank %}
-        <a
-          href="{{ block.settings.secondary_button_link }}"
-          class="ai-final-cta-secondary-{{ ai_gen_id }}"
-        >
-          {{ block.settings.secondary_button_text }}
-        </a>
-      {% endif %}
+      <div class="ai-sticky-cart-info-{{ ai_gen_id }}">
+        {% if block.settings.product_title != blank %}
+          <div class="ai-sticky-cart-title-{{ ai_gen_id }}">{{ block.settings.product_title }}</div>
+        {% endif %}
+
+        <div class="ai-sticky-cart-price-{{ ai_gen_id }}">
+          {% if block.settings.compare_price != blank %}
+            <span class="ai-sticky-cart-compare-price-{{ ai_gen_id }}">{{ block.settings.compare_price }}</span>
+          {% endif %}
+          {{ block.settings.product_price }}
+        </div>
+      </div>
     </div>
 
-    {% if block.settings.guarantee_text != blank %}
-      <div class="ai-final-cta-guarantee-{{ ai_gen_id }}">
-        <svg class="ai-final-cta-guarantee-icon-{{ ai_gen_id }}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-          <path d="M9 12l2 2 4-4"></path>
-        </svg>
-        {{ block.settings.guarantee_text }}
-      </div>
-    {% endif %}
+    <div class="ai-sticky-cart-actions-{{ ai_gen_id }}">
+      {% if block.settings.show_quantity %}
+        <div class="ai-sticky-cart-quantity-{{ ai_gen_id }}">
+          <button class="ai-sticky-cart-quantity-btn-{{ ai_gen_id }}" data-quantity-decrease>−</button>
+          <input
+            type="number"
+            class="ai-sticky-cart-quantity-input-{{ ai_gen_id }}"
+            value="1"
+            min="1"
+            data-quantity-input
+          >
+          <button class="ai-sticky-cart-quantity-btn-{{ ai_gen_id }}" data-quantity-increase>+</button>
+        </div>
+      {% endif %}
+
+      {% if block.settings.button_text != blank %}
+        <button
+          class="ai-sticky-cart-button-{{ ai_gen_id }}"
+          data-add-to-cart
+        >
+          {{ block.settings.button_text }}
+        </button>
+      {% endif %}
+
+      {% if block.settings.show_close_button %}
+        <button class="ai-sticky-cart-close-{{ ai_gen_id }}" data-close-sticky>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      {% endif %}
+    </div>
   </div>
-</div>
+</sticky-add-to-cart-{{ ai_gen_id }}>
+
+<script>
+  (function() {
+    class StickyAddToCart{{ ai_gen_id }} extends HTMLElement {
+      constructor() {
+        super();
+      }
+
+      connectedCallback() {
+        this.scrollThreshold = {{ block.settings.scroll_threshold }};
+        this.quantityInput = this.querySelector('[data-quantity-input]');
+        this.decreaseBtn = this.querySelector('[data-quantity-decrease]');
+        this.increaseBtn = this.querySelector('[data-quantity-increase]');
+        this.addToCartBtn = this.querySelector('[data-add-to-cart]');
+        this.closeBtn = this.querySelector('[data-close-sticky]');
+        this.isHidden = false;
+
+        this.setupEventListeners();
+        this.handleScroll();
+      }
+
+      setupEventListeners() {
+        window.addEventListener('scroll', () => this.handleScroll());
+
+        if (this.decreaseBtn) {
+          this.decreaseBtn.addEventListener('click', () => this.updateQuantity(-1));
+        }
+
+        if (this.increaseBtn) {
+          this.increaseBtn.addEventListener('click', () => this.updateQuantity(1));
+        }
+
+        if (this.quantityInput) {
+          this.quantityInput.addEventListener('change', () => this.validateQuantity());
+        }
+
+        if (this.addToCartBtn) {
+          this.addToCartBtn.addEventListener('click', () => this.handleAddToCart());
+        }
+
+        if (this.closeBtn) {
+          this.closeBtn.addEventListener('click', () => this.hideStickyCart());
+        }
+      }
+
+      handleScroll() {
+        if (this.isHidden) return;
+
+        const scrollY = window.scrollY;
+        const shouldShow = scrollY > this.scrollThreshold;
+
+        if (shouldShow) {
+          this.classList.add('visible');
+        } else {
+          this.classList.remove('visible');
+        }
+      }
+
+      updateQuantity(change) {
+        if (!this.quantityInput) return;
+
+        const currentValue = parseInt(this.quantityInput.value) || 1;
+        const newValue = Math.max(1, currentValue + change);
+        this.quantityInput.value = newValue;
+      }
+
+      validateQuantity() {
+        if (!this.quantityInput) return;
+
+        const value = parseInt(this.quantityInput.value) || 1;
+        this.quantityInput.value = Math.max(1, value);
+      }
+
+      handleAddToCart() {
+        const quantity = this.quantityInput ? parseInt(this.quantityInput.value) || 1 : 1;
+        
+        console.log('Add to cart:', { quantity });
+      }
+
+      hideStickyCart() {
+        this.isHidden = true;
+        this.classList.remove('visible');
+      }
+    }
+
+    customElements.define('sticky-add-to-cart-{{ ai_gen_id }}', StickyAddToCart{{ ai_gen_id }});
+  })();
+</script>
 
 {% schema %}
 {
-  "name": "Final call to action",
+  "name": "Sticky add to cart",
   "settings": [
     {
       "type": "header",
-      "content": "Background"
+      "content": "Product"
     },
     {
       "type": "image_picker",
-      "id": "background_image",
-      "label": "Background image"
+      "id": "product_image",
+      "label": "Product image"
     },
     {
-      "type": "checkbox",
-      "id": "show_overlay",
-      "label": "Show overlay",
-      "default": true
+      "type": "text",
+      "id": "product_title",
+      "label": "Product title",
+      "default": "Premium Skincare Serum"
     },
     {
-      "type": "color",
-      "id": "overlay_color",
-      "label": "Overlay color",
-      "default": "#00000066"
+      "type": "text",
+      "id": "product_price",
+      "label": "Product price",
+      "default": "₱2,499"
+    },
+    {
+      "type": "text",
+      "id": "compare_price",
+      "label": "Compare at price"
     },
     {
       "type": "header",
-      "content": "Content"
+      "content": "Button"
     },
     {
       "type": "text",
-      "id": "badge_text",
-      "label": "Badge text",
-      "default": "Final Offer"
-    },
-    {
-      "type": "text",
-      "id": "headline",
-      "label": "Headline",
-      "default": "Don't Miss Out - Transform Your Skin Today"
-    },
-    {
-      "type": "textarea",
-      "id": "subheading",
-      "label": "Subheading",
-      "default": "Join thousands of satisfied customers and start your skincare transformation journey"
-    },
-    {
-      "type": "text",
-      "id": "guarantee_text",
-      "label": "Guarantee text",
-      "default": "30-Day Money Back Guarantee"
-    },
-    {
-      "type": "header",
-      "content": "Primary button"
-    },
-    {
-      "type": "text",
-      "id": "primary_button_text",
-      "label": "Button text",
-      "default": "Buy Now"
-    },
-    {
-      "type": "url",
-      "id": "primary_button_link",
-      "label": "Button link"
-    },
-    {
-      "type": "header",
-      "content": "Secondary button"
-    },
-    {
-      "type": "text",
-      "id": "secondary_button_text",
+      "id": "button_text",
       "label": "Button text",
       "default": "Add to Cart"
     },
     {
-      "type": "url",
-      "id": "secondary_button_link",
-      "label": "Button link"
+      "type": "header",
+      "content": "Behavior"
+    },
+    {
+      "type": "range",
+      "id": "scroll_threshold",
+      "min": 100,
+      "max": 1000,
+      "step": 50,
+      "unit": "px",
+      "label": "Show after scroll",
+      "default": 300
+    },
+    {
+      "type": "checkbox",
+      "id": "show_quantity",
+      "label": "Show quantity selector",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_close_button",
+      "label": "Show close button",
+      "default": true
     },
     {
       "type": "header",
@@ -407,33 +467,53 @@
     },
     {
       "type": "range",
-      "id": "section_height",
-      "min": 400,
-      "max": 700,
+      "id": "container_width",
+      "min": 800,
+      "max": 1400,
       "step": 50,
       "unit": "px",
-      "label": "Desktop height",
-      "default": 500
+      "label": "Container width",
+      "default": 1200
     },
     {
       "type": "range",
-      "id": "mobile_height",
-      "min": 300,
-      "max": 500,
-      "step": 50,
+      "id": "padding_vertical",
+      "min": 10,
+      "max": 30,
+      "step": 2,
       "unit": "px",
-      "label": "Mobile height",
-      "default": 400
+      "label": "Vertical padding",
+      "default": 16
     },
     {
       "type": "range",
-      "id": "content_width",
-      "min": 400,
-      "max": 800,
-      "step": 50,
+      "id": "padding_horizontal",
+      "min": 15,
+      "max": 40,
+      "step": 5,
       "unit": "px",
-      "label": "Content width",
-      "default": 600
+      "label": "Horizontal padding",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "image_size",
+      "min": 40,
+      "max": 80,
+      "step": 5,
+      "unit": "px",
+      "label": "Image size",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "image_border_radius",
+      "min": 0,
+      "max": 20,
+      "step": 2,
+      "unit": "px",
+      "label": "Image border radius",
+      "default": 8
     },
     {
       "type": "header",
@@ -441,42 +521,32 @@
     },
     {
       "type": "range",
-      "id": "badge_size",
-      "min": 10,
-      "max": 16,
+      "id": "title_size",
+      "min": 14,
+      "max": 20,
       "step": 1,
       "unit": "px",
-      "label": "Badge size",
-      "default": 12
+      "label": "Title size",
+      "default": 16
     },
     {
       "type": "range",
-      "id": "headline_size",
-      "min": 28,
-      "max": 56,
-      "step": 4,
+      "id": "price_size",
+      "min": 14,
+      "max": 20,
+      "step": 1,
       "unit": "px",
-      "label": "Headline size",
-      "default": 40
+      "label": "Price size",
+      "default": 16
     },
     {
       "type": "range",
-      "id": "subheading_size",
-      "min": 16,
-      "max": 24,
-      "step": 2,
-      "unit": "px",
-      "label": "Subheading size",
-      "default": 18
-    },
-    {
-      "type": "range",
-      "id": "guarantee_size",
+      "id": "quantity_text_size",
       "min": 12,
       "max": 18,
       "step": 1,
       "unit": "px",
-      "label": "Guarantee size",
+      "label": "Quantity text size",
       "default": 14
     },
     {
@@ -487,206 +557,132 @@
       "type": "color",
       "id": "background_color",
       "label": "Background color",
-      "default": "#de5757"
+      "default": "#ffffff"
     },
     {
       "type": "color",
       "id": "text_color",
       "label": "Text color",
-      "default": "#ffffff"
+      "default": "#0b0b0b"
     },
     {
       "type": "color",
-      "id": "badge_bg_color",
-      "label": "Badge background color",
-      "default": "#ffffff"
-    },
-    {
-      "type": "color",
-      "id": "badge_text_color",
-      "label": "Badge text color",
+      "id": "price_color",
+      "label": "Price color",
       "default": "#de5757"
     },
     {
-      "type": "range",
-      "id": "badge_border_radius",
-      "min": 0,
-      "max": 25,
-      "step": 1,
-      "unit": "px",
-      "label": "Badge border radius",
-      "default": 20
+      "type": "color",
+      "id": "border_color",
+      "label": "Border color",
+      "default": "#e5e5e5"
     },
     {
       "type": "color",
-      "id": "guarantee_icon_color",
-      "label": "Guarantee icon color",
-      "default": "#4ade80"
+      "id": "quantity_bg_color",
+      "label": "Quantity background color",
+      "default": "#f8f8f8"
+    },
+    {
+      "type": "color",
+      "id": "quantity_border_color",
+      "label": "Quantity border color",
+      "default": "#e5e5e5"
+    },
+    {
+      "type": "color",
+      "id": "quantity_hover_color",
+      "label": "Quantity hover color",
+      "default": "#f0f0f0"
+    },
+    {
+      "type": "range",
+      "id": "quantity_border_radius",
+      "min": 0,
+      "max": 15,
+      "step": 1,
+      "unit": "px",
+      "label": "Quantity border radius",
+      "default": 6
     },
     {
       "type": "header",
-      "content": "Primary button style"
+      "content": "Button style"
     },
     {
       "type": "color",
-      "id": "primary_button_bg_color",
+      "id": "button_bg_color",
       "label": "Background color",
       "default": "#0b0b0b"
     },
     {
       "type": "color",
-      "id": "primary_button_text_color",
+      "id": "button_text_color",
       "label": "Text color",
       "default": "#ffffff"
     },
     {
       "type": "color",
-      "id": "primary_button_hover_bg_color",
+      "id": "button_hover_bg_color",
       "label": "Hover background color",
       "default": "#333333"
     },
     {
       "type": "color",
-      "id": "primary_button_hover_text_color",
+      "id": "button_hover_text_color",
       "label": "Hover text color",
       "default": "#ffffff"
     },
     {
       "type": "range",
-      "id": "primary_button_text_size",
-      "min": 14,
-      "max": 20,
+      "id": "button_text_size",
+      "min": 12,
+      "max": 18,
       "step": 1,
       "unit": "px",
       "label": "Text size",
-      "default": 18
+      "default": 14
     },
     {
       "type": "range",
-      "id": "primary_button_padding_vertical",
-      "min": 12,
-      "max": 24,
+      "id": "button_padding_vertical",
+      "min": 8,
+      "max": 20,
       "step": 2,
       "unit": "px",
       "label": "Vertical padding",
-      "default": 18
+      "default": 12
     },
     {
       "type": "range",
-      "id": "primary_button_padding_horizontal",
-      "min": 24,
-      "max": 48,
+      "id": "button_padding_horizontal",
+      "min": 16,
+      "max": 40,
       "step": 4,
       "unit": "px",
       "label": "Horizontal padding",
-      "default": 36
+      "default": 24
     },
     {
       "type": "range",
-      "id": "primary_button_border_radius",
+      "id": "button_border_radius",
       "min": 0,
-      "max": 50,
-      "step": 2,
+      "max": 25,
+      "step": 1,
       "unit": "px",
       "label": "Border radius",
-      "default": 8
+      "default": 6
     },
     {
       "type": "checkbox",
-      "id": "primary_button_uppercase",
+      "id": "button_uppercase",
       "label": "Uppercase text",
       "default": true
-    },
-    {
-      "type": "header",
-      "content": "Secondary button style"
-    },
-    {
-      "type": "color",
-      "id": "secondary_button_bg_color",
-      "label": "Background color",
-      "default": "rgba(0,0,0,0)"
-    },
-    {
-      "type": "color",
-      "id": "secondary_button_text_color",
-      "label": "Text color",
-      "default": "#ffffff"
-    },
-    {
-      "type": "color",
-      "id": "secondary_button_border_color",
-      "label": "Border color",
-      "default": "#ffffff"
-    },
-    {
-      "type": "color",
-      "id": "secondary_button_hover_bg_color",
-      "label": "Hover background color",
-      "default": "#ffffff"
-    },
-    {
-      "type": "color",
-      "id": "secondary_button_hover_text_color",
-      "label": "Hover text color",
-      "default": "#0b0b0b"
-    },
-    {
-      "type": "color",
-      "id": "secondary_button_hover_border_color",
-      "label": "Hover border color",
-      "default": "#ffffff"
-    },
-    {
-      "type": "range",
-      "id": "secondary_button_text_size",
-      "min": 14,
-      "max": 20,
-      "step": 1,
-      "unit": "px",
-      "label": "Text size",
-      "default": 16
-    },
-    {
-      "type": "range",
-      "id": "secondary_button_padding_vertical",
-      "min": 10,
-      "max": 22,
-      "step": 2,
-      "unit": "px",
-      "label": "Vertical padding",
-      "default": 16
-    },
-    {
-      "type": "range",
-      "id": "secondary_button_padding_horizontal",
-      "min": 20,
-      "max": 44,
-      "step": 4,
-      "unit": "px",
-      "label": "Horizontal padding",
-      "default": 32
-    },
-    {
-      "type": "range",
-      "id": "secondary_button_border_radius",
-      "min": 0,
-      "max": 50,
-      "step": 2,
-      "unit": "px",
-      "label": "Border radius",
-      "default": 8
-    },
-    {
-      "type": "checkbox",
-      "id": "secondary_button_uppercase",
-      "label": "Uppercase text",
-      "default": false
     }
   ],
   "presets": [
     {
-      "name": "Final call to action"
+      "name": "Sticky add to cart"
     }
   ]
 }
