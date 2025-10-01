@@ -9,6 +9,55 @@
  */
 {
   "sections": {
+    "175928512318e52e87": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_847e19c_NPGNH6": {
+          "type": "ai_gen_block_847e19c",
+          "settings": {
+            "product_image": "shopify://shop_images/Pili_Ani_Moisturizing_Lipstick_crimson_jane_main001.jpg",
+            "product_title": "Premium Skincare Serum",
+            "product_price": "₱2,499",
+            "compare_price": "",
+            "button_text": "Add to Cart",
+            "scroll_threshold": 300,
+            "show_quantity": true,
+            "show_close_button": true,
+            "container_width": 1200,
+            "padding_vertical": 16,
+            "padding_horizontal": 20,
+            "image_size": 60,
+            "image_border_radius": 8,
+            "title_size": 16,
+            "price_size": 16,
+            "quantity_text_size": 14,
+            "background_color": "#ffffff",
+            "text_color": "#0b0b0b",
+            "price_color": "#de5757",
+            "border_color": "#e5e5e5",
+            "quantity_bg_color": "#f8f8f8",
+            "quantity_border_color": "#e5e5e5",
+            "quantity_hover_color": "#f0f0f0",
+            "quantity_border_radius": 6,
+            "button_bg_color": "#0b0b0b",
+            "button_text_color": "#ffffff",
+            "button_hover_bg_color": "#333333",
+            "button_hover_text_color": "#ffffff",
+            "button_text_size": 14,
+            "button_padding_vertical": 12,
+            "button_padding_horizontal": 24,
+            "button_border_radius": 6,
+            "button_uppercase": true
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_847e19c_NPGNH6"
+      ],
+      "disabled": true,
+      "settings": {}
+    },
     "1759277456b1014fa2": {
       "type": "_blocks",
       "blocks": {
@@ -214,7 +263,7 @@
         "title": "<p>Welcome to Palo Alto</p>",
         "heading_size": 100,
         "heading_highlight_type": "underline-hand-drawn",
-        "highlight_color": "#000",
+        "highlight_color": "#000000",
         "highlight_text_color": "",
         "text": "This text helps you provide some more detail to the title above.",
         "text_size": 100,
@@ -398,7 +447,7 @@
         "title": "<p>Our Story, Our Promise</p>",
         "heading_size": 100,
         "heading_highlight_type": "underline-hand-drawn",
-        "highlight_color": "#000",
+        "highlight_color": "#000000",
         "highlight_text_color": "",
         "description": "<p>Use this text to describe a product, promotion, or your company.</p>",
         "text_size": 100,
@@ -436,7 +485,7 @@
             "size": 120,
             "text_position": "left",
             "heading_highlight_type": "underline-hand-drawn",
-            "highlight_color": "#000",
+            "highlight_color": "#000000",
             "highlight_text_color": "",
             "spacing_bottom": 12
           }
@@ -584,6 +633,8 @@
         "slide_ngHAPi": {
           "type": "slide",
           "settings": {
+            "image": "shopify://shop_images/Pili_Ani_Moisturizing_Lipstick_La_Vie_Rose_main003.jpg",
+            "image_mobile": "shopify://shop_images/Moisturizing_Matte_Lipstick_-_La_Vie_En_Rose_7078075f-f7df-42de-99d2-b2f66b993bb5.jpg",
             "video_url": "",
             "truncate_text": true,
             "title_length": 10,
@@ -669,6 +720,7 @@
     }
   },
   "order": [
+    "175928512318e52e87",
     "1759277456b1014fa2",
     "1759276997d00f2b85",
     "main",
