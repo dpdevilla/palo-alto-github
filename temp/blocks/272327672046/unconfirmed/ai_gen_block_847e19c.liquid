@@ -32,101 +32,100 @@
 {% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
 
 {% style %}
-  .ai-hero-section-{{ ai_gen_id }} {
-    position: relative;
-    width: 100%;
-    min-height: {{ block.settings.section_height }}px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
+  .ai-influencer-endorsement-{{ ai_gen_id }} {
+    padding: {{ block.settings.section_padding_top }}px 20px {{ block.settings.section_padding_bottom }}px;
     background-color: {{ block.settings.background_color }};
   }
 
-  .ai-hero-media-{{ ai_gen_id }} {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
+  .ai-influencer-container-{{ ai_gen_id }} {
+    max-width: {{ block.settings.container_width }}px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 40px;
   }
 
-  .ai-hero-media-{{ ai_gen_id }} img,
-  .ai-hero-media-{{ ai_gen_id }} video {
+  .ai-influencer-media-{{ ai_gen_id }} {
+    flex: 0 0 {{ block.settings.media_width }}%;
+    position: relative;
+  }
+
+  .ai-influencer-image-{{ ai_gen_id }} {
     width: 100%;
-    height: 100%;
+    height: auto;
+    border-radius: {{ block.settings.image_border_radius }}px;
     object-fit: cover;
   }
 
-  .ai-hero-overlay-{{ ai_gen_id }} {
-    position: absolute;
-    top: 0;
-    left: 0;
+  .ai-influencer-video-{{ ai_gen_id }} {
     width: 100%;
-    height: 100%;
-    background-color: {{ block.settings.overlay_color }};
-    z-index: 2;
+    height: auto;
+    border-radius: {{ block.settings.image_border_radius }}px;
   }
 
-  .ai-hero-content-{{ ai_gen_id }} {
-    position: relative;
-    z-index: 3;
-    text-align: {{ block.settings.text_alignment }};
-    max-width: {{ block.settings.content_width }}px;
-    padding: 40px 20px;
+  .ai-influencer-content-{{ ai_gen_id }} {
+    flex: 1;
     color: {{ block.settings.text_color }};
   }
 
-  .ai-hero-headline-{{ ai_gen_id }} {
-    font-size: {{ block.settings.headline_size }}px;
-    font-weight: 700;
-    line-height: 1.2;
+  .ai-influencer-quote-{{ ai_gen_id }} {
+    font-size: {{ block.settings.quote_size }}px;
+    line-height: 1.5;
+    font-style: italic;
     margin: 0 0 20px;
     color: {{ block.settings.text_color }};
+    position: relative;
   }
 
-  .ai-hero-subheading-{{ ai_gen_id }} {
-    font-size: {{ block.settings.subheading_size }}px;
-    line-height: 1.4;
-    margin: 0 0 30px;
+  .ai-influencer-quote-{{ ai_gen_id }}::before {
+    content: '"';
+    font-size: {{ block.settings.quote_size | times: 1.5 }}px;
+    color: {{ block.settings.accent_color }};
+    position: absolute;
+    left: -20px;
+    top: -10px;
+    font-family: serif;
+  }
+
+  .ai-influencer-quote-{{ ai_gen_id }}::after {
+    content: '"';
+    font-size: {{ block.settings.quote_size | times: 1.5 }}px;
+    color: {{ block.settings.accent_color }};
+    font-family: serif;
+  }
+
+  .ai-influencer-name-{{ ai_gen_id }} {
+    font-size: {{ block.settings.name_size }}px;
+    font-weight: 600;
+    margin: 0 0 5px;
+    color: {{ block.settings.text_color }};
+  }
+
+  .ai-influencer-title-{{ ai_gen_id }} {
+    font-size: {{ block.settings.title_size }}px;
+    color: {{ block.settings.accent_color }};
+    margin: 0 0 20px;
+  }
+
+  .ai-influencer-story-{{ ai_gen_id }} {
+    font-size: {{ block.settings.story_size }}px;
+    line-height: 1.6;
     color: {{ block.settings.text_color }};
     opacity: 0.9;
   }
 
-  .ai-hero-cta-{{ ai_gen_id }} {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: {{ block.settings.button_padding_vertical }}px {{ block.settings.button_padding_horizontal }}px;
-    background-color: {{ block.settings.button_bg_color }};
-    color: {{ block.settings.button_text_color }};
-    text-decoration: none;
-    font-size: {{ block.settings.button_text_size }}px;
-    font-weight: 600;
-    border-radius: {{ block.settings.button_border_radius }}px;
-    transition: all 0.3s ease;
-    text-transform: {% if block.settings.button_uppercase %}uppercase{% else %}none{% endif %};
-    letter-spacing: {% if block.settings.button_uppercase %}1px{% else %}0{% endif %};
-  }
-
-  .ai-hero-cta-{{ ai_gen_id }}:hover {
-    background-color: {{ block.settings.button_hover_bg_color }};
-    color: {{ block.settings.button_hover_text_color }};
-    transform: translateY(-2px);
-  }
-
-  .ai-hero-placeholder-{{ ai_gen_id }} {
+  .ai-influencer-placeholder-{{ ai_gen_id }} {
     width: 100%;
-    height: 100%;
+    aspect-ratio: 1;
     background-color: #f4f4f4;
     display: flex;
     align-items: center;
     justify-content: center;
+    border-radius: {{ block.settings.image_border_radius }}px;
     position: relative;
   }
 
-  .ai-hero-empty-state-{{ ai_gen_id }} {
+  .ai-influencer-empty-state-{{ ai_gen_id }} {
     position: absolute;
     bottom: 20px;
     left: 50%;
@@ -139,84 +138,96 @@
   }
 
   @media screen and (max-width: 768px) {
-    .ai-hero-section-{{ ai_gen_id }} {
-      min-height: {{ block.settings.mobile_height }}px;
+    .ai-influencer-container-{{ ai_gen_id }} {
+      flex-direction: column;
+      gap: 30px;
+      text-align: center;
     }
 
-    .ai-hero-headline-{{ ai_gen_id }} {
-      font-size: {{ block.settings.headline_size | times: 0.8 }}px;
+    .ai-influencer-media-{{ ai_gen_id }} {
+      flex: none;
+      width: 100%;
+      max-width: 300px;
     }
 
-    .ai-hero-subheading-{{ ai_gen_id }} {
-      font-size: {{ block.settings.subheading_size | times: 0.9 }}px;
+    .ai-influencer-quote-{{ ai_gen_id }} {
+      font-size: {{ block.settings.quote_size | times: 0.9 }}px;
     }
 
-    .ai-hero-content-{{ ai_gen_id }} {
-      padding: 20px 15px;
-      max-width: 100%;
+    .ai-influencer-quote-{{ ai_gen_id }}::before {
+      left: -15px;
+      top: -8px;
     }
   }
+
+  {% if block.settings.layout == 'reverse' %}
+    .ai-influencer-container-{{ ai_gen_id }} {
+      flex-direction: row-reverse;
+    }
+
+    @media screen and (max-width: 768px) {
+      .ai-influencer-container-{{ ai_gen_id }} {
+        flex-direction: column;
+      }
+    }
+  {% endif %}
 {% endstyle %}
 
-<div class="ai-hero-section-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
-  {% if block.settings.media_type == 'image' and block.settings.hero_image %}
-    <div class="ai-hero-media-{{ ai_gen_id }}">
-      <img
-        src="{{ block.settings.hero_image | image_url: width: 2000 }}"
-        alt="{{ block.settings.hero_image.alt | escape }}"
-        loading="lazy"
-        width="{{ block.settings.hero_image.width }}"
-        height="{{ block.settings.hero_image.height }}"
-      >
+<div class="ai-influencer-endorsement-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  <div class="ai-influencer-container-{{ ai_gen_id }}">
+    <div class="ai-influencer-media-{{ ai_gen_id }}">
+      {% if block.settings.media_type == 'image' and block.settings.influencer_image %}
+        <img
+          src="{{ block.settings.influencer_image | image_url: width: 600 }}"
+          alt="{{ block.settings.influencer_image.alt | escape }}"
+          loading="lazy"
+          width="{{ block.settings.influencer_image.width }}"
+          height="{{ block.settings.influencer_image.height }}"
+          class="ai-influencer-image-{{ ai_gen_id }}"
+        >
+      {% elsif block.settings.media_type == 'video' and block.settings.influencer_video %}
+        <video
+          class="ai-influencer-video-{{ ai_gen_id }}"
+          controls
+          {% if block.settings.video_poster %}poster="{{ block.settings.video_poster | image_url: width: 600 }}"{% endif %}
+        >
+          <source src="{{ block.settings.influencer_video }}" type="video/mp4">
+        </video>
+      {% else %}
+        <div class="ai-influencer-placeholder-{{ ai_gen_id }}">
+          {{ 'image' | placeholder_svg_tag }}
+          <div class="ai-influencer-empty-state-{{ ai_gen_id }}">
+            Add influencer photo or video
+          </div>
+        </div>
+      {% endif %}
     </div>
-  {% elsif block.settings.media_type == 'video' and block.settings.hero_video %}
-    <div class="ai-hero-media-{{ ai_gen_id }}">
-      <video
-        autoplay
-        muted
-        loop
-        playsinline
-        {% if block.settings.video_poster %}poster="{{ block.settings.video_poster | image_url: width: 2000 }}"{% endif %}
-      >
-        <source src="{{ block.settings.hero_video }}" type="video/mp4">
-      </video>
+
+    <div class="ai-influencer-content-{{ ai_gen_id }}">
+      {% if block.settings.testimonial_quote != blank %}
+        <blockquote class="ai-influencer-quote-{{ ai_gen_id }}">
+          {{ block.settings.testimonial_quote }}
+        </blockquote>
+      {% endif %}
+
+      {% if block.settings.influencer_name != blank %}
+        <div class="ai-influencer-name-{{ ai_gen_id }}">{{ block.settings.influencer_name }}</div>
+      {% endif %}
+
+      {% if block.settings.influencer_title != blank %}
+        <div class="ai-influencer-title-{{ ai_gen_id }}">{{ block.settings.influencer_title }}</div>
+      {% endif %}
+
+      {% if block.settings.personal_story != blank %}
+        <div class="ai-influencer-story-{{ ai_gen_id }}">{{ block.settings.personal_story }}</div>
+      {% endif %}
     </div>
-  {% else %}
-    <div class="ai-hero-placeholder-{{ ai_gen_id }}">
-      {{ 'hero-apparel-1' | placeholder_svg_tag }}
-      <div class="ai-hero-empty-state-{{ ai_gen_id }}">
-        Add an image or video to get started
-      </div>
-    </div>
-  {% endif %}
-
-  {% if block.settings.show_overlay %}
-    <div class="ai-hero-overlay-{{ ai_gen_id }}"></div>
-  {% endif %}
-
-  <div class="ai-hero-content-{{ ai_gen_id }}">
-    {% if block.settings.headline != blank %}
-      <h1 class="ai-hero-headline-{{ ai_gen_id }}">{{ block.settings.headline }}</h1>
-    {% endif %}
-
-    {% if block.settings.subheading != blank %}
-      <div class="ai-hero-subheading-{{ ai_gen_id }}">{{ block.settings.subheading }}</div>
-    {% endif %}
-
-    {% if block.settings.cta_text != blank %}
-      <a
-        href="{{ block.settings.cta_link }}"
-        class="ai-hero-cta-{{ ai_gen_id }}"
-      >
-        {{ block.settings.cta_text }}
-      </a>
-    {% endif %}
   </div>
 </div>
 
 {% schema %}
 {
-  "name": "Hero section",
+  "name": "Influencer endorsement",
   "settings": [
     {
       "type": "header",
@@ -240,12 +251,12 @@
     },
     {
       "type": "image_picker",
-      "id": "hero_image",
-      "label": "Hero image"
+      "id": "influencer_image",
+      "label": "Influencer image"
     },
     {
       "type": "url",
-      "id": "hero_video",
+      "id": "influencer_video",
       "label": "Video URL"
     },
     {
@@ -254,85 +265,102 @@
       "label": "Video poster image"
     },
     {
+      "type": "range",
+      "id": "image_border_radius",
+      "min": 0,
+      "max": 50,
+      "step": 2,
+      "unit": "px",
+      "label": "Image border radius",
+      "default": 12
+    },
+    {
       "type": "header",
       "content": "Content"
     },
     {
+      "type": "textarea",
+      "id": "testimonial_quote",
+      "label": "Testimonial quote",
+      "default": "This product has completely transformed my skincare routine. I've never felt more confident in my skin!"
+    },
+    {
       "type": "text",
-      "id": "headline",
-      "label": "Headline",
-      "default": "Transform Your Beauty Routine"
+      "id": "influencer_name",
+      "label": "Influencer name",
+      "default": "Iza Calzado"
+    },
+    {
+      "type": "text",
+      "id": "influencer_title",
+      "label": "Influencer title",
+      "default": "Actress & Beauty Enthusiast"
     },
     {
       "type": "textarea",
-      "id": "subheading",
-      "label": "Subheading",
-      "default": "Discover premium skincare products that deliver real results"
-    },
-    {
-      "type": "text",
-      "id": "cta_text",
-      "label": "Button text",
-      "default": "Shop Now"
-    },
-    {
-      "type": "url",
-      "id": "cta_link",
-      "label": "Button link"
-    },
-    {
-      "type": "select",
-      "id": "text_alignment",
-      "label": "Text alignment",
-      "options": [
-        {
-          "value": "left",
-          "label": "Left"
-        },
-        {
-          "value": "center",
-          "label": "Center"
-        },
-        {
-          "value": "right",
-          "label": "Right"
-        }
-      ],
-      "default": "center"
+      "id": "personal_story",
+      "label": "Personal story",
+      "default": "As someone who's always in front of cameras, I need products that deliver real results. This has become an essential part of my daily routine."
     },
     {
       "type": "header",
       "content": "Layout"
     },
     {
-      "type": "range",
-      "id": "section_height",
-      "min": 400,
-      "max": 800,
-      "step": 50,
-      "unit": "px",
-      "label": "Desktop height",
-      "default": 600
+      "type": "select",
+      "id": "layout",
+      "label": "Layout",
+      "options": [
+        {
+          "value": "normal",
+          "label": "Image left, content right"
+        },
+        {
+          "value": "reverse",
+          "label": "Content left, image right"
+        }
+      ],
+      "default": "normal"
     },
     {
       "type": "range",
-      "id": "mobile_height",
-      "min": 300,
-      "max": 600,
+      "id": "container_width",
+      "min": 800,
+      "max": 1400,
       "step": 50,
       "unit": "px",
-      "label": "Mobile height",
-      "default": 500
+      "label": "Container width",
+      "default": 1200
     },
     {
       "type": "range",
-      "id": "content_width",
-      "min": 400,
-      "max": 800,
-      "step": 50,
+      "id": "media_width",
+      "min": 30,
+      "max": 60,
+      "step": 5,
+      "unit": "%",
+      "label": "Media width",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "section_padding_top",
+      "min": 20,
+      "max": 100,
+      "step": 10,
       "unit": "px",
-      "label": "Content width",
-      "default": 600
+      "label": "Top padding",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "section_padding_bottom",
+      "min": 20,
+      "max": 100,
+      "step": 10,
+      "unit": "px",
+      "label": "Bottom padding",
+      "default": 60
     },
     {
       "type": "header",
@@ -340,23 +368,43 @@
     },
     {
       "type": "range",
-      "id": "headline_size",
-      "min": 24,
-      "max": 72,
-      "step": 4,
+      "id": "quote_size",
+      "min": 16,
+      "max": 32,
+      "step": 2,
       "unit": "px",
-      "label": "Headline size",
-      "default": 48
+      "label": "Quote size",
+      "default": 22
     },
     {
       "type": "range",
-      "id": "subheading_size",
-      "min": 14,
-      "max": 24,
+      "id": "name_size",
+      "min": 16,
+      "max": 28,
       "step": 2,
       "unit": "px",
-      "label": "Subheading size",
-      "default": 18
+      "label": "Name size",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "title_size",
+      "min": 12,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "label": "Title size",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "story_size",
+      "min": 14,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "label": "Story size",
+      "default": 16
     },
     {
       "type": "header",
@@ -366,104 +414,24 @@
       "type": "color",
       "id": "background_color",
       "label": "Background color",
-      "default": "#f4f4f4"
+      "default": "#fff7f2"
     },
     {
       "type": "color",
       "id": "text_color",
       "label": "Text color",
-      "default": "#ffffff"
-    },
-    {
-      "type": "checkbox",
-      "id": "show_overlay",
-      "label": "Show overlay",
-      "default": true
-    },
-    {
-      "type": "color",
-      "id": "overlay_color",
-      "label": "Overlay color",
-      "default": "#00000066"
-    },
-    {
-      "type": "header",
-      "content": "Button style"
-    },
-    {
-      "type": "color",
-      "id": "button_bg_color",
-      "label": "Background color",
       "default": "#0b0b0b"
     },
     {
       "type": "color",
-      "id": "button_text_color",
-      "label": "Text color",
-      "default": "#ffffff"
-    },
-    {
-      "type": "color",
-      "id": "button_hover_bg_color",
-      "label": "Hover background color",
-      "default": "#333333"
-    },
-    {
-      "type": "color",
-      "id": "button_hover_text_color",
-      "label": "Hover text color",
-      "default": "#ffffff"
-    },
-    {
-      "type": "range",
-      "id": "button_text_size",
-      "min": 12,
-      "max": 20,
-      "step": 1,
-      "unit": "px",
-      "label": "Text size",
-      "default": 16
-    },
-    {
-      "type": "range",
-      "id": "button_padding_vertical",
-      "min": 8,
-      "max": 24,
-      "step": 2,
-      "unit": "px",
-      "label": "Vertical padding",
-      "default": 16
-    },
-    {
-      "type": "range",
-      "id": "button_padding_horizontal",
-      "min": 16,
-      "max": 48,
-      "step": 4,
-      "unit": "px",
-      "label": "Horizontal padding",
-      "default": 32
-    },
-    {
-      "type": "range",
-      "id": "button_border_radius",
-      "min": 0,
-      "max": 50,
-      "step": 2,
-      "unit": "px",
-      "label": "Border radius",
-      "default": 4
-    },
-    {
-      "type": "checkbox",
-      "id": "button_uppercase",
-      "label": "Uppercase text",
-      "default": true
+      "id": "accent_color",
+      "label": "Accent color",
+      "default": "#de5757"
     }
   ],
   "presets": [
     {
-      "name": "Hero section"
+      "name": "Influencer endorsement"
     }
   ]
 }
