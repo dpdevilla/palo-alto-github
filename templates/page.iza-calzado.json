@@ -512,7 +512,7 @@
             "text": "<p>New collections just released - <a href=\"/collections\" title=\"All collections\">Shop now</a></p>",
             "text_color": "",
             "heading_highlight_type": "underline-hand-drawn",
-            "highlight_color": "#000",
+            "highlight_color": "#000000",
             "highlight_text_color": "",
             "icon_name": "none",
             "icon_color": "",
@@ -534,7 +534,7 @@
             "text": "<p>Use code <strong>TENOFF</strong> for 10% off first purchase</p>",
             "text_color": "",
             "heading_highlight_type": "underline-hand-drawn",
-            "highlight_color": "#000",
+            "highlight_color": "#000000",
             "highlight_text_color": "",
             "icon_name": "none",
             "icon_color": "",
@@ -565,7 +565,7 @@
         "padding": 10,
         "marquee_speed": 100,
         "direction": "ticker-ltr",
-        "slider_speed": 7,
+        "slider_speed": 6,
         "show_arrows": false,
         "text_caps": false,
         "type_font": "space_mono_n4",
@@ -577,7 +577,7 @@
         "color": "",
         "border_color": "",
         "padding_top": 10,
-        "padding_bottom": 10
+        "padding_bottom": 0
       }
     },
     "section_columns_WtMb7L": {
