@@ -1,6 +1,728 @@
+{% doc %}
+  @prompt
+    3.	Product Spotlight
+    o	Combination of lifestyle + product images
+    o	Benefit bullet points (not just features)
+    o	Show price + any limited-time promo
+    , this is good the layout but i need to get the product features on the product inside the shopify not image also the price and CTA button
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-product-spotlight-{{ ai_gen_id }} {
+    background-color: {{ block.settings.background_color }};
+    padding: {{ block.settings.section_padding }}px;
+    border-radius: {{ block.settings.border_radius }}px;
+  }
+
+  .ai-product-spotlight-container-{{ ai_gen_id }} {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: {{ block.settings.content_gap }}px;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .ai-product-spotlight-images-{{ ai_gen_id }} {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: {{ block.settings.image_gap }}px;
+    height: 100%;
+  }
+
+  .ai-product-spotlight-lifestyle-{{ ai_gen_id }} {
+    grid-column: 1 / 3;
+    position: relative;
+    overflow: hidden;
+    border-radius: {{ block.settings.image_border_radius }}px;
+    aspect-ratio: {{ block.settings.lifestyle_aspect_ratio }};
+  }
+
+  .ai-product-spotlight-lifestyle-{{ ai_gen_id }} img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .ai-product-spotlight-product-images-{{ ai_gen_id }} {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: {{ block.settings.image_gap }}px;
+    grid-column: 1 / 3;
+  }
+
+  .ai-product-spotlight-product-image-{{ ai_gen_id }} {
+    position: relative;
+    overflow: hidden;
+    border-radius: {{ block.settings.image_border_radius }}px;
+    aspect-ratio: 1;
+  }
+
+  .ai-product-spotlight-product-image-{{ ai_gen_id }} img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .ai-product-spotlight-content-{{ ai_gen_id }} {
+    padding: {{ block.settings.content_padding }}px;
+  }
+
+  .ai-product-spotlight-title-{{ ai_gen_id }} {
+    color: {{ block.settings.title_color }};
+    font-size: {{ block.settings.title_size }}px;
+    font-weight: 700;
+    margin: 0 0 {{ block.settings.element_spacing }}px;
+    line-height: 1.2;
+  }
+
+  .ai-product-spotlight-description-{{ ai_gen_id }} {
+    color: {{ block.settings.text_color }};
+    font-size: {{ block.settings.text_size }}px;
+    line-height: 1.5;
+    margin-bottom: {{ block.settings.element_spacing }}px;
+  }
+
+  .ai-product-spotlight-benefits-{{ ai_gen_id }} {
+    margin-bottom: {{ block.settings.element_spacing }}px;
+  }
+
+  .ai-product-spotlight-benefit-{{ ai_gen_id }} {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 12px;
+    color: {{ block.settings.text_color }};
+    font-size: {{ block.settings.text_size }}px;
+    line-height: 1.4;
+  }
+
+  .ai-product-spotlight-benefit-icon-{{ ai_gen_id }} {
+    color: {{ block.settings.accent_color }};
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .ai-product-spotlight-pricing-{{ ai_gen_id }} {
+    margin-bottom: {{ block.settings.element_spacing }}px;
+  }
+
+  .ai-product-spotlight-price-{{ ai_gen_id }} {
+    color: {{ block.settings.price_color }};
+    font-size: {{ block.settings.price_size }}px;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+
+  .ai-product-spotlight-compare-price-{{ ai_gen_id }} {
+    color: {{ block.settings.compare_price_color }};
+    font-size: {{ block.settings.compare_price_size }}px;
+    text-decoration: line-through;
+    margin-right: 8px;
+  }
+
+  .ai-product-spotlight-promo-{{ ai_gen_id }} {
+    background-color: {{ block.settings.promo_bg_color }};
+    color: {{ block.settings.promo_text_color }};
+    padding: 8px 12px;
+    border-radius: {{ block.settings.promo_border_radius }}px;
+    font-size: {{ block.settings.promo_text_size }}px;
+    font-weight: 600;
+    display: inline-block;
+    margin-bottom: {{ block.settings.element_spacing }}px;
+  }
+
+  .ai-product-spotlight-button-{{ ai_gen_id }} {
+    background-color: {{ block.settings.button_bg_color }};
+    color: {{ block.settings.button_text_color }};
+    padding: {{ block.settings.button_padding }}px {{ block.settings.button_padding | times: 1.5 }}px;
+    border: none;
+    border-radius: {{ block.settings.button_border_radius }}px;
+    font-size: {{ block.settings.button_text_size }}px;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .ai-product-spotlight-button-{{ ai_gen_id }}:hover {
+    background-color: {{ block.settings.button_hover_bg_color }};
+    color: {{ block.settings.button_hover_text_color }};
+    transform: translateY(-2px);
+  }
+
+  .ai-product-spotlight-image-placeholder-{{ ai_gen_id }} {
+    background-color: #f4f4f4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    border-radius: {{ block.settings.image_border_radius }}px;
+  }
+
+  .ai-product-spotlight-image-placeholder-{{ ai_gen_id }} svg {
+    width: 60%;
+    height: 60%;
+    opacity: 0.3;
+  }
+
+  .ai-product-spotlight-empty-state-{{ ai_gen_id }} {
+    text-align: center;
+    color: #666;
+    font-style: italic;
+    padding: 40px 20px;
+  }
+
+  @media screen and (max-width: 768px) {
+    .ai-product-spotlight-container-{{ ai_gen_id }} {
+      grid-template-columns: 1fr;
+      gap: {{ block.settings.content_gap | times: 0.75 }}px;
+    }
+
+    .ai-product-spotlight-images-{{ ai_gen_id }} {
+      {% if block.settings.mobile_images_first %}order: 1;{% else %}order: 2;{% endif %}
+    }
+
+    .ai-product-spotlight-content-{{ ai_gen_id }} {
+      {% if block.settings.mobile_images_first %}order: 2;{% else %}order: 1;{% endif %}
+      padding: {{ block.settings.content_padding | times: 0.75 }}px;
+    }
+
+    .ai-product-spotlight-title-{{ ai_gen_id }} {
+      font-size: {{ block.settings.title_size | times: 0.85 }}px;
+    }
+
+    .ai-product-spotlight-product-images-{{ ai_gen_id }} {
+      grid-template-columns: {% if block.settings.mobile_product_columns == '1' %}1fr{% else %}1fr 1fr{% endif %};
+    }
+  }
+{% endstyle %}
+
+<div
+  class="ai-product-spotlight-{{ ai_gen_id }}"
+  {{ block.shopify_attributes }}
+>
+  {% if block.settings.featured_product %}
+    {% assign product = block.settings.featured_product %}
+    
+    <div class="ai-product-spotlight-container-{{ ai_gen_id }}">
+      <div class="ai-product-spotlight-images-{{ ai_gen_id }}">
+        <div class="ai-product-spotlight-lifestyle-{{ ai_gen_id }}">
+          {% if block.settings.lifestyle_image %}
+            <img
+              src="{{ block.settings.lifestyle_image | image_url: width: 800 }}"
+              alt="{{ block.settings.lifestyle_image.alt | escape }}"
+              loading="lazy"
+              width="{{ block.settings.lifestyle_image.width }}"
+              height="{{ block.settings.lifestyle_image.height }}"
+            >
+          {% elsif product.featured_image %}
+            <img
+              src="{{ product.featured_image | image_url: width: 800 }}"
+              alt="{{ product.featured_image.alt | escape }}"
+              loading="lazy"
+              width="{{ product.featured_image.width }}"
+              height="{{ product.featured_image.height }}"
+            >
+          {% else %}
+            <div class="ai-product-spotlight-image-placeholder-{{ ai_gen_id }}">
+              {{ 'hero-apparel-1' | placeholder_svg_tag }}
+            </div>
+          {% endif %}
+        </div>
+
+        <div class="ai-product-spotlight-product-images-{{ ai_gen_id }}">
+          {% assign product_images = product.images | slice: 1, 2 %}
+          {% for image in product_images %}
+            <div class="ai-product-spotlight-product-image-{{ ai_gen_id }}">
+              <img
+                src="{{ image | image_url: width: 400 }}"
+                alt="{{ image.alt | escape }}"
+                loading="lazy"
+                width="{{ image.width }}"
+                height="{{ image.height }}"
+              >
+            </div>
+          {% endfor %}
+          
+          {% if product_images.size < 2 %}
+            {% for i in (1..2) %}
+              {% unless forloop.index <= product_images.size %}
+                <div class="ai-product-spotlight-product-image-{{ ai_gen_id }}">
+                  <div class="ai-product-spotlight-image-placeholder-{{ ai_gen_id }}">
+                    {{ 'product-apparel-1' | placeholder_svg_tag }}
+                  </div>
+                </div>
+              {% endunless %}
+            {% endfor %}
+          {% endif %}
+        </div>
+      </div>
+
+      <div class="ai-product-spotlight-content-{{ ai_gen_id }}">
+        <h2 class="ai-product-spotlight-title-{{ ai_gen_id }}">{{ product.title }}</h2>
+
+        {% if block.settings.show_description and product.description != blank %}
+          <div class="ai-product-spotlight-description-{{ ai_gen_id }}">
+            {{ product.description | truncate: block.settings.description_length }}
+          </div>
+        {% endif %}
+
+        {% assign features_metafield = product.metafields[block.settings.features_namespace][block.settings.features_key] %}
+        {% if features_metafield != blank %}
+          <div class="ai-product-spotlight-benefits-{{ ai_gen_id }}">
+            {% assign features_list = features_metafield | split: '|' %}
+            {% for feature in features_list limit: 3 %}
+              {% if feature != blank %}
+                <div class="ai-product-spotlight-benefit-{{ ai_gen_id }}">
+                  <div class="ai-product-spotlight-benefit-icon-{{ ai_gen_id }}">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <polyline points="20,6 9,17 4,12"></polyline>
+                    </svg>
+                  </div>
+                  <span>{{ feature | strip }}</span>
+                </div>
+              {% endif %}
+            {% endfor %}
+          </div>
+        {% elsif block.settings.fallback_benefit_1 != blank or block.settings.fallback_benefit_2 != blank or block.settings.fallback_benefit_3 != blank %}
+          <div class="ai-product-spotlight-benefits-{{ ai_gen_id }}">
+            {% for i in (1..3) %}
+              {% liquid
+                assign benefit_key = 'fallback_benefit_' | append: i
+                assign benefit = block.settings[benefit_key]
+              %}
+              {% if benefit != blank %}
+                <div class="ai-product-spotlight-benefit-{{ ai_gen_id }}">
+                  <div class="ai-product-spotlight-benefit-icon-{{ ai_gen_id }}">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <polyline points="20,6 9,17 4,12"></polyline>
+                    </svg>
+                  </div>
+                  <span>{{ benefit }}</span>
+                </div>
+              {% endif %}
+            {% endfor %}
+          </div>
+        {% endif %}
+
+        <div class="ai-product-spotlight-pricing-{{ ai_gen_id }}">
+          {% if product.compare_at_price > product.price %}
+            <div class="ai-product-spotlight-price-{{ ai_gen_id }}">
+              <span class="ai-product-spotlight-compare-price-{{ ai_gen_id }}">{{ product.compare_at_price | money }}</span>
+              {{ product.price | money }}
+            </div>
+          {% else %}
+            <div class="ai-product-spotlight-price-{{ ai_gen_id }}">{{ product.price | money }}</div>
+          {% endif %}
+        </div>
+
+        {% if block.settings.promo_text != blank %}
+          <div class="ai-product-spotlight-promo-{{ ai_gen_id }}">
+            {{ block.settings.promo_text }}
+          </div>
+        {% endif %}
+
+        <a
+          href="{{ product.url }}"
+          class="ai-product-spotlight-button-{{ ai_gen_id }}"
+        >
+          {{ block.settings.button_text }}
+        </a>
+      </div>
+    </div>
+  {% else %}
+    <div class="ai-product-spotlight-empty-state-{{ ai_gen_id }}">
+      <p>Please select a product to showcase in this spotlight.</p>
+    </div>
+  {% endif %}
+</div>
+
 {% schema %}
- {
-   "name": "AI_Block",
-   "tag": "shopify-ai-generated-block"
- }
+{
+  "name": "Product spotlight",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Product"
+    },
+    {
+      "type": "product",
+      "id": "featured_product",
+      "label": "Featured product"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_description",
+      "label": "Show product description",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "description_length",
+      "min": 50,
+      "max": 300,
+      "step": 10,
+      "label": "Description length",
+      "default": 150
+    },
+    {
+      "type": "header",
+      "content": "Product features"
+    },
+    {
+      "type": "text",
+      "id": "features_namespace",
+      "label": "Features metafield namespace",
+      "default": "custom",
+      "info": "The namespace of your product features metafield"
+    },
+    {
+      "type": "text",
+      "id": "features_key",
+      "label": "Features metafield key",
+      "default": "features",
+      "info": "The key of your product features metafield. Separate features with | (pipe) character"
+    },
+    {
+      "type": "paragraph",
+      "content": "Fallback benefits will show if no metafield features are found"
+    },
+    {
+      "type": "text",
+      "id": "fallback_benefit_1",
+      "label": "Fallback benefit 1",
+      "default": "Premium quality materials"
+    },
+    {
+      "type": "text",
+      "id": "fallback_benefit_2",
+      "label": "Fallback benefit 2",
+      "default": "Comfortable all-day wear"
+    },
+    {
+      "type": "text",
+      "id": "fallback_benefit_3",
+      "label": "Fallback benefit 3",
+      "default": "Sustainable production"
+    },
+    {
+      "type": "header",
+      "content": "Promotion"
+    },
+    {
+      "type": "text",
+      "id": "promo_text",
+      "label": "Promo text",
+      "default": "Limited time: 20% off"
+    },
+    {
+      "type": "header",
+      "content": "Images"
+    },
+    {
+      "type": "image_picker",
+      "id": "lifestyle_image",
+      "label": "Lifestyle image",
+      "info": "Optional: Override the main product image with a lifestyle shot"
+    },
+    {
+      "type": "range",
+      "id": "lifestyle_aspect_ratio",
+      "min": 0.5,
+      "max": 2,
+      "step": 0.1,
+      "label": "Lifestyle image aspect ratio",
+      "default": 1.3
+    },
+    {
+      "type": "header",
+      "content": "Button"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button text",
+      "default": "Shop Now"
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Title color",
+      "default": "#0b0b0b"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#0b0b0b"
+    },
+    {
+      "type": "color",
+      "id": "accent_color",
+      "label": "Accent color",
+      "default": "#de5757"
+    },
+    {
+      "type": "color",
+      "id": "price_color",
+      "label": "Price color",
+      "default": "#0b0b0b"
+    },
+    {
+      "type": "color",
+      "id": "compare_price_color",
+      "label": "Compare price color",
+      "default": "#999999"
+    },
+    {
+      "type": "color",
+      "id": "promo_bg_color",
+      "label": "Promo background color",
+      "default": "#de5757"
+    },
+    {
+      "type": "color",
+      "id": "promo_text_color",
+      "label": "Promo text color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "button_bg_color",
+      "label": "Button background color",
+      "default": "#0b0b0b"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "Button text color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "button_hover_bg_color",
+      "label": "Button hover background color",
+      "default": "#333333"
+    },
+    {
+      "type": "color",
+      "id": "button_hover_text_color",
+      "label": "Button hover text color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "header",
+      "content": "Typography"
+    },
+    {
+      "type": "range",
+      "id": "title_size",
+      "min": 20,
+      "max": 60,
+      "step": 2,
+      "unit": "px",
+      "label": "Title size",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "text_size",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Text size",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "price_size",
+      "min": 16,
+      "max": 36,
+      "step": 2,
+      "unit": "px",
+      "label": "Price size",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "compare_price_size",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Compare price size",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "promo_text_size",
+      "min": 12,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "label": "Promo text size",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "button_text_size",
+      "min": 12,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "label": "Button text size",
+      "default": 16
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "range",
+      "id": "section_padding",
+      "min": 20,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "label": "Section padding",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "content_gap",
+      "min": 20,
+      "max": 80,
+      "step": 5,
+      "unit": "px",
+      "label": "Content gap",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "content_padding",
+      "min": 0,
+      "max": 60,
+      "step": 5,
+      "unit": "px",
+      "label": "Content padding",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "element_spacing",
+      "min": 10,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "label": "Element spacing",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "image_gap",
+      "min": 10,
+      "max": 30,
+      "step": 5,
+      "unit": "px",
+      "label": "Image gap",
+      "default": 15
+    },
+    {
+      "type": "range",
+      "id": "border_radius",
+      "min": 0,
+      "max": 30,
+      "step": 2,
+      "unit": "px",
+      "label": "Section border radius",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "image_border_radius",
+      "min": 0,
+      "max": 20,
+      "step": 2,
+      "unit": "px",
+      "label": "Image border radius",
+      "default": 8
+    },
+    {
+      "type": "range",
+      "id": "button_border_radius",
+      "min": 0,
+      "max": 30,
+      "step": 2,
+      "unit": "px",
+      "label": "Button border radius",
+      "default": 4
+    },
+    {
+      "type": "range",
+      "id": "button_padding",
+      "min": 8,
+      "max": 24,
+      "step": 2,
+      "unit": "px",
+      "label": "Button padding",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "promo_border_radius",
+      "min": 0,
+      "max": 20,
+      "step": 2,
+      "unit": "px",
+      "label": "Promo border radius",
+      "default": 4
+    },
+    {
+      "type": "header",
+      "content": "Mobile layout"
+    },
+    {
+      "type": "select",
+      "id": "mobile_product_columns",
+      "label": "Product images columns on mobile",
+      "options": [
+        {
+          "value": "1",
+          "label": "1"
+        },
+        {
+          "value": "2",
+          "label": "2"
+        }
+      ],
+      "default": "2"
+    },
+    {
+      "type": "checkbox",
+      "id": "mobile_images_first",
+      "label": "Show images first on mobile",
+      "default": true
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product spotlight"
+    }
+  ]
+}
 {% endschema %}
