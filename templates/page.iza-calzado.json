@@ -51,10 +51,43 @@
             "mobile_button_padding_horizontal": 24
           },
           "blocks": {}
+        },
+        "ai_gen_block_ea4ed4b_88TDcM": {
+          "type": "ai_gen_block_ea4ed4b",
+          "settings": {
+            "influencer_image": "shopify://shop_images/Pili_Ani_Moisturizing_Lipstick__La_Vie_En_Rose_main001.jpg",
+            "influencer_name": "Iza Calzado",
+            "influencer_title": "Actress & Wellness Advocate",
+            "instagram_handle": "",
+            "tiktok_handle": "",
+            "youtube_handle": "",
+            "show_video": false,
+            "video_file": "",
+            "video_autoplay": false,
+            "video_loop": false,
+            "testimonial": "<p><strong>Lorem Ipsum</strong>is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>",
+            "show_quote_marks": true,
+            "testimonial_style": "italic",
+            "text_alignment": "left",
+            "background_color": "#fff7f2",
+            "text_color": "#0b0b0b",
+            "subtitle_color": "#666666",
+            "quote_color": "#de5757",
+            "social_bg_color": "#0b0b0b",
+            "social_icon_color": "#ffffff",
+            "border_radius": 12,
+            "video_border_radius": 8,
+            "avatar_size": 80,
+            "name_size": 20,
+            "title_size": 14,
+            "testimonial_size": 16
+          },
+          "blocks": {}
         }
       },
       "block_order": [
-        "ai_gen_block_102b8bc_bmaajD"
+        "ai_gen_block_102b8bc_bmaajD",
+        "ai_gen_block_ea4ed4b_88TDcM"
       ],
       "settings": {}
     },
