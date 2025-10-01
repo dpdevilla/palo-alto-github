@@ -961,12 +961,151 @@
         "padding_top": 60,
         "padding_bottom": 60
       }
+    },
+    "section_icons_row_XcknRM": {
+      "type": "section-icons-row",
+      "blocks": {
+        "text_mqiF3U": {
+          "type": "text",
+          "settings": {
+            "icon_name": "truck",
+            "title": "Free Shipping",
+            "text": "<p>on all order over $99</p>"
+          }
+        },
+        "text_eVNeBD": {
+          "type": "text",
+          "settings": {
+            "icon_name": "check",
+            "title": "Free Returns",
+            "text": "<p>within 30 days of purchase</p>"
+          }
+        },
+        "text_DWBPC8": {
+          "type": "text",
+          "settings": {
+            "icon_name": "eco-friendly",
+            "title": "1% Donated",
+            "text": "<p>to forest conservation</p>"
+          }
+        }
+      },
+      "block_order": [
+        "text_mqiF3U",
+        "text_eVNeBD",
+        "text_DWBPC8"
+      ],
+      "name": "Icons row",
+      "settings": {
+        "heading": "",
+        "subheading": "",
+        "alignment": "center",
+        "columns": 3,
+        "icons_width": 20,
+        "show_vertical_borders": true,
+        "show_top_border": true,
+        "show_bottom_border": true,
+        "heading_size": 120,
+        "text_size": 100,
+        "color_scheme": "",
+        "text_color": "",
+        "box_color": "",
+        "color_border": "",
+        "button_text": "",
+        "button_link": "",
+        "button_color": "btn--black",
+        "button_style": "btn--solid",
+        "button_size": "btn--medium",
+        "layout_mobile": "grid",
+        "width": "wrapper",
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
+    "section_marquee_3TKLgM": {
+      "type": "section-marquee",
+      "blocks": {
+        "text_8XBgAc": {
+          "type": "text",
+          "settings": {
+            "text": "<p>New collections just released - <a href=\"/collections\" title=\"All collections\">Shop now</a></p>",
+            "text_color": "",
+            "heading_highlight_type": "underline-hand-drawn",
+            "highlight_color": "#000",
+            "highlight_text_color": "",
+            "icon_name": "none",
+            "icon_color": "",
+            "icon_width": 25,
+            "target_device_enabled": false,
+            "target_device": "mobile"
+          }
+        },
+        "image_tQYmMa": {
+          "type": "image",
+          "settings": {
+            "link": "",
+            "image_width": 100
+          }
+        },
+        "text_nywrwy": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Use code <strong>TENOFF</strong> for 10% off first purchase</p>",
+            "text_color": "",
+            "heading_highlight_type": "underline-hand-drawn",
+            "highlight_color": "#000",
+            "highlight_text_color": "",
+            "icon_name": "none",
+            "icon_color": "",
+            "icon_width": 25,
+            "target_device_enabled": false,
+            "target_device": "mobile"
+          }
+        },
+        "image_4d8hLi": {
+          "type": "image",
+          "settings": {
+            "link": "",
+            "image_width": 100
+          }
+        }
+      },
+      "block_order": [
+        "text_8XBgAc",
+        "image_tQYmMa",
+        "text_nywrwy",
+        "image_4d8hLi"
+      ],
+      "name": "Marquee",
+      "settings": {
+        "layout": "marquee",
+        "show_top_border": false,
+        "show_bottom_border": false,
+        "padding": 10,
+        "marquee_speed": 100,
+        "direction": "ticker-ltr",
+        "slider_speed": 7,
+        "show_arrows": false,
+        "text_caps": false,
+        "type_font": "space_mono_n4",
+        "text_size": 120,
+        "text_size_mobile": 80,
+        "letter_spacing": 0,
+        "message_spacing": 10,
+        "color_scheme": "",
+        "color": "",
+        "border_color": "",
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
     }
   },
   "order": [
     "175928636660a525d9",
+    "section_icons_row_XcknRM",
     "section_image_with_text_fqqa6Q",
     "section_image_with_text_fHUq38",
+    "section_marquee_3TKLgM",
     "section_columns_WtMb7L",
     "175928512318e52e87",
     "1759277456b1014fa2",
