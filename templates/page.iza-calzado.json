@@ -140,11 +140,146 @@
         "padding_top": 60,
         "padding_bottom": 60
       }
+    },
+    "section_shop_the_look_banner_pTJdHg": {
+      "type": "section-shop-the-look-banner",
+      "blocks": {
+        "product_k8Wr7B": {
+          "type": "product",
+          "settings": {
+            "product": "pili-ani-ageless-concentrate",
+            "position_x_desktop": 31,
+            "position_y_desktop": 41,
+            "position_x_mobile": 21,
+            "position_y_mobile": 42,
+            "info_bubbles_position_desktop": 55,
+            "info_bubbles_position_mobile": 5
+          }
+        },
+        "product_CW9ihT": {
+          "type": "product",
+          "settings": {
+            "product": "",
+            "position_x_desktop": 69,
+            "position_y_desktop": 46,
+            "position_x_mobile": 75,
+            "position_y_mobile": 45,
+            "info_bubbles_position_desktop": 5,
+            "info_bubbles_position_mobile": 30
+          }
+        }
+      },
+      "block_order": [
+        "product_k8Wr7B",
+        "product_CW9ihT"
+      ],
+      "disabled": true,
+      "name": "Shop the Look Banner",
+      "settings": {
+        "image": "shopify://shop_images/PILI_BEAUTY_11072019_00087_Ageless.jpg",
+        "aspect_ratio_desktop": 0.4,
+        "show_arrow": true,
+        "initial_open_card": false,
+        "product_card_aspect_ratio": 0.9,
+        "button_color": "btn--black",
+        "button_style": "btn--outline",
+        "title": "Shop the Look Banner",
+        "heading_size": 120,
+        "text": "<p>Our most popular looks of the season</p>",
+        "text_size": 100,
+        "text_alignment": "text-left",
+        "aspect_ratio_mobile": 1.5,
+        "popup_heading": "Shop the Look",
+        "show_free_shipping_message": true,
+        "hotspot_color": "#9d9797",
+        "color_scheme": "",
+        "hotspot_contents_bg_color": "#fbf9f9",
+        "width": "wrapper--full-padded",
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
+    "section_products_list_CJBpE7": {
+      "type": "section-products-list",
+      "blocks": {
+        "product_wRP48b": {
+          "type": "product",
+          "settings": {
+            "product": "pili-ani-ageless-concentrate",
+            "title": "",
+            "product_description": "",
+            "button_text": "View Product",
+            "show_second_image": true,
+            "show_circle": true,
+            "hide_on_mobile": false,
+            "circle_text_color": "#000000",
+            "circle_rotate_animation": "rotate-on-scroll",
+            "circle_text": "New Arrival ~ New Arrival ~",
+            "circle_word_spacing": 3,
+            "circle_size": 150
+          }
+        },
+        "product_bjkKTL": {
+          "type": "product",
+          "settings": {
+            "product": "pili-ani-self-care-night-recovery-oil-antioxidant-rich-facial-oil",
+            "title": "",
+            "product_description": "",
+            "button_text": "View Product",
+            "show_second_image": true,
+            "show_circle": true,
+            "hide_on_mobile": false,
+            "circle_text_color": "#000000",
+            "circle_rotate_animation": "rotate-on-scroll",
+            "circle_text": "New Arrival ~ New Arrival ~",
+            "circle_word_spacing": 3,
+            "circle_size": 150
+          }
+        },
+        "product_FWWkAm": {
+          "type": "product",
+          "disabled": true,
+          "settings": {
+            "product": "",
+            "title": "",
+            "product_description": "",
+            "button_text": "View Product",
+            "show_second_image": true,
+            "show_circle": true,
+            "hide_on_mobile": false,
+            "circle_text_color": "#000000",
+            "circle_rotate_animation": "rotate-on-scroll",
+            "circle_text": "New Arrival ~ New Arrival ~",
+            "circle_word_spacing": 3,
+            "circle_size": 150
+          }
+        }
+      },
+      "block_order": [
+        "product_wRP48b",
+        "product_bjkKTL",
+        "product_FWWkAm"
+      ],
+      "name": "Products list",
+      "settings": {
+        "title": "",
+        "heading_size": 90,
+        "button_color": "btn--black",
+        "button_style": "btn--solid",
+        "button_size": "btn--medium",
+        "image_aspect_ratio": 1,
+        "color_scheme": "",
+        "width": "wrapper",
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
     }
   },
   "order": [
     "1759277456b1014fa2",
     "1759276997d00f2b85",
-    "main"
+    "main",
+    "section_shop_the_look_banner_pTJdHg",
+    "section_products_list_CJBpE7"
   ]
 }
