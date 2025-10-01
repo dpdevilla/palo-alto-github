@@ -9,6 +9,55 @@
  */
 {
   "sections": {
+    "175928636660a525d9": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_102b8bc_bmaajD": {
+          "type": "ai_gen_block_102b8bc",
+          "settings": {
+            "media_type": "image",
+            "background_image": "shopify://shop_images/Pili_Ani_Moisturizing_Lipstick__Toasted_Latte_main001.jpg",
+            "background_video": "",
+            "heading": "Welcome to our store",
+            "subheading": "Discover our amazing collection of products",
+            "button_text": "Shop now",
+            "button_link": "",
+            "section_height": 600,
+            "mobile_section_height": 500,
+            "content_width": 600,
+            "content_alignment": "center",
+            "text_alignment": "center",
+            "spacing_between_elements": 10,
+            "background_color": "#ffffff",
+            "text_color": "#000000",
+            "show_overlay": true,
+            "overlay_color": "#00000040",
+            "heading_size": 48,
+            "mobile_heading_size": 32,
+            "subheading_size": 18,
+            "mobile_subheading_size": 16,
+            "button_background_color": "#0b0b0b",
+            "button_text_color": "#ffffff",
+            "button_border_color": "#0b0b0b",
+            "button_hover_background_color": "#ffffff",
+            "button_hover_text_color": "#0b0b0b",
+            "button_hover_border_color": "#0b0b0b",
+            "button_border_radius": 10,
+            "button_text_size": 16,
+            "mobile_button_text_size": 14,
+            "button_padding_vertical": 16,
+            "button_padding_horizontal": 32,
+            "mobile_button_padding_vertical": 12,
+            "mobile_button_padding_horizontal": 24
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_102b8bc_bmaajD"
+      ],
+      "settings": {}
+    },
     "175928512318e52e87": {
       "type": "_blocks",
       "blocks": {
@@ -590,6 +639,7 @@
     }
   },
   "order": [
+    "175928636660a525d9",
     "175928512318e52e87",
     "1759277456b1014fa2",
     "1759276997d00f2b85",
