@@ -86,6 +86,7 @@
         },
         "ai_gen_block_67d1001_m43p6a": {
           "type": "ai_gen_block_67d1001",
+          "disabled": true,
           "settings": {
             "featured_product": "pili-ani-ageless-concentrate",
             "show_description": true,
@@ -134,6 +135,8 @@
         "ai_gen_block_e7bc182_UXLJzq": {
           "type": "ai_gen_block_e7bc182",
           "settings": {
+            "before_image": "shopify://shop_images/Pili_Ani_Moisturizing_Lipstick_crimson_jane_main002.jpg",
+            "after_image": "shopify://shop_images/Pili_Ani_Moisturizing_Lipstick_crimson_jane_main002.jpg",
             "max_width": 800,
             "container_height": 500,
             "background_color": "#ffffff",
@@ -187,6 +190,84 @@
       ],
       "settings": {}
     },
+    "section_product_QYABKX": {
+      "type": "section-product",
+      "blocks": {
+        "title_K3jpj8": {
+          "type": "title",
+          "settings": {
+            "subheading": "none",
+            "title_size": 100,
+            "price_size": 100,
+            "bold_price": false,
+            "padding_bottom": 20
+          }
+        },
+        "form_DzMMwU": {
+          "type": "form",
+          "settings": {
+            "info_page": "",
+            "show_labels": true,
+            "show_quantity": false,
+            "show_payment_button": true,
+            "enable_subscriptions_selectors": true,
+            "padding_bottom": 20
+          }
+        },
+        "description_KUzh83": {
+          "type": "description",
+          "settings": {
+            "enable_full_width": false,
+            "padding_bottom": 20
+          }
+        },
+        "icon_row_BNMcXH": {
+          "type": "icon_row",
+          "settings": {
+            "icon_name_1": "truck",
+            "icon_color_1": "",
+            "icon_width_1": 20,
+            "icon_text_1": "Free shipping",
+            "icon_name_2": "check",
+            "icon_color_2": "",
+            "icon_width_2": 20,
+            "icon_text_2": "Free Returns",
+            "icon_name_3": "heart",
+            "icon_color_3": "",
+            "icon_width_3": 20,
+            "icon_text_3": "1% Donated Annually",
+            "icon_name_4": "clock",
+            "icon_color_4": "",
+            "icon_width_4": 20,
+            "icon_text_4": "Feature",
+            "alignment": "center",
+            "bg_color": "#ffffff",
+            "padding_bottom": 20
+          }
+        }
+      },
+      "block_order": [
+        "title_K3jpj8",
+        "form_DzMMwU",
+        "description_KUzh83",
+        "icon_row_BNMcXH"
+      ],
+      "name": "Featured product",
+      "settings": {
+        "product": "",
+        "product_sticky_enable": true,
+        "image_layout": "carousel",
+        "image_width": "standard",
+        "hide_product_thumbnails": false,
+        "product_image_aspect_ratio": false,
+        "enable_zoom": true,
+        "enable_video_looping": false,
+        "color_scheme": "",
+        "width": "wrapper--full-padded",
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
     "section_icons_row_XcknRM": {
       "type": "section-icons-row",
       "blocks": {
@@ -220,6 +301,7 @@
         "text_eVNeBD",
         "text_DWBPC8"
       ],
+      "disabled": true,
       "name": "Icons row",
       "settings": {
         "heading": "",
@@ -1102,6 +1184,7 @@
   },
   "order": [
     "175928636660a525d9",
+    "section_product_QYABKX",
     "section_icons_row_XcknRM",
     "section_image_with_text_fqqa6Q",
     "section_image_with_text_fHUq38",
