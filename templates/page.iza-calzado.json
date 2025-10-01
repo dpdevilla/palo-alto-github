@@ -772,7 +772,6 @@
         "column_8mPU3C": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/GiftsThatGlowWeb2.jpg",
             "subheading": "<p>For a limited time</p>",
             "subheading_size": 90,
             "heading": "<p><em>FREE PRODUCT</em></p>",
@@ -780,7 +779,7 @@
             "heading_highlight_type": "underline-hand-drawn",
             "highlight_color": "#000000",
             "highlight_text_color": "#131212",
-            "description": "With every purchase over $99",
+            "description": "With every purchase over 1500",
             "description_size": 90,
             "disclaimer": "",
             "disclaimer_size": 75,
@@ -791,7 +790,7 @@
             "button_size": "btn--small",
             "bg_color": "#fff7f2",
             "gradient_background": "linear-gradient(320deg, rgba(246, 246, 246, 1) 16%, rgba(203, 68, 194, 1) 52%, rgba(255, 201, 104, 1) 87%)",
-            "text_color": "#f1ce0b",
+            "text_color": "#0b0b0b",
             "overlay_type": "disabled"
           }
         }
