@@ -32,18 +32,18 @@
 {% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
 
 {% style %}
-  .ai-social-proof-{{ ai_gen_id }} {
+  .ai-ingredients-benefits-{{ ai_gen_id }} {
     padding: {{ block.settings.section_padding_top }}px 20px {{ block.settings.section_padding_bottom }}px;
     background-color: {{ block.settings.background_color }};
   }
 
-  .ai-social-proof-container-{{ ai_gen_id }} {
+  .ai-ingredients-container-{{ ai_gen_id }} {
     max-width: {{ block.settings.container_width }}px;
     margin: 0 auto;
     text-align: center;
   }
 
-  .ai-social-proof-heading-{{ ai_gen_id }} {
+  .ai-ingredients-heading-{{ ai_gen_id }} {
     font-size: {{ block.settings.heading_size }}px;
     font-weight: 700;
     line-height: 1.2;
@@ -51,268 +51,243 @@
     color: {{ block.settings.text_color }};
   }
 
-  .ai-social-proof-subheading-{{ ai_gen_id }} {
+  .ai-ingredients-subheading-{{ ai_gen_id }} {
     font-size: {{ block.settings.subheading_size }}px;
     line-height: 1.5;
-    margin: 0 0 50px;
+    margin: 0 0 60px;
     color: {{ block.settings.text_color }};
     opacity: 0.8;
   }
 
-  .ai-social-proof-reviews-{{ ai_gen_id }} {
+  .ai-ingredients-grid-{{ ai_gen_id }} {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    margin-bottom: 50px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
   }
 
-  .ai-social-proof-review-{{ ai_gen_id }} {
-    background-color: {{ block.settings.review_bg_color }};
-    padding: 30px;
-    border-radius: {{ block.settings.review_border_radius }}px;
-    text-align: left;
+  .ai-ingredient-card-{{ ai_gen_id }} {
+    background-color: {{ block.settings.card_bg_color }};
+    padding: 40px 30px;
+    border-radius: {{ block.settings.card_border_radius }}px;
+    text-align: center;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-    transition: transform 0.3s ease;
-  }
-
-  .ai-social-proof-review-{{ ai_gen_id }}:hover {
-    transform: translateY(-5px);
-  }
-
-  .ai-social-proof-stars-{{ ai_gen_id }} {
-    display: flex;
-    gap: 2px;
-    margin-bottom: 15px;
-  }
-
-  .ai-social-proof-star-{{ ai_gen_id }} {
-    width: 16px;
-    height: 16px;
-    color: {{ block.settings.star_color }};
-  }
-
-  .ai-social-proof-review-text-{{ ai_gen_id }} {
-    font-size: {{ block.settings.review_text_size }}px;
-    line-height: 1.6;
-    margin: 0 0 20px;
-    color: {{ block.settings.text_color }};
-    font-style: italic;
-  }
-
-  .ai-social-proof-reviewer-{{ ai_gen_id }} {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-  }
-
-  .ai-social-proof-reviewer-avatar-{{ ai_gen_id }} {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background-color: {{ block.settings.accent_color }};
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-weight: 600;
-    font-size: 16px;
-  }
-
-  .ai-social-proof-reviewer-info-{{ ai_gen_id }} {
-    flex: 1;
-  }
-
-  .ai-social-proof-reviewer-name-{{ ai_gen_id }} {
-    font-size: {{ block.settings.reviewer_name_size }}px;
-    font-weight: 600;
-    margin: 0 0 2px;
-    color: {{ block.settings.text_color }};
-  }
-
-  .ai-social-proof-reviewer-location-{{ ai_gen_id }} {
-    font-size: {{ block.settings.reviewer_location_size }}px;
-    color: {{ block.settings.text_color }};
-    opacity: 0.6;
-  }
-
-  .ai-social-proof-ugc-{{ ai_gen_id }} {
-    margin-top: 40px;
-  }
-
-  .ai-social-proof-ugc-heading-{{ ai_gen_id }} {
-    font-size: {{ block.settings.ugc_heading_size }}px;
-    font-weight: 600;
-    margin: 0 0 30px;
-    color: {{ block.settings.text_color }};
-  }
-
-  .ai-social-proof-ugc-grid-{{ ai_gen_id }} {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 15px;
-  }
-
-  .ai-social-proof-ugc-item-{{ ai_gen_id }} {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     position: relative;
-    aspect-ratio: 1;
-    border-radius: {{ block.settings.ugc_border_radius }}px;
     overflow: hidden;
-    background-color: #f4f4f4;
   }
 
-  .ai-social-proof-ugc-image-{{ ai_gen_id }} {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+  .ai-ingredient-card-{{ ai_gen_id }}:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
   }
 
-  .ai-social-proof-ugc-overlay-{{ ai_gen_id }} {
+  .ai-ingredient-card-{{ ai_gen_id }}::before {
+    content: '';
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
-    bottom: 0;
-    background: linear-gradient(45deg, rgba(0,0,0,0.3), transparent);
-    display: flex;
-    align-items: flex-end;
-    padding: 15px;
-    opacity: 0;
-    transition: opacity 0.3s ease;
+    height: 4px;
+    background: linear-gradient(90deg, {{ block.settings.accent_color }}, {{ block.settings.accent_color | color_modify: 'alpha', 0.6 }});
   }
 
-  .ai-social-proof-ugc-item-{{ ai_gen_id }}:hover .ai-social-proof-ugc-overlay-{{ ai_gen_id }} {
-    opacity: 1;
-  }
-
-  .ai-social-proof-ugc-username-{{ ai_gen_id }} {
-    color: white;
-    font-size: 12px;
-    font-weight: 600;
-  }
-
-  .ai-social-proof-placeholder-{{ ai_gen_id }} {
-    width: 100%;
-    height: 100%;
-    background-color: #f4f4f4;
+  .ai-ingredient-icon-{{ ai_gen_id }} {
+    width: {{ block.settings.icon_size }}px;
+    height: {{ block.settings.icon_size }}px;
+    background-color: {{ block.settings.accent_color }};
+    border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: {{ block.settings.ugc_border_radius }}px;
+    margin: 0 auto 25px;
+    position: relative;
+  }
+
+  .ai-ingredient-icon-{{ ai_gen_id }}::after {
+    content: '';
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    background-color: white;
+    border-radius: 50%;
+  }
+
+  .ai-ingredient-image-{{ ai_gen_id }} {
+    width: {{ block.settings.icon_size }}px;
+    height: {{ block.settings.icon_size }}px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto 25px;
+    display: block;
+  }
+
+  .ai-ingredient-name-{{ ai_gen_id }} {
+    font-size: {{ block.settings.ingredient_name_size }}px;
+    font-weight: 700;
+    margin: 0 0 15px;
+    color: {{ block.settings.text_color }};
+  }
+
+  .ai-ingredient-description-{{ ai_gen_id }} {
+    font-size: {{ block.settings.description_size }}px;
+    line-height: 1.6;
+    margin: 0 0 20px;
+    color: {{ block.settings.text_color }};
+    opacity: 0.8;
+  }
+
+  .ai-ingredient-benefits-{{ ai_gen_id }} {
+    text-align: left;
+  }
+
+  .ai-ingredient-benefit-{{ ai_gen_id }} {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 12px;
+    font-size: {{ block.settings.benefit_size }}px;
+    color: {{ block.settings.text_color }};
+  }
+
+  .ai-ingredient-benefit-icon-{{ ai_gen_id }} {
+    width: 16px;
+    height: 16px;
+    background-color: {{ block.settings.accent_color }};
+    border-radius: 50%;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2px;
+  }
+
+  .ai-ingredient-benefit-icon-{{ ai_gen_id }}::after {
+    content: '✓';
+    color: white;
+    font-size: 10px;
+    font-weight: bold;
+  }
+
+  .ai-ingredient-placeholder-{{ ai_gen_id }} {
+    width: {{ block.settings.icon_size }}px;
+    height: {{ block.settings.icon_size }}px;
+    background-color: #f4f4f4;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 25px;
+  }
+
+  .ai-ingredient-placeholder-{{ ai_gen_id }} svg {
+    width: 30px;
+    height: 30px;
+    color: #999;
   }
 
   @media screen and (max-width: 768px) {
-    .ai-social-proof-reviews-{{ ai_gen_id }} {
+    .ai-ingredients-grid-{{ ai_gen_id }} {
       grid-template-columns: 1fr;
-      gap: 20px;
+      gap: 30px;
     }
 
-    .ai-social-proof-ugc-grid-{{ ai_gen_id }} {
-      grid-template-columns: repeat(3, 1fr);
+    .ai-ingredient-card-{{ ai_gen_id }} {
+      padding: 30px 20px;
     }
 
-    .ai-social-proof-heading-{{ ai_gen_id }} {
+    .ai-ingredients-heading-{{ ai_gen_id }} {
       font-size: {{ block.settings.heading_size | times: 0.8 }}px;
     }
   }
 {% endstyle %}
 
-<div class="ai-social-proof-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
-  <div class="ai-social-proof-container-{{ ai_gen_id }}">
+<div class="ai-ingredients-benefits-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  <div class="ai-ingredients-container-{{ ai_gen_id }}">
     {% if block.settings.heading != blank %}
-      <h2 class="ai-social-proof-heading-{{ ai_gen_id }}">{{ block.settings.heading }}</h2>
+      <h2 class="ai-ingredients-heading-{{ ai_gen_id }}">{{ block.settings.heading }}</h2>
     {% endif %}
 
     {% if block.settings.subheading != blank %}
-      <div class="ai-social-proof-subheading-{{ ai_gen_id }}">{{ block.settings.subheading }}</div>
+      <div class="ai-ingredients-subheading-{{ ai_gen_id }}">{{ block.settings.subheading }}</div>
     {% endif %}
 
-    <div class="ai-social-proof-reviews-{{ ai_gen_id }}">
-      {% for i in (1..3) %}
+    <div class="ai-ingredients-grid-{{ ai_gen_id }}">
+      {% for i in (1..4) %}
         {% liquid
-          assign review_text_key = 'review_' | append: i | append: '_text'
-          assign reviewer_name_key = 'review_' | append: i | append: '_name'
-          assign reviewer_location_key = 'review_' | append: i | append: '_location'
-          assign review_rating_key = 'review_' | append: i | append: '_rating'
+          assign ingredient_name_key = 'ingredient_' | append: i | append: '_name'
+          assign ingredient_description_key = 'ingredient_' | append: i | append: '_description'
+          assign ingredient_image_key = 'ingredient_' | append: i | append: '_image'
+          assign ingredient_benefit_1_key = 'ingredient_' | append: i | append: '_benefit_1'
+          assign ingredient_benefit_2_key = 'ingredient_' | append: i | append: '_benefit_2'
+          assign ingredient_benefit_3_key = 'ingredient_' | append: i | append: '_benefit_3'
 
-          assign review_text = block.settings[review_text_key]
-          assign reviewer_name = block.settings[reviewer_name_key]
-          assign reviewer_location = block.settings[reviewer_location_key]
-          assign review_rating = block.settings[review_rating_key]
+          assign ingredient_name = block.settings[ingredient_name_key]
+          assign ingredient_description = block.settings[ingredient_description_key]
+          assign ingredient_image = block.settings[ingredient_image_key]
+          assign ingredient_benefit_1 = block.settings[ingredient_benefit_1_key]
+          assign ingredient_benefit_2 = block.settings[ingredient_benefit_2_key]
+          assign ingredient_benefit_3 = block.settings[ingredient_benefit_3_key]
         %}
 
-        {% if review_text != blank %}
-          <div class="ai-social-proof-review-{{ ai_gen_id }}">
-            <div class="ai-social-proof-stars-{{ ai_gen_id }}">
-              {% for star in (1..5) %}
-                <svg class="ai-social-proof-star-{{ ai_gen_id }}" viewBox="0 0 24 24" fill="{% if star <= review_rating %}currentColor{% else %}none{% endif %}" stroke="currentColor" stroke-width="2">
-                  <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"></polygon>
+        {% if ingredient_name != blank %}
+          <div class="ai-ingredient-card-{{ ai_gen_id }}">
+            {% if ingredient_image %}
+              <img
+                src="{{ ingredient_image | image_url: width: 200 }}"
+                alt="{{ ingredient_image.alt | escape }}"
+                loading="lazy"
+                class="ai-ingredient-image-{{ ai_gen_id }}"
+              >
+            {% else %}
+              <div class="ai-ingredient-placeholder-{{ ai_gen_id }}">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+                  <path d="M2 17l10 5 10-5"></path>
+                  <path d="M2 12l10 5 10-5"></path>
                 </svg>
-              {% endfor %}
-            </div>
-
-            <div class="ai-social-proof-review-text-{{ ai_gen_id }}">{{ review_text }}</div>
-
-            <div class="ai-social-proof-reviewer-{{ ai_gen_id }}">
-              <div class="ai-social-proof-reviewer-avatar-{{ ai_gen_id }}">
-                {{ reviewer_name | slice: 0 }}
               </div>
-              <div class="ai-social-proof-reviewer-info-{{ ai_gen_id }}">
-                <div class="ai-social-proof-reviewer-name-{{ ai_gen_id }}">{{ reviewer_name }}</div>
-                {% if reviewer_location != blank %}
-                  <div class="ai-social-proof-reviewer-location-{{ ai_gen_id }}">{{ reviewer_location }}</div>
+            {% endif %}
+
+            <h3 class="ai-ingredient-name-{{ ai_gen_id }}">{{ ingredient_name }}</h3>
+
+            {% if ingredient_description != blank %}
+              <div class="ai-ingredient-description-{{ ai_gen_id }}">{{ ingredient_description }}</div>
+            {% endif %}
+
+            {% if ingredient_benefit_1 != blank or ingredient_benefit_2 != blank or ingredient_benefit_3 != blank %}
+              <div class="ai-ingredient-benefits-{{ ai_gen_id }}">
+                {% if ingredient_benefit_1 != blank %}
+                  <div class="ai-ingredient-benefit-{{ ai_gen_id }}">
+                    <div class="ai-ingredient-benefit-icon-{{ ai_gen_id }}"></div>
+                    <div>{{ ingredient_benefit_1 }}</div>
+                  </div>
+                {% endif %}
+
+                {% if ingredient_benefit_2 != blank %}
+                  <div class="ai-ingredient-benefit-{{ ai_gen_id }}">
+                    <div class="ai-ingredient-benefit-icon-{{ ai_gen_id }}"></div>
+                    <div>{{ ingredient_benefit_2 }}</div>
+                  </div>
+                {% endif %}
+
+                {% if ingredient_benefit_3 != blank %}
+                  <div class="ai-ingredient-benefit-{{ ai_gen_id }}">
+                    <div class="ai-ingredient-benefit-icon-{{ ai_gen_id }}"></div>
+                    <div>{{ ingredient_benefit_3 }}</div>
+                  </div>
                 {% endif %}
               </div>
-            </div>
+            {% endif %}
           </div>
         {% endif %}
       {% endfor %}
     </div>
-
-    {% if block.settings.show_ugc %}
-      <div class="ai-social-proof-ugc-{{ ai_gen_id }}">
-        {% if block.settings.ugc_heading != blank %}
-          <h3 class="ai-social-proof-ugc-heading-{{ ai_gen_id }}">{{ block.settings.ugc_heading }}</h3>
-        {% endif %}
-
-        <div class="ai-social-proof-ugc-grid-{{ ai_gen_id }}">
-          {% for i in (1..6) %}
-            {% liquid
-              assign ugc_image_key = 'ugc_image_' | append: i
-              assign ugc_username_key = 'ugc_username_' | append: i
-
-              assign ugc_image = block.settings[ugc_image_key]
-              assign ugc_username = block.settings[ugc_username_key]
-            %}
-
-            <div class="ai-social-proof-ugc-item-{{ ai_gen_id }}">
-              {% if ugc_image %}
-                <img
-                  src="{{ ugc_image | image_url: width: 300 }}"
-                  alt="User generated content"
-                  loading="lazy"
-                  class="ai-social-proof-ugc-image-{{ ai_gen_id }}"
-                >
-                {% if ugc_username != blank %}
-                  <div class="ai-social-proof-ugc-overlay-{{ ai_gen_id }}">
-                    <div class="ai-social-proof-ugc-username-{{ ai_gen_id }}">@{{ ugc_username }}</div>
-                  </div>
-                {% endif %}
-              {% else %}
-                <div class="ai-social-proof-placeholder-{{ ai_gen_id }}">
-                  {{ 'image' | placeholder_svg_tag }}
-                </div>
-              {% endif %}
-            </div>
-          {% endfor %}
-        </div>
-      </div>
-    {% endif %}
   </div>
 </div>
 
 {% schema %}
 {
-  "name": "Social proof",
+  "name": "Key ingredients",
   "settings": [
     {
       "type": "header",
@@ -322,182 +297,169 @@
       "type": "text",
       "id": "heading",
       "label": "Heading",
-      "default": "What Our Customers Say"
+      "default": "Powerful Ingredients"
     },
     {
       "type": "textarea",
       "id": "subheading",
       "label": "Subheading",
-      "default": "Join thousands of satisfied customers who have transformed their skin"
+      "default": "Scientifically proven ingredients that deliver real results for your skin"
     },
     {
       "type": "header",
-      "content": "Review 1"
+      "content": "Ingredient 1"
+    },
+    {
+      "type": "text",
+      "id": "ingredient_1_name",
+      "label": "Ingredient name",
+      "default": "Hyaluronic Acid"
     },
     {
       "type": "textarea",
-      "id": "review_1_text",
-      "label": "Review text",
-      "default": "This product completely changed my skincare routine! I saw results in just one week and my skin has never looked better."
+      "id": "ingredient_1_description",
+      "label": "Description",
+      "default": "A powerful humectant that can hold up to 1000 times its weight in water, providing intense hydration."
+    },
+    {
+      "type": "image_picker",
+      "id": "ingredient_1_image",
+      "label": "Ingredient image"
     },
     {
       "type": "text",
-      "id": "review_1_name",
-      "label": "Reviewer name",
-      "default": "Maria Santos"
+      "id": "ingredient_1_benefit_1",
+      "label": "Benefit 1",
+      "default": "Deep hydration for 24 hours"
     },
     {
       "type": "text",
-      "id": "review_1_location",
-      "label": "Reviewer location",
-      "default": "Manila, Philippines"
+      "id": "ingredient_1_benefit_2",
+      "label": "Benefit 2",
+      "default": "Plumps and smooths fine lines"
     },
     {
-      "type": "range",
-      "id": "review_1_rating",
-      "min": 1,
-      "max": 5,
-      "step": 1,
-      "label": "Rating",
-      "default": 5
+      "type": "text",
+      "id": "ingredient_1_benefit_3",
+      "label": "Benefit 3",
+      "default": "Suitable for all skin types"
     },
     {
       "type": "header",
-      "content": "Review 2"
+      "content": "Ingredient 2"
+    },
+    {
+      "type": "text",
+      "id": "ingredient_2_name",
+      "label": "Ingredient name",
+      "default": "Vitamin C"
     },
     {
       "type": "textarea",
-      "id": "review_2_text",
-      "label": "Review text",
-      "default": "Amazing quality and fast shipping! The results speak for themselves. Highly recommend to anyone looking for effective skincare."
+      "id": "ingredient_2_description",
+      "label": "Description",
+      "default": "A potent antioxidant that brightens skin and protects against environmental damage."
+    },
+    {
+      "type": "image_picker",
+      "id": "ingredient_2_image",
+      "label": "Ingredient image"
     },
     {
       "type": "text",
-      "id": "review_2_name",
-      "label": "Reviewer name",
-      "default": "Ana Rodriguez"
+      "id": "ingredient_2_benefit_1",
+      "label": "Benefit 1",
+      "default": "Brightens and evens skin tone"
     },
     {
       "type": "text",
-      "id": "review_2_location",
-      "label": "Reviewer location",
-      "default": "Cebu, Philippines"
+      "id": "ingredient_2_benefit_2",
+      "label": "Benefit 2",
+      "default": "Boosts collagen production"
     },
     {
-      "type": "range",
-      "id": "review_2_rating",
-      "min": 1,
-      "max": 5,
-      "step": 1,
-      "label": "Rating",
-      "default": 5
+      "type": "text",
+      "id": "ingredient_2_benefit_3",
+      "label": "Benefit 3",
+      "default": "Protects against free radicals"
     },
     {
       "type": "header",
-      "content": "Review 3"
+      "content": "Ingredient 3"
+    },
+    {
+      "type": "text",
+      "id": "ingredient_3_name",
+      "label": "Ingredient name",
+      "default": "Niacinamide"
     },
     {
       "type": "textarea",
-      "id": "review_3_text",
-      "label": "Review text",
-      "default": "I was skeptical at first, but this product delivered exactly what it promised. My friends keep asking what I'm using!"
+      "id": "ingredient_3_description",
+      "label": "Description",
+      "default": "A form of Vitamin B3 that regulates oil production and minimizes the appearance of pores."
+    },
+    {
+      "type": "image_picker",
+      "id": "ingredient_3_image",
+      "label": "Ingredient image"
     },
     {
       "type": "text",
-      "id": "review_3_name",
-      "label": "Reviewer name",
-      "default": "Carmen Dela Cruz"
+      "id": "ingredient_3_benefit_1",
+      "label": "Benefit 1",
+      "default": "Controls excess oil production"
     },
     {
       "type": "text",
-      "id": "review_3_location",
-      "label": "Reviewer location",
-      "default": "Davao, Philippines"
+      "id": "ingredient_3_benefit_2",
+      "label": "Benefit 2",
+      "default": "Minimizes pore appearance"
     },
     {
-      "type": "range",
-      "id": "review_3_rating",
-      "min": 1,
-      "max": 5,
-      "step": 1,
-      "label": "Rating",
-      "default": 4
+      "type": "text",
+      "id": "ingredient_3_benefit_3",
+      "label": "Benefit 3",
+      "default": "Improves skin texture"
     },
     {
       "type": "header",
-      "content": "User generated content"
-    },
-    {
-      "type": "checkbox",
-      "id": "show_ugc",
-      "label": "Show user generated content",
-      "default": true
+      "content": "Ingredient 4"
     },
     {
       "type": "text",
-      "id": "ugc_heading",
-      "label": "UGC heading",
-      "default": "See It In Action"
+      "id": "ingredient_4_name",
+      "label": "Ingredient name",
+      "default": "Peptides"
+    },
+    {
+      "type": "textarea",
+      "id": "ingredient_4_description",
+      "label": "Description",
+      "default": "Amino acid chains that signal skin to produce more collagen and elastin for firmer skin."
     },
     {
       "type": "image_picker",
-      "id": "ugc_image_1",
-      "label": "UGC image 1"
+      "id": "ingredient_4_image",
+      "label": "Ingredient image"
     },
     {
       "type": "text",
-      "id": "ugc_username_1",
-      "label": "Username 1"
-    },
-    {
-      "type": "image_picker",
-      "id": "ugc_image_2",
-      "label": "UGC image 2"
+      "id": "ingredient_4_benefit_1",
+      "label": "Benefit 1",
+      "default": "Firms and tightens skin"
     },
     {
       "type": "text",
-      "id": "ugc_username_2",
-      "label": "Username 2"
-    },
-    {
-      "type": "image_picker",
-      "id": "ugc_image_3",
-      "label": "UGC image 3"
+      "id": "ingredient_4_benefit_2",
+      "label": "Benefit 2",
+      "default": "Reduces appearance of wrinkles"
     },
     {
       "type": "text",
-      "id": "ugc_username_3",
-      "label": "Username 3"
-    },
-    {
-      "type": "image_picker",
-      "id": "ugc_image_4",
-      "label": "UGC image 4"
-    },
-    {
-      "type": "text",
-      "id": "ugc_username_4",
-      "label": "Username 4"
-    },
-    {
-      "type": "image_picker",
-      "id": "ugc_image_5",
-      "label": "UGC image 5"
-    },
-    {
-      "type": "text",
-      "id": "ugc_username_5",
-      "label": "Username 5"
-    },
-    {
-      "type": "image_picker",
-      "id": "ugc_image_6",
-      "label": "UGC image 6"
-    },
-    {
-      "type": "text",
-      "id": "ugc_username_6",
-      "label": "Username 6"
+      "id": "ingredient_4_benefit_3",
+      "label": "Benefit 3",
+      "default": "Improves skin elasticity"
     },
     {
       "type": "header",
@@ -535,23 +497,23 @@
     },
     {
       "type": "range",
-      "id": "review_border_radius",
+      "id": "card_border_radius",
       "min": 0,
       "max": 30,
       "step": 2,
       "unit": "px",
-      "label": "Review border radius",
-      "default": 12
+      "label": "Card border radius",
+      "default": 16
     },
     {
       "type": "range",
-      "id": "ugc_border_radius",
-      "min": 0,
-      "max": 20,
-      "step": 2,
+      "id": "icon_size",
+      "min": 60,
+      "max": 100,
+      "step": 10,
       "unit": "px",
-      "label": "UGC border radius",
-      "default": 8
+      "label": "Icon/image size",
+      "default": 80
     },
     {
       "type": "header",
@@ -579,43 +541,33 @@
     },
     {
       "type": "range",
-      "id": "review_text_size",
-      "min": 14,
-      "max": 18,
-      "step": 1,
-      "unit": "px",
-      "label": "Review text size",
-      "default": 16
-    },
-    {
-      "type": "range",
-      "id": "reviewer_name_size",
-      "min": 14,
-      "max": 18,
-      "step": 1,
-      "unit": "px",
-      "label": "Reviewer name size",
-      "default": 16
-    },
-    {
-      "type": "range",
-      "id": "reviewer_location_size",
-      "min": 12,
-      "max": 16,
-      "step": 1,
-      "unit": "px",
-      "label": "Reviewer location size",
-      "default": 14
-    },
-    {
-      "type": "range",
-      "id": "ugc_heading_size",
+      "id": "ingredient_name_size",
       "min": 18,
-      "max": 32,
+      "max": 28,
       "step": 2,
       "unit": "px",
-      "label": "UGC heading size",
-      "default": 24
+      "label": "Ingredient name size",
+      "default": 22
+    },
+    {
+      "type": "range",
+      "id": "description_size",
+      "min": 14,
+      "max": 18,
+      "step": 1,
+      "unit": "px",
+      "label": "Description size",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "benefit_size",
+      "min": 13,
+      "max": 17,
+      "step": 1,
+      "unit": "px",
+      "label": "Benefit size",
+      "default": 15
     },
     {
       "type": "header",
@@ -625,7 +577,7 @@
       "type": "color",
       "id": "background_color",
       "label": "Background color",
-      "default": "#ffffff"
+      "default": "#fff7f2"
     },
     {
       "type": "color",
@@ -641,20 +593,14 @@
     },
     {
       "type": "color",
-      "id": "review_bg_color",
-      "label": "Review background color",
+      "id": "card_bg_color",
+      "label": "Card background color",
       "default": "#ffffff"
-    },
-    {
-      "type": "color",
-      "id": "star_color",
-      "label": "Star color",
-      "default": "#ffd700"
     }
   ],
   "presets": [
     {
-      "name": "Social proof"
+      "name": "Key ingredients"
     }
   ]
 }
