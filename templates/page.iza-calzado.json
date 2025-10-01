@@ -243,6 +243,7 @@
     },
     "section_video_M3Bh4X": {
       "type": "section-video",
+      "disabled": true,
       "name": "Video",
       "settings": {
         "video_height": "six-fifty-height",
@@ -337,6 +338,7 @@
         "product_bjkKTL",
         "product_FWWkAm"
       ],
+      "disabled": true,
       "name": "Products list",
       "settings": {
         "title": "",
@@ -353,6 +355,7 @@
     },
     "section_overlapping_images_HxhVEa": {
       "type": "section-overlapping-images",
+      "disabled": true,
       "name": "Overlapping images",
       "settings": {
         "text_position": "right",
@@ -454,6 +457,7 @@
         "accordion_gL4xTC",
         "button_4q9rge"
       ],
+      "disabled": true,
       "name": "Image with text",
       "settings": {
         "show_accordion_divider": true,
@@ -530,6 +534,7 @@
         "column_AKqtLn",
         "column_8mPU3C"
       ],
+      "disabled": true,
       "name": "Promotion row",
       "settings": {
         "layout": "1",
