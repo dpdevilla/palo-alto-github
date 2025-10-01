@@ -32,91 +32,149 @@
 {% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
 
 {% style %}
-  .ai-influencer-endorsement-{{ ai_gen_id }} {
+  .ai-product-spotlight-{{ ai_gen_id }} {
     padding: {{ block.settings.section_padding_top }}px 20px {{ block.settings.section_padding_bottom }}px;
     background-color: {{ block.settings.background_color }};
   }
 
-  .ai-influencer-container-{{ ai_gen_id }} {
+  .ai-product-container-{{ ai_gen_id }} {
     max-width: {{ block.settings.container_width }}px;
     margin: 0 auto;
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
     align-items: center;
-    gap: 40px;
   }
 
-  .ai-influencer-media-{{ ai_gen_id }} {
-    flex: 0 0 {{ block.settings.media_width }}%;
-    position: relative;
+  .ai-product-images-{{ ai_gen_id }} {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
   }
 
-  .ai-influencer-image-{{ ai_gen_id }} {
+  .ai-product-main-image-{{ ai_gen_id }} {
+    grid-column: 1 / -1;
     width: 100%;
     height: auto;
     border-radius: {{ block.settings.image_border_radius }}px;
     object-fit: cover;
   }
 
-  .ai-influencer-video-{{ ai_gen_id }} {
+  .ai-product-lifestyle-image-{{ ai_gen_id }} {
     width: 100%;
     height: auto;
     border-radius: {{ block.settings.image_border_radius }}px;
+    object-fit: cover;
+    aspect-ratio: 1;
   }
 
-  .ai-influencer-content-{{ ai_gen_id }} {
-    flex: 1;
+  .ai-product-content-{{ ai_gen_id }} {
     color: {{ block.settings.text_color }};
   }
 
-  .ai-influencer-quote-{{ ai_gen_id }} {
-    font-size: {{ block.settings.quote_size }}px;
-    line-height: 1.5;
-    font-style: italic;
-    margin: 0 0 20px;
-    color: {{ block.settings.text_color }};
-    position: relative;
-  }
-
-  .ai-influencer-quote-{{ ai_gen_id }}::before {
-    content: '"';
-    font-size: {{ block.settings.quote_size | times: 1.5 }}px;
-    color: {{ block.settings.accent_color }};
-    position: absolute;
-    left: -20px;
-    top: -10px;
-    font-family: serif;
-  }
-
-  .ai-influencer-quote-{{ ai_gen_id }}::after {
-    content: '"';
-    font-size: {{ block.settings.quote_size | times: 1.5 }}px;
-    color: {{ block.settings.accent_color }};
-    font-family: serif;
-  }
-
-  .ai-influencer-name-{{ ai_gen_id }} {
-    font-size: {{ block.settings.name_size }}px;
-    font-weight: 600;
-    margin: 0 0 5px;
-    color: {{ block.settings.text_color }};
-  }
-
-  .ai-influencer-title-{{ ai_gen_id }} {
+  .ai-product-title-{{ ai_gen_id }} {
     font-size: {{ block.settings.title_size }}px;
-    color: {{ block.settings.accent_color }};
-    margin: 0 0 20px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin: 0 0 15px;
+    color: {{ block.settings.text_color }};
   }
 
-  .ai-influencer-story-{{ ai_gen_id }} {
-    font-size: {{ block.settings.story_size }}px;
+  .ai-product-description-{{ ai_gen_id }} {
+    font-size: {{ block.settings.description_size }}px;
     line-height: 1.6;
+    margin: 0 0 25px;
     color: {{ block.settings.text_color }};
     opacity: 0.9;
   }
 
-  .ai-influencer-placeholder-{{ ai_gen_id }} {
+  .ai-product-benefits-{{ ai_gen_id }} {
+    margin: 0 0 30px;
+  }
+
+  .ai-product-benefit-item-{{ ai_gen_id }} {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 15px;
+    font-size: {{ block.settings.benefit_size }}px;
+    color: {{ block.settings.text_color }};
+  }
+
+  .ai-product-benefit-icon-{{ ai_gen_id }} {
+    width: 20px;
+    height: 20px;
+    background-color: {{ block.settings.accent_color }};
+    border-radius: 50%;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2px;
+  }
+
+  .ai-product-benefit-icon-{{ ai_gen_id }}::after {
+    content: '✓';
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+  }
+
+  .ai-product-pricing-{{ ai_gen_id }} {
+    margin: 0 0 25px;
+  }
+
+  .ai-product-price-{{ ai_gen_id }} {
+    font-size: {{ block.settings.price_size }}px;
+    font-weight: 700;
+    color: {{ block.settings.text_color }};
+    margin-bottom: 8px;
+  }
+
+  .ai-product-compare-price-{{ ai_gen_id }} {
+    font-size: {{ block.settings.price_size | times: 0.85 }}px;
+    color: {{ block.settings.text_color }};
+    opacity: 0.6;
+    text-decoration: line-through;
+    margin-right: 10px;
+  }
+
+  .ai-product-promo-{{ ai_gen_id }} {
+    background-color: {{ block.settings.promo_bg_color }};
+    color: {{ block.settings.promo_text_color }};
+    padding: 8px 16px;
+    border-radius: {{ block.settings.promo_border_radius }}px;
+    font-size: {{ block.settings.promo_size }}px;
+    font-weight: 600;
+    display: inline-block;
+    margin-bottom: 20px;
+  }
+
+  .ai-product-cta-{{ ai_gen_id }} {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: {{ block.settings.button_padding_vertical }}px {{ block.settings.button_padding_horizontal }}px;
+    background-color: {{ block.settings.button_bg_color }};
+    color: {{ block.settings.button_text_color }};
+    text-decoration: none;
+    font-size: {{ block.settings.button_text_size }}px;
+    font-weight: 600;
+    border-radius: {{ block.settings.button_border_radius }}px;
+    transition: all 0.3s ease;
+    text-transform: {% if block.settings.button_uppercase %}uppercase{% else %}none{% endif %};
+    letter-spacing: {% if block.settings.button_uppercase %}1px{% else %}0{% endif %};
+  }
+
+  .ai-product-cta-{{ ai_gen_id }}:hover {
+    background-color: {{ block.settings.button_hover_bg_color }};
+    color: {{ block.settings.button_hover_text_color }};
+    transform: translateY(-2px);
+  }
+
+  .ai-product-placeholder-{{ ai_gen_id }} {
     width: 100%;
-    aspect-ratio: 1;
+    aspect-ratio: 1.2;
     background-color: #f4f4f4;
     display: flex;
     align-items: center;
@@ -125,7 +183,7 @@
     position: relative;
   }
 
-  .ai-influencer-empty-state-{{ ai_gen_id }} {
+  .ai-product-empty-state-{{ ai_gen_id }} {
     position: absolute;
     bottom: 20px;
     left: 50%;
@@ -138,88 +196,139 @@
   }
 
   @media screen and (max-width: 768px) {
-    .ai-influencer-container-{{ ai_gen_id }} {
-      flex-direction: column;
-      gap: 30px;
-      text-align: center;
+    .ai-product-container-{{ ai_gen_id }} {
+      grid-template-columns: 1fr;
+      gap: 40px;
     }
 
-    .ai-influencer-media-{{ ai_gen_id }} {
-      flex: none;
-      width: 100%;
-      max-width: 300px;
+    .ai-product-images-{{ ai_gen_id }} {
+      order: -1;
     }
 
-    .ai-influencer-quote-{{ ai_gen_id }} {
-      font-size: {{ block.settings.quote_size | times: 0.9 }}px;
-    }
-
-    .ai-influencer-quote-{{ ai_gen_id }}::before {
-      left: -15px;
-      top: -8px;
+    .ai-product-title-{{ ai_gen_id }} {
+      font-size: {{ block.settings.title_size | times: 0.85 }}px;
     }
   }
 
   {% if block.settings.layout == 'reverse' %}
-    .ai-influencer-container-{{ ai_gen_id }} {
-      flex-direction: row-reverse;
+    .ai-product-container-{{ ai_gen_id }} {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .ai-product-content-{{ ai_gen_id }} {
+      order: -1;
     }
 
     @media screen and (max-width: 768px) {
-      .ai-influencer-container-{{ ai_gen_id }} {
-        flex-direction: column;
+      .ai-product-container-{{ ai_gen_id }} {
+        grid-template-columns: 1fr;
+      }
+
+      .ai-product-content-{{ ai_gen_id }} {
+        order: 0;
       }
     }
   {% endif %}
 {% endstyle %}
 
-<div class="ai-influencer-endorsement-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
-  <div class="ai-influencer-container-{{ ai_gen_id }}">
-    <div class="ai-influencer-media-{{ ai_gen_id }}">
-      {% if block.settings.media_type == 'image' and block.settings.influencer_image %}
+<div class="ai-product-spotlight-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  <div class="ai-product-container-{{ ai_gen_id }}">
+    <div class="ai-product-images-{{ ai_gen_id }}">
+      {% if block.settings.product_image %}
         <img
-          src="{{ block.settings.influencer_image | image_url: width: 600 }}"
-          alt="{{ block.settings.influencer_image.alt | escape }}"
+          src="{{ block.settings.product_image | image_url: width: 800 }}"
+          alt="{{ block.settings.product_image.alt | escape }}"
           loading="lazy"
-          width="{{ block.settings.influencer_image.width }}"
-          height="{{ block.settings.influencer_image.height }}"
-          class="ai-influencer-image-{{ ai_gen_id }}"
+          width="{{ block.settings.product_image.width }}"
+          height="{{ block.settings.product_image.height }}"
+          class="ai-product-main-image-{{ ai_gen_id }}"
         >
-      {% elsif block.settings.media_type == 'video' and block.settings.influencer_video %}
-        <video
-          class="ai-influencer-video-{{ ai_gen_id }}"
-          controls
-          {% if block.settings.video_poster %}poster="{{ block.settings.video_poster | image_url: width: 600 }}"{% endif %}
-        >
-          <source src="{{ block.settings.influencer_video }}" type="video/mp4">
-        </video>
       {% else %}
-        <div class="ai-influencer-placeholder-{{ ai_gen_id }}">
-          {{ 'image' | placeholder_svg_tag }}
-          <div class="ai-influencer-empty-state-{{ ai_gen_id }}">
-            Add influencer photo or video
+        <div class="ai-product-placeholder-{{ ai_gen_id }}">
+          {{ 'product-apparel-1' | placeholder_svg_tag }}
+          <div class="ai-product-empty-state-{{ ai_gen_id }}">
+            Add product image
           </div>
         </div>
       {% endif %}
+
+      {% if block.settings.lifestyle_image_1 %}
+        <img
+          src="{{ block.settings.lifestyle_image_1 | image_url: width: 400 }}"
+          alt="{{ block.settings.lifestyle_image_1.alt | escape }}"
+          loading="lazy"
+          width="{{ block.settings.lifestyle_image_1.width }}"
+          height="{{ block.settings.lifestyle_image_1.height }}"
+          class="ai-product-lifestyle-image-{{ ai_gen_id }}"
+        >
+      {% endif %}
+
+      {% if block.settings.lifestyle_image_2 %}
+        <img
+          src="{{ block.settings.lifestyle_image_2 | image_url: width: 400 }}"
+          alt="{{ block.settings.lifestyle_image_2.alt | escape }}"
+          loading="lazy"
+          width="{{ block.settings.lifestyle_image_2.width }}"
+          height="{{ block.settings.lifestyle_image_2.height }}"
+          class="ai-product-lifestyle-image-{{ ai_gen_id }}"
+        >
+      {% endif %}
     </div>
 
-    <div class="ai-influencer-content-{{ ai_gen_id }}">
-      {% if block.settings.testimonial_quote != blank %}
-        <blockquote class="ai-influencer-quote-{{ ai_gen_id }}">
-          {{ block.settings.testimonial_quote }}
-        </blockquote>
+    <div class="ai-product-content-{{ ai_gen_id }}">
+      {% if block.settings.product_title != blank %}
+        <h2 class="ai-product-title-{{ ai_gen_id }}">{{ block.settings.product_title }}</h2>
       {% endif %}
 
-      {% if block.settings.influencer_name != blank %}
-        <div class="ai-influencer-name-{{ ai_gen_id }}">{{ block.settings.influencer_name }}</div>
+      {% if block.settings.product_description != blank %}
+        <div class="ai-product-description-{{ ai_gen_id }}">{{ block.settings.product_description }}</div>
       {% endif %}
 
-      {% if block.settings.influencer_title != blank %}
-        <div class="ai-influencer-title-{{ ai_gen_id }}">{{ block.settings.influencer_title }}</div>
+      {% if block.settings.benefit_1 != blank or block.settings.benefit_2 != blank or block.settings.benefit_3 != blank %}
+        <div class="ai-product-benefits-{{ ai_gen_id }}">
+          {% if block.settings.benefit_1 != blank %}
+            <div class="ai-product-benefit-item-{{ ai_gen_id }}">
+              <div class="ai-product-benefit-icon-{{ ai_gen_id }}"></div>
+              <div>{{ block.settings.benefit_1 }}</div>
+            </div>
+          {% endif %}
+
+          {% if block.settings.benefit_2 != blank %}
+            <div class="ai-product-benefit-item-{{ ai_gen_id }}">
+              <div class="ai-product-benefit-icon-{{ ai_gen_id }}"></div>
+              <div>{{ block.settings.benefit_2 }}</div>
+            </div>
+          {% endif %}
+
+          {% if block.settings.benefit_3 != blank %}
+            <div class="ai-product-benefit-item-{{ ai_gen_id }}">
+              <div class="ai-product-benefit-icon-{{ ai_gen_id }}"></div>
+              <div>{{ block.settings.benefit_3 }}</div>
+            </div>
+          {% endif %}
+        </div>
       {% endif %}
 
-      {% if block.settings.personal_story != blank %}
-        <div class="ai-influencer-story-{{ ai_gen_id }}">{{ block.settings.personal_story }}</div>
+      <div class="ai-product-pricing-{{ ai_gen_id }}">
+        {% if block.settings.promo_text != blank %}
+          <div class="ai-product-promo-{{ ai_gen_id }}">{{ block.settings.promo_text }}</div>
+        {% endif %}
+
+        <div class="ai-product-price-{{ ai_gen_id }}">
+          {% if block.settings.compare_price != blank %}
+            <span class="ai-product-compare-price-{{ ai_gen_id }}">{{ block.settings.compare_price }}</span>
+          {% endif %}
+          {{ block.settings.product_price }}
+        </div>
+      </div>
+
+      {% if block.settings.cta_text != blank %}
+        <a
+          href="{{ block.settings.cta_link }}"
+          class="ai-product-cta-{{ ai_gen_id }}"
+        >
+          {{ block.settings.cta_text }}
+        </a>
       {% endif %}
     </div>
   </div>
@@ -227,80 +336,102 @@
 
 {% schema %}
 {
-  "name": "Influencer endorsement",
+  "name": "Product spotlight",
   "settings": [
     {
       "type": "header",
-      "content": "Media"
-    },
-    {
-      "type": "select",
-      "id": "media_type",
-      "label": "Media type",
-      "options": [
-        {
-          "value": "image",
-          "label": "Image"
-        },
-        {
-          "value": "video",
-          "label": "Video"
-        }
-      ],
-      "default": "image"
+      "content": "Images"
     },
     {
       "type": "image_picker",
-      "id": "influencer_image",
-      "label": "Influencer image"
-    },
-    {
-      "type": "url",
-      "id": "influencer_video",
-      "label": "Video URL"
+      "id": "product_image",
+      "label": "Main product image"
     },
     {
       "type": "image_picker",
-      "id": "video_poster",
-      "label": "Video poster image"
+      "id": "lifestyle_image_1",
+      "label": "Lifestyle image 1"
+    },
+    {
+      "type": "image_picker",
+      "id": "lifestyle_image_2",
+      "label": "Lifestyle image 2"
     },
     {
       "type": "range",
       "id": "image_border_radius",
       "min": 0,
-      "max": 50,
+      "max": 30,
       "step": 2,
       "unit": "px",
       "label": "Image border radius",
-      "default": 12
+      "default": 8
     },
     {
       "type": "header",
-      "content": "Content"
-    },
-    {
-      "type": "textarea",
-      "id": "testimonial_quote",
-      "label": "Testimonial quote",
-      "default": "This product has completely transformed my skincare routine. I've never felt more confident in my skin!"
+      "content": "Product content"
     },
     {
       "type": "text",
-      "id": "influencer_name",
-      "label": "Influencer name",
-      "default": "Iza Calzado"
-    },
-    {
-      "type": "text",
-      "id": "influencer_title",
-      "label": "Influencer title",
-      "default": "Actress & Beauty Enthusiast"
+      "id": "product_title",
+      "label": "Product title",
+      "default": "Premium Skincare Serum"
     },
     {
       "type": "textarea",
-      "id": "personal_story",
-      "label": "Personal story",
-      "default": "As someone who's always in front of cameras, I need products that deliver real results. This has become an essential part of my daily routine."
+      "id": "product_description",
+      "label": "Product description",
+      "default": "Transform your skin with our scientifically-formulated serum that delivers visible results in just 7 days."
+    },
+    {
+      "type": "text",
+      "id": "benefit_1",
+      "label": "Benefit 1",
+      "default": "Reduces fine lines and wrinkles"
+    },
+    {
+      "type": "text",
+      "id": "benefit_2",
+      "label": "Benefit 2",
+      "default": "Brightens and evens skin tone"
+    },
+    {
+      "type": "text",
+      "id": "benefit_3",
+      "label": "Benefit 3",
+      "default": "Deeply hydrates for 24 hours"
+    },
+    {
+      "type": "header",
+      "content": "Pricing"
+    },
+    {
+      "type": "text",
+      "id": "product_price",
+      "label": "Product price",
+      "default": "₱2,499"
+    },
+    {
+      "type": "text",
+      "id": "compare_price",
+      "label": "Compare at price"
+    },
+    {
+      "type": "text",
+      "id": "promo_text",
+      "label": "Promo text",
+      "default": "Limited Time: 20% OFF"
+    },
+    {
+      "type": "text",
+      "id": "cta_text",
+      "label": "Button text",
+      "default": "Add to Cart"
+    },
+    {
+      "type": "url",
+      "id": "cta_link",
+      "label": "Button link"
     },
     {
       "type": "header",
@@ -313,11 +444,11 @@
       "options": [
         {
           "value": "normal",
-          "label": "Image left, content right"
+          "label": "Images left, content right"
         },
         {
           "value": "reverse",
-          "label": "Content left, image right"
+          "label": "Content left, images right"
         }
       ],
       "default": "normal"
@@ -331,16 +462,6 @@
       "unit": "px",
       "label": "Container width",
       "default": 1200
-    },
-    {
-      "type": "range",
-      "id": "media_width",
-      "min": 30,
-      "max": 60,
-      "step": 5,
-      "unit": "%",
-      "label": "Media width",
-      "default": 40
     },
     {
       "type": "range",
@@ -368,43 +489,53 @@
     },
     {
       "type": "range",
-      "id": "quote_size",
-      "min": 16,
-      "max": 32,
-      "step": 2,
-      "unit": "px",
-      "label": "Quote size",
-      "default": 22
-    },
-    {
-      "type": "range",
-      "id": "name_size",
-      "min": 16,
-      "max": 28,
-      "step": 2,
-      "unit": "px",
-      "label": "Name size",
-      "default": 20
-    },
-    {
-      "type": "range",
       "id": "title_size",
-      "min": 12,
-      "max": 20,
-      "step": 1,
+      "min": 24,
+      "max": 48,
+      "step": 2,
       "unit": "px",
       "label": "Title size",
-      "default": 16
+      "default": 36
     },
     {
       "type": "range",
-      "id": "story_size",
+      "id": "description_size",
       "min": 14,
       "max": 20,
       "step": 1,
       "unit": "px",
-      "label": "Story size",
+      "label": "Description size",
       "default": 16
+    },
+    {
+      "type": "range",
+      "id": "benefit_size",
+      "min": 14,
+      "max": 18,
+      "step": 1,
+      "unit": "px",
+      "label": "Benefit size",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "price_size",
+      "min": 20,
+      "max": 32,
+      "step": 2,
+      "unit": "px",
+      "label": "Price size",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "promo_size",
+      "min": 12,
+      "max": 16,
+      "step": 1,
+      "unit": "px",
+      "label": "Promo text size",
+      "default": 14
     },
     {
       "type": "header",
@@ -414,7 +545,7 @@
       "type": "color",
       "id": "background_color",
       "label": "Background color",
-      "default": "#fff7f2"
+      "default": "#ffffff"
     },
     {
       "type": "color",
@@ -427,11 +558,107 @@
       "id": "accent_color",
       "label": "Accent color",
       "default": "#de5757"
+    },
+    {
+      "type": "color",
+      "id": "promo_bg_color",
+      "label": "Promo background color",
+      "default": "#de5757"
+    },
+    {
+      "type": "color",
+      "id": "promo_text_color",
+      "label": "Promo text color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "promo_border_radius",
+      "min": 0,
+      "max": 25,
+      "step": 1,
+      "unit": "px",
+      "label": "Promo border radius",
+      "default": 20
+    },
+    {
+      "type": "header",
+      "content": "Button style"
+    },
+    {
+      "type": "color",
+      "id": "button_bg_color",
+      "label": "Background color",
+      "default": "#0b0b0b"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "Text color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "button_hover_bg_color",
+      "label": "Hover background color",
+      "default": "#333333"
+    },
+    {
+      "type": "color",
+      "id": "button_hover_text_color",
+      "label": "Hover text color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "button_text_size",
+      "min": 12,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "label": "Text size",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "button_padding_vertical",
+      "min": 8,
+      "max": 24,
+      "step": 2,
+      "unit": "px",
+      "label": "Vertical padding",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "button_padding_horizontal",
+      "min": 16,
+      "max": 48,
+      "step": 4,
+      "unit": "px",
+      "label": "Horizontal padding",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "button_border_radius",
+      "min": 0,
+      "max": 50,
+      "step": 2,
+      "unit": "px",
+      "label": "Border radius",
+      "default": 4
+    },
+    {
+      "type": "checkbox",
+      "id": "button_uppercase",
+      "label": "Uppercase text",
+      "default": true
     }
   ],
   "presets": [
     {
-      "name": "Influencer endorsement"
+      "name": "Product spotlight"
     }
   ]
 }
