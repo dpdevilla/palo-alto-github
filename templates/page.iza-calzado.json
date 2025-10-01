@@ -199,6 +199,115 @@
         "padding_bottom": 60
       }
     },
+    "section_video_M3Bh4X": {
+      "type": "section-video",
+      "name": "Video",
+      "settings": {
+        "video_height": "six-fifty-height",
+        "enable_mobile_height": false,
+        "mobile_height": "six-fifty-height-mobile",
+        "text_width": "normal",
+        "text_position": "middle-center",
+        "video_link_bg": "",
+        "video_link": "",
+        "overlay_type": "disabled",
+        "title": "<p>Welcome to Palo Alto</p>",
+        "heading_size": 100,
+        "heading_highlight_type": "underline-hand-drawn",
+        "highlight_color": "#000",
+        "highlight_text_color": "",
+        "text": "This text helps you provide some more detail to the title above.",
+        "text_size": 100,
+        "button_1_text": "Welcome",
+        "button_1_link": "",
+        "button_1_color": "btn--white",
+        "button_1_style": "btn--solid-border",
+        "button_1_size": "btn--medium",
+        "button_2_text": "",
+        "button_2_link": "",
+        "button_2_color": "btn--black",
+        "button_2_style": "btn--solid",
+        "button_2_size": "btn--medium",
+        "color_scheme": "",
+        "show_text_background": false,
+        "bg_color": "",
+        "text_color": ""
+      }
+    },
+    "section_banner_text_columns_rxiURF": {
+      "type": "section-banner-text-columns",
+      "blocks": {
+        "column_UNaXxJ": {
+          "type": "column",
+          "settings": {
+            "overlay_type": "disabled",
+            "subheading": "Add a subheading",
+            "heading": "Add a heading",
+            "text": "",
+            "button_text": "",
+            "button_link": ""
+          }
+        },
+        "column_czCC4L": {
+          "type": "column",
+          "settings": {
+            "overlay_type": "disabled",
+            "subheading": "Add a subheading",
+            "heading": "Add a heading",
+            "text": "",
+            "button_text": "",
+            "button_link": ""
+          }
+        },
+        "column_nextnQ": {
+          "type": "column",
+          "settings": {
+            "overlay_type": "disabled",
+            "subheading": "Add a subheading",
+            "heading": "Add a heading",
+            "text": "",
+            "button_text": "",
+            "button_link": ""
+          }
+        },
+        "column_ykMjX3": {
+          "type": "column",
+          "settings": {
+            "overlay_type": "disabled",
+            "subheading": "Add a subheading",
+            "heading": "Add a heading",
+            "text": "",
+            "button_text": "",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_UNaXxJ",
+        "column_czCC4L",
+        "column_nextnQ",
+        "column_ykMjX3"
+      ],
+      "disabled": true,
+      "name": "Banner with text columns",
+      "settings": {
+        "appearance": "columns",
+        "content_alignment": "center",
+        "text_alignment": "text-center",
+        "section_height": "six-fifty-height",
+        "enable_mobile_height": false,
+        "mobile_section_height": "five-fifty-height-mobile",
+        "color_scheme": "",
+        "button_color": "btn--white",
+        "button_style": "btn--text",
+        "button_size": "btn--medium",
+        "show_single_image": false,
+        "heading_size": 100,
+        "width": "wrapper",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
     "section_products_list_CJBpE7": {
       "type": "section-products-list",
       "blocks": {
@@ -273,6 +382,290 @@
         "padding_top": 60,
         "padding_bottom": 60
       }
+    },
+    "section_overlapping_images_HxhVEa": {
+      "type": "section-overlapping-images",
+      "name": "Overlapping images",
+      "settings": {
+        "text_position": "right",
+        "text_alignment": "center",
+        "images_width": 750,
+        "images_offset": 60,
+        "image_link_1": "",
+        "image_link_2": "",
+        "hide_image_2": false,
+        "subheading": "",
+        "title": "<p>Our Story, Our Promise</p>",
+        "heading_size": 100,
+        "heading_highlight_type": "underline-hand-drawn",
+        "highlight_color": "#000",
+        "highlight_text_color": "",
+        "description": "<p>Use this text to describe a product, promotion, or your company.</p>",
+        "text_size": 100,
+        "button_text": "",
+        "button_link": "",
+        "button_color": "btn--black",
+        "button_style": "btn--solid",
+        "button_size": "btn--medium",
+        "video_text": "",
+        "video_link": "",
+        "color_scheme": "",
+        "animation": "horizontal",
+        "animation_intensity": 50,
+        "width": "wrapper--full-padded",
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
+    "section_image_with_text_fqqa6Q": {
+      "type": "section-image-with-text",
+      "blocks": {
+        "subheading_NYrygy": {
+          "type": "subheading",
+          "settings": {
+            "subheading": "Introducing",
+            "size": 75,
+            "text_position": "left",
+            "spacing_bottom": 12
+          }
+        },
+        "heading_JtTYnn": {
+          "type": "heading",
+          "settings": {
+            "title": "<p>Image with text</p>",
+            "size": 120,
+            "text_position": "left",
+            "heading_highlight_type": "underline-hand-drawn",
+            "highlight_color": "#000",
+            "highlight_text_color": "",
+            "spacing_bottom": 12
+          }
+        },
+        "text_Kbpn6y": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>",
+            "size": 100,
+            "text_position": "left",
+            "spacing_bottom": 12
+          }
+        },
+        "accordion_gL4xTC": {
+          "type": "accordion",
+          "settings": {
+            "icon_width": 25,
+            "icon_position": "inline-left",
+            "heading": "Frequently asked question",
+            "type_style": "font-heading",
+            "heading_size": 120,
+            "text": "<p>Use this text block to discuss some commonly asked questions like shipping and returns, sizing, warranties, or product and company details.</p>",
+            "text_size": 75,
+            "tabs_bg_color": "",
+            "line_thickness": "normal",
+            "spacing_bottom": 0
+          }
+        },
+        "button_4q9rge": {
+          "type": "button",
+          "settings": {
+            "button_text": "Button text",
+            "button_link": "",
+            "button_color": "btn--black",
+            "button_style": "btn--solid",
+            "button_size": "btn--small",
+            "video_link": "",
+            "text_position": "left",
+            "spacing_bottom": 12
+          }
+        }
+      },
+      "block_order": [
+        "subheading_NYrygy",
+        "heading_JtTYnn",
+        "text_Kbpn6y",
+        "accordion_gL4xTC",
+        "button_4q9rge"
+      ],
+      "name": "Image with text",
+      "settings": {
+        "show_accordion_divider": true,
+        "increase_border_radius": false,
+        "section_height": "six-fifty-height",
+        "enable_mobile_height": false,
+        "mobile_height": "four-fifty-height-mobile",
+        "layout": "inline",
+        "image_location": "left",
+        "image_width": "standard",
+        "block_bg_color": "",
+        "color_scheme": "",
+        "section_width": "wrapper",
+        "add_gutter": true,
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
+    "section_promotion_row_Lczf4N": {
+      "type": "section-promotion-row",
+      "blocks": {
+        "column_AKqtLn": {
+          "type": "column",
+          "settings": {
+            "subheading": "<p>IN-STORE AND ONLINE</p>",
+            "subheading_size": 75,
+            "heading": "<p>20% OFF</p>",
+            "heading_size": 295,
+            "heading_highlight_type": "underline-hand-drawn",
+            "highlight_color": "#000000",
+            "highlight_text_color": "",
+            "description": "Share details about the promotion",
+            "description_size": 100,
+            "disclaimer": "*Use this text for a disclaimer.",
+            "disclaimer_size": 75,
+            "button_text": "",
+            "button_link": "",
+            "button_color": "btn--black",
+            "button_style": "btn--solid",
+            "button_size": "btn--medium",
+            "bg_color": "",
+            "gradient_background": "",
+            "text_color": "#ffffff",
+            "overlay_type": "disabled"
+          }
+        },
+        "column_8mPU3C": {
+          "type": "column",
+          "settings": {
+            "subheading": "<p>For a limited time</p>",
+            "subheading_size": 75,
+            "heading": "<p><em>FREE PRODUCT</em></p>",
+            "heading_size": 205,
+            "heading_highlight_type": "underline-hand-drawn",
+            "highlight_color": "#000000",
+            "highlight_text_color": "",
+            "description": "With every purchase over $99",
+            "description_size": 80,
+            "disclaimer": "",
+            "disclaimer_size": 75,
+            "button_text": "",
+            "button_link": "",
+            "button_color": "btn--black",
+            "button_style": "btn--solid",
+            "button_size": "btn--medium",
+            "bg_color": "",
+            "gradient_background": "",
+            "text_color": "#ffffff",
+            "overlay_type": "disabled"
+          }
+        }
+      },
+      "block_order": [
+        "column_AKqtLn",
+        "column_8mPU3C"
+      ],
+      "name": "Promotion row",
+      "settings": {
+        "layout": "1",
+        "count_up_enabled": true,
+        "count_up_duration": 100,
+        "height": "400",
+        "enable_mobile_height": false,
+        "mobile_height": "400",
+        "color_scheme": "",
+        "enable_slider_mobile": true,
+        "columns_mobile": "1",
+        "width": "wrapper--full-padded",
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
+    "section_sticky_images_and_text_3PJYYJ": {
+      "type": "section-sticky-images-and-text",
+      "blocks": {
+        "slide_ngHAPi": {
+          "type": "slide",
+          "settings": {
+            "video_url": "",
+            "truncate_text": true,
+            "title_length": 10,
+            "content_length": 15,
+            "subheading": "New this month",
+            "title": "<p>Our latest obsessions.</p>",
+            "heading_size": 130,
+            "content": "<p>We believe that fashion should be stylish, affordable and accessible to everyone. </p>",
+            "text_size": 125,
+            "button_text": "Shop now",
+            "button_link": "",
+            "button_color": "btn--black",
+            "button_style": "btn--solid",
+            "button_size": "btn--medium",
+            "video_link": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+            "video_text": "Play video"
+          }
+        },
+        "slide_ECpWHC": {
+          "type": "slide",
+          "settings": {
+            "video_url": "",
+            "truncate_text": true,
+            "title_length": 10,
+            "content_length": 15,
+            "subheading": "",
+            "title": "<p>Sustainable trends you'll love!</p>",
+            "heading_size": 130,
+            "content": "<p>Our mission is to empower people through sustainable fashion.</p>",
+            "text_size": 125,
+            "button_text": "Learn more",
+            "button_link": "",
+            "button_color": "btn--black",
+            "button_style": "btn--solid",
+            "button_size": "btn--medium",
+            "video_link": "",
+            "video_text": ""
+          }
+        },
+        "slide_cidHKn": {
+          "type": "slide",
+          "settings": {
+            "video_url": "",
+            "truncate_text": true,
+            "title_length": 10,
+            "content_length": 15,
+            "subheading": "Lookbooks",
+            "title": "<p>Summer 2025</p>",
+            "heading_size": 130,
+            "content": "<p>Our latest lookbook has dropped and is now ready to shop. Tailored to elevate your style</p>",
+            "text_size": 125,
+            "button_text": "View lookbook",
+            "button_link": "",
+            "button_color": "btn--black",
+            "button_style": "btn--solid",
+            "button_size": "btn--medium",
+            "video_link": "",
+            "video_text": ""
+          }
+        }
+      },
+      "block_order": [
+        "slide_ngHAPi",
+        "slide_ECpWHC",
+        "slide_cidHKn"
+      ],
+      "disabled": true,
+      "name": "Sticky images and text: Horizontal",
+      "settings": {
+        "scroll_direction": "horizontal",
+        "text_alignment": "left",
+        "image_position": "",
+        "space_around_images": true,
+        "image_width": "standard",
+        "aspect_ratio_desktop": 1.5,
+        "aspect_ratio_mobile": 1.5,
+        "show_single_text": false,
+        "color_scheme": "",
+        "width": "wrapper--full",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
     }
   },
   "order": [
@@ -280,6 +673,12 @@
     "1759276997d00f2b85",
     "main",
     "section_shop_the_look_banner_pTJdHg",
-    "section_products_list_CJBpE7"
+    "section_video_M3Bh4X",
+    "section_banner_text_columns_rxiURF",
+    "section_products_list_CJBpE7",
+    "section_overlapping_images_HxhVEa",
+    "section_image_with_text_fqqa6Q",
+    "section_promotion_row_Lczf4N",
+    "section_sticky_images_and_text_3PJYYJ"
   ]
 }
