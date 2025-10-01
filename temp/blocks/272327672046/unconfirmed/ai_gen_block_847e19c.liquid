@@ -32,149 +32,166 @@
 {% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
 
 {% style %}
-  .ai-product-spotlight-{{ ai_gen_id }} {
+  .ai-before-after-{{ ai_gen_id }} {
     padding: {{ block.settings.section_padding_top }}px 20px {{ block.settings.section_padding_bottom }}px;
     background-color: {{ block.settings.background_color }};
   }
 
-  .ai-product-container-{{ ai_gen_id }} {
+  .ai-before-after-container-{{ ai_gen_id }} {
     max-width: {{ block.settings.container_width }}px;
     margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 60px;
-    align-items: center;
+    text-align: center;
   }
 
-  .ai-product-images-{{ ai_gen_id }} {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-  }
-
-  .ai-product-main-image-{{ ai_gen_id }} {
-    grid-column: 1 / -1;
-    width: 100%;
-    height: auto;
-    border-radius: {{ block.settings.image_border_radius }}px;
-    object-fit: cover;
-  }
-
-  .ai-product-lifestyle-image-{{ ai_gen_id }} {
-    width: 100%;
-    height: auto;
-    border-radius: {{ block.settings.image_border_radius }}px;
-    object-fit: cover;
-    aspect-ratio: 1;
-  }
-
-  .ai-product-content-{{ ai_gen_id }} {
-    color: {{ block.settings.text_color }};
-  }
-
-  .ai-product-title-{{ ai_gen_id }} {
-    font-size: {{ block.settings.title_size }}px;
+  .ai-before-after-heading-{{ ai_gen_id }} {
+    font-size: {{ block.settings.heading_size }}px;
     font-weight: 700;
     line-height: 1.2;
     margin: 0 0 15px;
     color: {{ block.settings.text_color }};
   }
 
-  .ai-product-description-{{ ai_gen_id }} {
-    font-size: {{ block.settings.description_size }}px;
-    line-height: 1.6;
-    margin: 0 0 25px;
+  .ai-before-after-subheading-{{ ai_gen_id }} {
+    font-size: {{ block.settings.subheading_size }}px;
+    line-height: 1.5;
+    margin: 0 0 50px;
     color: {{ block.settings.text_color }};
-    opacity: 0.9;
+    opacity: 0.8;
   }
 
-  .ai-product-benefits-{{ ai_gen_id }} {
-    margin: 0 0 30px;
+  .ai-before-after-comparison-{{ ai_gen_id }} {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto 40px;
+    border-radius: {{ block.settings.image_border_radius }}px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   }
 
-  .ai-product-benefit-item-{{ ai_gen_id }} {
-    display: flex;
-    align-items: flex-start;
-    gap: 12px;
-    margin-bottom: 15px;
-    font-size: {{ block.settings.benefit_size }}px;
-    color: {{ block.settings.text_color }};
-  }
-
-  .ai-product-benefit-icon-{{ ai_gen_id }} {
-    width: 20px;
-    height: 20px;
-    background-color: {{ block.settings.accent_color }};
-    border-radius: 50%;
-    flex-shrink: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 2px;
-  }
-
-  .ai-product-benefit-icon-{{ ai_gen_id }}::after {
-    content: '✓';
-    color: white;
-    font-size: 12px;
-    font-weight: bold;
-  }
-
-  .ai-product-pricing-{{ ai_gen_id }} {
-    margin: 0 0 25px;
-  }
-
-  .ai-product-price-{{ ai_gen_id }} {
-    font-size: {{ block.settings.price_size }}px;
-    font-weight: 700;
-    color: {{ block.settings.text_color }};
-    margin-bottom: 8px;
-  }
-
-  .ai-product-compare-price-{{ ai_gen_id }} {
-    font-size: {{ block.settings.price_size | times: 0.85 }}px;
-    color: {{ block.settings.text_color }};
-    opacity: 0.6;
-    text-decoration: line-through;
-    margin-right: 10px;
-  }
-
-  .ai-product-promo-{{ ai_gen_id }} {
-    background-color: {{ block.settings.promo_bg_color }};
-    color: {{ block.settings.promo_text_color }};
-    padding: 8px 16px;
-    border-radius: {{ block.settings.promo_border_radius }}px;
-    font-size: {{ block.settings.promo_size }}px;
-    font-weight: 600;
-    display: inline-block;
-    margin-bottom: 20px;
-  }
-
-  .ai-product-cta-{{ ai_gen_id }} {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: {{ block.settings.button_padding_vertical }}px {{ block.settings.button_padding_horizontal }}px;
-    background-color: {{ block.settings.button_bg_color }};
-    color: {{ block.settings.button_text_color }};
-    text-decoration: none;
-    font-size: {{ block.settings.button_text_size }}px;
-    font-weight: 600;
-    border-radius: {{ block.settings.button_border_radius }}px;
-    transition: all 0.3s ease;
-    text-transform: {% if block.settings.button_uppercase %}uppercase{% else %}none{% endif %};
-    letter-spacing: {% if block.settings.button_uppercase %}1px{% else %}0{% endif %};
-  }
-
-  .ai-product-cta-{{ ai_gen_id }}:hover {
-    background-color: {{ block.settings.button_hover_bg_color }};
-    color: {{ block.settings.button_hover_text_color }};
-    transform: translateY(-2px);
-  }
-
-  .ai-product-placeholder-{{ ai_gen_id }} {
+  .ai-before-after-images-{{ ai_gen_id }} {
+    position: relative;
     width: 100%;
-    aspect-ratio: 1.2;
+    height: 400px;
+    overflow: hidden;
+  }
+
+  .ai-before-after-image-{{ ai_gen_id }} {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .ai-before-image-{{ ai_gen_id }} {
+    left: 0;
+    clip-path: inset(0 50% 0 0);
+  }
+
+  .ai-after-image-{{ ai_gen_id }} {
+    right: 0;
+    clip-path: inset(0 0 0 50%);
+  }
+
+  .ai-before-after-slider-{{ ai_gen_id }} {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 4px;
+    height: 100%;
+    background-color: {{ block.settings.slider_color }};
+    cursor: ew-resize;
+    transform: translateX(-50%);
+    z-index: 3;
+  }
+
+  .ai-before-after-handle-{{ ai_gen_id }} {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 40px;
+    height: 40px;
+    background-color: {{ block.settings.slider_color }};
+    border: 3px solid white;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    cursor: ew-resize;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  }
+
+  .ai-before-after-handle-{{ ai_gen_id }}::before,
+  .ai-before-after-handle-{{ ai_gen_id }}::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-style: solid;
+  }
+
+  .ai-before-after-handle-{{ ai_gen_id }}::before {
+    border-width: 6px 8px 6px 0;
+    border-color: transparent white transparent transparent;
+    left: 10px;
+  }
+
+  .ai-before-after-handle-{{ ai_gen_id }}::after {
+    border-width: 6px 0 6px 8px;
+    border-color: transparent transparent transparent white;
+    right: 10px;
+  }
+
+  .ai-before-after-labels-{{ ai_gen_id }} {
+    position: absolute;
+    top: 20px;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+    z-index: 2;
+  }
+
+  .ai-before-after-label-{{ ai_gen_id }} {
+    background-color: {{ block.settings.label_bg_color }};
+    color: {{ block.settings.label_text_color }};
+    padding: 8px 16px;
+    border-radius: {{ block.settings.label_border_radius }}px;
+    font-size: {{ block.settings.label_size }}px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .ai-before-after-results-{{ ai_gen_id }} {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+  }
+
+  .ai-before-after-result-{{ ai_gen_id }} {
+    text-align: center;
+  }
+
+  .ai-before-after-stat-{{ ai_gen_id }} {
+    font-size: {{ block.settings.stat_size }}px;
+    font-weight: 700;
+    color: {{ block.settings.accent_color }};
+    margin: 0 0 8px;
+  }
+
+  .ai-before-after-stat-label-{{ ai_gen_id }} {
+    font-size: {{ block.settings.stat_label_size }}px;
+    color: {{ block.settings.text_color }};
+    opacity: 0.8;
+  }
+
+  .ai-before-after-placeholder-{{ ai_gen_id }} {
+    width: 100%;
+    height: 400px;
     background-color: #f4f4f4;
     display: flex;
     align-items: center;
@@ -183,7 +200,7 @@
     position: relative;
   }
 
-  .ai-product-empty-state-{{ ai_gen_id }} {
+  .ai-before-after-empty-state-{{ ai_gen_id }} {
     position: absolute;
     bottom: 20px;
     left: 50%;
@@ -196,147 +213,173 @@
   }
 
   @media screen and (max-width: 768px) {
-    .ai-product-container-{{ ai_gen_id }} {
-      grid-template-columns: 1fr;
-      gap: 40px;
+    .ai-before-after-images-{{ ai_gen_id }} {
+      height: 300px;
     }
 
-    .ai-product-images-{{ ai_gen_id }} {
-      order: -1;
+    .ai-before-after-heading-{{ ai_gen_id }} {
+      font-size: {{ block.settings.heading_size | times: 0.8 }}px;
     }
 
-    .ai-product-title-{{ ai_gen_id }} {
-      font-size: {{ block.settings.title_size | times: 0.85 }}px;
+    .ai-before-after-results-{{ ai_gen_id }} {
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .ai-before-after-labels-{{ ai_gen_id }} {
+      padding: 0 15px;
     }
   }
-
-  {% if block.settings.layout == 'reverse' %}
-    .ai-product-container-{{ ai_gen_id }} {
-      grid-template-columns: 1fr 1fr;
-    }
-
-    .ai-product-content-{{ ai_gen_id }} {
-      order: -1;
-    }
-
-    @media screen and (max-width: 768px) {
-      .ai-product-container-{{ ai_gen_id }} {
-        grid-template-columns: 1fr;
-      }
-
-      .ai-product-content-{{ ai_gen_id }} {
-        order: 0;
-      }
-    }
-  {% endif %}
 {% endstyle %}
 
-<div class="ai-product-spotlight-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
-  <div class="ai-product-container-{{ ai_gen_id }}">
-    <div class="ai-product-images-{{ ai_gen_id }}">
-      {% if block.settings.product_image %}
-        <img
-          src="{{ block.settings.product_image | image_url: width: 800 }}"
-          alt="{{ block.settings.product_image.alt | escape }}"
-          loading="lazy"
-          width="{{ block.settings.product_image.width }}"
-          height="{{ block.settings.product_image.height }}"
-          class="ai-product-main-image-{{ ai_gen_id }}"
-        >
+<before-after-slider-{{ ai_gen_id }} class="ai-before-after-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  <div class="ai-before-after-container-{{ ai_gen_id }}">
+    {% if block.settings.heading != blank %}
+      <h2 class="ai-before-after-heading-{{ ai_gen_id }}">{{ block.settings.heading }}</h2>
+    {% endif %}
+
+    {% if block.settings.subheading != blank %}
+      <div class="ai-before-after-subheading-{{ ai_gen_id }}">{{ block.settings.subheading }}</div>
+    {% endif %}
+
+    <div class="ai-before-after-comparison-{{ ai_gen_id }}">
+      {% if block.settings.before_image and block.settings.after_image %}
+        <div class="ai-before-after-images-{{ ai_gen_id }}">
+          <img
+            src="{{ block.settings.before_image | image_url: width: 800 }}"
+            alt="Before"
+            class="ai-before-after-image-{{ ai_gen_id }} ai-before-image-{{ ai_gen_id }}"
+            loading="lazy"
+          >
+          <img
+            src="{{ block.settings.after_image | image_url: width: 800 }}"
+            alt="After"
+            class="ai-before-after-image-{{ ai_gen_id }} ai-after-image-{{ ai_gen_id }}"
+            loading="lazy"
+          >
+          
+          <div class="ai-before-after-slider-{{ ai_gen_id }}">
+            <div class="ai-before-after-handle-{{ ai_gen_id }}"></div>
+          </div>
+
+          <div class="ai-before-after-labels-{{ ai_gen_id }}">
+            <div class="ai-before-after-label-{{ ai_gen_id }}">{{ block.settings.before_label }}</div>
+            <div class="ai-before-after-label-{{ ai_gen_id }}">{{ block.settings.after_label }}</div>
+          </div>
+        </div>
       {% else %}
-        <div class="ai-product-placeholder-{{ ai_gen_id }}">
-          {{ 'product-apparel-1' | placeholder_svg_tag }}
-          <div class="ai-product-empty-state-{{ ai_gen_id }}">
-            Add product image
+        <div class="ai-before-after-placeholder-{{ ai_gen_id }}">
+          {{ 'image' | placeholder_svg_tag }}
+          <div class="ai-before-after-empty-state-{{ ai_gen_id }}">
+            Add before and after images
           </div>
         </div>
       {% endif %}
-
-      {% if block.settings.lifestyle_image_1 %}
-        <img
-          src="{{ block.settings.lifestyle_image_1 | image_url: width: 400 }}"
-          alt="{{ block.settings.lifestyle_image_1.alt | escape }}"
-          loading="lazy"
-          width="{{ block.settings.lifestyle_image_1.width }}"
-          height="{{ block.settings.lifestyle_image_1.height }}"
-          class="ai-product-lifestyle-image-{{ ai_gen_id }}"
-        >
-      {% endif %}
-
-      {% if block.settings.lifestyle_image_2 %}
-        <img
-          src="{{ block.settings.lifestyle_image_2 | image_url: width: 400 }}"
-          alt="{{ block.settings.lifestyle_image_2.alt | escape }}"
-          loading="lazy"
-          width="{{ block.settings.lifestyle_image_2.width }}"
-          height="{{ block.settings.lifestyle_image_2.height }}"
-          class="ai-product-lifestyle-image-{{ ai_gen_id }}"
-        >
-      {% endif %}
     </div>
 
-    <div class="ai-product-content-{{ ai_gen_id }}">
-      {% if block.settings.product_title != blank %}
-        <h2 class="ai-product-title-{{ ai_gen_id }}">{{ block.settings.product_title }}</h2>
-      {% endif %}
-
-      {% if block.settings.product_description != blank %}
-        <div class="ai-product-description-{{ ai_gen_id }}">{{ block.settings.product_description }}</div>
-      {% endif %}
-
-      {% if block.settings.benefit_1 != blank or block.settings.benefit_2 != blank or block.settings.benefit_3 != blank %}
-        <div class="ai-product-benefits-{{ ai_gen_id }}">
-          {% if block.settings.benefit_1 != blank %}
-            <div class="ai-product-benefit-item-{{ ai_gen_id }}">
-              <div class="ai-product-benefit-icon-{{ ai_gen_id }}"></div>
-              <div>{{ block.settings.benefit_1 }}</div>
-            </div>
-          {% endif %}
-
-          {% if block.settings.benefit_2 != blank %}
-            <div class="ai-product-benefit-item-{{ ai_gen_id }}">
-              <div class="ai-product-benefit-icon-{{ ai_gen_id }}"></div>
-              <div>{{ block.settings.benefit_2 }}</div>
-            </div>
-          {% endif %}
-
-          {% if block.settings.benefit_3 != blank %}
-            <div class="ai-product-benefit-item-{{ ai_gen_id }}">
-              <div class="ai-product-benefit-icon-{{ ai_gen_id }}"></div>
-              <div>{{ block.settings.benefit_3 }}</div>
-            </div>
-          {% endif %}
-        </div>
-      {% endif %}
-
-      <div class="ai-product-pricing-{{ ai_gen_id }}">
-        {% if block.settings.promo_text != blank %}
-          <div class="ai-product-promo-{{ ai_gen_id }}">{{ block.settings.promo_text }}</div>
+    {% if block.settings.stat_1 != blank or block.settings.stat_2 != blank or block.settings.stat_3 != blank %}
+      <div class="ai-before-after-results-{{ ai_gen_id }}">
+        {% if block.settings.stat_1 != blank %}
+          <div class="ai-before-after-result-{{ ai_gen_id }}">
+            <div class="ai-before-after-stat-{{ ai_gen_id }}">{{ block.settings.stat_1 }}</div>
+            <div class="ai-before-after-stat-label-{{ ai_gen_id }}">{{ block.settings.stat_1_label }}</div>
+          </div>
         {% endif %}
 
-        <div class="ai-product-price-{{ ai_gen_id }}">
-          {% if block.settings.compare_price != blank %}
-            <span class="ai-product-compare-price-{{ ai_gen_id }}">{{ block.settings.compare_price }}</span>
-          {% endif %}
-          {{ block.settings.product_price }}
-        </div>
-      </div>
+        {% if block.settings.stat_2 != blank %}
+          <div class="ai-before-after-result-{{ ai_gen_id }}">
+            <div class="ai-before-after-stat-{{ ai_gen_id }}">{{ block.settings.stat_2 }}</div>
+            <div class="ai-before-after-stat-label-{{ ai_gen_id }}">{{ block.settings.stat_2_label }}</div>
+          </div>
+        {% endif %}
 
-      {% if block.settings.cta_text != blank %}
-        <a
-          href="{{ block.settings.cta_link }}"
-          class="ai-product-cta-{{ ai_gen_id }}"
-        >
-          {{ block.settings.cta_text }}
-        </a>
-      {% endif %}
-    </div>
+        {% if block.settings.stat_3 != blank %}
+          <div class="ai-before-after-result-{{ ai_gen_id }}">
+            <div class="ai-before-after-stat-{{ ai_gen_id }}">{{ block.settings.stat_3 }}</div>
+            <div class="ai-before-after-stat-label-{{ ai_gen_id }}">{{ block.settings.stat_3_label }}</div>
+          </div>
+        {% endif %}
+      </div>
+    {% endif %}
   </div>
-</div>
+</before-after-slider-{{ ai_gen_id }}>
+
+<script>
+  (function() {
+    class BeforeAfterSlider{{ ai_gen_id }} extends HTMLElement {
+      constructor() {
+        super();
+      }
+
+      connectedCallback() {
+        this.slider = this.querySelector('.ai-before-after-slider-{{ ai_gen_id }}');
+        this.beforeImage = this.querySelector('.ai-before-image-{{ ai_gen_id }}');
+        this.afterImage = this.querySelector('.ai-after-image-{{ ai_gen_id }}');
+        this.container = this.querySelector('.ai-before-after-images-{{ ai_gen_id }}');
+
+        if (this.slider && this.beforeImage && this.afterImage && this.container) {
+          this.setupEventListeners();
+        }
+      }
+
+      setupEventListeners() {
+        let isDragging = false;
+
+        const updateSlider = (clientX) => {
+          const rect = this.container.getBoundingClientRect();
+          const x = clientX - rect.left;
+          const percentage = Math.max(0, Math.min(100, (x / rect.width) * 100));
+          
+          this.slider.style.left = percentage + '%';
+          this.beforeImage.style.clipPath = `inset(0 ${100 - percentage}% 0 0)`;
+          this.afterImage.style.clipPath = `inset(0 0 0 ${percentage}%)`;
+        };
+
+        this.slider.addEventListener('mousedown', (e) => {
+          isDragging = true;
+          e.preventDefault();
+        });
+
+        document.addEventListener('mousemove', (e) => {
+          if (isDragging) {
+            updateSlider(e.clientX);
+          }
+        });
+
+        document.addEventListener('mouseup', () => {
+          isDragging = false;
+        });
+
+        this.slider.addEventListener('touchstart', (e) => {
+          isDragging = true;
+          e.preventDefault();
+        });
+
+        document.addEventListener('touchmove', (e) => {
+          if (isDragging) {
+            updateSlider(e.touches[0].clientX);
+          }
+        });
+
+        document.addEventListener('touchend', () => {
+          isDragging = false;
+        });
+
+        this.container.addEventListener('click', (e) => {
+          if (!isDragging) {
+            updateSlider(e.clientX);
+          }
+        });
+      }
+    }
+
+    customElements.define('before-after-slider-{{ ai_gen_id }}', BeforeAfterSlider{{ ai_gen_id }});
+  })();
+</script>
 
 {% schema %}
 {
-  "name": "Product spotlight",
+  "name": "Before & after results",
   "settings": [
     {
       "type": "header",
@@ -344,18 +387,13 @@
     },
     {
       "type": "image_picker",
-      "id": "product_image",
-      "label": "Main product image"
+      "id": "before_image",
+      "label": "Before image"
     },
     {
       "type": "image_picker",
-      "id": "lifestyle_image_1",
-      "label": "Lifestyle image 1"
-    },
-    {
-      "type": "image_picker",
-      "id": "lifestyle_image_2",
-      "label": "Lifestyle image 2"
+      "id": "after_image",
+      "label": "After image"
     },
     {
       "type": "range",
@@ -365,93 +403,79 @@
       "step": 2,
       "unit": "px",
       "label": "Image border radius",
-      "default": 8
+      "default": 12
     },
     {
       "type": "header",
-      "content": "Product content"
+      "content": "Content"
     },
     {
       "type": "text",
-      "id": "product_title",
-      "label": "Product title",
-      "default": "Premium Skincare Serum"
+      "id": "heading",
+      "label": "Heading",
+      "default": "Real Results in 7 Days"
     },
     {
       "type": "textarea",
-      "id": "product_description",
-      "label": "Product description",
-      "default": "Transform your skin with our scientifically-formulated serum that delivers visible results in just 7 days."
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "See the dramatic transformation our customers experience with consistent use"
     },
     {
       "type": "text",
-      "id": "benefit_1",
-      "label": "Benefit 1",
-      "default": "Reduces fine lines and wrinkles"
+      "id": "before_label",
+      "label": "Before label",
+      "default": "Before"
     },
     {
       "type": "text",
-      "id": "benefit_2",
-      "label": "Benefit 2",
-      "default": "Brightens and evens skin tone"
-    },
-    {
-      "type": "text",
-      "id": "benefit_3",
-      "label": "Benefit 3",
-      "default": "Deeply hydrates for 24 hours"
+      "id": "after_label",
+      "label": "After label",
+      "default": "After"
     },
     {
       "type": "header",
-      "content": "Pricing"
+      "content": "Statistics"
     },
     {
       "type": "text",
-      "id": "product_price",
-      "label": "Product price",
-      "default": "₱2,499"
+      "id": "stat_1",
+      "label": "Statistic 1",
+      "default": "95%"
     },
     {
       "type": "text",
-      "id": "compare_price",
-      "label": "Compare at price"
+      "id": "stat_1_label",
+      "label": "Statistic 1 label",
+      "default": "Saw visible improvement"
     },
     {
       "type": "text",
-      "id": "promo_text",
-      "label": "Promo text",
-      "default": "Limited Time: 20% OFF"
+      "id": "stat_2",
+      "label": "Statistic 2",
+      "default": "7 Days"
     },
     {
       "type": "text",
-      "id": "cta_text",
-      "label": "Button text",
-      "default": "Add to Cart"
+      "id": "stat_2_label",
+      "label": "Statistic 2 label",
+      "default": "To see results"
     },
     {
-      "type": "url",
-      "id": "cta_link",
-      "label": "Button link"
+      "type": "text",
+      "id": "stat_3",
+      "label": "Statistic 3",
+      "default": "100%"
+    },
+    {
+      "type": "text",
+      "id": "stat_3_label",
+      "label": "Statistic 3 label",
+      "default": "Would recommend"
     },
     {
       "type": "header",
       "content": "Layout"
-    },
-    {
-      "type": "select",
-      "id": "layout",
-      "label": "Layout",
-      "options": [
-        {
-          "value": "normal",
-          "label": "Images left, content right"
-        },
-        {
-          "value": "reverse",
-          "label": "Content left, images right"
-        }
-      ],
-      "default": "normal"
     },
     {
       "type": "range",
@@ -471,7 +495,7 @@
       "step": 10,
       "unit": "px",
       "label": "Top padding",
-      "default": 60
+      "default": 80
     },
     {
       "type": "range",
@@ -481,7 +505,7 @@
       "step": 10,
       "unit": "px",
       "label": "Bottom padding",
-      "default": 60
+      "default": 80
     },
     {
       "type": "header",
@@ -489,52 +513,52 @@
     },
     {
       "type": "range",
-      "id": "title_size",
+      "id": "heading_size",
       "min": 24,
       "max": 48,
       "step": 2,
       "unit": "px",
-      "label": "Title size",
+      "label": "Heading size",
       "default": 36
     },
     {
       "type": "range",
-      "id": "description_size",
+      "id": "subheading_size",
       "min": 14,
       "max": 20,
       "step": 1,
       "unit": "px",
-      "label": "Description size",
-      "default": 16
+      "label": "Subheading size",
+      "default": 18
     },
     {
       "type": "range",
-      "id": "benefit_size",
-      "min": 14,
-      "max": 18,
-      "step": 1,
-      "unit": "px",
-      "label": "Benefit size",
-      "default": 16
-    },
-    {
-      "type": "range",
-      "id": "price_size",
-      "min": 20,
-      "max": 32,
-      "step": 2,
-      "unit": "px",
-      "label": "Price size",
-      "default": 24
-    },
-    {
-      "type": "range",
-      "id": "promo_size",
-      "min": 12,
+      "id": "label_size",
+      "min": 10,
       "max": 16,
       "step": 1,
       "unit": "px",
-      "label": "Promo text size",
+      "label": "Label size",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "stat_size",
+      "min": 24,
+      "max": 48,
+      "step": 2,
+      "unit": "px",
+      "label": "Statistic size",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "stat_label_size",
+      "min": 12,
+      "max": 18,
+      "step": 1,
+      "unit": "px",
+      "label": "Statistic label size",
       "default": 14
     },
     {
@@ -545,7 +569,7 @@
       "type": "color",
       "id": "background_color",
       "label": "Background color",
-      "default": "#ffffff"
+      "default": "#fff7f2"
     },
     {
       "type": "color",
@@ -561,104 +585,36 @@
     },
     {
       "type": "color",
-      "id": "promo_bg_color",
-      "label": "Promo background color",
-      "default": "#de5757"
+      "id": "slider_color",
+      "label": "Slider color",
+      "default": "#ffffff"
     },
     {
       "type": "color",
-      "id": "promo_text_color",
-      "label": "Promo text color",
+      "id": "label_bg_color",
+      "label": "Label background color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "label_text_color",
+      "label": "Label text color",
       "default": "#ffffff"
     },
     {
       "type": "range",
-      "id": "promo_border_radius",
+      "id": "label_border_radius",
       "min": 0,
-      "max": 25,
-      "step": 1,
-      "unit": "px",
-      "label": "Promo border radius",
-      "default": 20
-    },
-    {
-      "type": "header",
-      "content": "Button style"
-    },
-    {
-      "type": "color",
-      "id": "button_bg_color",
-      "label": "Background color",
-      "default": "#0b0b0b"
-    },
-    {
-      "type": "color",
-      "id": "button_text_color",
-      "label": "Text color",
-      "default": "#ffffff"
-    },
-    {
-      "type": "color",
-      "id": "button_hover_bg_color",
-      "label": "Hover background color",
-      "default": "#333333"
-    },
-    {
-      "type": "color",
-      "id": "button_hover_text_color",
-      "label": "Hover text color",
-      "default": "#ffffff"
-    },
-    {
-      "type": "range",
-      "id": "button_text_size",
-      "min": 12,
       "max": 20,
       "step": 1,
       "unit": "px",
-      "label": "Text size",
-      "default": 16
-    },
-    {
-      "type": "range",
-      "id": "button_padding_vertical",
-      "min": 8,
-      "max": 24,
-      "step": 2,
-      "unit": "px",
-      "label": "Vertical padding",
-      "default": 16
-    },
-    {
-      "type": "range",
-      "id": "button_padding_horizontal",
-      "min": 16,
-      "max": 48,
-      "step": 4,
-      "unit": "px",
-      "label": "Horizontal padding",
-      "default": 32
-    },
-    {
-      "type": "range",
-      "id": "button_border_radius",
-      "min": 0,
-      "max": 50,
-      "step": 2,
-      "unit": "px",
-      "label": "Border radius",
+      "label": "Label border radius",
       "default": 4
-    },
-    {
-      "type": "checkbox",
-      "id": "button_uppercase",
-      "label": "Uppercase text",
-      "default": true
     }
   ],
   "presets": [
     {
-      "name": "Product spotlight"
+      "name": "Before & after results"
     }
   ]
 }
