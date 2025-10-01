@@ -269,13 +269,99 @@
         "layout": "inline",
         "image_location": "left",
         "image_width": "standard",
-        "image": "shopify://shop_images/JAY04599.jpg",
         "block_bg_color": "",
         "color_scheme": "",
         "section_width": "wrapper",
         "add_gutter": true,
         "padding_top": 60,
-        "padding_bottom": 60
+        "padding_bottom": 0
+      }
+    },
+    "section_image_with_text_fHUq38": {
+      "type": "section-image-with-text",
+      "blocks": {
+        "subheading_dGXhNw": {
+          "type": "subheading",
+          "settings": {
+            "subheading": "Introducing",
+            "size": 75,
+            "text_position": "left",
+            "spacing_bottom": 12
+          }
+        },
+        "heading_HTiEtX": {
+          "type": "heading",
+          "settings": {
+            "title": "<p>Image with text</p>",
+            "size": 120,
+            "text_position": "left",
+            "heading_highlight_type": "underline-hand-drawn",
+            "highlight_color": "#000",
+            "highlight_text_color": "",
+            "spacing_bottom": 12
+          }
+        },
+        "text_wNygX9": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>",
+            "size": 100,
+            "text_position": "left",
+            "spacing_bottom": 12
+          }
+        },
+        "accordion_Barg8B": {
+          "type": "accordion",
+          "settings": {
+            "icon_width": 25,
+            "icon_position": "inline-left",
+            "heading": "Frequently asked question",
+            "type_style": "font-heading",
+            "heading_size": 120,
+            "text": "<p>Use this text block to discuss some commonly asked questions like shipping and returns, sizing, warranties, or product and company details.</p>",
+            "text_size": 75,
+            "tabs_bg_color": "",
+            "line_thickness": "normal",
+            "spacing_bottom": 0
+          }
+        },
+        "button_3Rh3Gn": {
+          "type": "button",
+          "settings": {
+            "button_text": "Button text",
+            "button_link": "",
+            "button_color": "btn--black",
+            "button_style": "btn--solid",
+            "button_size": "btn--small",
+            "video_link": "",
+            "text_position": "left",
+            "spacing_bottom": 12
+          }
+        }
+      },
+      "block_order": [
+        "subheading_dGXhNw",
+        "heading_HTiEtX",
+        "text_wNygX9",
+        "accordion_Barg8B",
+        "button_3Rh3Gn"
+      ],
+      "name": "Image with text",
+      "settings": {
+        "show_accordion_divider": true,
+        "increase_border_radius": false,
+        "section_height": "six-fifty-height",
+        "enable_mobile_height": false,
+        "mobile_height": "four-fifty-height-mobile",
+        "layout": "inline",
+        "image_location": "right",
+        "image_width": "standard",
+        "block_bg_color": "",
+        "color_scheme": "",
+        "section_width": "wrapper",
+        "add_gutter": true,
+        "padding_top": 0,
+        "padding_bottom": 22
       }
     },
     "175928512318e52e87": {
@@ -778,6 +864,7 @@
   "order": [
     "175928636660a525d9",
     "section_image_with_text_fqqa6Q",
+    "section_image_with_text_fHUq38",
     "175928512318e52e87",
     "1759277456b1014fa2",
     "1759276997d00f2b85",
