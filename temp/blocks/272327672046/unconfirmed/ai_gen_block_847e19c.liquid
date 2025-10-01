@@ -32,18 +32,52 @@
 {% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
 
 {% style %}
-  .ai-how-to-use-{{ ai_gen_id }} {
+  .ai-urgency-offer-{{ ai_gen_id }} {
     padding: {{ block.settings.section_padding_top }}px 20px {{ block.settings.section_padding_bottom }}px;
     background-color: {{ block.settings.background_color }};
+    position: relative;
+    overflow: hidden;
   }
 
-  .ai-how-to-use-container-{{ ai_gen_id }} {
+  .ai-urgency-offer-{{ ai_gen_id }}::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: {{ block.settings.background_gradient }};
+    z-index: 1;
+  }
+
+  .ai-urgency-container-{{ ai_gen_id }} {
     max-width: {{ block.settings.container_width }}px;
     margin: 0 auto;
     text-align: center;
+    position: relative;
+    z-index: 2;
   }
 
-  .ai-how-to-use-heading-{{ ai_gen_id }} {
+  .ai-urgency-badge-{{ ai_gen_id }} {
+    display: inline-block;
+    background-color: {{ block.settings.badge_bg_color }};
+    color: {{ block.settings.badge_text_color }};
+    padding: 8px 20px;
+    border-radius: {{ block.settings.badge_border_radius }}px;
+    font-size: {{ block.settings.badge_size }}px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+    animation: pulse-{{ ai_gen_id }} 2s infinite;
+  }
+
+  @keyframes pulse-{{ ai_gen_id }} {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+  }
+
+  .ai-urgency-heading-{{ ai_gen_id }} {
     font-size: {{ block.settings.heading_size }}px;
     font-weight: 700;
     line-height: 1.2;
@@ -51,239 +85,267 @@
     color: {{ block.settings.text_color }};
   }
 
-  .ai-how-to-use-subheading-{{ ai_gen_id }} {
+  .ai-urgency-subheading-{{ ai_gen_id }} {
     font-size: {{ block.settings.subheading_size }}px;
     line-height: 1.5;
-    margin: 0 0 60px;
+    margin: 0 0 40px;
     color: {{ block.settings.text_color }};
-    opacity: 0.8;
+    opacity: 0.9;
   }
 
-  .ai-how-to-use-steps-{{ ai_gen_id }} {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 40px;
-    position: relative;
-  }
-
-  .ai-how-to-use-step-{{ ai_gen_id }} {
-    position: relative;
-    text-align: center;
-  }
-
-  .ai-how-to-use-step-number-{{ ai_gen_id }} {
-    width: {{ block.settings.step_number_size }}px;
-    height: {{ block.settings.step_number_size }}px;
-    background-color: {{ block.settings.accent_color }};
-    color: white;
-    border-radius: 50%;
+  .ai-urgency-countdown-{{ ai_gen_id }} {
     display: flex;
-    align-items: center;
     justify-content: center;
-    font-size: {{ block.settings.step_number_text_size }}px;
+    gap: 20px;
+    margin-bottom: 40px;
+  }
+
+  .ai-urgency-countdown-item-{{ ai_gen_id }} {
+    background-color: {{ block.settings.countdown_bg_color }};
+    color: {{ block.settings.countdown_text_color }};
+    padding: 20px 15px;
+    border-radius: {{ block.settings.countdown_border_radius }}px;
+    min-width: 80px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  }
+
+  .ai-urgency-countdown-number-{{ ai_gen_id }} {
+    font-size: {{ block.settings.countdown_number_size }}px;
     font-weight: 700;
-    margin: 0 auto 25px;
-    position: relative;
-    z-index: 2;
-  }
-
-  .ai-how-to-use-step-icon-{{ ai_gen_id }} {
-    width: {{ block.settings.step_icon_size }}px;
-    height: {{ block.settings.step_icon_size }}px;
-    background-color: {{ block.settings.icon_bg_color }};
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto 25px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  }
-
-  .ai-how-to-use-step-image-{{ ai_gen_id }} {
-    width: {{ block.settings.step_icon_size }}px;
-    height: {{ block.settings.step_icon_size }}px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin: 0 auto 25px;
+    line-height: 1;
+    margin-bottom: 5px;
     display: block;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   }
 
-  .ai-how-to-use-step-title-{{ ai_gen_id }} {
-    font-size: {{ block.settings.step_title_size }}px;
-    font-weight: 600;
-    margin: 0 0 15px;
-    color: {{ block.settings.text_color }};
-  }
-
-  .ai-how-to-use-step-description-{{ ai_gen_id }} {
-    font-size: {{ block.settings.step_description_size }}px;
-    line-height: 1.6;
-    color: {{ block.settings.text_color }};
+  .ai-urgency-countdown-label-{{ ai_gen_id }} {
+    font-size: {{ block.settings.countdown_label_size }}px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
     opacity: 0.8;
   }
 
-  .ai-how-to-use-connector-{{ ai_gen_id }} {
-    position: absolute;
-    top: {{ block.settings.step_number_size | divided_by: 2 }}px;
-    left: 50%;
-    right: -50%;
-    height: 2px;
-    background: linear-gradient(90deg, {{ block.settings.accent_color }}, transparent);
-    z-index: 1;
+  .ai-urgency-offer-details-{{ ai_gen_id }} {
+    background-color: {{ block.settings.offer_bg_color }};
+    padding: 30px;
+    border-radius: {{ block.settings.offer_border_radius }}px;
+    margin-bottom: 30px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
   }
 
-  .ai-how-to-use-step-{{ ai_gen_id }}:last-child .ai-how-to-use-connector-{{ ai_gen_id }} {
-    display: none;
+  .ai-urgency-offer-text-{{ ai_gen_id }} {
+    font-size: {{ block.settings.offer_text_size }}px;
+    font-weight: 600;
+    color: {{ block.settings.offer_text_color }};
+    margin-bottom: 15px;
   }
 
-  .ai-how-to-use-placeholder-{{ ai_gen_id }} {
-    width: {{ block.settings.step_icon_size }}px;
-    height: {{ block.settings.step_icon_size }}px;
-    background-color: #f4f4f4;
-    border-radius: 50%;
-    display: flex;
+  .ai-urgency-discount-{{ ai_gen_id }} {
+    font-size: {{ block.settings.discount_size }}px;
+    font-weight: 700;
+    color: {{ block.settings.discount_color }};
+    margin-bottom: 10px;
+  }
+
+  .ai-urgency-original-price-{{ ai_gen_id }} {
+    font-size: {{ block.settings.price_size }}px;
+    color: {{ block.settings.text_color }};
+    text-decoration: line-through;
+    opacity: 0.6;
+    margin-right: 15px;
+  }
+
+  .ai-urgency-sale-price-{{ ai_gen_id }} {
+    font-size: {{ block.settings.price_size | times: 1.2 }}px;
+    font-weight: 700;
+    color: {{ block.settings.discount_color }};
+  }
+
+  .ai-urgency-cta-{{ ai_gen_id }} {
+    display: inline-flex;
     align-items: center;
     justify-content: center;
-    margin: 0 auto 25px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    padding: {{ block.settings.button_padding_vertical }}px {{ block.settings.button_padding_horizontal }}px;
+    background-color: {{ block.settings.button_bg_color }};
+    color: {{ block.settings.button_text_color }};
+    text-decoration: none;
+    font-size: {{ block.settings.button_text_size }}px;
+    font-weight: 700;
+    border-radius: {{ block.settings.button_border_radius }}px;
+    transition: all 0.3s ease;
+    text-transform: {% if block.settings.button_uppercase %}uppercase{% else %}none{% endif %};
+    letter-spacing: {% if block.settings.button_uppercase %}1px{% else %}0{% endif %};
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    animation: glow-{{ ai_gen_id }} 2s infinite alternate;
   }
 
-  .ai-how-to-use-placeholder-{{ ai_gen_id }} svg {
-    width: 30px;
-    height: 30px;
-    color: #999;
+  @keyframes glow-{{ ai_gen_id }} {
+    from { box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); }
+    to { box-shadow: 0 6px 20px {{ block.settings.button_bg_color }}66; }
+  }
+
+  .ai-urgency-cta-{{ ai_gen_id }}:hover {
+    background-color: {{ block.settings.button_hover_bg_color }};
+    color: {{ block.settings.button_hover_text_color }};
+    transform: translateY(-2px);
+  }
+
+  .ai-urgency-stock-warning-{{ ai_gen_id }} {
+    background-color: {{ block.settings.warning_bg_color }};
+    color: {{ block.settings.warning_text_color }};
+    padding: 15px 25px;
+    border-radius: {{ block.settings.warning_border_radius }}px;
+    font-size: {{ block.settings.warning_text_size }}px;
+    font-weight: 600;
+    margin-top: 20px;
+    display: inline-block;
   }
 
   @media screen and (max-width: 768px) {
-    .ai-how-to-use-steps-{{ ai_gen_id }} {
-      grid-template-columns: 1fr;
-      gap: 50px;
+    .ai-urgency-countdown-{{ ai_gen_id }} {
+      gap: 15px;
     }
 
-    .ai-how-to-use-connector-{{ ai_gen_id }} {
-      display: none;
+    .ai-urgency-countdown-item-{{ ai_gen_id }} {
+      padding: 15px 10px;
+      min-width: 60px;
     }
 
-    .ai-how-to-use-step-{{ ai_gen_id }}::after {
-      content: '';
-      position: absolute;
-      bottom: -25px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 2px;
-      height: 25px;
-      background-color: {{ block.settings.accent_color }};
-    }
-
-    .ai-how-to-use-step-{{ ai_gen_id }}:last-child::after {
-      display: none;
-    }
-
-    .ai-how-to-use-heading-{{ ai_gen_id }} {
+    .ai-urgency-heading-{{ ai_gen_id }} {
       font-size: {{ block.settings.heading_size | times: 0.8 }}px;
     }
-  }
 
-  {% if block.settings.layout == 'horizontal' %}
-    @media screen and (min-width: 769px) {
-      .ai-how-to-use-steps-{{ ai_gen_id }} {
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-start;
-      }
-
-      .ai-how-to-use-step-{{ ai_gen_id }} {
-        flex: 1;
-        max-width: 200px;
-      }
+    .ai-urgency-offer-details-{{ ai_gen_id }} {
+      padding: 20px;
     }
-  {% endif %}
+  }
 {% endstyle %}
 
-<div class="ai-how-to-use-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
-  <div class="ai-how-to-use-container-{{ ai_gen_id }}">
+<countdown-timer-{{ ai_gen_id }} class="ai-urgency-offer-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  <div class="ai-urgency-container-{{ ai_gen_id }}">
+    {% if block.settings.badge_text != blank %}
+      <div class="ai-urgency-badge-{{ ai_gen_id }}">{{ block.settings.badge_text }}</div>
+    {% endif %}
+
     {% if block.settings.heading != blank %}
-      <h2 class="ai-how-to-use-heading-{{ ai_gen_id }}">{{ block.settings.heading }}</h2>
+      <h2 class="ai-urgency-heading-{{ ai_gen_id }}">{{ block.settings.heading }}</h2>
     {% endif %}
 
     {% if block.settings.subheading != blank %}
-      <div class="ai-how-to-use-subheading-{{ ai_gen_id }}">{{ block.settings.subheading }}</div>
+      <div class="ai-urgency-subheading-{{ ai_gen_id }}">{{ block.settings.subheading }}</div>
     {% endif %}
 
-    <div class="ai-how-to-use-steps-{{ ai_gen_id }}">
-      {% for i in (1..4) %}
-        {% liquid
-          assign step_title_key = 'step_' | append: i | append: '_title'
-          assign step_description_key = 'step_' | append: i | append: '_description'
-          assign step_image_key = 'step_' | append: i | append: '_image'
+    {% if block.settings.show_countdown %}
+      <div class="ai-urgency-countdown-{{ ai_gen_id }}">
+        <div class="ai-urgency-countdown-item-{{ ai_gen_id }}">
+          <span class="ai-urgency-countdown-number-{{ ai_gen_id }}" data-countdown="days">00</span>
+          <span class="ai-urgency-countdown-label-{{ ai_gen_id }}">Days</span>
+        </div>
+        <div class="ai-urgency-countdown-item-{{ ai_gen_id }}">
+          <span class="ai-urgency-countdown-number-{{ ai_gen_id }}" data-countdown="hours">00</span>
+          <span class="ai-urgency-countdown-label-{{ ai_gen_id }}">Hours</span>
+        </div>
+        <div class="ai-urgency-countdown-item-{{ ai_gen_id }}">
+          <span class="ai-urgency-countdown-number-{{ ai_gen_id }}" data-countdown="minutes">00</span>
+          <span class="ai-urgency-countdown-label-{{ ai_gen_id }}">Min</span>
+        </div>
+        <div class="ai-urgency-countdown-item-{{ ai_gen_id }}">
+          <span class="ai-urgency-countdown-number-{{ ai_gen_id }}" data-countdown="seconds">00</span>
+          <span class="ai-urgency-countdown-label-{{ ai_gen_id }}">Sec</span>
+        </div>
+      </div>
+    {% endif %}
 
-          assign step_title = block.settings[step_title_key]
-          assign step_description = block.settings[step_description_key]
-          assign step_image = block.settings[step_image_key]
-        %}
+    <div class="ai-urgency-offer-details-{{ ai_gen_id }}">
+      {% if block.settings.offer_text != blank %}
+        <div class="ai-urgency-offer-text-{{ ai_gen_id }}">{{ block.settings.offer_text }}</div>
+      {% endif %}
 
-        {% if step_title != blank %}
-          <div class="ai-how-to-use-step-{{ ai_gen_id }}">
-            {% if block.settings.show_step_numbers %}
-              <div class="ai-how-to-use-step-number-{{ ai_gen_id }}">{{ i }}</div>
-            {% endif %}
+      {% if block.settings.discount_text != blank %}
+        <div class="ai-urgency-discount-{{ ai_gen_id }}">{{ block.settings.discount_text }}</div>
+      {% endif %}
 
-            {% if step_image %}
-              <img
-                src="{{ step_image | image_url: width: 200 }}"
-                alt="{{ step_image.alt | escape }}"
-                loading="lazy"
-                class="ai-how-to-use-step-image-{{ ai_gen_id }}"
-              >
-            {% else %}
-              <div class="ai-how-to-use-placeholder-{{ ai_gen_id }}">
-                {% case i %}
-                  {% when 1 %}
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                      <path d="M9 12l2 2 4-4"></path>
-                      <path d="M21 12c-1 0-3-1-3-3s2-3 3-3 3 1 3 3-2 3-3 3"></path>
-                      <path d="M3 12c1 0 3-1 3-3s-2-3-3-3-3 1-3 3 2 3 3 3"></path>
-                      <path d="M12 3c0 1-1 3-3 3s-3-2-3-3 1-3 3-3 3 2 3 3"></path>
-                      <path d="M12 21c0-1-1-3-3-3s-3 2-3 3 1 3 3 3 3-2 3-3"></path>
-                    </svg>
-                  {% when 2 %}
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                      <circle cx="12" cy="12" r="3"></circle>
-                      <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
-                    </svg>
-                  {% when 3 %}
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                      <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
-                    </svg>
-                  {% else %}
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                      <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
-                      <polyline points="22,4 12,14.01 9,11.01"></polyline>
-                    </svg>
-                {% endcase %}
-              </div>
-            {% endif %}
-
-            <h3 class="ai-how-to-use-step-title-{{ ai_gen_id }}">{{ step_title }}</h3>
-
-            {% if step_description != blank %}
-              <div class="ai-how-to-use-step-description-{{ ai_gen_id }}">{{ step_description }}</div>
-            {% endif %}
-
-            {% if block.settings.layout == 'horizontal' and forloop.last == false %}
-              <div class="ai-how-to-use-connector-{{ ai_gen_id }}"></div>
-            {% endif %}
-          </div>
-        {% endif %}
-      {% endfor %}
+      {% if block.settings.original_price != blank or block.settings.sale_price != blank %}
+        <div class="ai-urgency-pricing-{{ ai_gen_id }}">
+          {% if block.settings.original_price != blank %}
+            <span class="ai-urgency-original-price-{{ ai_gen_id }}">{{ block.settings.original_price }}</span>
+          {% endif %}
+          {% if block.settings.sale_price != blank %}
+            <span class="ai-urgency-sale-price-{{ ai_gen_id }}">{{ block.settings.sale_price }}</span>
+          {% endif %}
+        </div>
+      {% endif %}
     </div>
+
+    {% if block.settings.cta_text != blank %}
+      <a
+        href="{{ block.settings.cta_link }}"
+        class="ai-urgency-cta-{{ ai_gen_id }}"
+      >
+        {{ block.settings.cta_text }}
+      </a>
+    {% endif %}
+
+    {% if block.settings.stock_warning != blank %}
+      <div class="ai-urgency-stock-warning-{{ ai_gen_id }}">{{ block.settings.stock_warning }}</div>
+    {% endif %}
   </div>
-</div>
+</countdown-timer-{{ ai_gen_id }}>
+
+<script>
+  (function() {
+    class CountdownTimer{{ ai_gen_id }} extends HTMLElement {
+      constructor() {
+        super();
+      }
+
+      connectedCallback() {
+        this.endDate = new Date('{{ block.settings.countdown_end_date }}').getTime();
+        this.daysElement = this.querySelector('[data-countdown="days"]');
+        this.hoursElement = this.querySelector('[data-countdown="hours"]');
+        this.minutesElement = this.querySelector('[data-countdown="minutes"]');
+        this.secondsElement = this.querySelector('[data-countdown="seconds"]');
+
+        if (this.endDate && this.daysElement) {
+          this.startCountdown();
+        }
+      }
+
+      startCountdown() {
+        const updateCountdown = () => {
+          const now = new Date().getTime();
+          const distance = this.endDate - now;
+
+          if (distance < 0) {
+            this.daysElement.textContent = '00';
+            this.hoursElement.textContent = '00';
+            this.minutesElement.textContent = '00';
+            this.secondsElement.textContent = '00';
+            return;
+          }
+
+          const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+          const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+          const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+          const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+          this.daysElement.textContent = days.toString().padStart(2, '0');
+          this.hoursElement.textContent = hours.toString().padStart(2, '0');
+          this.minutesElement.textContent = minutes.toString().padStart(2, '0');
+          this.secondsElement.textContent = seconds.toString().padStart(2, '0');
+        };
+
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+      }
+    }
+
+    customElements.define('countdown-timer-{{ ai_gen_id }}', CountdownTimer{{ ai_gen_id }});
+  })();
+</script>
 
 {% schema %}
 {
-  "name": "How to use",
+  "name": "Limited time offer",
   "settings": [
     {
       "type": "header",
@@ -291,135 +353,93 @@
     },
     {
       "type": "text",
+      "id": "badge_text",
+      "label": "Badge text",
+      "default": "Limited Time"
+    },
+    {
+      "type": "text",
       "id": "heading",
       "label": "Heading",
-      "default": "How to Use"
+      "default": "Get 25% Off Today Only!"
     },
     {
       "type": "textarea",
       "id": "subheading",
       "label": "Subheading",
-      "default": "Follow these simple steps for best results"
+      "default": "Don't miss out on this exclusive offer - while stocks last"
+    },
+    {
+      "type": "text",
+      "id": "offer_text",
+      "label": "Offer text",
+      "default": "Save big on your favorite skincare products"
+    },
+    {
+      "type": "text",
+      "id": "discount_text",
+      "label": "Discount text",
+      "default": "25% OFF"
+    },
+    {
+      "type": "text",
+      "id": "original_price",
+      "label": "Original price",
+      "default": "₱2,499"
+    },
+    {
+      "type": "text",
+      "id": "sale_price",
+      "label": "Sale price",
+      "default": "₱1,874"
+    },
+    {
+      "type": "text",
+      "id": "cta_text",
+      "label": "Button text",
+      "default": "Shop Now - Limited Time"
+    },
+    {
+      "type": "url",
+      "id": "cta_link",
+      "label": "Button link"
+    },
+    {
+      "type": "text",
+      "id": "stock_warning",
+      "label": "Stock warning",
+      "default": "⚠️ Only 12 left in stock!"
+    },
+    {
+      "type": "header",
+      "content": "Countdown timer"
     },
     {
       "type": "checkbox",
-      "id": "show_step_numbers",
-      "label": "Show step numbers",
+      "id": "show_countdown",
+      "label": "Show countdown timer",
       "default": true
     },
     {
-      "type": "header",
-      "content": "Step 1"
-    },
-    {
       "type": "text",
-      "id": "step_1_title",
-      "label": "Step title",
-      "default": "Cleanse"
-    },
-    {
-      "type": "textarea",
-      "id": "step_1_description",
-      "label": "Step description",
-      "default": "Start with clean, dry skin. Gently cleanse your face with your preferred cleanser."
-    },
-    {
-      "type": "image_picker",
-      "id": "step_1_image",
-      "label": "Step image"
-    },
-    {
-      "type": "header",
-      "content": "Step 2"
-    },
-    {
-      "type": "text",
-      "id": "step_2_title",
-      "label": "Step title",
-      "default": "Apply"
-    },
-    {
-      "type": "textarea",
-      "id": "step_2_description",
-      "label": "Step description",
-      "default": "Apply 2-3 drops of serum to your face and neck. Use gentle upward motions."
-    },
-    {
-      "type": "image_picker",
-      "id": "step_2_image",
-      "label": "Step image"
-    },
-    {
-      "type": "header",
-      "content": "Step 3"
-    },
-    {
-      "type": "text",
-      "id": "step_3_title",
-      "label": "Step title",
-      "default": "Massage"
-    },
-    {
-      "type": "textarea",
-      "id": "step_3_description",
-      "label": "Step description",
-      "default": "Gently massage the serum into your skin until fully absorbed."
-    },
-    {
-      "type": "image_picker",
-      "id": "step_3_image",
-      "label": "Step image"
-    },
-    {
-      "type": "header",
-      "content": "Step 4"
-    },
-    {
-      "type": "text",
-      "id": "step_4_title",
-      "label": "Step title",
-      "default": "Moisturize"
-    },
-    {
-      "type": "textarea",
-      "id": "step_4_description",
-      "label": "Step description",
-      "default": "Follow with your favorite moisturizer and sunscreen during the day."
-    },
-    {
-      "type": "image_picker",
-      "id": "step_4_image",
-      "label": "Step image"
+      "id": "countdown_end_date",
+      "label": "End date",
+      "default": "2025-12-31 23:59:59",
+      "info": "Format: YYYY-MM-DD HH:MM:SS"
     },
     {
       "type": "header",
       "content": "Layout"
     },
     {
-      "type": "select",
-      "id": "layout",
-      "label": "Layout",
-      "options": [
-        {
-          "value": "grid",
-          "label": "Grid"
-        },
-        {
-          "value": "horizontal",
-          "label": "Horizontal"
-        }
-      ],
-      "default": "grid"
-    },
-    {
       "type": "range",
       "id": "container_width",
-      "min": 800,
-      "max": 1400,
+      "min": 600,
+      "max": 1000,
       "step": 50,
       "unit": "px",
       "label": "Container width",
-      "default": 1200
+      "default": 800
     },
     {
       "type": "range",
@@ -429,7 +449,7 @@
       "step": 10,
       "unit": "px",
       "label": "Top padding",
-      "default": 80
+      "default": 60
     },
     {
       "type": "range",
@@ -439,31 +459,61 @@
       "step": 10,
       "unit": "px",
       "label": "Bottom padding",
-      "default": 80
-    },
-    {
-      "type": "range",
-      "id": "step_number_size",
-      "min": 40,
-      "max": 80,
-      "step": 5,
-      "unit": "px",
-      "label": "Step number size",
       "default": 60
     },
     {
       "type": "range",
-      "id": "step_icon_size",
-      "min": 60,
-      "max": 120,
-      "step": 10,
+      "id": "badge_border_radius",
+      "min": 0,
+      "max": 30,
+      "step": 2,
       "unit": "px",
-      "label": "Step icon/image size",
-      "default": 80
+      "label": "Badge border radius",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "countdown_border_radius",
+      "min": 0,
+      "max": 20,
+      "step": 2,
+      "unit": "px",
+      "label": "Countdown border radius",
+      "default": 8
+    },
+    {
+      "type": "range",
+      "id": "offer_border_radius",
+      "min": 0,
+      "max": 30,
+      "step": 2,
+      "unit": "px",
+      "label": "Offer box border radius",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "warning_border_radius",
+      "min": 0,
+      "max": 20,
+      "step": 2,
+      "unit": "px",
+      "label": "Warning border radius",
+      "default": 8
     },
     {
       "type": "header",
       "content": "Typography"
+    },
+    {
+      "type": "range",
+      "id": "badge_size",
+      "min": 10,
+      "max": 16,
+      "step": 1,
+      "unit": "px",
+      "label": "Badge size",
+      "default": 12
     },
     {
       "type": "range",
@@ -487,33 +537,63 @@
     },
     {
       "type": "range",
-      "id": "step_number_text_size",
-      "min": 16,
-      "max": 32,
+      "id": "countdown_number_size",
+      "min": 20,
+      "max": 40,
       "step": 2,
       "unit": "px",
-      "label": "Step number text size",
-      "default": 24
+      "label": "Countdown number size",
+      "default": 28
     },
     {
       "type": "range",
-      "id": "step_title_size",
+      "id": "countdown_label_size",
+      "min": 10,
+      "max": 16,
+      "step": 1,
+      "unit": "px",
+      "label": "Countdown label size",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "offer_text_size",
+      "min": 16,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Offer text size",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "discount_size",
+      "min": 24,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "label": "Discount size",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "price_size",
       "min": 18,
       "max": 28,
       "step": 2,
       "unit": "px",
-      "label": "Step title size",
+      "label": "Price size",
       "default": 22
     },
     {
       "type": "range",
-      "id": "step_description_size",
-      "min": 14,
+      "id": "warning_text_size",
+      "min": 12,
       "max": 18,
       "step": 1,
       "unit": "px",
-      "label": "Step description size",
-      "default": 16
+      "label": "Warning text size",
+      "default": 14
     },
     {
       "type": "header",
@@ -523,30 +603,151 @@
       "type": "color",
       "id": "background_color",
       "label": "Background color",
-      "default": "#ffffff"
+      "default": "#de5757"
+    },
+    {
+      "type": "color_background",
+      "id": "background_gradient",
+      "label": "Background gradient"
     },
     {
       "type": "color",
       "id": "text_color",
       "label": "Text color",
-      "default": "#0b0b0b"
+      "default": "#ffffff"
     },
     {
       "type": "color",
-      "id": "accent_color",
-      "label": "Accent color",
+      "id": "badge_bg_color",
+      "label": "Badge background color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "badge_text_color",
+      "label": "Badge text color",
       "default": "#de5757"
     },
     {
       "type": "color",
-      "id": "icon_bg_color",
-      "label": "Icon background color",
-      "default": "#fff7f2"
+      "id": "countdown_bg_color",
+      "label": "Countdown background color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "countdown_text_color",
+      "label": "Countdown text color",
+      "default": "#0b0b0b"
+    },
+    {
+      "type": "color",
+      "id": "offer_bg_color",
+      "label": "Offer box background color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "offer_text_color",
+      "label": "Offer text color",
+      "default": "#0b0b0b"
+    },
+    {
+      "type": "color",
+      "id": "discount_color",
+      "label": "Discount color",
+      "default": "#de5757"
+    },
+    {
+      "type": "color",
+      "id": "warning_bg_color",
+      "label": "Warning background color",
+      "default": "#ff6b6b"
+    },
+    {
+      "type": "color",
+      "id": "warning_text_color",
+      "label": "Warning text color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "header",
+      "content": "Button style"
+    },
+    {
+      "type": "color",
+      "id": "button_bg_color",
+      "label": "Background color",
+      "default": "#0b0b0b"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "Text color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "button_hover_bg_color",
+      "label": "Hover background color",
+      "default": "#333333"
+    },
+    {
+      "type": "color",
+      "id": "button_hover_text_color",
+      "label": "Hover text color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "button_text_size",
+      "min": 14,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "label": "Text size",
+      "default": 18
+    },
+    {
+      "type": "range",
+      "id": "button_padding_vertical",
+      "min": 12,
+      "max": 24,
+      "step": 2,
+      "unit": "px",
+      "label": "Vertical padding",
+      "default": 18
+    },
+    {
+      "type": "range",
+      "id": "button_padding_horizontal",
+      "min": 24,
+      "max": 48,
+      "step": 4,
+      "unit": "px",
+      "label": "Horizontal padding",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "button_border_radius",
+      "min": 0,
+      "max": 50,
+      "step": 2,
+      "unit": "px",
+      "label": "Border radius",
+      "default": 8
+    },
+    {
+      "type": "checkbox",
+      "id": "button_uppercase",
+      "label": "Uppercase text",
+      "default": true
     }
   ],
   "presets": [
     {
-      "name": "How to use"
+      "name": "Limited time offer"
     }
   ]
 }
