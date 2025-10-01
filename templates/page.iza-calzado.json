@@ -55,7 +55,7 @@
         "ai_gen_block_ea4ed4b_88TDcM": {
           "type": "ai_gen_block_ea4ed4b",
           "settings": {
-            "influencer_image": "shopify://shop_images/Pili_Ani_Moisturizing_Lipstick__La_Vie_En_Rose_main001.jpg",
+            "influencer_image": "shopify://shop_images/Pili_Ani_Moisturizing_Lipstick__Toasted_Latte_main001.jpg",
             "influencer_name": "Iza Calzado",
             "influencer_title": "Actress & Wellness Advocate",
             "instagram_handle": "",
@@ -96,7 +96,6 @@
             "fallback_benefit_2": "Sample Benefit 2",
             "fallback_benefit_3": "Sample Benefit 3",
             "promo_text": "Limited time: 20% off",
-            "lifestyle_image": "shopify://shop_images/Pili_Ani_Moisturizing_Lipstick__Toasted_Latte_main001.jpg",
             "lifestyle_aspect_ratio": 1.3,
             "button_text": "Shop Now",
             "background_color": "#ffffff",
@@ -135,8 +134,6 @@
         "ai_gen_block_e7bc182_UXLJzq": {
           "type": "ai_gen_block_e7bc182",
           "settings": {
-            "before_image": "shopify://shop_images/Pili_Ani_Moisturizing_Lipstick_crimson_jane_main002.jpg",
-            "after_image": "shopify://shop_images/Pili_Ani_Moisturizing_Lipstick_crimson_jane_main002.jpg",
             "max_width": 800,
             "container_height": 500,
             "background_color": "#ffffff",
@@ -296,7 +293,7 @@
             "size": 120,
             "text_position": "left",
             "heading_highlight_type": "underline-hand-drawn",
-            "highlight_color": "#000",
+            "highlight_color": "#000000",
             "highlight_text_color": "",
             "spacing_bottom": 12
           }
@@ -453,7 +450,7 @@
         "desktop_aspect_ratio": 0.8,
         "mobile_aspect_ratio": 0.8,
         "color_scheme": "",
-        "color_borders": "#000",
+        "color_borders": "#000000",
         "width": "wrapper",
         "padding_top": 60,
         "padding_bottom": 60
@@ -775,25 +772,26 @@
         "column_8mPU3C": {
           "type": "column",
           "settings": {
+            "image": "shopify://shop_images/GiftsThatGlowWeb2.jpg",
             "subheading": "<p>For a limited time</p>",
-            "subheading_size": 75,
+            "subheading_size": 90,
             "heading": "<p><em>FREE PRODUCT</em></p>",
-            "heading_size": 205,
+            "heading_size": 145,
             "heading_highlight_type": "underline-hand-drawn",
             "highlight_color": "#000000",
-            "highlight_text_color": "",
+            "highlight_text_color": "#131212",
             "description": "With every purchase over $99",
-            "description_size": 80,
+            "description_size": 90,
             "disclaimer": "",
             "disclaimer_size": 75,
             "button_text": "",
             "button_link": "",
             "button_color": "btn--black",
             "button_style": "btn--solid",
-            "button_size": "btn--medium",
-            "bg_color": "",
-            "gradient_background": "",
-            "text_color": "#ffffff",
+            "button_size": "btn--small",
+            "bg_color": "#fff7f2",
+            "gradient_background": "linear-gradient(320deg, rgba(246, 246, 246, 1) 16%, rgba(203, 68, 194, 1) 52%, rgba(255, 201, 104, 1) 87%)",
+            "text_color": "#f1ce0b",
             "overlay_type": "disabled"
           }
         }
@@ -802,21 +800,20 @@
         "column_AKqtLn",
         "column_8mPU3C"
       ],
-      "disabled": true,
       "name": "Promotion row",
       "settings": {
-        "layout": "1",
+        "layout": "2",
         "count_up_enabled": true,
         "count_up_duration": 100,
         "height": "400",
-        "enable_mobile_height": false,
+        "enable_mobile_height": true,
         "mobile_height": "400",
-        "color_scheme": "",
+        "color_scheme": "scheme-7",
         "enable_slider_mobile": true,
         "columns_mobile": "1",
         "width": "wrapper--full-padded",
-        "padding_top": 60,
-        "padding_bottom": 60
+        "padding_top": 42,
+        "padding_bottom": 44
       }
     },
     "section_sticky_images_and_text_3PJYYJ": {
