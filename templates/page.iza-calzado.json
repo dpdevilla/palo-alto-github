@@ -75,12 +75,12 @@
             "quote_color": "#de5757",
             "social_bg_color": "#0b0b0b",
             "social_icon_color": "#ffffff",
-            "border_radius": 12,
-            "video_border_radius": 8,
-            "avatar_size": 80,
+            "border_radius": 10,
+            "video_border_radius": 2,
+            "avatar_size": 96,
             "name_size": 20,
-            "title_size": 14,
-            "testimonial_size": 16
+            "title_size": 16,
+            "testimonial_size": 17
           },
           "blocks": {}
         }
