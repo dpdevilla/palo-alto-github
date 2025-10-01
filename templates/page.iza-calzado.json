@@ -55,6 +55,7 @@
         "ai_gen_block_ea4ed4b_YfjzQp": {
           "type": "ai_gen_block_ea4ed4b",
           "name": "Influencer endorsement",
+          "disabled": true,
           "settings": {
             "influencer_name": "Iza Calzado",
             "influencer_title": "Actress & Wellness Advocate",
