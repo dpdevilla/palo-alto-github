@@ -174,10 +174,12 @@
       "block_order": [
         "ai_gen_block_755dcab_8AiWRq"
       ],
+      "disabled": true,
       "settings": {}
     },
     "1759276997d00f2b85": {
       "type": "_blocks",
+      "disabled": true,
       "settings": {}
     },
     "main": {
@@ -186,64 +188,6 @@
       "settings": {
         "show_page_title": true,
         "color_scheme": "",
-        "padding_top": 60,
-        "padding_bottom": 60
-      }
-    },
-    "section_shop_the_look_banner_pTJdHg": {
-      "type": "section-shop-the-look-banner",
-      "blocks": {
-        "product_k8Wr7B": {
-          "type": "product",
-          "settings": {
-            "product": "pili-ani-ageless-concentrate",
-            "position_x_desktop": 31,
-            "position_y_desktop": 41,
-            "position_x_mobile": 21,
-            "position_y_mobile": 42,
-            "info_bubbles_position_desktop": 55,
-            "info_bubbles_position_mobile": 5
-          }
-        },
-        "product_CW9ihT": {
-          "type": "product",
-          "settings": {
-            "product": "",
-            "position_x_desktop": 69,
-            "position_y_desktop": 46,
-            "position_x_mobile": 75,
-            "position_y_mobile": 45,
-            "info_bubbles_position_desktop": 5,
-            "info_bubbles_position_mobile": 30
-          }
-        }
-      },
-      "block_order": [
-        "product_k8Wr7B",
-        "product_CW9ihT"
-      ],
-      "disabled": true,
-      "name": "Shop the Look Banner",
-      "settings": {
-        "image": "shopify://shop_images/PILI_BEAUTY_11072019_00087_Ageless.jpg",
-        "aspect_ratio_desktop": 0.4,
-        "show_arrow": true,
-        "initial_open_card": false,
-        "product_card_aspect_ratio": 0.9,
-        "button_color": "btn--black",
-        "button_style": "btn--outline",
-        "title": "Shop the Look Banner",
-        "heading_size": 120,
-        "text": "<p>Our most popular looks of the season</p>",
-        "text_size": 100,
-        "text_alignment": "text-left",
-        "aspect_ratio_mobile": 1.5,
-        "popup_heading": "Shop the Look",
-        "show_free_shipping_message": true,
-        "hotspot_color": "#9d9797",
-        "color_scheme": "",
-        "hotspot_contents_bg_color": "#fbf9f9",
-        "width": "wrapper--full-padded",
         "padding_top": 60,
         "padding_bottom": 60
       }
@@ -281,80 +225,6 @@
         "show_text_background": false,
         "bg_color": "",
         "text_color": ""
-      }
-    },
-    "section_banner_text_columns_rxiURF": {
-      "type": "section-banner-text-columns",
-      "blocks": {
-        "column_UNaXxJ": {
-          "type": "column",
-          "settings": {
-            "overlay_type": "disabled",
-            "subheading": "Add a subheading",
-            "heading": "Add a heading",
-            "text": "",
-            "button_text": "",
-            "button_link": ""
-          }
-        },
-        "column_czCC4L": {
-          "type": "column",
-          "settings": {
-            "overlay_type": "disabled",
-            "subheading": "Add a subheading",
-            "heading": "Add a heading",
-            "text": "",
-            "button_text": "",
-            "button_link": ""
-          }
-        },
-        "column_nextnQ": {
-          "type": "column",
-          "settings": {
-            "overlay_type": "disabled",
-            "subheading": "Add a subheading",
-            "heading": "Add a heading",
-            "text": "",
-            "button_text": "",
-            "button_link": ""
-          }
-        },
-        "column_ykMjX3": {
-          "type": "column",
-          "settings": {
-            "overlay_type": "disabled",
-            "subheading": "Add a subheading",
-            "heading": "Add a heading",
-            "text": "",
-            "button_text": "",
-            "button_link": ""
-          }
-        }
-      },
-      "block_order": [
-        "column_UNaXxJ",
-        "column_czCC4L",
-        "column_nextnQ",
-        "column_ykMjX3"
-      ],
-      "disabled": true,
-      "name": "Banner with text columns",
-      "settings": {
-        "appearance": "columns",
-        "content_alignment": "center",
-        "text_alignment": "text-center",
-        "section_height": "six-fifty-height",
-        "enable_mobile_height": false,
-        "mobile_section_height": "five-fifty-height-mobile",
-        "color_scheme": "",
-        "button_color": "btn--white",
-        "button_style": "btn--text",
-        "button_size": "btn--medium",
-        "show_single_image": false,
-        "heading_size": 100,
-        "width": "wrapper",
-        "padding_top": 0,
-        "padding_bottom": 0
       }
     },
     "section_products_list_CJBpE7": {
@@ -724,9 +594,7 @@
     "1759277456b1014fa2",
     "1759276997d00f2b85",
     "main",
-    "section_shop_the_look_banner_pTJdHg",
     "section_video_M3Bh4X",
-    "section_banner_text_columns_rxiURF",
     "section_products_list_CJBpE7",
     "section_overlapping_images_HxhVEa",
     "section_image_with_text_fqqa6Q",
