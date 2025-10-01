@@ -1180,6 +1180,48 @@
         "padding_top": 60,
         "padding_bottom": 60
       }
+    },
+    "175935936554e6023c": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_bb66959_qrnnJQ": {
+          "type": "ai_gen_block_bb66959",
+          "settings": {
+            "heading": "Discover Your Perfect Style",
+            "subheading": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+            "button_text": "Shop Now",
+            "button_link": "",
+            "hero_image": "shopify://shop_images/PILI_BEAUTY_11072019_00719_Ageless.jpg",
+            "image_border_radius": 12,
+            "show_product_card": true,
+            "featured_product": "pili-ani-ageless-concentrate",
+            "product_cta_text": "Add to Cart",
+            "section_height": 650,
+            "background_color": "#ffffff",
+            "text_color": "#0b0b0b",
+            "button_color": "#0b0b0b",
+            "button_text_color": "#ffffff",
+            "button_hover_color": "#333333",
+            "button_hover_text_color": "#ffffff",
+            "product_card_bg": "#ffffff",
+            "product_card_text": "#0b0b0b",
+            "product_button_color": "#0b0b0b",
+            "product_button_text": "#ffffff",
+            "product_button_hover": "#333333",
+            "heading_size": 48,
+            "subheading_size": 18,
+            "button_text_size": 16,
+            "button_uppercase": true,
+            "button_padding": 16,
+            "button_border_radius": 6
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_bb66959_qrnnJQ"
+      ],
+      "settings": {}
     }
   },
   "order": [
@@ -1199,6 +1241,7 @@
     "section_overlapping_images_HxhVEa",
     "section_promotion_row_Lczf4N",
     "section_sticky_images_and_text_3PJYYJ",
-    "section_accordions_yLWNnN"
+    "section_accordions_yLWNnN",
+    "175935936554e6023c"
   ]
 }
