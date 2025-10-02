@@ -166,7 +166,7 @@
         "image_shape": "square",
         "image_aspect_ratio": 1.2,
         "enable_product_count": false,
-        "text_size": 120,
+        "text_size": 135,
         "overlay_text": false,
         "enable_slider_mobile": true,
         "color_scheme": "scheme-1",
