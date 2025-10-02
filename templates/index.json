@@ -105,6 +105,77 @@
         "color_scheme": ""
       }
     },
+    "section_list_collection_ygrE8X": {
+      "type": "section-list-collection",
+      "blocks": {
+        "collection_EfTjj9": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "heading": "Skincare",
+            "block_text_color": "",
+            "bg_color": "",
+            "overlay_type": "disabled"
+          }
+        },
+        "collection_GhnaNg": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "heading": "Beauty",
+            "block_text_color": "",
+            "bg_color": "",
+            "overlay_type": "disabled"
+          }
+        },
+        "collection_yaUjp9": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "heading": "Hair Care",
+            "block_text_color": "",
+            "bg_color": "",
+            "overlay_type": "disabled"
+          }
+        },
+        "collection_VLT7PX": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "heading": "Lifestyle",
+            "block_text_color": "",
+            "bg_color": "",
+            "overlay_type": "disabled"
+          }
+        }
+      },
+      "block_order": [
+        "collection_EfTjj9",
+        "collection_GhnaNg",
+        "collection_yaUjp9",
+        "collection_VLT7PX"
+      ],
+      "name": "Collection list",
+      "settings": {
+        "title": "",
+        "heading_size": 100,
+        "layout": "carousel",
+        "alignment": "center",
+        "collections_per_row": 4,
+        "columns_mobile": "1",
+        "image_shape": "square",
+        "image_aspect_ratio": 1.2,
+        "enable_product_count": false,
+        "text_size": 120,
+        "overlay_text": false,
+        "enable_slider_mobile": true,
+        "color_scheme": "scheme-1",
+        "section_text_color": "",
+        "width": "wrapper--full-padded",
+        "padding_top": 44,
+        "padding_bottom": 30
+      }
+    },
     "section_custom_html_CPgtHE": {
       "type": "section-custom-html",
       "name": "Custom code",
@@ -868,116 +939,11 @@
         "padding_top": 0,
         "padding_bottom": 0
       }
-    },
-    "section_grid_9yMtR7": {
-      "type": "section-grid",
-      "blocks": {
-        "image_rceXiM": {
-          "type": "image",
-          "settings": {
-            "width": "100",
-            "overlay_type": "opacity",
-            "text_position": "center",
-            "subheading": "",
-            "title": "Trending",
-            "text": "Add more info or delete this text",
-            "button_1_text": "Shop Now",
-            "button_1_link": "",
-            "button_2_text": "",
-            "button_2_link": "",
-            "show_text_background": false,
-            "bg_color": "",
-            "text_color": ""
-          }
-        },
-        "image_Gk9yzx": {
-          "type": "image",
-          "settings": {
-            "width": "33.33",
-            "overlay_type": "disabled",
-            "text_position": "center",
-            "subheading": "",
-            "title": "Clearance",
-            "text": "Add more info or delete this text",
-            "button_1_text": "Shop Now",
-            "button_1_link": "",
-            "button_2_text": "",
-            "button_2_link": "",
-            "show_text_background": false,
-            "bg_color": "",
-            "text_color": ""
-          }
-        },
-        "image_CJ3V7f": {
-          "type": "image",
-          "settings": {
-            "width": "33.33",
-            "overlay_type": "disabled",
-            "text_position": "center",
-            "subheading": "",
-            "title": "Best Sellers",
-            "text": "Add more info or delete this text",
-            "button_1_text": "Shop Now",
-            "button_1_link": "",
-            "button_2_text": "",
-            "button_2_link": "",
-            "show_text_background": false,
-            "bg_color": "",
-            "text_color": ""
-          }
-        },
-        "image_rTB6x3": {
-          "type": "image",
-          "settings": {
-            "width": "33.33",
-            "overlay_type": "disabled",
-            "text_position": "center",
-            "subheading": "",
-            "title": "New Arrivals",
-            "text": "Add more info or delete this text",
-            "button_1_text": "Shop Now",
-            "button_1_link": "",
-            "button_2_text": "",
-            "button_2_link": "",
-            "show_text_background": false,
-            "bg_color": "",
-            "text_color": ""
-          }
-        }
-      },
-      "block_order": [
-        "image_rceXiM",
-        "image_Gk9yzx",
-        "image_CJ3V7f",
-        "image_rTB6x3"
-      ],
-      "name": "Grid",
-      "settings": {
-        "desktop_height": "six-fifty-height",
-        "enable_mobile_height": false,
-        "mobile_height": "four-fifty-height-mobile",
-        "heading_size": 130,
-        "text_size": 100,
-        "button_1_color": "btn--white",
-        "button_1_style": "btn--text",
-        "button_1_size": "btn--medium",
-        "button_2_color": "btn--black",
-        "button_2_style": "btn--text",
-        "button_2_size": "btn--medium",
-        "color_scheme": "",
-        "overlayed_text": "#ffffff",
-        "enable_slider_mobile": true,
-        "columns_mobile": "1",
-        "overlay_text": true,
-        "width": "wrapper--full",
-        "add_gutter": true,
-        "padding_top": 60,
-        "padding_bottom": 60
-      }
     }
   },
   "order": [
     "section_slideshow_wjdEGR",
+    "section_list_collection_ygrE8X",
     "section_custom_html_CPgtHE",
     "1759263469a009fc97",
     "16593247592f08dc83",
@@ -989,7 +955,6 @@
     "1659368106d6f5d880",
     "section_banner_text_columns_6bbkJf",
     "section_hero_scrolling_wkByXN",
-    "section_banner_text_columns_HcgkB7",
-    "section_grid_9yMtR7"
+    "section_banner_text_columns_HcgkB7"
   ]
 }
