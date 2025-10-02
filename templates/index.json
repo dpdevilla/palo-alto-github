@@ -120,6 +120,7 @@
       "blocks": {
         "ai_gen_block_29a7689_3CaMWe": {
           "type": "ai_gen_block_29a7689",
+          "disabled": true,
           "settings": {
             "collection": "best-sellers",
             "products_limit": 8,
@@ -171,7 +172,6 @@
       "block_order": [
         "ai_gen_block_29a7689_3CaMWe"
       ],
-      "disabled": true,
       "settings": {}
     },
     "16593247592f08dc83": {
