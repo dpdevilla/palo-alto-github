@@ -466,6 +466,7 @@
         "16593319175013cc88-1",
         "5a9aeeea-ae3e-4a67-89c5-b9b1d09d5bf2"
       ],
+      "disabled": true,
       "settings": {
         "columns_mobile": "1",
         "image_aspect_ratio": 1.3,
@@ -493,6 +494,7 @@
       "blocks": {
         "6b879faf-367d-47b0-ae30-4f09ae553609": {
           "type": "shopify://apps/loox-reviews/blocks/loox-card-carousel-section/5c3b337f-fd14-4df5-b1d6-80ec13e6e28e",
+          "disabled": true,
           "settings": {
             "maxWidth": 1100,
             "borderRadius": 8,
@@ -577,6 +579,7 @@
         "16593323606309dafe-0",
         "16593323606309dafe-1"
       ],
+      "disabled": true,
       "settings": {
         "columns_mobile": "1",
         "title": "Read our Blog",
@@ -639,6 +642,7 @@
         "1659368106275a5820-0",
         "1659368106275a5820-1"
       ],
+      "disabled": true,
       "settings": {
         "height": "four-fifty-height",
         "enable_mobile_height": false,
