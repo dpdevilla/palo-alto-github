@@ -369,7 +369,7 @@
         "title": "",
         "show_quotations": true,
         "show_rounded_corners": false,
-        "logo_opacity": 50,
+        "logo_opacity": 100,
         "autoplay": true,
         "duration": 4,
         "color_scheme": "scheme-8",
