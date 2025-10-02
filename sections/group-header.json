@@ -67,7 +67,7 @@
         ".navlink--toplevel > .navtext:before {background: #1e8693;}"
       ],
       "settings": {
-        "sticky_header": false,
+        "sticky_header": true,
         "link_hover_effect": "line",
         "header_border": false,
         "header_border_color": "#1e8693",
