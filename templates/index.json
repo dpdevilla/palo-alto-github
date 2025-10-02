@@ -176,6 +176,84 @@
         "padding_bottom": 30
       }
     },
+    "section_hero_scrolling_DPzhNr": {
+      "type": "section-hero-scrolling",
+      "blocks": {
+        "text_zYkjaQ": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Share information about your brand, describe a product, share announcements, or welcome customers to your store.</p>",
+            "size": 100
+          }
+        },
+        "button_E9K9fK": {
+          "type": "button",
+          "settings": {
+            "stacked_button": false,
+            "button_1_text": "Shop All",
+            "button_1_link": "shopify://collections/all",
+            "button_1_color": "btn--white",
+            "button_1_style": "btn--solid-border",
+            "button_1_size": "btn--medium",
+            "button_2_text": "",
+            "button_2_link": "",
+            "button_2_color": "btn--black",
+            "button_2_style": "btn--solid",
+            "button_2_size": "btn--medium"
+          }
+        },
+        "scrolling_text_h8xU89": {
+          "type": "scrolling_text",
+          "settings": {
+            "text": "<p><strong>Make an announcement</strong> | More info</p>"
+          }
+        },
+        "timer_i7xPme": {
+          "type": "timer",
+          "disabled": true,
+          "settings": {
+            "layout_style": "inline",
+            "end_date": "2025-12-31",
+            "end_time": "11:59",
+            "period": "am",
+            "end_message": "",
+            "digit_size": 100,
+            "unit_size": 100
+          }
+        }
+      },
+      "block_order": [
+        "text_zYkjaQ",
+        "button_E9K9fK",
+        "scrolling_text_h8xU89",
+        "timer_i7xPme"
+      ],
+      "name": "Image with scrolling text",
+      "settings": {
+        "overlay_type": "disabled",
+        "message_spacing": 10,
+        "marquee_speed": 100,
+        "height": "six-fifty-height",
+        "enable_mobile_height": false,
+        "mobile_height": "four-fifty-height-mobile",
+        "transition": "zoom-out",
+        "enable_zoom_animation": true,
+        "enable_card_scrolling": false,
+        "increase_border_radius": true,
+        "text_align": "align--top",
+        "scrolling_text_color": "#ffffff",
+        "text_caps": false,
+        "type_font": "space_mono_n4",
+        "size": 100,
+        "size_mobile": 80,
+        "letter_spacing": 0,
+        "scrolling_align": "align--middle",
+        "direction": "ticker-ltr",
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
     "section_custom_html_CPgtHE": {
       "type": "section-custom-html",
       "name": "Custom code",
@@ -936,84 +1014,6 @@
         "show_single_image": false,
         "heading_size": 100,
         "width": "wrapper",
-        "padding_top": 0,
-        "padding_bottom": 0
-      }
-    },
-    "section_hero_scrolling_DPzhNr": {
-      "type": "section-hero-scrolling",
-      "blocks": {
-        "text_zYkjaQ": {
-          "type": "text",
-          "settings": {
-            "text": "<p>Share information about your brand, describe a product, share announcements, or welcome customers to your store.</p>",
-            "size": 100
-          }
-        },
-        "button_E9K9fK": {
-          "type": "button",
-          "settings": {
-            "stacked_button": false,
-            "button_1_text": "Shop All",
-            "button_1_link": "shopify://collections/all",
-            "button_1_color": "btn--white",
-            "button_1_style": "btn--solid-border",
-            "button_1_size": "btn--medium",
-            "button_2_text": "",
-            "button_2_link": "",
-            "button_2_color": "btn--black",
-            "button_2_style": "btn--solid",
-            "button_2_size": "btn--medium"
-          }
-        },
-        "scrolling_text_h8xU89": {
-          "type": "scrolling_text",
-          "settings": {
-            "text": "<p><strong>Make an announcement</strong> | More info</p>"
-          }
-        },
-        "timer_i7xPme": {
-          "type": "timer",
-          "disabled": true,
-          "settings": {
-            "layout_style": "inline",
-            "end_date": "2025-12-31",
-            "end_time": "11:59",
-            "period": "am",
-            "end_message": "",
-            "digit_size": 100,
-            "unit_size": 100
-          }
-        }
-      },
-      "block_order": [
-        "text_zYkjaQ",
-        "button_E9K9fK",
-        "scrolling_text_h8xU89",
-        "timer_i7xPme"
-      ],
-      "name": "Image with scrolling text",
-      "settings": {
-        "overlay_type": "disabled",
-        "message_spacing": 10,
-        "marquee_speed": 100,
-        "height": "six-fifty-height",
-        "enable_mobile_height": false,
-        "mobile_height": "four-fifty-height-mobile",
-        "transition": "zoom-out",
-        "enable_zoom_animation": true,
-        "enable_card_scrolling": false,
-        "increase_border_radius": true,
-        "text_align": "align--middle",
-        "scrolling_text_color": "#fff",
-        "text_caps": false,
-        "type_font": "space_mono_n4",
-        "size": 100,
-        "size_mobile": 80,
-        "letter_spacing": 0,
-        "scrolling_align": "align--top",
-        "direction": "ticker-ltr",
-        "color_scheme": "",
         "padding_top": 0,
         "padding_bottom": 0
       }
