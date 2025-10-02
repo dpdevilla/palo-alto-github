@@ -268,7 +268,7 @@
             "text": "<p>\"This Filipino Beauty Brand Has Something You Didn’t Know Your Evening Routine Needed\"</p>",
             "link": "https://www.lofficielph.com/21789521/this-filipino-beauty-brand-has-something-you-didnt-know-your-evening-routine-needed",
             "press_logo": "shopify://shop_images/Press-Logo-LO.png",
-            "logo_width": 120
+            "logo_width": 150
           }
         },
         "16608855243802c805-1": {
@@ -374,7 +374,7 @@
         "duration": 4,
         "color_scheme": "scheme-8",
         "enable_slider_mobile": true,
-        "width": "wrapper--narrow",
+        "width": "wrapper--full-padded",
         "padding_top": 0,
         "padding_bottom": 32
       }
