@@ -350,6 +350,24 @@
           "upsells_bg_color": "#f7f6f4",
           "upsells_text_color": "#0b0b0b"
         }
+      },
+      "scheme-080fa1c4-978e-45a8-b01f-f22c55a55cff": {
+        "settings": {
+          "section_bg": "#ffffff",
+          "section_heading": "#0f0f0f",
+          "section_text": "#0f0f0f",
+          "section_bg_gradient": "",
+          "btn_primary_bg": "#2fabbc",
+          "btn_secondary_bg": "#2fabbc",
+          "accent": "#fff7f2",
+          "lines_and_border": "#000000",
+          "overlay": "#0000004d",
+          "links": "#000000",
+          "quick_add_bg_color": "#ffffff",
+          "quick_add_text_color": "#000000",
+          "upsells_bg_color": "#f7f6f4",
+          "upsells_text_color": "#0b0b0b"
+        }
       }
     }
   },
