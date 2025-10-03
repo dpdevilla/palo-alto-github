@@ -1052,6 +1052,78 @@
         "padding_top": 0,
         "padding_bottom": 0
       }
+    },
+    "section_banner_image_UH3iw9": {
+      "type": "section-banner-image",
+      "blocks": {
+        "subheading_rrF3dG": {
+          "type": "subheading",
+          "settings": {
+            "text": "<p>Welcome to</p>",
+            "size": 100
+          }
+        },
+        "heading_mE78fc": {
+          "type": "heading",
+          "settings": {
+            "text": "<p>Palo Alto</p>",
+            "size": 180,
+            "heading_highlight_type": "underline-hand-drawn",
+            "highlight_color": "#000",
+            "highlight_text_color": ""
+          }
+        },
+        "text_EFMYnM": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Share information about your brand, describe a product, share announcements, or welcome customers to your store.</p>",
+            "size": 100
+          }
+        },
+        "button_TgLMJG": {
+          "type": "button",
+          "settings": {
+            "stacked_button": false,
+            "button_1_text": "Shop All",
+            "button_1_link": "shopify://collections/all",
+            "button_1_color": "btn--white",
+            "button_1_style": "btn--solid-border",
+            "button_1_size": "btn--medium",
+            "button_2_text": "",
+            "button_2_link": "",
+            "button_2_color": "btn--black",
+            "button_2_style": "btn--solid",
+            "button_2_size": "btn--medium"
+          }
+        }
+      },
+      "block_order": [
+        "subheading_rrF3dG",
+        "heading_mE78fc",
+        "text_EFMYnM",
+        "button_TgLMJG"
+      ],
+      "name": "Banner image",
+      "settings": {
+        "height": "six-fifty-height",
+        "enable_mobile_height": false,
+        "mobile_height": "four-fifty-height-mobile",
+        "overlay_type": "disabled",
+        "transition": "zoom-out",
+        "enable_zoom_animation": true,
+        "enable_card_scrolling": false,
+        "increase_border_radius": true,
+        "content_width": 80,
+        "text_position": "left",
+        "text_alignment": "text-left",
+        "color_scheme": "",
+        "show_text_background": false,
+        "bg_color": "",
+        "text_color": "",
+        "width": "wrapper--full",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
     }
   },
   "order": [
@@ -1062,6 +1134,7 @@
     "section_custom_html_CPgtHE",
     "1759263469a009fc97",
     "16593247592f08dc83",
+    "section_banner_image_UH3iw9",
     "166088552470924e52",
     "1659331412e92e9982",
     "16593319187b25d871",
