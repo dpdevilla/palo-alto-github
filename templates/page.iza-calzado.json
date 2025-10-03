@@ -777,69 +777,6 @@
       ],
       "settings": {}
     },
-    "section_custom_content_c8ffKh": {
-      "type": "section-custom-content",
-      "blocks": {
-        "image_akCR77": {
-          "type": "image",
-          "settings": {
-            "text_position": "middle-center",
-            "overlay_type": "disabled",
-            "title": "Welcome to Palo Alto",
-            "heading_size": 100,
-            "image_text": "<p>Describe in a few words your special products, collection, or brand.</p>",
-            "text_size": 100,
-            "show_text_background": false,
-            "bg_color": "",
-            "text_color": "",
-            "button_text": "",
-            "button_link": "",
-            "button_color": "btn--white",
-            "button_style": "btn--solid-border",
-            "button_size": "btn--medium"
-          }
-        },
-        "text_fqeEWQ": {
-          "type": "text",
-          "settings": {
-            "text_position": "center",
-            "top_image_width": 100,
-            "subheading": "Subheading",
-            "title": "Our Story",
-            "heading_size": 100,
-            "text": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>",
-            "text_size": 100,
-            "button_text": "Learn More",
-            "button_link": "",
-            "button_color": "btn--black",
-            "button_style": "btn--solid",
-            "button_size": "btn--medium",
-            "button_2_text": "",
-            "button_2_link": "",
-            "button_2_color": "btn--white",
-            "button_2_style": "btn--solid-border",
-            "button_2_size": "btn--medium",
-            "bg_color": ""
-          }
-        }
-      },
-      "block_order": [
-        "image_akCR77",
-        "text_fqeEWQ"
-      ],
-      "name": "Custom section",
-      "settings": {
-        "height": "six-fifty-height",
-        "enable_mobile_height": false,
-        "mobile_height": "six-fifty-height-mobile",
-        "color_scheme": "",
-        "reverse_blocks": false,
-        "width": "wrapper",
-        "add_gutter": false,
-        "padding_top": 60,
-        "padding_bottom": 60
-      }
-    },
     "175928512318e52e87": {
       "type": "_blocks",
       "settings": {}
@@ -1398,7 +1335,6 @@
     "section_marquee_3TKLgM",
     "section_columns_WtMb7L",
     "1759459509c52afd54",
-    "section_custom_content_c8ffKh",
     "175928512318e52e87",
     "1759277456b1014fa2",
     "1759276997d00f2b85",
