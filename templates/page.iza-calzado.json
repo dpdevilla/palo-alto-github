@@ -593,7 +593,7 @@
       ],
       "name": "Marquee",
       "settings": {
-        "layout": "marquee",
+        "layout": "marquee-with-parallax",
         "show_top_border": false,
         "show_bottom_border": false,
         "padding": 10,
@@ -606,7 +606,7 @@
         "text_size": 120,
         "text_size_mobile": 80,
         "letter_spacing": 0,
-        "message_spacing": 10,
+        "message_spacing": 5,
         "color_scheme": "scheme-1",
         "color": "",
         "border_color": "",
