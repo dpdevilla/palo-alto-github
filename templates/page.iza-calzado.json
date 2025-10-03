@@ -242,7 +242,7 @@
           "settings": {
             "info_page": "",
             "show_labels": true,
-            "show_quantity": false,
+            "show_quantity": true,
             "show_payment_button": true,
             "enable_subscriptions_selectors": true,
             "padding_bottom": 20
