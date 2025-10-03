@@ -9,74 +9,6 @@
  */
 {
   "sections": {
-    "1759459509c52afd54": {
-      "type": "_blocks",
-      "blocks": {
-        "ai_gen_block_a72dafb_da4AJM": {
-          "type": "ai_gen_block_a72dafb",
-          "settings": {
-            "section_title": "Why Choose Pili Ani?",
-            "section_intro": "Rooted in nature, backed by science, and proudly Filipino — discover what makes Pili Ani different.",
-            "columns_desktop": "4",
-            "columns_mobile": "1",
-            "grid_gap": 30,
-            "item_1_enabled": true,
-            "item_1_icon": "🌿",
-            "item_1_title": "Sustainably Sourced",
-            "item_1_description": "Pili oils harvested from local farms with sustainable practices",
-            "item_2_enabled": true,
-            "item_2_icon": "💧",
-            "item_2_title": "All-Natural Ingredients",
-            "item_2_description": "No harmful chemicals, pure botanicals for your skin",
-            "item_3_enabled": true,
-            "item_3_icon": "🇵🇭",
-            "item_3_title": "Proudly Filipino",
-            "item_3_description": "Supporting local communities and heritage",
-            "item_4_enabled": true,
-            "item_4_icon": "🌟",
-            "item_4_title": "Proven Results",
-            "item_4_description": "Trusted by dermatologists and beauty lovers",
-            "show_cta": true,
-            "cta_text": "Experience the Pili Ani difference today.",
-            "button_text": "Shop Now",
-            "button_link": "shopify://collections/all",
-            "background_color": "#f7f6f4",
-            "text_color": "#0f0f0f",
-            "item_background_color": "#ffffff",
-            "icon_background_color": "#fff7f2",
-            "button_background_color": "#2fabbc",
-            "button_text_color": "#ffffff",
-            "button_hover_background_color": "#2fabbc",
-            "button_hover_text_color": "#ffffff",
-            "title_size": 36,
-            "intro_size": 18,
-            "item_title_size": 20,
-            "item_description_size": 16,
-            "cta_text_size": 18,
-            "button_text_size": 16,
-            "section_padding_top": 60,
-            "section_padding_bottom": 60,
-            "content_spacing": 50,
-            "title_spacing": 20,
-            "icon_size": 60,
-            "icon_spacing": 20,
-            "item_title_spacing": 12,
-            "item_padding": 25,
-            "cta_spacing": 50,
-            "cta_text_spacing": 20,
-            "button_padding_vertical": 14,
-            "button_padding_horizontal": 30,
-            "button_border_radius": 6,
-            "item_border_radius": 12
-          },
-          "blocks": {}
-        }
-      },
-      "block_order": [
-        "ai_gen_block_a72dafb_da4AJM"
-      ],
-      "settings": {}
-    },
     "175928636660a525d9": {
       "type": "_blocks",
       "blocks": {
@@ -777,6 +709,74 @@
         "padding_bottom": 32
       }
     },
+    "1759459509c52afd54": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_a72dafb_da4AJM": {
+          "type": "ai_gen_block_a72dafb",
+          "settings": {
+            "section_title": "Why Choose Pili Ani?",
+            "section_intro": "Rooted in nature, backed by science, and proudly Filipino — discover what makes Pili Ani different.",
+            "columns_desktop": "4",
+            "columns_mobile": "1",
+            "grid_gap": 30,
+            "item_1_enabled": true,
+            "item_1_icon": "🌿",
+            "item_1_title": "Sustainably Sourced",
+            "item_1_description": "Pili oils harvested from local farms with sustainable practices",
+            "item_2_enabled": true,
+            "item_2_icon": "💧",
+            "item_2_title": "All-Natural Ingredients",
+            "item_2_description": "No harmful chemicals, pure botanicals for your skin",
+            "item_3_enabled": true,
+            "item_3_icon": "🇵🇭",
+            "item_3_title": "Proudly Filipino",
+            "item_3_description": "Supporting local communities and heritage",
+            "item_4_enabled": true,
+            "item_4_icon": "🌟",
+            "item_4_title": "Proven Results",
+            "item_4_description": "Trusted by dermatologists and beauty lovers",
+            "show_cta": true,
+            "cta_text": "Experience the Pili Ani difference today.",
+            "button_text": "Shop Now",
+            "button_link": "shopify://collections/all",
+            "background_color": "#f7f6f4",
+            "text_color": "#0f0f0f",
+            "item_background_color": "#ffffff",
+            "icon_background_color": "#fff7f2",
+            "button_background_color": "#2fabbc",
+            "button_text_color": "#ffffff",
+            "button_hover_background_color": "#2fabbc",
+            "button_hover_text_color": "#ffffff",
+            "title_size": 36,
+            "intro_size": 18,
+            "item_title_size": 20,
+            "item_description_size": 16,
+            "cta_text_size": 18,
+            "button_text_size": 16,
+            "section_padding_top": 60,
+            "section_padding_bottom": 60,
+            "content_spacing": 50,
+            "title_spacing": 20,
+            "icon_size": 60,
+            "icon_spacing": 20,
+            "item_title_spacing": 12,
+            "item_padding": 25,
+            "cta_spacing": 50,
+            "cta_text_spacing": 20,
+            "button_padding_vertical": 14,
+            "button_padding_horizontal": 30,
+            "button_border_radius": 6,
+            "item_border_radius": 12
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_a72dafb_da4AJM"
+      ],
+      "settings": {}
+    },
     "section_custom_content_c8ffKh": {
       "type": "section-custom-content",
       "blocks": {
@@ -1390,7 +1390,6 @@
     }
   },
   "order": [
-    "1759459509c52afd54",
     "175928636660a525d9",
     "section_product_QYABKX",
     "section_icons_row_XcknRM",
@@ -1398,6 +1397,7 @@
     "section_image_with_text_fHUq38",
     "section_marquee_3TKLgM",
     "section_columns_WtMb7L",
+    "1759459509c52afd54",
     "section_custom_content_c8ffKh",
     "175928512318e52e87",
     "1759277456b1014fa2",
