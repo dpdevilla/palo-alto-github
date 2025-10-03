@@ -185,7 +185,7 @@
             "label_letter_spacing": 1,
             "label_position_x": 20,
             "label_position_y": 20,
-            "label_bg_color": "#000000",
+            "label_bg_color": "#2fabbc",
             "label_text_color": "#ffffff"
           },
           "blocks": {}
