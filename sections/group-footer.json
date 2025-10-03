@@ -73,7 +73,7 @@
         "enable_greyscale": false,
         "bottom_menu": "",
         "color_text": "#ffffff",
-        "color_scheme": "",
+        "color_scheme": "scheme-3",
         "color_border": "#ffffff",
         "show_locale_selector": false,
         "show_locale_code": true,

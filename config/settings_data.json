@@ -191,9 +191,9 @@
     "color_schemes": {
       "scheme-1": {
         "settings": {
-          "section_bg": "#ffffff",
-          "section_heading": "#0b0b0b",
-          "section_text": "#0b0b0b",
+          "section_bg": "#f5fafa",
+          "section_heading": "#0f0f0f",
+          "section_text": "#0f0f0f",
           "section_bg_gradient": "",
           "btn_primary_bg": "#0b0b0b",
           "btn_secondary_bg": "#ffffff",
@@ -327,6 +327,24 @@
           "lines_and_border": "#000000",
           "overlay": "#00000005",
           "links": "#ffffff",
+          "quick_add_bg_color": "#ffffff",
+          "quick_add_text_color": "#000000",
+          "upsells_bg_color": "#f7f6f4",
+          "upsells_text_color": "#0b0b0b"
+        }
+      },
+      "scheme-35de9e34-bd2b-4262-9f97-890b13319c9b": {
+        "settings": {
+          "section_bg": "#2fabbc",
+          "section_heading": "#0f0f0f",
+          "section_text": "#0f0f0f",
+          "section_bg_gradient": "",
+          "btn_primary_bg": "#0b0b0b",
+          "btn_secondary_bg": "#ffffff",
+          "accent": "#fff7f2",
+          "lines_and_border": "#000000",
+          "overlay": "#0000004d",
+          "links": "#000000",
           "quick_add_bg_color": "#ffffff",
           "quick_add_text_color": "#000000",
           "upsells_bg_color": "#f7f6f4",
