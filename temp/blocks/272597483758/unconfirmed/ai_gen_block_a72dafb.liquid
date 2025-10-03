@@ -1,6 +1,711 @@
+{% doc %}
+  @prompt
+    Why Choose Pili Ani? (Section Layout)
+    1. Section Title (Centered, Bold)
+    
+    “Why Choose Pili Ani?”
+    
+    2. Short Intro Line (1–2 sentences, centered)
+    
+    Example: “Rooted in nature, backed by science, and proudly Filipino — discover what makes Pili Ani different.”
+    
+    3. Content Layout Options
+    Option A – Icon Grid (most common, clean)
+    
+    3 or 4 columns with icons + short headlines + 1–2 lines description
+    
+    🌿 Sustainably Sourced – Pili oils harvested from local farms
+    
+    💧 All-Natural Ingredients – No harmful chemicals, pure botanicals
+    
+    🇵🇭 Proudly Filipino – Supporting local communities and heritage
+    
+    🌟 Proven Results – Trusted by dermatologists and beauty lovers
+    
+    Option B – Split Image + Text
+    
+    Left side: Lifestyle/product image
+    
+    Right side: Bulleted list of 3–4 reasons (with small icons)
+    
+    4. Visual Style Suggestions
+    
+    Use soft background color (light beige or pale green) to differentiate from the other sections.
+    
+    Rounded icon styles or line illustrations for consistency with brand visuals.
+    
+    Keep text short, scannable, and benefit-driven (not just features).
+    
+    5. CTA (Optional, Below Section)
+    
+    Example: “Experience the Pili Ani difference today.”
+    
+    Button: Shop Now
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-why-choose-section-{{ ai_gen_id }} {
+    padding: {{ block.settings.section_padding_top }}px 0 {{ block.settings.section_padding_bottom }}px;
+    background-color: {{ block.settings.background_color }};
+  }
+
+  .ai-why-choose-container-{{ ai_gen_id }} {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .ai-why-choose-header-{{ ai_gen_id }} {
+    text-align: center;
+    margin-bottom: {{ block.settings.content_spacing }}px;
+  }
+
+  .ai-why-choose-title-{{ ai_gen_id }} {
+    font-size: {{ block.settings.title_size }}px;
+    font-weight: bold;
+    color: {{ block.settings.text_color }};
+    margin: 0 0 {{ block.settings.title_spacing }}px;
+    line-height: 1.2;
+  }
+
+  .ai-why-choose-intro-{{ ai_gen_id }} {
+    font-size: {{ block.settings.intro_size }}px;
+    color: {{ block.settings.text_color }};
+    margin: 0;
+    opacity: 0.8;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.5;
+  }
+
+  .ai-why-choose-grid-{{ ai_gen_id }} {
+    display: grid;
+    grid-template-columns: repeat({{ block.settings.columns_desktop }}, 1fr);
+    gap: {{ block.settings.grid_gap }}px;
+    margin-bottom: {{ block.settings.cta_spacing }}px;
+  }
+
+  .ai-why-choose-item-{{ ai_gen_id }} {
+    text-align: center;
+    padding: {{ block.settings.item_padding }}px;
+    background-color: {{ block.settings.item_background_color }};
+    border-radius: {{ block.settings.item_border_radius }}px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .ai-why-choose-item-{{ ai_gen_id }}:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  }
+
+  .ai-why-choose-icon-{{ ai_gen_id }} {
+    width: {{ block.settings.icon_size }}px;
+    height: {{ block.settings.icon_size }}px;
+    margin: 0 auto {{ block.settings.icon_spacing }}px;
+    background-color: {{ block.settings.icon_background_color }};
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: {{ block.settings.icon_size | times: 0.5 }}px;
+  }
+
+  .ai-why-choose-item-title-{{ ai_gen_id }} {
+    font-size: {{ block.settings.item_title_size }}px;
+    font-weight: 600;
+    color: {{ block.settings.text_color }};
+    margin: 0 0 {{ block.settings.item_title_spacing }}px;
+    line-height: 1.3;
+  }
+
+  .ai-why-choose-item-description-{{ ai_gen_id }} {
+    font-size: {{ block.settings.item_description_size }}px;
+    color: {{ block.settings.text_color }};
+    opacity: 0.8;
+    margin: 0;
+    line-height: 1.5;
+  }
+
+  .ai-why-choose-cta-{{ ai_gen_id }} {
+    text-align: center;
+  }
+
+  .ai-why-choose-cta-text-{{ ai_gen_id }} {
+    font-size: {{ block.settings.cta_text_size }}px;
+    color: {{ block.settings.text_color }};
+    margin: 0 0 {{ block.settings.cta_text_spacing }}px;
+    opacity: 0.9;
+  }
+
+  .ai-why-choose-button-{{ ai_gen_id }} {
+    display: inline-block;
+    padding: {{ block.settings.button_padding_vertical }}px {{ block.settings.button_padding_horizontal }}px;
+    background-color: {{ block.settings.button_background_color }};
+    color: {{ block.settings.button_text_color }};
+    text-decoration: none;
+    border-radius: {{ block.settings.button_border_radius }}px;
+    font-size: {{ block.settings.button_text_size }}px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: 2px solid {{ block.settings.button_background_color }};
+  }
+
+  .ai-why-choose-button-{{ ai_gen_id }}:hover {
+    background-color: {{ block.settings.button_hover_background_color }};
+    color: {{ block.settings.button_hover_text_color }};
+    border-color: {{ block.settings.button_hover_background_color }};
+    transform: translateY(-2px);
+  }
+
+  @media screen and (max-width: 768px) {
+    .ai-why-choose-grid-{{ ai_gen_id }} {
+      grid-template-columns: repeat({{ block.settings.columns_mobile }}, 1fr);
+      gap: {{ block.settings.grid_gap | times: 0.8 }}px;
+    }
+
+    .ai-why-choose-title-{{ ai_gen_id }} {
+      font-size: {{ block.settings.title_size | times: 0.8 }}px;
+    }
+
+    .ai-why-choose-intro-{{ ai_gen_id }} {
+      font-size: {{ block.settings.intro_size | times: 0.9 }}px;
+    }
+
+    .ai-why-choose-item-{{ ai_gen_id }} {
+      padding: {{ block.settings.item_padding | times: 0.8 }}px;
+    }
+
+    .ai-why-choose-icon-{{ ai_gen_id }} {
+      width: {{ block.settings.icon_size | times: 0.8 }}px;
+      height: {{ block.settings.icon_size | times: 0.8 }}px;
+      font-size: {{ block.settings.icon_size | times: 0.4 }}px;
+    }
+  }
+{% endstyle %}
+
+<div class="ai-why-choose-section-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  <div class="ai-why-choose-container-{{ ai_gen_id }}">
+    {% if block.settings.section_title != blank or block.settings.section_intro != blank %}
+      <div class="ai-why-choose-header-{{ ai_gen_id }}">
+        {% if block.settings.section_title != blank %}
+          <h2 class="ai-why-choose-title-{{ ai_gen_id }}">{{ block.settings.section_title }}</h2>
+        {% endif %}
+        {% if block.settings.section_intro != blank %}
+          <p class="ai-why-choose-intro-{{ ai_gen_id }}">{{ block.settings.section_intro }}</p>
+        {% endif %}
+      </div>
+    {% endif %}
+
+    <div class="ai-why-choose-grid-{{ ai_gen_id }}">
+      {% for i in (1..4) %}
+        {% liquid
+          assign item_enabled_key = 'item_' | append: i | append: '_enabled'
+          assign item_icon_key = 'item_' | append: i | append: '_icon'
+          assign item_title_key = 'item_' | append: i | append: '_title'
+          assign item_description_key = 'item_' | append: i | append: '_description'
+
+          assign item_enabled = block.settings[item_enabled_key]
+          assign item_icon = block.settings[item_icon_key]
+          assign item_title = block.settings[item_title_key]
+          assign item_description = block.settings[item_description_key]
+        %}
+
+        {% if item_enabled and item_title != blank %}
+          <div class="ai-why-choose-item-{{ ai_gen_id }}">
+            {% if item_icon != blank %}
+              <div class="ai-why-choose-icon-{{ ai_gen_id }}">
+                {{ item_icon }}
+              </div>
+            {% endif %}
+            <h3 class="ai-why-choose-item-title-{{ ai_gen_id }}">{{ item_title }}</h3>
+            {% if item_description != blank %}
+              <p class="ai-why-choose-item-description-{{ ai_gen_id }}">{{ item_description }}</p>
+            {% endif %}
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+
+    {% if block.settings.show_cta %}
+      <div class="ai-why-choose-cta-{{ ai_gen_id }}">
+        {% if block.settings.cta_text != blank %}
+          <p class="ai-why-choose-cta-text-{{ ai_gen_id }}">{{ block.settings.cta_text }}</p>
+        {% endif %}
+        {% if block.settings.button_text != blank and block.settings.button_link != blank %}
+          <a href="{{ block.settings.button_link }}" class="ai-why-choose-button-{{ ai_gen_id }}">
+            {{ block.settings.button_text }}
+          </a>
+        {% endif %}
+      </div>
+    {% endif %}
+  </div>
+</div>
+
 {% schema %}
- {
-   "name": "AI_Block",
-   "tag": "shopify-ai-generated-block"
- }
+{
+  "name": "Why Choose Pili Ani",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Section content"
+    },
+    {
+      "type": "text",
+      "id": "section_title",
+      "label": "Section title",
+      "default": "Why Choose Pili Ani?"
+    },
+    {
+      "type": "textarea",
+      "id": "section_intro",
+      "label": "Introduction text",
+      "default": "Rooted in nature, backed by science, and proudly Filipino — discover what makes Pili Ani different."
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "select",
+      "id": "columns_desktop",
+      "label": "Columns on desktop",
+      "options": [
+        { "value": "2", "label": "2" },
+        { "value": "3", "label": "3" },
+        { "value": "4", "label": "4" }
+      ],
+      "default": "4"
+    },
+    {
+      "type": "select",
+      "id": "columns_mobile",
+      "label": "Columns on mobile",
+      "options": [
+        { "value": "1", "label": "1" },
+        { "value": "2", "label": "2" }
+      ],
+      "default": "1"
+    },
+    {
+      "type": "range",
+      "id": "grid_gap",
+      "min": 10,
+      "max": 60,
+      "step": 5,
+      "unit": "px",
+      "label": "Grid gap",
+      "default": 30
+    },
+    {
+      "type": "header",
+      "content": "Item 1"
+    },
+    {
+      "type": "checkbox",
+      "id": "item_1_enabled",
+      "label": "Enable item 1",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "item_1_icon",
+      "label": "Icon (emoji)",
+      "default": "🌿"
+    },
+    {
+      "type": "text",
+      "id": "item_1_title",
+      "label": "Title",
+      "default": "Sustainably Sourced"
+    },
+    {
+      "type": "textarea",
+      "id": "item_1_description",
+      "label": "Description",
+      "default": "Pili oils harvested from local farms with sustainable practices"
+    },
+    {
+      "type": "header",
+      "content": "Item 2"
+    },
+    {
+      "type": "checkbox",
+      "id": "item_2_enabled",
+      "label": "Enable item 2",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "item_2_icon",
+      "label": "Icon (emoji)",
+      "default": "💧"
+    },
+    {
+      "type": "text",
+      "id": "item_2_title",
+      "label": "Title",
+      "default": "All-Natural Ingredients"
+    },
+    {
+      "type": "textarea",
+      "id": "item_2_description",
+      "label": "Description",
+      "default": "No harmful chemicals, pure botanicals for your skin"
+    },
+    {
+      "type": "header",
+      "content": "Item 3"
+    },
+    {
+      "type": "checkbox",
+      "id": "item_3_enabled",
+      "label": "Enable item 3",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "item_3_icon",
+      "label": "Icon (emoji)",
+      "default": "🇵🇭"
+    },
+    {
+      "type": "text",
+      "id": "item_3_title",
+      "label": "Title",
+      "default": "Proudly Filipino"
+    },
+    {
+      "type": "textarea",
+      "id": "item_3_description",
+      "label": "Description",
+      "default": "Supporting local communities and heritage"
+    },
+    {
+      "type": "header",
+      "content": "Item 4"
+    },
+    {
+      "type": "checkbox",
+      "id": "item_4_enabled",
+      "label": "Enable item 4",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "item_4_icon",
+      "label": "Icon (emoji)",
+      "default": "🌟"
+    },
+    {
+      "type": "text",
+      "id": "item_4_title",
+      "label": "Title",
+      "default": "Proven Results"
+    },
+    {
+      "type": "textarea",
+      "id": "item_4_description",
+      "label": "Description",
+      "default": "Trusted by dermatologists and beauty lovers"
+    },
+    {
+      "type": "header",
+      "content": "Call to action"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_cta",
+      "label": "Show call to action",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "cta_text",
+      "label": "CTA text",
+      "default": "Experience the Pili Ani difference today."
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button text",
+      "default": "Shop Now"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link"
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#f5fafa"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#0f0f0f"
+    },
+    {
+      "type": "color",
+      "id": "item_background_color",
+      "label": "Item background color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "icon_background_color",
+      "label": "Icon background color",
+      "default": "#fff7f2"
+    },
+    {
+      "type": "color",
+      "id": "button_background_color",
+      "label": "Button background color",
+      "default": "#0b0b0b"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "Button text color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "button_hover_background_color",
+      "label": "Button hover background color",
+      "default": "#2fabbc"
+    },
+    {
+      "type": "color",
+      "id": "button_hover_text_color",
+      "label": "Button hover text color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "header",
+      "content": "Typography"
+    },
+    {
+      "type": "range",
+      "id": "title_size",
+      "min": 20,
+      "max": 60,
+      "step": 2,
+      "unit": "px",
+      "label": "Title size",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "intro_size",
+      "min": 14,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Introduction text size",
+      "default": 18
+    },
+    {
+      "type": "range",
+      "id": "item_title_size",
+      "min": 16,
+      "max": 28,
+      "step": 1,
+      "unit": "px",
+      "label": "Item title size",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "item_description_size",
+      "min": 12,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "label": "Item description size",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "cta_text_size",
+      "min": 14,
+      "max": 22,
+      "step": 1,
+      "unit": "px",
+      "label": "CTA text size",
+      "default": 18
+    },
+    {
+      "type": "range",
+      "id": "button_text_size",
+      "min": 12,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "label": "Button text size",
+      "default": 16
+    },
+    {
+      "type": "header",
+      "content": "Spacing"
+    },
+    {
+      "type": "range",
+      "id": "section_padding_top",
+      "min": 20,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "label": "Section padding top",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "section_padding_bottom",
+      "min": 20,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "label": "Section padding bottom",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "content_spacing",
+      "min": 20,
+      "max": 80,
+      "step": 5,
+      "unit": "px",
+      "label": "Content spacing",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "title_spacing",
+      "min": 10,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "label": "Title spacing",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "icon_size",
+      "min": 40,
+      "max": 80,
+      "step": 5,
+      "unit": "px",
+      "label": "Icon size",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "icon_spacing",
+      "min": 10,
+      "max": 30,
+      "step": 2,
+      "unit": "px",
+      "label": "Icon spacing",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "item_title_spacing",
+      "min": 8,
+      "max": 24,
+      "step": 2,
+      "unit": "px",
+      "label": "Item title spacing",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "item_padding",
+      "min": 15,
+      "max": 40,
+      "step": 5,
+      "unit": "px",
+      "label": "Item padding",
+      "default": 25
+    },
+    {
+      "type": "range",
+      "id": "cta_spacing",
+      "min": 30,
+      "max": 80,
+      "step": 5,
+      "unit": "px",
+      "label": "CTA spacing",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "cta_text_spacing",
+      "min": 10,
+      "max": 30,
+      "step": 2,
+      "unit": "px",
+      "label": "CTA text spacing",
+      "default": 20
+    },
+    {
+      "type": "header",
+      "content": "Button style"
+    },
+    {
+      "type": "range",
+      "id": "button_padding_vertical",
+      "min": 8,
+      "max": 20,
+      "step": 2,
+      "unit": "px",
+      "label": "Button vertical padding",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "button_padding_horizontal",
+      "min": 20,
+      "max": 50,
+      "step": 5,
+      "unit": "px",
+      "label": "Button horizontal padding",
+      "default": 30
+    },
+    {
+      "type": "range",
+      "id": "button_border_radius",
+      "min": 0,
+      "max": 30,
+      "step": 2,
+      "unit": "px",
+      "label": "Button border radius",
+      "default": 6
+    },
+    {
+      "type": "range",
+      "id": "item_border_radius",
+      "min": 0,
+      "max": 20,
+      "step": 2,
+      "unit": "px",
+      "label": "Item border radius",
+      "default": 12
+    }
+  ],
+  "presets": [
+    {
+      "name": "Why Choose Pili Ani"
+    }
+  ]
+}
 {% endschema %}
