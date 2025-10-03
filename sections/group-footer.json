@@ -19,7 +19,7 @@
           "settings": {
             "alignment": "text-left",
             "title": "About us",
-            "footer_text": "<p>All Pili Ani products have ethically and sustainably sourced ingredients from Bicol, Philippines, crafted with care for both you and the planet.</p><p></p><p><strong>Elemie Naturals Incorporated</strong></p><p>Gold Condo, 15 Annapolis st., San Juan City, 1502 Metro Manila<br/><em>Contact Number:</em> 0917 826 4424<br/><em>Monday to Fridays:</em> 8am to 5pm<br/><em>Saturdays:</em> 7am to 3pm<br/><em>Email Address:</em> <a href=\"mailto:info@piliani.com\" target=\"_blank\" title=\"mailto:info@piliani.com\">info@piliani.com</a></p>",
+            "footer_text": "<p>All Pili Ani products have ethically and sustainably sourced ingredients from Bicol, Philippines, crafted with care for both you and the planet.</p>",
             "column_width": "30"
           }
         },
@@ -73,7 +73,7 @@
         "enable_greyscale": false,
         "bottom_menu": "",
         "color_text": "#ffffff",
-        "color_scheme": "scheme-3",
+        "color_scheme": "scheme-35de9e34-bd2b-4262-9f97-890b13319c9b",
         "color_border": "#ffffff",
         "show_locale_selector": false,
         "show_locale_code": true,
