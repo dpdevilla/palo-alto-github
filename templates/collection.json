@@ -1,1 +1,109 @@
-{"sections":{"hero":{"type":"collection-image-with-title","settings":{"banner_height":"original-height","text_position":"middle-center","show_image":true}},"subcollections":{"type":"subcollections","settings":{"layout":"grid","image_source":"collection","image_aspect_ratio":1}},"main":{"type":"collection","settings":{"show_breadcrumbs":false,"enable_sorting":true,"enable_filters":true,"filter_mode":"default"}},"16593695967dbb0ff8":{"type":"section-accordions","blocks":{"165936959672f74c55-0":{"type":"text","settings":{"title":"How long does it take to get my products?","text":"<p>Domestic shipping can take up to 5 business days.<br\/><br\/>Foreign shipping could take up to 14 business days.<br\/><br\/>Due to global supply chain challenges, shipping times could be longer than usual.<\/p>"}},"165936959672f74c55-1":{"type":"text","settings":{"title":"Do you offer warranty for your products?","text":"<p>All our products are subject to quality control.<br\/><br\/>Our warranty provides a guarantee against manufacturer defects.<br\/><br\/>The guarantee covers any manufacturing, design, or material defect. Please notify us within 2 months of noticing any defects.<br\/><br\/>It does not cover blows, improper use, or other issues that are not attributable to a manufacturer defects.<\/p>"}},"165936959672f74c55-2":{"type":"text","settings":{"title":"Do you offer refunds?","text":"<p>Yes, we offer full and partial refunds.<br\/><br\/>Please enquire for more information about our Refund policy.<\/p>"}}},"block_order":["165936959672f74c55-0","165936959672f74c55-1","165936959672f74c55-2"],"disabled":true,"settings":{"subheading":"","title":"Frequently Asked Questions","text":"","tabs_bg_color":""}}},"order":["hero","subcollections","main","16593695967dbb0ff8"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "hero": {
+      "type": "collection-image-with-title",
+      "disabled": true,
+      "settings": {
+        "banner_height": "original-height",
+        "text_position": "middle-center",
+        "show_image": true,
+        "overlay_type": "disabled",
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "subcollections": {
+      "type": "subcollections",
+      "settings": {
+        "subcollections": [],
+        "limit": 8,
+        "layout": "grid",
+        "image_source": "collection",
+        "image_aspect_ratio": 1,
+        "overlay_type": "disabled",
+        "color_scheme": "",
+        "padding_top": 30,
+        "padding_bottom": 30
+      }
+    },
+    "main": {
+      "type": "collection",
+      "settings": {
+        "show_breadcrumbs": false,
+        "products_per_page": 24,
+        "enable_sorting": true,
+        "enable_filters": true,
+        "filters_layout": "open",
+        "show_more": true,
+        "filter_mode": "default",
+        "color_scheme": "",
+        "padding_top": 30,
+        "padding_bottom": 60
+      }
+    },
+    "16593695967dbb0ff8": {
+      "type": "section-accordions",
+      "blocks": {
+        "165936959672f74c55-0": {
+          "type": "text",
+          "settings": {
+            "title": "How long does it take to get my products?",
+            "text": "<p>Domestic shipping can take up to 5 business days.<br/><br/>Foreign shipping could take up to 14 business days.<br/><br/>Due to global supply chain challenges, shipping times could be longer than usual.</p>"
+          }
+        },
+        "165936959672f74c55-1": {
+          "type": "text",
+          "settings": {
+            "title": "Do you offer warranty for your products?",
+            "text": "<p>All our products are subject to quality control.<br/><br/>Our warranty provides a guarantee against manufacturer defects.<br/><br/>The guarantee covers any manufacturing, design, or material defect. Please notify us within 2 months of noticing any defects.<br/><br/>It does not cover blows, improper use, or other issues that are not attributable to a manufacturer defects.</p>"
+          }
+        },
+        "165936959672f74c55-2": {
+          "type": "text",
+          "settings": {
+            "title": "Do you offer refunds?",
+            "text": "<p>Yes, we offer full and partial refunds.<br/><br/>Please enquire for more information about our Refund policy.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "165936959672f74c55-0",
+        "165936959672f74c55-1",
+        "165936959672f74c55-2"
+      ],
+      "disabled": true,
+      "settings": {
+        "layout": "two-columns",
+        "show_accordion_divider": false,
+        "line_thickness": "normal",
+        "subheading": "",
+        "title": "Frequently Asked Questions",
+        "type_style": "font-heading",
+        "heading_size": 120,
+        "text": "",
+        "tabs_bg_color": "",
+        "color_scheme": "",
+        "border_color": "",
+        "width": "wrapper",
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "subcollections",
+    "main",
+    "16593695967dbb0ff8"
+  ]
+}
