@@ -37,6 +37,7 @@
     "cart_custom_message_text": "",
     "loading_appearance": "never",
     "show_spacer_lines": false,
+    "animations_enabled": true,
     "show_saving_badge": true,
     "show_scroll_to_top": true,
     "social_instagram_link": "https://www.instagram.com/pilianiph",
