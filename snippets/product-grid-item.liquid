@@ -161,12 +161,7 @@
   <a class="product-grid-item__title {{ heading_style }}" href="{{ product.url | within: collection }}" aria-label="{{ product.title | strip_html | escape }}"{% if index > 1 %} tabindex="-1"{% endif %} data-grid-link>
     {{- product.title | strip_html | escape -}}
   </a>
-  {% if product.metafields.loox.avg_rating %}
-  <div class="loox-rating" data-id="{{ product.id }}" data-rating="{{ product.metafields.loox.avg_rating }}" data-raters="{{ product.metafields.loox.num_reviews }}"></div>
-{% else %}
-  {% render 'loox-rating', product: product %}
-{% endif %}
-
+  
 {%- endcapture -%}
 
 {%- capture info_separator -%}
