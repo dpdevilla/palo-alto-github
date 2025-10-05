@@ -1,1 +1,162 @@
-{"sections":{"main":{"type":"product","blocks":{"title":{"type":"title","settings":{"subheading":"breadcrumbs"}},"26254d59-0bc2-4d6a-9895-2e1fc4019e10":{"type":"shopify:\/\/apps\/loox-reviews\/blocks\/loox-rating\/5c3b337f-fd14-4df5-b1d6-80ec13e6e28e","settings":{}},"form":{"type":"form","settings":{"show_labels":true,"show_quantity":true,"show_payment_button":false,"enable_subscriptions_selectors":false}},"icon":{"type":"icon","settings":{"icon_name":"truck","icon_color":"","icon_width":20,"icon_text":"Free shipping over P1,000","text_size":90,"width":"full","text_alignment":"center","bg_color":"#ffffff"}},"6fde644f-bb89-424d-93a0-03bf7164d65a":{"type":"text","settings":{"title":"<p><strong>Suitable for: <\/strong>{{ product.metafields.custom.skin_type.value }}<\/p>","text_alignment":"left"}},"description":{"type":"description","settings":{}},"upsell":{"type":"upsell","settings":{}},"share-button":{"type":"share-button","settings":{"text":"Share"}}},"block_order":["title","26254d59-0bc2-4d6a-9895-2e1fc4019e10","form","icon","6fde644f-bb89-424d-93a0-03bf7164d65a","description","upsell","share-button"],"settings":{"enable_zoom":true,"enable_video_looping":false}},"loox-product-reviews-app-section":{"type":"apps","blocks":{"loox-product-reviews":{"type":"shopify:\/\/apps\/loox-reviews\/blocks\/loox-dynamic-section\/5c3b337f-fd14-4df5-b1d6-80ec13e6e28e","settings":{"only_photos":false,"aggregated":false,"hide_thumbnails":false,"maxwidth":1080}}},"block_order":["loox-product-reviews"],"settings":{}},"related":{"type":"related-products","settings":{}}},"order":["main","loox-product-reviews-app-section","related"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "product",
+      "blocks": {
+        "title": {
+          "type": "title",
+          "settings": {
+            "subheading": "breadcrumbs",
+            "title_size": 100,
+            "price_size": 100,
+            "bold_price": false,
+            "padding_bottom": 20
+          }
+        },
+        "26254d59-0bc2-4d6a-9895-2e1fc4019e10": {
+          "type": "shopify://apps/loox-reviews/blocks/loox-rating/5c3b337f-fd14-4df5-b1d6-80ec13e6e28e",
+          "settings": {
+            "contentSize": 16,
+            "pattern": "",
+            "hideText": false,
+            "alignment": "",
+            "layout": "",
+            "textColor": "",
+            "starColor": "",
+            "showAllReviews": false,
+            "looxOpenFloatingWidget": false,
+            "emptyRatingWidget": false
+          }
+        },
+        "form": {
+          "type": "form",
+          "settings": {
+            "show_labels": true,
+            "show_quantity": true,
+            "show_payment_button": false,
+            "enable_subscriptions_selectors": false,
+            "padding_bottom": 20
+          }
+        },
+        "icon": {
+          "type": "icon",
+          "settings": {
+            "icon_name": "truck",
+            "icon_color": "",
+            "icon_width": 20,
+            "icon_text": "Free shipping over P1,000",
+            "text_size": 90,
+            "width": "full",
+            "text_alignment": "center",
+            "bg_color": "#ffffff",
+            "padding_bottom": 20
+          }
+        },
+        "6fde644f-bb89-424d-93a0-03bf7164d65a": {
+          "type": "text",
+          "settings": {
+            "title": "<p><strong>Suitable for: </strong>{{ product.metafields.custom.skin_type.value }}</p>",
+            "text_alignment": "left",
+            "padding_bottom": 20
+          }
+        },
+        "description": {
+          "type": "description",
+          "settings": {
+            "enable_full_width": false,
+            "padding_bottom": 20
+          }
+        },
+        "upsell": {
+          "type": "upsell",
+          "settings": {
+            "product_list": [],
+            "padding_bottom": 20
+          }
+        },
+        "share-button": {
+          "type": "share-button",
+          "settings": {
+            "text": "Share",
+            "padding_bottom": 20
+          }
+        }
+      },
+      "block_order": [
+        "title",
+        "26254d59-0bc2-4d6a-9895-2e1fc4019e10",
+        "form",
+        "icon",
+        "6fde644f-bb89-424d-93a0-03bf7164d65a",
+        "description",
+        "upsell",
+        "share-button"
+      ],
+      "settings": {
+        "product_sticky_enable": true,
+        "image_layout": "carousel",
+        "image_width": "standard",
+        "product_image_aspect_ratio": false,
+        "enable_zoom": true,
+        "enable_video_looping": false,
+        "color_scheme": "",
+        "width": "wrapper",
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
+    "loox-product-reviews-app-section": {
+      "type": "apps",
+      "blocks": {
+        "loox_reviews_loox_dynamic_section_767PxL": {
+          "type": "shopify://apps/loox-reviews/blocks/loox-dynamic-section/5c3b337f-fd14-4df5-b1d6-80ec13e6e28e",
+          "settings": {
+            "only_photos": false,
+            "aggregated": false,
+            "limit": 20,
+            "hide_thumbnails": false,
+            "maxwidth": 1080,
+            "is_sample": true
+          }
+        }
+      },
+      "block_order": [
+        "loox_reviews_loox_dynamic_section_767PxL"
+      ],
+      "settings": {
+        "color_scheme": "",
+        "width": "wrapper",
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
+    "related": {
+      "type": "related-products",
+      "settings": {
+        "enable_tabs": true,
+        "layout": "grid",
+        "columns_mobile": "1",
+        "type_style": "subheading-text",
+        "tab_heading_size": 120,
+        "color_scheme": "",
+        "width": "wrapper",
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    }
+  },
+  "order": [
+    "main",
+    "loox-product-reviews-app-section",
+    "related"
+  ]
+}
