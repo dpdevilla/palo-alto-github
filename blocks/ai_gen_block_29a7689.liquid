@@ -120,41 +120,62 @@
 </product-cards-collection-{{ ai_gen_id }}>
 
 <script>
-  (function(){
-    document.querySelectorAll('.ai-variant-dropdown-{{ ai_gen_id }}').forEach(dropdown => {
+  (function() {
+    const formatMoney = window.Shopify?.formatMoney || (c => '$' + (c/100).toFixed(2));
+
+    document.querySelectorAll('.ai-product-card-{{ ai_gen_id }}').forEach(card => {
+      const dropdown = card.querySelector('.ai-variant-dropdown-{{ ai_gen_id }}');
+      const priceEl = card.querySelector('.ai-product-price-{{ ai_gen_id }}');
+      const imageEl = card.querySelector('.ai-product-image-primary-{{ ai_gen_id }}');
+      const hiddenInput = card.querySelector('.variant-id-input-{{ ai_gen_id }}');
+      const button = card.querySelector('.ai-add-to-cart-button-{{ ai_gen_id }}');
+
+      if (!dropdown) return;
+
       dropdown.addEventListener('change', e => {
         const selectedOption = e.target.selectedOptions[0];
         const newVariantId = selectedOption.value;
-        const productCard = e.target.closest('.ai-product-card-{{ ai_gen_id }}');
-        const priceEl = productCard.querySelector('.ai-product-price-{{ ai_gen_id }}');
-        const imageEl = productCard.querySelector('.ai-product-image-primary-{{ ai_gen_id }}');
-        const hiddenInput = productCard.querySelector('.variant-id-input-{{ ai_gen_id }}');
-        const button = productCard.querySelector('.ai-add-to-cart-button-{{ ai_gen_id }}');
 
         // Update hidden input + button
         hiddenInput.value = newVariantId;
         button.dataset.variantId = newVariantId;
 
         // Update price
-        const price = selectedOption.dataset.price;
-        const compareAt = selectedOption.dataset.compareAt;
+        const price = parseInt(selectedOption.dataset.price, 10);
+        const compareAt = selectedOption.dataset.compareAt ? parseInt(selectedOption.dataset.compareAt, 10) : null;
+
         if (compareAt && compareAt > price) {
-          priceEl.innerHTML = `<span class="ai-product-price-compare-{{ ai_gen_id }}">${Shopify.formatMoney(compareAt)}</span>${Shopify.formatMoney(price)}`;
+          priceEl.innerHTML = `<span class="ai-product-price-compare-{{ ai_gen_id }}">${formatMoney(compareAt)}</span>${formatMoney(price)}`;
         } else {
-          priceEl.innerHTML = Shopify.formatMoney(price);
+          priceEl.innerHTML = formatMoney(price);
         }
 
-        // Update image
+        // Update primary image
         const newImage = selectedOption.dataset.image;
-        if (newImage && imageEl) {
+        if (newImage) {
           const tempImage = new Image();
           tempImage.onload = () => { imageEl.src = newImage; };
           tempImage.src = newImage;
         }
+
+        // Reset hover image if exists
+        const secondaryEl = card.querySelector('.ai-product-image-secondary-{{ ai_gen_id }}');
+        if (secondaryEl && card.dataset.defaultSecondImage) {
+          secondaryEl.src = card.dataset.defaultSecondImage;
+        }
       });
+    });
+
+    // Initialize default second images for hover
+    document.querySelectorAll('.ai-product-card-{{ ai_gen_id }}').forEach(card => {
+      const secondaryEl = card.querySelector('.ai-product-image-secondary-{{ ai_gen_id }}');
+      if (secondaryEl) {
+        card.dataset.defaultSecondImage = secondaryEl.src;
+      }
     });
   })();
 </script>
+
 
 {% schema %}
 {
