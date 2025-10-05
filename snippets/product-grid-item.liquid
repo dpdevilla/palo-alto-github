@@ -670,7 +670,17 @@
       {%- comment -%} Price {%- endcomment -%}
       {{ product_info_price }}
     {%- endunless -%}
-
+     {% if product.metafields.loox.num_reviews > 0 %}
+  <a href="#looxReviews">
+    <div class="loox-rating" 
+         data-id="{{ product.id }}" 
+         data-rating="{{ product.metafields.loox.avg_rating }}" 
+         data-raters="{{ product.metafields.loox.num_reviews }}">
+    </div>
+  </a>
+{% else %}
+  <div style="height: 24px;"></div> <!-- Blank space if no reviews -->
+{% endif %}
     {%- if has_colors -%}
       <product-grid-item-swatch
         class="
