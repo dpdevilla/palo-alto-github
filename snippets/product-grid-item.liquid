@@ -161,7 +161,6 @@
   <a class="product-grid-item__title {{ heading_style }}" href="{{ product.url | within: collection }}" aria-label="{{ product.title | strip_html | escape }}"{% if index > 1 %} tabindex="-1"{% endif %} data-grid-link>
     {{- product.title | strip_html | escape -}}
   </a>
-  
 {%- endcapture -%}
 
 {%- capture info_separator -%}
@@ -670,20 +669,17 @@
       {%- comment -%} Price {%- endcomment -%}
       {{ product_info_price }}
     {%- endunless -%}
-{% if product.metafields.loox.num_reviews > 0 %}
-  <a href="{{ product.url }}#looxReviews">
+     {% if product.metafields.loox.num_reviews > 0 %}
+  <a href="#looxReviews">
     <div class="loox-rating" 
          data-id="{{ product.id }}" 
-         style="min-height: 24px;">
+         data-rating="{{ product.metafields.loox.avg_rating }}" 
+         data-raters="{{ product.metafields.loox.num_reviews }}">
     </div>
   </a>
 {% else %}
-  <div class="loox-rating" 
-       data-id="{{ product.id }}" 
-       style="min-height: 24px;">
-  </div>
+  <div style="height: 24px;"></div> <!-- Blank space if no reviews -->
 {% endif %}
-
     {%- if has_colors -%}
       <product-grid-item-swatch
         class="
