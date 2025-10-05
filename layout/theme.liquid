@@ -305,7 +305,7 @@ template-{{ template | replace: '.', ' ' | truncatewords: 1, '' | handle }}
       {% render 'icon-select' %}
     </button>
   {%- endif -%}
-
+	{{ shop.metafields.loox["global_html_body"] }}
   {%- comment -%}
     In order to use your custom javascript file at assets/custom.js
     just cut this next line and paste it outside this comment:
