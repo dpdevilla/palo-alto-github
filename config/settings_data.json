@@ -21,6 +21,7 @@
     "button_caps": true,
     "content_alignment": "left",
     "bold_price": false,
+    "products_per_row_on_desktop": 3,
     "products_per_row_on_mobile": "2",
     "image_size": "cover",
     "image_aspect_ratio": 1,
