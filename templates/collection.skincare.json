@@ -39,6 +39,7 @@
     },
     "main": {
       "type": "collection",
+      "disabled": true,
       "settings": {
         "show_breadcrumbs": true,
         "products_per_page": 24,
