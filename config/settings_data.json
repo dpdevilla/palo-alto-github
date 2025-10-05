@@ -186,11 +186,6 @@
         "disabled": false,
         "settings": {}
       },
-      "14280642947000332093": {
-        "type": "shopify://apps/warnify-pro-warnings/blocks/main/b82106ea-6172-4ab0-814f-17df1cb2b18a",
-        "disabled": false,
-        "settings": {}
-      },
       "16273355016472601751": {
         "type": "shopify://apps/peek-better-replay-survey/blocks/app-embed/1f29cc96-61f9-4675-b0d8-7ada6610e575",
         "disabled": false,
@@ -211,6 +206,11 @@
       "11532412952436166569": {
         "type": "shopify://apps/loox-reviews/blocks/loox-inject/5c3b337f-fd14-4df5-b1d6-80ec13e6e28e",
         "disabled": false,
+        "settings": {}
+      },
+      "14280642947000332093": {
+        "type": "shopify://apps/warnify-pro-warnings/blocks/main/b82106ea-6172-4ab0-814f-17df1cb2b18a",
+        "disabled": true,
         "settings": {}
       }
     },
