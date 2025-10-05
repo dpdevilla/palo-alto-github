@@ -11,6 +11,7 @@
   "sections": {
     "hero": {
       "type": "collection-image-with-title",
+      "disabled": true,
       "settings": {
         "banner_height": "original-height",
         "text_position": "middle-center",
