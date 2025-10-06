@@ -81,31 +81,37 @@
                 </div>
 
                 <div class="ai-product-actions-{{ ai_gen_id }}">
-                  {% if product.variants.size > 1 %}
-                    <select class="ai-variant-dropdown-{{ ai_gen_id }}">
-                      {% for variant in product.variants %}
-                        <option value="{{ variant.id }}"
-                                data-image="{% if variant.featured_image %}{{ variant.featured_image | image_url: width:600 }}{% else %}{{ product.featured_image | image_url: width:600 }}{% endif %}"
-                                data-price="{{ variant.price }}"
-                                data-compare-at="{{ variant.compare_at_price }}"
-                                {% if variant.id == product.selected_or_first_available_variant.id %}selected{% endif %}
-                                {% unless variant.available %}disabled{% endunless %}>
-                          {{ variant.title }} {% unless variant.available %}- Sold Out{% endunless %}
-                        </option>
-                      {% endfor %}
-                    </select>
-                  {% endif %}
+  {% if product.variants.size > 1 %}
+    <select class="ai-variant-dropdown-{{ ai_gen_id }}">
+      {% for variant in product.variants %}
+        <option value="{{ variant.id }}"
+                data-image="{% if variant.featured_image %}{{ variant.featured_image | image_url: width:600 }}{% else %}{{ product.featured_image | image_url: width:600 }}{% endif %}"
+                data-price="{{ variant.price }}"
+                data-compare-at="{{ variant.compare_at_price }}"
+                {% if variant.id == product.selected_or_first_available_variant.id %}selected{% endif %}
+                {% unless variant.available %}disabled{% endunless %}>
+          {{ variant.title }} {% unless variant.available %}- Sold Out{% endunless %}
+        </option>
+      {% endfor %}
+    </select>
+  {% endif %}
 
-                  <form method="post" action="/cart/add" enctype="multipart/form-data" style="flex-shrink:0;">
-                    <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}" class="variant-id-input-{{ ai_gen_id }}">
-                    <button type="submit" class="ai-add-to-cart-button-{{ ai_gen_id }}"
-                            data-product-id="{{ product.id }}"
-                            data-variant-id="{{ product.selected_or_first_available_variant.id }}"
-                            {% unless product.available %}disabled{% endunless %}>
-                      {% if product.available %}{{ block.settings.add_to_cart_text }}{% else %}Sold Out{% endif %}
-                    </button>
-                  </form>
-                </div>
+  <form method="post" action="/cart/add" enctype="multipart/form-data" style="flex-shrink:0;">
+    {% if product.variants.size > 0 %}
+      <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}" class="variant-id-input-{{ ai_gen_id }}">
+      <button type="submit" class="ai-add-to-cart-button-{{ ai_gen_id }}"
+              data-product-id="{{ product.id }}"
+              data-variant-id="{{ product.selected_or_first_available_variant.id }}"
+              {% unless product.available %}disabled{% endunless %}>
+        {% if product.available %}{{ block.settings.add_to_cart_text }}{% else %}Sold Out{% endif %}
+      </button>
+    {% else %}
+      <!-- Empty placeholder for layout alignment -->
+      <button type="button" class="ai-add-to-cart-button-{{ ai_gen_id }}" style="visibility:hidden;"></button>
+    {% endif %}
+  </form>
+</div>
+
               </div>
             </div>
           {% endfor %}
@@ -127,64 +133,52 @@
   };
 
   document.querySelectorAll('.ai-product-card-{{ ai_gen_id }}').forEach(card => {
-    const dropdown = card.querySelector('.ai-variant-dropdown-{{ ai_gen_id }}');
-    const priceEl = card.querySelector('.ai-product-price-{{ ai_gen_id }}');
-    const imageEl = card.querySelector('.ai-product-image-primary-{{ ai_gen_id }}');
-    const hiddenInput = card.querySelector('.variant-id-input-{{ ai_gen_id }}');
-    const button = card.querySelector('.ai-add-to-cart-button-{{ ai_gen_id }}');
+  const dropdown = card.querySelector('.ai-variant-dropdown-{{ ai_gen_id }}');
+  const priceEl = card.querySelector('.ai-product-price-{{ ai_gen_id }}');
+  const imageEl = card.querySelector('.ai-product-image-primary-{{ ai_gen_id }}');
+  const hiddenInput = card.querySelector('.variant-id-input-{{ ai_gen_id }}');
+  const button = card.querySelector('.ai-add-to-cart-button-{{ ai_gen_id }}');
 
-    // Set initial price to selected_or_first_available_variant
-    const initialVariant = dropdown ? dropdown.selectedOptions[0] : null;
-    if (initialVariant) {
-      const price = parseInt(initialVariant.dataset.price, 10);
-      const compareAt = initialVariant.dataset.compareAt ? parseInt(initialVariant.dataset.compareAt, 10) : null;
-      if (compareAt && compareAt > price) {
-        priceEl.innerHTML = `<span class="ai-product-price-compare-{{ ai_gen_id }}">${formatMoneyPHP(compareAt)}</span>${formatMoneyPHP(price)}`;
-      } else {
-        priceEl.innerHTML = formatMoneyPHP(price);
-      }
+  // Only run if dropdown exists
+  if (dropdown) {
+    const initialVariant = dropdown.selectedOptions[0];
+    const price = parseInt(initialVariant.dataset.price, 10);
+    const compareAt = initialVariant.dataset.compareAt ? parseInt(initialVariant.dataset.compareAt, 10) : null;
+    if (compareAt && compareAt > price) {
+      priceEl.innerHTML = `<span class="ai-product-price-compare-{{ ai_gen_id }}">${formatMoneyPHP(compareAt)}</span>${formatMoneyPHP(price)}`;
+    } else {
+      priceEl.innerHTML = formatMoneyPHP(price);
     }
-
-    if (!dropdown) return;
 
     dropdown.addEventListener('change', e => {
       const selectedOption = e.target.selectedOptions[0];
-      const newVariantId = selectedOption.value;
+      hiddenInput.value = selectedOption.value;
+      button.dataset.variantId = selectedOption.value;
 
-      hiddenInput.value = newVariantId;
-      button.dataset.variantId = newVariantId;
-
-      const price = parseInt(selectedOption.dataset.price, 10);
-      const compareAt = selectedOption.dataset.compareAt ? parseInt(selectedOption.dataset.compareAt, 10) : null;
-
-      if (compareAt && compareAt > price) {
-        priceEl.innerHTML = `<span class="ai-product-price-compare-{{ ai_gen_id }}">${formatMoneyPHP(compareAt)}</span>${formatMoneyPHP(price)}`;
-      } else {
-        priceEl.innerHTML = formatMoneyPHP(price);
-      }
+      const newPrice = parseInt(selectedOption.dataset.price, 10);
+      const newCompareAt = selectedOption.dataset.compareAt ? parseInt(selectedOption.dataset.compareAt, 10) : null;
+      priceEl.innerHTML = (newCompareAt && newCompareAt > newPrice) 
+                          ? `<span class="ai-product-price-compare-{{ ai_gen_id }}">${formatMoneyPHP(newCompareAt)}</span>${formatMoneyPHP(newPrice)}`
+                          : formatMoneyPHP(newPrice);
 
       const newImage = selectedOption.dataset.image;
-      if (newImage) {
-        const tempImage = new Image();
-        tempImage.onload = () => { imageEl.src = newImage; };
-        tempImage.src = newImage;
-      }
+      if (newImage) imageEl.src = newImage;
 
       const secondaryEl = card.querySelector('.ai-product-image-secondary-{{ ai_gen_id }}');
       if (secondaryEl && card.dataset.defaultSecondImage) {
         secondaryEl.src = card.dataset.defaultSecondImage;
       }
     });
-  });
+  } else {
+    // No variants: keep button hidden
+    if (button) button.style.visibility = 'hidden';
+  }
 
-  // Initialize default second images for hover
-  document.querySelectorAll('.ai-product-card-{{ ai_gen_id }}').forEach(card => {
-    const secondaryEl = card.querySelector('.ai-product-image-secondary-{{ ai_gen_id }}');
-    if (secondaryEl) {
-      card.dataset.defaultSecondImage = secondaryEl.src;
-    }
-  });
-})();
+  // Initialize hover second image
+  const secondaryEl = card.querySelector('.ai-product-image-secondary-{{ ai_gen_id }}');
+  if (secondaryEl) card.dataset.defaultSecondImage = secondaryEl.src;
+});
+
 </script>
 
 
