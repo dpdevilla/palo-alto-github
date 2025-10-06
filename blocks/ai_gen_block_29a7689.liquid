@@ -118,66 +118,72 @@
 </product-cards-collection-{{ ai_gen_id }}>
 
 <script>
-  (function() {
-    // Custom formatMoney to PHP
-    const formatMoneyPHP = (cents) => {
-      const amount = (cents / 100).toFixed(2); // convert cents to amount
-      return '₱' + amount.replace(/\B(?=(\d{3})+(?!\d))/g, ','); // add comma thousands separator
-    };
+(function() {
+  const formatMoneyPHP = (cents) => {
+    const amount = (cents / 100).toFixed(2);
+    return '₱' + amount.replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+  };
 
-    document.querySelectorAll('.ai-product-card-{{ ai_gen_id }}').forEach(card => {
-      const dropdown = card.querySelector('.ai-variant-dropdown-{{ ai_gen_id }}');
-      const priceEl = card.querySelector('.ai-product-price-{{ ai_gen_id }}');
-      const imageEl = card.querySelector('.ai-product-image-primary-{{ ai_gen_id }}');
-      const hiddenInput = card.querySelector('.variant-id-input-{{ ai_gen_id }}');
-      const button = card.querySelector('.ai-add-to-cart-button-{{ ai_gen_id }}');
+  document.querySelectorAll('.ai-product-card-{{ ai_gen_id }}').forEach(card => {
+    const dropdown = card.querySelector('.ai-variant-dropdown-{{ ai_gen_id }}');
+    const priceEl = card.querySelector('.ai-product-price-{{ ai_gen_id }}');
+    const imageEl = card.querySelector('.ai-product-image-primary-{{ ai_gen_id }}');
+    const hiddenInput = card.querySelector('.variant-id-input-{{ ai_gen_id }}');
+    const button = card.querySelector('.ai-add-to-cart-button-{{ ai_gen_id }}');
 
-      if (!dropdown) return;
+    // Set initial price to selected_or_first_available_variant
+    const initialVariant = dropdown ? dropdown.selectedOptions[0] : null;
+    if (initialVariant) {
+      const price = parseInt(initialVariant.dataset.price, 10);
+      const compareAt = initialVariant.dataset.compareAt ? parseInt(initialVariant.dataset.compareAt, 10) : null;
+      if (compareAt && compareAt > price) {
+        priceEl.innerHTML = `<span class="ai-product-price-compare-{{ ai_gen_id }}">${formatMoneyPHP(compareAt)}</span>${formatMoneyPHP(price)}`;
+      } else {
+        priceEl.innerHTML = formatMoneyPHP(price);
+      }
+    }
 
-      dropdown.addEventListener('change', e => {
-        const selectedOption = e.target.selectedOptions[0];
-        const newVariantId = selectedOption.value;
+    if (!dropdown) return;
 
-        // Update hidden input + button
-        hiddenInput.value = newVariantId;
-        button.dataset.variantId = newVariantId;
+    dropdown.addEventListener('change', e => {
+      const selectedOption = e.target.selectedOptions[0];
+      const newVariantId = selectedOption.value;
 
-        // Update price
-        const price = parseInt(selectedOption.dataset.price, 10);
-        const compareAt = selectedOption.dataset.compareAt ? parseInt(selectedOption.dataset.compareAt, 10) : null;
+      hiddenInput.value = newVariantId;
+      button.dataset.variantId = newVariantId;
 
-        if (compareAt && compareAt > price) {
-          priceEl.innerHTML = `<span class="ai-product-price-compare-{{ ai_gen_id }}">${formatMoneyPHP(compareAt)}</span>${formatMoneyPHP(price)}`;
-        } else {
-          priceEl.innerHTML = formatMoneyPHP(price);
-        }
+      const price = parseInt(selectedOption.dataset.price, 10);
+      const compareAt = selectedOption.dataset.compareAt ? parseInt(selectedOption.dataset.compareAt, 10) : null;
 
-        // Update primary image
-        const newImage = selectedOption.dataset.image;
-        if (newImage) {
-          const tempImage = new Image();
-          tempImage.onload = () => { imageEl.src = newImage; };
-          tempImage.src = newImage;
-        }
+      if (compareAt && compareAt > price) {
+        priceEl.innerHTML = `<span class="ai-product-price-compare-{{ ai_gen_id }}">${formatMoneyPHP(compareAt)}</span>${formatMoneyPHP(price)}`;
+      } else {
+        priceEl.innerHTML = formatMoneyPHP(price);
+      }
 
-        // Reset hover image if exists
-        const secondaryEl = card.querySelector('.ai-product-image-secondary-{{ ai_gen_id }}');
-        if (secondaryEl && card.dataset.defaultSecondImage) {
-          secondaryEl.src = card.dataset.defaultSecondImage;
-        }
-      });
-    });
+      const newImage = selectedOption.dataset.image;
+      if (newImage) {
+        const tempImage = new Image();
+        tempImage.onload = () => { imageEl.src = newImage; };
+        tempImage.src = newImage;
+      }
 
-    // Initialize default second images for hover
-    document.querySelectorAll('.ai-product-card-{{ ai_gen_id }}').forEach(card => {
       const secondaryEl = card.querySelector('.ai-product-image-secondary-{{ ai_gen_id }}');
-      if (secondaryEl) {
-        card.dataset.defaultSecondImage = secondaryEl.src;
+      if (secondaryEl && card.dataset.defaultSecondImage) {
+        secondaryEl.src = card.dataset.defaultSecondImage;
       }
     });
-  })();
-</script>
+  });
 
+  // Initialize default second images for hover
+  document.querySelectorAll('.ai-product-card-{{ ai_gen_id }}').forEach(card => {
+    const secondaryEl = card.querySelector('.ai-product-image-secondary-{{ ai_gen_id }}');
+    if (secondaryEl) {
+      card.dataset.defaultSecondImage = secondaryEl.src;
+    }
+  });
+})();
+</script>
 
 
 {% schema %}
