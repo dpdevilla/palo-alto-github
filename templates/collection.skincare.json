@@ -100,7 +100,7 @@
           "settings": {
             "collection": "best-sellers",
             "products_limit": 8,
-            "columns_desktop": 4,
+            "columns_desktop": 3,
             "columns_mobile": "2",
             "grid_gap": 20,
             "section_padding": 40,
