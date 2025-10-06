@@ -1,23 +1,18 @@
-{% doc %}
-  @prompt
-    product cards collection below product image price
-    variants 
-    add to cart button, also can you mak a variants dropdown and add to cart make a small button and all equal size ang align the cta button add to cart please, this is good but i need also to change the product image and price when variants choose , by product image default it should be same with price also. 
-    can you also make hover effect the second image show when hover over the product image, can you make price default should be same with primary product image, when default product image the price should be larger variants
-{% enddoc %}
-{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
-
-{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
-
 {% style %}
   /* --- CARD STYLES --- */
   .ai-product-cards-{{ ai_gen_id }} { padding: {{ block.settings.section_padding }}px 0; }
   .ai-product-cards-container-{{ ai_gen_id }} { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-  .ai-product-cards-grid-{{ ai_gen_id }} { display: grid; grid-template-columns: repeat({{ block.settings.columns_desktop }}, 1fr); gap: {{ block.settings.grid_gap }}px; }
+
+  .ai-product-cards-grid-{{ ai_gen_id }} {
+    display: grid;
+    grid-template-columns: repeat({{ block.settings.columns_desktop }}, 1fr);
+    gap: {{ block.settings.grid_gap }}px;
+  }
 
   @media screen and (max-width: 749px) {
     .ai-product-cards-grid-{{ ai_gen_id }} {
       grid-template-columns: repeat({{ block.settings.columns_mobile }}, 1fr);
+      gap: 14px;
     }
   }
 
@@ -34,17 +29,16 @@
 
   .ai-product-card-{{ ai_gen_id }}:hover {
     transform: translateY(-{{ block.settings.hover_lift }}px);
-    box-shadow: 0 {{ block.settings.hover_shadow }}px
-      {{ block.settings.hover_shadow | times: 2 }}px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 {{ block.settings.hover_shadow }}px {{ block.settings.hover_shadow | times: 2 }}px rgba(0,0,0,0.1);
   }
 
-  /* Image wrapper and images (same width & height) */
+  /* Image wrapper and images - keep same size across products */
   .ai-product-image-wrapper-{{ ai_gen_id }} {
     position: relative;
     width: 100%;
-    height: auto; /* match image height */
+    aspect-ratio: 1/1; /* square and equal size for mobile and desktop */
     overflow: hidden;
-    background-color: #f9f9f9; /* Optional background for empty space */
+    background-color: #f9f9f9;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -53,20 +47,17 @@
   .ai-product-image-{{ ai_gen_id }},
   .ai-product-image-secondary-{{ ai_gen_id }} {
     width: 100%;
-    height: auto; /* natural height */
+    height: 100%;
     object-fit: contain;
     object-position: center;
     transition: transform 0.3s ease, opacity 0.3s ease;
-    position: relative; /* no longer absolute to maintain height */
-  }
-
-  .ai-product-image-secondary-{{ ai_gen_id }} {
     position: absolute;
     top: 0;
     left: 0;
+  }
+
+  .ai-product-image-secondary-{{ ai_gen_id }} {
     opacity: 0;
-    width: 100%;
-    height: 100%;
   }
 
   /* Hover effect */
@@ -74,17 +65,10 @@
     transform: scale({{ block.settings.image_hover_scale | divided_by: 10.0 }});
   }
 
-  .ai-product-image-wrapper-{{ ai_gen_id }}:hover
-    .ai-product-image-secondary-{{ ai_gen_id }} {
+  .ai-product-image-wrapper-{{ ai_gen_id }}:hover .ai-product-image-secondary-{{ ai_gen_id }} {
     opacity: 1;
   }
 
-  .ai-product-image-wrapper-{{ ai_gen_id }}:hover
-    .ai-product-image-primary-{{ ai_gen_id }} {
-    opacity: 0;
-  }
-
-  /* Badge, content, title, price, actions */
   .ai-product-badge-{{ ai_gen_id }} {
     position: absolute;
     top: 10px;
@@ -116,12 +100,10 @@
     display: block;
   }
 
-  .ai-product-title-{{ ai_gen_id }}:hover {
-    color: {{ block.settings.title_hover_color }};
-  }
+  .ai-product-title-{{ ai_gen_id }}:hover { color: {{ block.settings.title_hover_color }}; }
 
   .ai-product-price-{{ ai_gen_id }} {
-    font-size: {{ block.settings.price_font_size }}px;
+    font-size: clamp(16px, 4vw, {{ block.settings.price_font_size }}px);
     font-weight: {{ block.settings.price_font_weight }};
     color: {{ block.settings.price_color }};
     margin-bottom: 12px;
@@ -139,12 +121,23 @@
     gap: 8px;
     align-items: center;
     justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .ai-variant-dropdown-{{ ai_gen_id }} {
+    flex: 1;
+    padding: 8px 10px;
+    font-size: 13px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    cursor: pointer;
+    min-width: 55%;
   }
 
   .ai-add-to-cart-button-{{ ai_gen_id }} {
     flex-shrink: 0;
     width: auto;
-    padding: 6px 12px;
+    padding: 8px 14px;
     font-size: 13px;
     border-radius: 6px;
     background-color: {{ block.settings.button_background_color }};
@@ -154,6 +147,7 @@
     transition: all 0.3s ease;
     text-transform: uppercase;
     letter-spacing: 0.5px;
+    white-space: nowrap;
   }
 
   .ai-add-to-cart-button-{{ ai_gen_id }}:disabled {
@@ -162,13 +156,29 @@
     cursor: not-allowed;
   }
 
-  .ai-variant-dropdown-{{ ai_gen_id }} {
-    flex: 1;
-    padding: 6px 8px;
-    font-size: 13px;
-    border: 1px solid #ddd;
-    border-radius: 6px;
-    cursor: pointer;
+  /* --- MOBILE OPTIMIZATION --- */
+  @media screen and (max-width: 749px) {
+    .ai-product-content-{{ ai_gen_id }} {
+      padding: 10px;
+    }
+
+    .ai-product-title-{{ ai_gen_id }} {
+      font-size: 14px;
+      line-height: 1.4;
+    }
+
+    .ai-product-actions-{{ ai_gen_id }} {
+      flex-direction: column;
+      gap: 6px;
+      align-items: stretch;
+    }
+
+    .ai-variant-dropdown-{{ ai_gen_id }},
+    .ai-add-to-cart-button-{{ ai_gen_id }} {
+      width: 100%;
+      font-size: 13px;
+      padding: 8px 10px;
+    }
   }
 {% endstyle %}
 
