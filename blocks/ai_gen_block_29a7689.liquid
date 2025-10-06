@@ -10,30 +10,32 @@
 {% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
 
 {% style %}
-/* Variant dropdown arrow */
-.ai-variant-dropdown-{{ ai_gen_id }} {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  background: #fff url("data:image/svg+xml,%3Csvg width='10' height='6' viewBox='0 0 10 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%23999'/%3E%3C/svg%3E") no-repeat right 10px center;
-  background-size: 10px 6px;
-  padding-right: 28px;
-  font-size: 13px;
-  border: 1px solid #ddd;
-  border-radius: 6px;
-  cursor: pointer;
-  height: 36px;
-}
-
-/* Default price larger */
-.ai-product-price-{{ ai_gen_id }} {
-  font-size: {{ block.settings.price_font_size | plus: 4 }}px; /* +4px for default larger size */
-  font-weight: {{ block.settings.price_font_weight }};
-  color: {{ block.settings.price_color }};
-  margin-bottom: 12px;
-}
+  /* --- CARD STYLES --- */
+  .ai-product-cards-{{ ai_gen_id }} { padding: {{ block.settings.section_padding }}px 0; }
+  .ai-product-cards-container-{{ ai_gen_id }} { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+  .ai-product-cards-grid-{{ ai_gen_id }} { display: grid; grid-template-columns: repeat({{ block.settings.columns_desktop }}, 1fr); gap: {{ block.settings.grid_gap }}px; }
+  @media screen and (max-width: 749px) {
+    .ai-product-cards-grid-{{ ai_gen_id }} { grid-template-columns: repeat({{ block.settings.columns_mobile }}, 1fr); }
+  }
+  .ai-product-card-{{ ai_gen_id }} { background-color: {{ block.settings.card_background_color }}; border-radius: {{ block.settings.card_border_radius }}px; overflow: hidden; transition: transform 0.3s ease, box-shadow 0.3s ease; border: 1px solid {{ block.settings.card_border_color }}; display: flex; flex-direction: column; height: 100%; }
+  .ai-product-card-{{ ai_gen_id }}:hover { transform: translateY(-{{ block.settings.hover_lift }}px); box-shadow: 0 {{ block.settings.hover_shadow }}px {{ block.settings.hover_shadow | times: 2 }}px rgba(0,0,0,0.1); }
+  .ai-product-image-wrapper-{{ ai_gen_id }} { position: relative; width: 100%; aspect-ratio: {{ block.settings.image_aspect_ratio }}; overflow: hidden; }
+  .ai-product-image-{{ ai_gen_id }} { width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease, opacity 0.3s ease; position: absolute; top: 0; left: 0; }
+  .ai-product-image-secondary-{{ ai_gen_id }} { opacity: 0; transition: opacity 0.3s ease; }
+  .ai-product-image-wrapper-{{ ai_gen_id }}:hover .ai-product-image-{{ ai_gen_id }} { transform: scale({{ block.settings.image_hover_scale | divided_by: 10.0 }}); }
+  .ai-product-image-wrapper-{{ ai_gen_id }}:hover .ai-product-image-secondary-{{ ai_gen_id }} { opacity: 1; }
+  .ai-product-image-wrapper-{{ ai_gen_id }}:hover .ai-product-image-primary-{{ ai_gen_id }} { opacity: 0; }
+  .ai-product-badge-{{ ai_gen_id }} { position: absolute; top: 10px; left: 10px; background-color: {{ block.settings.badge_background_color }}; color: {{ block.settings.badge_text_color }}; padding: 4px 8px; border-radius: {{ block.settings.badge_border_radius }}px; font-size: 12px; font-weight: bold; text-transform: uppercase; z-index: 2; }
+  .ai-product-content-{{ ai_gen_id }} { padding: {{ block.settings.card_padding }}px; display: flex; flex-direction: column; flex-grow: 1; }
+  .ai-product-title-{{ ai_gen_id }} { font-size: {{ block.settings.title_font_size }}px; font-weight: {{ block.settings.title_font_weight }}; color: {{ block.settings.title_color }}; margin: 0 0 8px; line-height: 1.3; text-decoration: none; display: block; }
+  .ai-product-title-{{ ai_gen_id }}:hover { color: {{ block.settings.title_hover_color }}; }
+  .ai-product-price-{{ ai_gen_id }} { font-size: {{ block.settings.price_font_size }}px; font-weight: {{ block.settings.price_font_weight }}; color: {{ block.settings.price_color }}; margin-bottom: 12px; }
+  .ai-product-price-compare-{{ ai_gen_id }} { text-decoration: line-through; color: {{ block.settings.compare_price_color }}; margin-right: 8px; }
+  .ai-product-actions-{{ ai_gen_id }} { margin-top: auto; display: flex; gap: 8px; align-items: center; justify-content: space-between; }
+  .ai-add-to-cart-button-{{ ai_gen_id }} { flex-shrink: 0; width: auto; padding: 6px 12px; font-size: 13px; border-radius: 6px; background-color: {{ block.settings.button_background_color }}; color: {{ block.settings.button_text_color }}; border: none; cursor: pointer; transition: all 0.3s ease; text-transform: uppercase; letter-spacing: 0.5px; }
+  .ai-add-to-cart-button-{{ ai_gen_id }}:disabled { background-color: #ccc; color: #666; cursor: not-allowed; }
+  .ai-variant-dropdown-{{ ai_gen_id }} { flex: 1; padding: 6px 8px; font-size: 13px; border: 1px solid #ddd; border-radius: 6px; cursor: pointer; }
 {% endstyle %}
-
 
 <product-cards-collection-{{ ai_gen_id }} class="ai-product-cards-{{ ai_gen_id }}">
   <div class="ai-product-cards-container-{{ ai_gen_id }}">
@@ -118,72 +120,66 @@
 </product-cards-collection-{{ ai_gen_id }}>
 
 <script>
-(function() {
-  const formatMoneyPHP = (cents) => {
-    const amount = (cents / 100).toFixed(2);
-    return '₱' + amount.replace(/\B(?=(\d{3})+(?!\d))/g, ',');
-  };
+  (function() {
+    // Custom formatMoney to PHP
+    const formatMoneyPHP = (cents) => {
+      const amount = (cents / 100).toFixed(2); // convert cents to amount
+      return '₱' + amount.replace(/\B(?=(\d{3})+(?!\d))/g, ','); // add comma thousands separator
+    };
 
-  document.querySelectorAll('.ai-product-card-{{ ai_gen_id }}').forEach(card => {
-    const dropdown = card.querySelector('.ai-variant-dropdown-{{ ai_gen_id }}');
-    const priceEl = card.querySelector('.ai-product-price-{{ ai_gen_id }}');
-    const imageEl = card.querySelector('.ai-product-image-primary-{{ ai_gen_id }}');
-    const hiddenInput = card.querySelector('.variant-id-input-{{ ai_gen_id }}');
-    const button = card.querySelector('.ai-add-to-cart-button-{{ ai_gen_id }}');
+    document.querySelectorAll('.ai-product-card-{{ ai_gen_id }}').forEach(card => {
+      const dropdown = card.querySelector('.ai-variant-dropdown-{{ ai_gen_id }}');
+      const priceEl = card.querySelector('.ai-product-price-{{ ai_gen_id }}');
+      const imageEl = card.querySelector('.ai-product-image-primary-{{ ai_gen_id }}');
+      const hiddenInput = card.querySelector('.variant-id-input-{{ ai_gen_id }}');
+      const button = card.querySelector('.ai-add-to-cart-button-{{ ai_gen_id }}');
 
-    // Set initial price to selected_or_first_available_variant
-    const initialVariant = dropdown ? dropdown.selectedOptions[0] : null;
-    if (initialVariant) {
-      const price = parseInt(initialVariant.dataset.price, 10);
-      const compareAt = initialVariant.dataset.compareAt ? parseInt(initialVariant.dataset.compareAt, 10) : null;
-      if (compareAt && compareAt > price) {
-        priceEl.innerHTML = `<span class="ai-product-price-compare-{{ ai_gen_id }}">${formatMoneyPHP(compareAt)}</span>${formatMoneyPHP(price)}`;
-      } else {
-        priceEl.innerHTML = formatMoneyPHP(price);
-      }
-    }
+      if (!dropdown) return;
 
-    if (!dropdown) return;
+      dropdown.addEventListener('change', e => {
+        const selectedOption = e.target.selectedOptions[0];
+        const newVariantId = selectedOption.value;
 
-    dropdown.addEventListener('change', e => {
-      const selectedOption = e.target.selectedOptions[0];
-      const newVariantId = selectedOption.value;
+        // Update hidden input + button
+        hiddenInput.value = newVariantId;
+        button.dataset.variantId = newVariantId;
 
-      hiddenInput.value = newVariantId;
-      button.dataset.variantId = newVariantId;
+        // Update price
+        const price = parseInt(selectedOption.dataset.price, 10);
+        const compareAt = selectedOption.dataset.compareAt ? parseInt(selectedOption.dataset.compareAt, 10) : null;
 
-      const price = parseInt(selectedOption.dataset.price, 10);
-      const compareAt = selectedOption.dataset.compareAt ? parseInt(selectedOption.dataset.compareAt, 10) : null;
+        if (compareAt && compareAt > price) {
+          priceEl.innerHTML = `<span class="ai-product-price-compare-{{ ai_gen_id }}">${formatMoneyPHP(compareAt)}</span>${formatMoneyPHP(price)}`;
+        } else {
+          priceEl.innerHTML = formatMoneyPHP(price);
+        }
 
-      if (compareAt && compareAt > price) {
-        priceEl.innerHTML = `<span class="ai-product-price-compare-{{ ai_gen_id }}">${formatMoneyPHP(compareAt)}</span>${formatMoneyPHP(price)}`;
-      } else {
-        priceEl.innerHTML = formatMoneyPHP(price);
-      }
+        // Update primary image
+        const newImage = selectedOption.dataset.image;
+        if (newImage) {
+          const tempImage = new Image();
+          tempImage.onload = () => { imageEl.src = newImage; };
+          tempImage.src = newImage;
+        }
 
-      const newImage = selectedOption.dataset.image;
-      if (newImage) {
-        const tempImage = new Image();
-        tempImage.onload = () => { imageEl.src = newImage; };
-        tempImage.src = newImage;
-      }
+        // Reset hover image if exists
+        const secondaryEl = card.querySelector('.ai-product-image-secondary-{{ ai_gen_id }}');
+        if (secondaryEl && card.dataset.defaultSecondImage) {
+          secondaryEl.src = card.dataset.defaultSecondImage;
+        }
+      });
+    });
 
+    // Initialize default second images for hover
+    document.querySelectorAll('.ai-product-card-{{ ai_gen_id }}').forEach(card => {
       const secondaryEl = card.querySelector('.ai-product-image-secondary-{{ ai_gen_id }}');
-      if (secondaryEl && card.dataset.defaultSecondImage) {
-        secondaryEl.src = card.dataset.defaultSecondImage;
+      if (secondaryEl) {
+        card.dataset.defaultSecondImage = secondaryEl.src;
       }
     });
-  });
-
-  // Initialize default second images for hover
-  document.querySelectorAll('.ai-product-card-{{ ai_gen_id }}').forEach(card => {
-    const secondaryEl = card.querySelector('.ai-product-image-secondary-{{ ai_gen_id }}');
-    if (secondaryEl) {
-      card.dataset.defaultSecondImage = secondaryEl.src;
-    }
-  });
-})();
+  })();
 </script>
+
 
 
 {% schema %}
