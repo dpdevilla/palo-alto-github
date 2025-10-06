@@ -243,15 +243,16 @@
                     </select>
                   {% endif %}
 
-                  <form method="post" action="/cart/add" enctype="multipart/form-data" style="flex-shrink:0;">
-                    <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}" class="variant-id-input-{{ ai_gen_id }}">
-                    <button type="submit" class="ai-add-to-cart-button-{{ ai_gen_id }}"
-                            data-product-id="{{ product.id }}"
-                            data-variant-id="{{ product.selected_or_first_available_variant.id }}"
-                            {% unless product.available %}disabled{% endunless %}>
-                      {% if product.available %}{{ block.settings.add_to_cart_text }}{% else %}Sold Out{% endif %}
-                    </button>
-                  </form>
+                  <div style="flex-shrink:0;">
+  <input type="hidden" value="{{ product.selected_or_first_available_variant.id }}" class="variant-id-input-{{ ai_gen_id }}">
+  <button type="button" class="ai-add-to-cart-button-{{ ai_gen_id }}"
+          data-product-id="{{ product.id }}"
+          data-variant-id="{{ product.selected_or_first_available_variant.id }}"
+          {% unless product.available %}disabled{% endunless %}>
+    {% if product.available %}{{ block.settings.add_to_cart_text }}{% else %}Sold Out{% endif %}
+  </button>
+</div>
+
                 </div>
               </div>
             </div>
