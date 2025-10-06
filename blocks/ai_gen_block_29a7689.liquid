@@ -279,71 +279,56 @@
     const imageEl = card.querySelector('.ai-product-image-primary-{{ ai_gen_id }}');
     const hiddenInput = card.querySelector('.variant-id-input-{{ ai_gen_id }}');
     const button = card.querySelector('.ai-add-to-cart-button-{{ ai_gen_id }}');
-    const form = card.querySelector('form[action="/cart/add"]');
 
-    // --- Price + Image updates when variant changes ---
-    if (dropdown) {
-      dropdown.addEventListener('change', e => {
-        const selected = e.target.selectedOptions[0];
-        const newVariantId = selected.value;
-        hiddenInput.value = newVariantId;
-        button.dataset.variantId = newVariantId;
-
-        const price = parseInt(selected.dataset.price, 10);
-        const compareAt = selected.dataset.compareAt ? parseInt(selected.dataset.compareAt, 10) : null;
-
-        if (compareAt && compareAt > price) {
-          priceEl.innerHTML = `<span class="ai-product-price-compare-{{ ai_gen_id }}">${formatMoneyPHP(compareAt)}</span>${formatMoneyPHP(price)}`;
-        } else {
-          priceEl.innerHTML = formatMoneyPHP(price);
-        }
-
-        const newImage = selected.dataset.image;
-        if (newImage) imageEl.src = newImage;
-      });
+    // Set initial price to selected_or_first_available_variant
+    const initialVariant = dropdown ? dropdown.selectedOptions[0] : null;
+    if (initialVariant) {
+      const price = parseInt(initialVariant.dataset.price, 10);
+      const compareAt = initialVariant.dataset.compareAt ? parseInt(initialVariant.dataset.compareAt, 10) : null;
+      if (compareAt && compareAt > price) {
+        priceEl.innerHTML = `<span class="ai-product-price-compare-{{ ai_gen_id }}">${formatMoneyPHP(compareAt)}</span>${formatMoneyPHP(price)}`;
+      } else {
+        priceEl.innerHTML = formatMoneyPHP(price);
+      }
     }
 
-    // --- AJAX Add to Cart with Drawer trigger ---
-    if (form) {
-      form.addEventListener('submit', function(e) {
-        e.preventDefault();
-        const variantId = hiddenInput.value;
+    if (!dropdown) return;
 
-        button.disabled = true;
-        button.textContent = 'Adding...';
+    dropdown.addEventListener('change', e => {
+      const selectedOption = e.target.selectedOptions[0];
+      const newVariantId = selectedOption.value;
 
-        fetch(window.Shopify.routes.root + 'cart/add.js', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ id: variantId, quantity: 1 })
-        })
-        .then(res => res.json())
-        .then(data => {
-          button.textContent = 'Added!';
-          setTimeout(() => {
-            button.textContent = '{{ block.settings.add_to_cart_text }}';
-            button.disabled = false;
-          }, 1500);
+      hiddenInput.value = newVariantId;
+      button.dataset.variantId = newVariantId;
 
-          // --- Open cart drawer if it exists ---
-          if (window.Shopify && Shopify.theme && Shopify.theme.cartDrawer) {
-            Shopify.theme.cartDrawer.open();
-          } else if (window.CartDrawer && typeof CartDrawer.open === 'function') {
-            CartDrawer.open();
-          } else if (document.querySelector('cart-drawer, .cart-drawer')) {
-            const drawer = document.querySelector('cart-drawer, .cart-drawer');
-            drawer.classList.add('is-visible');
-          }
-        })
-        .catch(err => {
-          console.error('Error adding to cart:', err);
-          button.textContent = 'Error';
-          setTimeout(() => {
-            button.textContent = '{{ block.settings.add_to_cart_text }}';
-            button.disabled = false;
-          }, 1500);
-        });
-      });
+      const price = parseInt(selectedOption.dataset.price, 10);
+      const compareAt = selectedOption.dataset.compareAt ? parseInt(selectedOption.dataset.compareAt, 10) : null;
+
+      if (compareAt && compareAt > price) {
+        priceEl.innerHTML = `<span class="ai-product-price-compare-{{ ai_gen_id }}">${formatMoneyPHP(compareAt)}</span>${formatMoneyPHP(price)}`;
+      } else {
+        priceEl.innerHTML = formatMoneyPHP(price);
+      }
+
+      const newImage = selectedOption.dataset.image;
+      if (newImage) {
+        const tempImage = new Image();
+        tempImage.onload = () => { imageEl.src = newImage; };
+        tempImage.src = newImage;
+      }
+
+      const secondaryEl = card.querySelector('.ai-product-image-secondary-{{ ai_gen_id }}');
+      if (secondaryEl && card.dataset.defaultSecondImage) {
+        secondaryEl.src = card.dataset.defaultSecondImage;
+      }
+    });
+  });
+
+  // Initialize default second images for hover
+  document.querySelectorAll('.ai-product-card-{{ ai_gen_id }}').forEach(card => {
+    const secondaryEl = card.querySelector('.ai-product-image-secondary-{{ ai_gen_id }}');
+    if (secondaryEl) {
+      card.dataset.defaultSecondImage = secondaryEl.src;
     }
   });
 })();
