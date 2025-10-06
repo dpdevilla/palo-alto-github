@@ -243,16 +243,15 @@
                     </select>
                   {% endif %}
 
-                  <div style="flex-shrink:0;">
-  <input type="hidden" value="{{ product.selected_or_first_available_variant.id }}" class="variant-id-input-{{ ai_gen_id }}">
-  <button type="button" class="ai-add-to-cart-button-{{ ai_gen_id }}"
-          data-product-id="{{ product.id }}"
-          data-variant-id="{{ product.selected_or_first_available_variant.id }}"
-          {% unless product.available %}disabled{% endunless %}>
-    {% if product.available %}{{ block.settings.add_to_cart_text }}{% else %}Sold Out{% endif %}
-  </button>
-</div>
-
+                  <form method="post" action="/cart/add" enctype="multipart/form-data" style="flex-shrink:0;">
+                    <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}" class="variant-id-input-{{ ai_gen_id }}">
+                    <button type="submit" class="ai-add-to-cart-button-{{ ai_gen_id }}"
+                            data-product-id="{{ product.id }}"
+                            data-variant-id="{{ product.selected_or_first_available_variant.id }}"
+                            {% unless product.available %}disabled{% endunless %}>
+                      {% if product.available %}{{ block.settings.add_to_cart_text }}{% else %}Sold Out{% endif %}
+                    </button>
+                  </form>
                 </div>
               </div>
             </div>
@@ -274,46 +273,12 @@
     return '₱' + amount.replace(/\B(?=(\d{3})+(?!\d))/g, ',');
   };
 
-  document.querySelectorAll('.ai-add-to-cart-button-{{ ai_gen_id }}').forEach(button => {
-  button.addEventListener('click', async function() {
-    const variantId = this.dataset.variantId;
-    const formData = {
-      items: [{
-        id: variantId,
-        quantity: 1
-      }]
-    };
-
-    // Add item via Shopify AJAX API
-    try {
-      const response = await fetch('/cart/add.js', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Accept': 'application/json'
-        },
-        body: JSON.stringify(formData)
-      });
-
-      if (!response.ok) throw new Error('Add to cart failed');
-      const data = await response.json();
-
-      // ✅ Trigger your theme’s drawer cart to open
-      if (window.Shopify && window.Shopify.theme && typeof window.Shopify.theme.cartDrawer === 'object') {
-        // If your theme exposes a drawer API
-        window.Shopify.theme.cartDrawer.open();
-      } else {
-        // Otherwise, use Cascade’s default event (usually works)
-        document.dispatchEvent(new CustomEvent('cart:refresh', { bubbles: true }));
-        document.dispatchEvent(new CustomEvent('cart-drawer:open', { bubbles: true }));
-      }
-
-      console.log('✅ Added to cart:', data);
-    } catch (error) {
-      console.error('❌ Error adding to cart:', error);
-      alert('Sorry, there was a problem adding this product to your cart.');
-    }
-  });
+  document.querySelectorAll('.ai-product-card-{{ ai_gen_id }}').forEach(card => {
+    const dropdown = card.querySelector('.ai-variant-dropdown-{{ ai_gen_id }}');
+    const priceEl = card.querySelector('.ai-product-price-{{ ai_gen_id }}');
+    const imageEl = card.querySelector('.ai-product-image-primary-{{ ai_gen_id }}');
+    const hiddenInput = card.querySelector('.variant-id-input-{{ ai_gen_id }}');
+    const button = card.querySelector('.ai-add-to-cart-button-{{ ai_gen_id }}');
 
     // Set initial price to selected_or_first_available_variant
     const initialVariant = dropdown ? dropdown.selectedOptions[0] : null;
