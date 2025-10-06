@@ -121,7 +121,11 @@
 
 <script>
   (function() {
-    const formatMoney = window.Shopify?.formatMoney || (c => '$' + (c/100).toFixed(2));
+    // Custom formatMoney to PHP
+    const formatMoneyPHP = (cents) => {
+      const amount = (cents / 100).toFixed(2); // convert cents to amount
+      return '₱' + amount.replace(/\B(?=(\d{3})+(?!\d))/g, ','); // add comma thousands separator
+    };
 
     document.querySelectorAll('.ai-product-card-{{ ai_gen_id }}').forEach(card => {
       const dropdown = card.querySelector('.ai-variant-dropdown-{{ ai_gen_id }}');
@@ -145,9 +149,9 @@
         const compareAt = selectedOption.dataset.compareAt ? parseInt(selectedOption.dataset.compareAt, 10) : null;
 
         if (compareAt && compareAt > price) {
-          priceEl.innerHTML = `<span class="ai-product-price-compare-{{ ai_gen_id }}">${formatMoney(compareAt)}</span>${formatMoney(price)}`;
+          priceEl.innerHTML = `<span class="ai-product-price-compare-{{ ai_gen_id }}">${formatMoneyPHP(compareAt)}</span>${formatMoneyPHP(price)}`;
         } else {
-          priceEl.innerHTML = formatMoney(price);
+          priceEl.innerHTML = formatMoneyPHP(price);
         }
 
         // Update primary image
@@ -175,6 +179,7 @@
     });
   })();
 </script>
+
 
 
 {% schema %}
