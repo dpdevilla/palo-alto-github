@@ -15,57 +15,6 @@
       gap: 14px;
     }
   }
-.ai-product-cards-layout-{{ ai_gen_id }} {
-  display: flex;
-  gap: 20px;
-}
-
-/* Left sidebar */
-.ai-product-sidebar-{{ ai_gen_id }} {
-  width: 220px;
-  flex-shrink: 0;
-}
-
-/* Right grid wrapper */
-.ai-product-grid-wrapper-{{ ai_gen_id }} {
-  flex-grow: 1;
-}
-
-/* Breadcrumbs styling */
-.ai-breadcrumbs-{{ ai_gen_id }} a {
-  color: {{ block.settings.breadcrumb_link_color }};
-  text-decoration: none;
-  font-size: {{ block.settings.breadcrumb_font_size }}px;
-  margin-right: 4px;
-}
-
-.ai-breadcrumbs-{{ ai_gen_id }} a:hover {
-  color: {{ block.settings.breadcrumb_link_hover_color }};
-}
-
-/* Filters styling */
-.ai-filters-{{ ai_gen_id }} h4 {
-  margin-bottom: 8px;
-}
-
-.ai-filter-checkbox-{{ ai_gen_id }} {
-  margin-right: 6px;
-}
-
-/* Mobile responsiveness */
-@media screen and (max-width: 749px) {
-  .ai-product-cards-layout-{{ ai_gen_id }} {
-    flex-direction: column;
-  }
-
-  .ai-product-sidebar-{{ ai_gen_id }} {
-    width: 100%;
-    margin-bottom: 20px;
-  }
-
-  .ai-product-grid-wrapper-{{ ai_gen_id }} {
-    width: 100%;
-  }
 
   .ai-product-card-{{ ai_gen_id }} {
     background-color: {{ block.settings.card_background_color }};
@@ -237,54 +186,85 @@
 
 <product-cards-collection-{{ ai_gen_id }} class="ai-product-cards-{{ ai_gen_id }}">
   <div class="ai-product-cards-container-{{ ai_gen_id }}">
-    <div class="ai-product-cards-layout-{{ ai_gen_id }}">
-      <!-- LEFT SIDEBAR: Breadcrumbs + Filters -->
-      <aside class="ai-product-sidebar-{{ ai_gen_id }}">
-        {% if block.settings.show_breadcrumbs %}
-          <nav class="ai-breadcrumbs-{{ ai_gen_id }}">
-            <a href="/">Home</a> /
-            {% if collection %}<a href="{{ collection.url }}">{{ collection.title }}</a>{% endif %}
-          </nav>
-        {% endif %}
+    {% if block.settings.collection != blank %}
+      {% assign collection = block.settings.collection %}
+      {% assign products_to_show = block.settings.products_limit %}
+      {% if collection.products.size > 0 %}
+        <div class="ai-product-cards-grid-{{ ai_gen_id }}">
+          {% for product in collection.products limit: products_to_show %}
+            {% assign min_price = product.price_min %}
+            {% assign max_price = product.price_max %}
+            {% assign min_compare_price = product.compare_at_price_min %}
+            {% assign max_compare_price = product.compare_at_price_max %}
+            
+            <div class="ai-product-card-{{ ai_gen_id }}" data-product-id="{{ product.id }}" data-product-handle="{{ product.handle }}">
+              <div class="ai-product-image-wrapper-{{ ai_gen_id }}">
+                {% if product.featured_image %}
+                  <img src="{{ product.featured_image | image_url: width:600 }}" alt="{{ product.featured_image.alt | escape }}" class="ai-product-image-{{ ai_gen_id }} ai-product-image-primary-{{ ai_gen_id }}" data-original-src="{{ product.featured_image | image_url: width:600 }}">
+                  {% if product.images.size > 1 %}
+                    {% assign second_image = product.images[1] %}
+                    <img src="{{ second_image | image_url: width:600 }}" alt="{{ second_image.alt | escape }}" class="ai-product-image-{{ ai_gen_id }} ai-product-image-secondary-{{ ai_gen_id }}">
+                  {% endif %}
+                {% else %}
+                  <div class="ai-product-image-placeholder-{{ ai_gen_id }}">{{ 'product-1' | placeholder_svg_tag }}</div>
+                {% endif %}
+                {% if max_compare_price > max_price %}
+                  <div class="ai-product-badge-{{ ai_gen_id }}">Sale</div>
+                {% endif %}
+              </div>
 
-        {% if block.settings.enable_filtering %}
-          <div class="ai-filters-{{ ai_gen_id }}">
-            <h4>Filter by:</h4>
-            <!-- Example: Tag filters -->
-            {% assign all_tags = collection.all_tags %}
-            {% for tag in all_tags %}
-              <label>
-                <input type="checkbox" class="ai-filter-checkbox-{{ ai_gen_id }}" value="{{ tag }}">
-                {{ tag }}
-              </label><br>
-            {% endfor %}
-          </div>
-        {% endif %}
-      </aside>
+              <div class="ai-product-content-{{ ai_gen_id }}">
+                <a href="{{ product.url }}" class="ai-product-title-{{ ai_gen_id }}">{{ product.title }}</a>
+                <div class="ai-product-price-{{ ai_gen_id }}"
+                     data-min-price="{{ min_price }}"
+                     data-max-price="{{ max_price }}"
+                     data-min-compare-price="{{ min_compare_price }}"
+                     data-max-compare-price="{{ max_compare_price }}"
+                     data-has-compare-price="{% if max_compare_price > max_price %}true{% else %}false{% endif %}">
+                  {% if max_compare_price > max_price %}
+                    <span class="ai-product-price-compare-{{ ai_gen_id }}">{{ max_compare_price | money }}</span>
+                  {% endif %}
+                  {{ min_price | money }}
+                </div>
 
-      <!-- RIGHT GRID: Products -->
-      <div class="ai-product-grid-wrapper-{{ ai_gen_id }}">
-        {% if block.settings.collection != blank %}
-          {% assign collection = block.settings.collection %}
-          {% assign products_to_show = block.settings.products_limit %}
-          {% if collection.products.size > 0 %}
-            <div class="ai-product-cards-grid-{{ ai_gen_id }}">
-              {% for product in collection.products limit: products_to_show %}
-                <!-- Product card HTML remains the same as your current code -->
-                {% include 'product-card', product: product, ai_gen_id: ai_gen_id %}
-              {% endfor %}
+                <div class="ai-product-actions-{{ ai_gen_id }}">
+                  {% if product.variants.size > 1 %}
+                    <select class="ai-variant-dropdown-{{ ai_gen_id }}">
+                      {% for variant in product.variants %}
+                        <option value="{{ variant.id }}"
+                                data-image="{% if variant.featured_image %}{{ variant.featured_image | image_url: width:600 }}{% else %}{{ product.featured_image | image_url: width:600 }}{% endif %}"
+                                data-price="{{ variant.price }}"
+                                data-compare-at="{{ variant.compare_at_price }}"
+                                {% if variant.id == product.selected_or_first_available_variant.id %}selected{% endif %}
+                                {% unless variant.available %}disabled{% endunless %}>
+                          {{ variant.title }} {% unless variant.available %}- Sold Out{% endunless %}
+                        </option>
+                      {% endfor %}
+                    </select>
+                  {% endif %}
+
+                  <form method="post" action="/cart/add" enctype="multipart/form-data" style="flex-shrink:0;">
+                    <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}" class="variant-id-input-{{ ai_gen_id }}">
+                    <button type="submit" class="ai-add-to-cart-button-{{ ai_gen_id }}"
+                            data-product-id="{{ product.id }}"
+                            data-variant-id="{{ product.selected_or_first_available_variant.id }}"
+                            {% unless product.available %}disabled{% endunless %}>
+                      {% if product.available %}{{ block.settings.add_to_cart_text }}{% else %}Sold Out{% endif %}
+                    </button>
+                  </form>
+                </div>
+              </div>
             </div>
-          {% else %}
-            <div class="ai-empty-collection-{{ ai_gen_id }}"><h3>No products found</h3></div>
-          {% endif %}
-        {% else %}
-          <div class="ai-empty-collection-{{ ai_gen_id }}"><h3>Select a collection</h3></div>
-        {% endif %}
-      </div>
-    </div>
+          {% endfor %}
+        </div>
+      {% else %}
+        <div class="ai-empty-collection-{{ ai_gen_id }}"><h3>No products found</h3><p>This collection doesn't contain any products yet.</p></div>
+      {% endif %}
+    {% else %}
+      <div class="ai-empty-collection-{{ ai_gen_id }}"><h3>Select a collection</h3><p>Choose a collection to display products.</p></div>
+    {% endif %}
   </div>
 </product-cards-collection-{{ ai_gen_id }}>
-
 
 <script>
 (function() {
