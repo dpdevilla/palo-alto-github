@@ -338,7 +338,6 @@
 {% schema %}
 {
   "name": "Product cards collection",
-  "tag": null,
   "settings": [
     {
       "type": "header",
@@ -403,146 +402,120 @@
     },
     {
       "type": "header",
-      "content": "Card style"
+      "content": "Card"
     },
     {
       "type": "color",
       "id": "card_background_color",
-      "label": "Background color",
+      "label": "Card background color",
       "default": "#ffffff"
     },
     {
       "type": "color",
       "id": "card_border_color",
-      "label": "Border color",
-      "default": "#e5e5e5"
+      "label": "Card border color",
+      "default": "#dddddd"
     },
     {
       "type": "range",
       "id": "card_border_radius",
+      "label": "Card border radius",
       "min": 0,
-      "max": 20,
-      "step": 2,
-      "unit": "px",
-      "label": "Border radius",
+      "max": 50,
       "default": 8
     },
     {
       "type": "range",
       "id": "card_padding",
-      "min": 10,
-      "max": 30,
-      "step": 2,
-      "unit": "px",
       "label": "Card padding",
-      "default": 16
+      "min": 0,
+      "max": 50,
+      "default": 10
     },
     {
       "type": "range",
       "id": "hover_lift",
-      "min": 0,
-      "max": 10,
-      "step": 1,
-      "unit": "px",
       "label": "Hover lift",
+      "min": 0,
+      "max": 20,
       "default": 4
     },
     {
       "type": "range",
       "id": "hover_shadow",
+      "label": "Hover shadow",
       "min": 0,
       "max": 20,
-      "step": 2,
-      "unit": "px",
-      "label": "Hover shadow",
-      "default": 8
-    },
-    {
-      "type": "header",
-      "content": "Product image"
-    },
-    {
-      "type": "range",
-      "id": "image_aspect_ratio",
-      "min": 1,
-      "max": 2,
-      "step": 0.1,
-      "label": "Aspect ratio",
-      "default": 1.2
+      "default": 6
     },
     {
       "type": "range",
       "id": "image_hover_scale",
+      "label": "Image hover scale (x10)",
       "min": 10,
-      "max": 12,
-      "step": 1,
-      "label": "Hover scale",
+      "max": 20,
       "default": 11
     },
     {
       "type": "header",
-      "content": "Product title"
+      "content": "Title & Price"
     },
     {
       "type": "range",
       "id": "title_font_size",
-      "min": 12,
-      "max": 24,
-      "step": 1,
-      "unit": "px",
-      "label": "Font size",
+      "label": "Title font size",
+      "min": 10,
+      "max": 36,
       "default": 16
     },
     {
       "type": "select",
       "id": "title_font_weight",
-      "label": "Font weight",
+      "label": "Title font weight",
       "options": [
-        { "value": "normal", "label": "Normal" },
-        { "value": "bold", "label": "Bold" }
+        { "value": "400", "label": "Normal" },
+        { "value": "500", "label": "Medium" },
+        { "value": "600", "label": "Semi-bold" },
+        { "value": "700", "label": "Bold" }
       ],
-      "default": "bold"
+      "default": "500"
     },
     {
       "type": "color",
       "id": "title_color",
-      "label": "Color",
+      "label": "Title color",
       "default": "#000000"
     },
     {
       "type": "color",
       "id": "title_hover_color",
-      "label": "Hover color",
-      "default": "#666666"
-    },
-    {
-      "type": "header",
-      "content": "Product price"
+      "label": "Title hover color",
+      "default": "#333333"
     },
     {
       "type": "range",
       "id": "price_font_size",
-      "min": 12,
-      "max": 20,
-      "step": 1,
-      "unit": "px",
-      "label": "Font size",
-      "default": 14
+      "label": "Price font size",
+      "min": 10,
+      "max": 36,
+      "default": 16
     },
     {
       "type": "select",
       "id": "price_font_weight",
-      "label": "Font weight",
+      "label": "Price font weight",
       "options": [
-        { "value": "normal", "label": "Normal" },
-        { "value": "bold", "label": "Bold" }
+        { "value": "400", "label": "Normal" },
+        { "value": "500", "label": "Medium" },
+        { "value": "600", "label": "Semi-bold" },
+        { "value": "700", "label": "Bold" }
       ],
-      "default": "bold"
+      "default": "500"
     },
     {
       "type": "color",
       "id": "price_color",
-      "label": "Color",
+      "label": "Price color",
       "default": "#000000"
     },
     {
@@ -553,169 +526,119 @@
     },
     {
       "type": "header",
-      "content": "Product variants"
-    },
-    {
-      "type": "checkbox",
-      "id": "show_variants",
-      "label": "Show variant options",
-      "default": true
-    },
-    {
-      "type": "color",
-      "id": "variant_label_color",
-      "label": "Label color",
-      "default": "#666666"
-    },
-    {
-      "type": "color",
-      "id": "variant_background_color",
-      "label": "Background color",
-      "default": "#f8f8f8"
-    },
-    {
-      "type": "color",
-      "id": "variant_text_color",
-      "label": "Text color",
-      "default": "#333333"
-    },
-    {
-      "type": "color",
-      "id": "variant_border_color",
-      "label": "Border color",
-      "default": "#dddddd"
-    },
-    {
-      "type": "color",
-      "id": "variant_hover_background",
-      "label": "Hover background",
-      "default": "#e8e8e8"
-    },
-    {
-      "type": "color",
-      "id": "variant_hover_border",
-      "label": "Hover border",
-      "default": "#cccccc"
-    },
-    {
-      "type": "range",
-      "id": "variant_border_radius",
-      "min": 0,
-      "max": 10,
-      "step": 1,
-      "unit": "px",
-      "label": "Border radius",
-      "default": 4
-    },
-    {
-      "type": "header",
-      "content": "Add to cart button"
-    },
-    {
-      "type": "text",
-      "id": "add_to_cart_text",
-      "label": "Button text",
-      "default": "Add to Cart"
-    },
-    {
-      "type": "range",
-      "id": "button_font_size",
-      "min": 10,
-      "max": 16,
-      "step": 1,
-      "unit": "px",
-      "label": "Font size",
-      "default": 12
-    },
-    {
-      "type": "select",
-      "id": "button_font_weight",
-      "label": "Font weight",
-      "options": [
-        { "value": "normal", "label": "Normal" },
-        { "value": "bold", "label": "Bold" }
-      ],
-      "default": "bold"
-    },
-    {
-      "type": "range",
-      "id": "button_height",
-      "min": 30,
-      "max": 50,
-      "step": 2,
-      "unit": "px",
-      "label": "Button height",
-      "default": 36
-    },
-    {
-      "type": "range",
-      "id": "button_padding",
-      "min": 8,
-      "max": 20,
-      "step": 2,
-      "unit": "px",
-      "label": "Horizontal padding",
-      "default": 12
-    },
-    {
-      "type": "range",
-      "id": "button_border_radius",
-      "min": 0,
-      "max": 20,
-      "step": 2,
-      "unit": "px",
-      "label": "Border radius",
-      "default": 6
+      "content": "Variant & Button"
     },
     {
       "type": "color",
       "id": "button_background_color",
-      "label": "Background color",
+      "label": "Button background color",
       "default": "#000000"
     },
     {
       "type": "color",
       "id": "button_text_color",
-      "label": "Text color",
+      "label": "Button text color",
       "default": "#ffffff"
     },
     {
-      "type": "color",
-      "id": "button_hover_background",
-      "label": "Hover background",
-      "default": "#333333"
-    },
-    {
-      "type": "color",
-      "id": "button_hover_text_color",
-      "label": "Hover text color",
-      "default": "#ffffff"
+      "type": "text",
+      "id": "add_to_cart_text",
+      "label": "Add to cart button text",
+      "default": "Add to Cart"
     },
     {
       "type": "header",
-      "content": "Sale badge"
+      "content": "Badge"
     },
     {
       "type": "color",
       "id": "badge_background_color",
-      "label": "Background color",
-      "default": "#ff4444"
+      "label": "Badge background color",
+      "default": "#ff0000"
     },
     {
       "type": "color",
       "id": "badge_text_color",
-      "label": "Text color",
+      "label": "Badge text color",
       "default": "#ffffff"
     },
     {
       "type": "range",
       "id": "badge_border_radius",
+      "label": "Badge border radius",
       "min": 0,
-      "max": 10,
+      "max": 50,
+      "default": 4
+    },
+    {
+      "type": "header",
+      "content": "Filtering & Sorting"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_filtering",
+      "label": "Enable filtering",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_sorting",
+      "label": "Enable sorting",
+      "default": true
+    },
+    {
+      "type": "select",
+      "id": "sort_default",
+      "label": "Default sort option",
+      "options": [
+        { "value": "manual", "label": "Manual" },
+        { "value": "best-selling", "label": "Best selling" },
+        { "value": "title-ascending", "label": "Alphabetically, A-Z" },
+        { "value": "title-descending", "label": "Alphabetically, Z-A" },
+        { "value": "price-ascending", "label": "Price, low to high" },
+        { "value": "price-descending", "label": "Price, high to low" },
+        { "value": "created-ascending", "label": "Date, old to new" },
+        { "value": "created-descending", "label": "Date, new to old" }
+      ],
+      "default": "manual"
+    },
+    {
+      "type": "header",
+      "content": "Breadcrumbs"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_breadcrumbs",
+      "label": "Show breadcrumbs",
+      "default": true
+    },
+    {
+      "type": "color",
+      "id": "breadcrumb_text_color",
+      "label": "Text color",
+      "default": "#666666"
+    },
+    {
+      "type": "color",
+      "id": "breadcrumb_link_color",
+      "label": "Link color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "breadcrumb_link_hover_color",
+      "label": "Link hover color",
+      "default": "#333333"
+    },
+    {
+      "type": "range",
+      "id": "breadcrumb_font_size",
+      "label": "Font size",
+      "min": 12,
+      "max": 18,
       "step": 1,
       "unit": "px",
-      "label": "Border radius",
-      "default": 4
+      "default": 14
     }
   ],
   "presets": [
@@ -725,4 +648,3 @@
   ]
 }
 {% endschema %}
-
