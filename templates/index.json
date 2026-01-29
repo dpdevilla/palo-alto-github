@@ -210,6 +210,7 @@
         },
         "scrolling_text_h8xU89": {
           "type": "scrolling_text",
+          "disabled": true,
           "settings": {
             "text": "<p><strong>Make an announcement</strong> | More info</p>"
           }
