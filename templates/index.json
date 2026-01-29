@@ -15,11 +15,11 @@
         "image_Edybwy": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/Web_Banner_August_6.png",
-            "image_mobile": "shopify://shop_images/Mobile_Banner_September_9.png",
-            "overlay_type": "disabled",
+            "image": "shopify://shop_images/Pili_Ani_x_Iza_Calzado_-_Desktop_Banner.jpg",
+            "image_mobile": "shopify://shop_images/Pili_Ani_x_Iza_Calzado_-_Mobile_Banner.jpg",
+            "overlay_type": "text",
             "video_link_bg": "",
-            "content_width": 80,
+            "content_width": 49,
             "text_position": "center",
             "text_alignment": "text-center",
             "subheading": "",
@@ -35,7 +35,7 @@
             "text_color": "",
             "stacked_button": false,
             "button_1_text": "",
-            "button_1_link": "shopify://collections/all",
+            "button_1_link": "shopify://collections/new-arrivals",
             "button_1_color": "btn--white",
             "button_1_style": "btn--solid-border",
             "button_1_size": "btn--medium",
@@ -90,16 +90,16 @@
       ],
       "name": "Slideshow",
       "settings": {
-        "slide_height": "two-thirds-height",
-        "enable_mobile_height": false,
+        "slide_height": "six-fifty-height",
+        "enable_mobile_height": true,
         "mobile_slide_height": "five-fifty-height-mobile",
-        "show_nav_dots": true,
+        "show_nav_dots": false,
         "show_nav_arrows": false,
         "show_arrow_down": false,
         "autoplay": false,
         "duration": 4,
         "transition": "wipe",
-        "enable_zoom_animation": true,
+        "enable_zoom_animation": false,
         "enable_card_scrolling": false,
         "increase_border_radius": true,
         "color_scheme": ""
@@ -392,7 +392,6 @@
             "card_padding": 16,
             "hover_lift": 4,
             "hover_shadow": 8,
-            "image_aspect_ratio": 1.2,
             "image_hover_scale": 11,
             "title_font_size": 16,
             "title_font_weight": "bold",
@@ -402,27 +401,20 @@
             "price_font_weight": "bold",
             "price_color": "#1e8693",
             "compare_price_color": "#999999",
-            "show_variants": true,
-            "variant_label_color": "#666666",
-            "variant_background_color": "#f8f8f8",
-            "variant_text_color": "#333333",
-            "variant_border_color": "#dddddd",
-            "variant_hover_background": "#e8e8e8",
-            "variant_hover_border": "#cccccc",
-            "variant_border_radius": 4,
-            "add_to_cart_text": "Add to Cart",
-            "button_font_size": 12,
-            "button_font_weight": "bold",
-            "button_height": 36,
-            "button_padding": 12,
-            "button_border_radius": 6,
             "button_background_color": "#1e8693",
             "button_text_color": "#ffffff",
-            "button_hover_background": "#1e8693",
-            "button_hover_text_color": "#ffffff",
+            "add_to_cart_text": "Add to Cart",
             "badge_background_color": "#ff4444",
             "badge_text_color": "#ffffff",
-            "badge_border_radius": 4
+            "badge_border_radius": 4,
+            "enable_filtering": true,
+            "enable_sorting": true,
+            "sort_default": "manual",
+            "show_breadcrumbs": true,
+            "breadcrumb_text_color": "#666666",
+            "breadcrumb_link_color": "#000000",
+            "breadcrumb_link_hover_color": "#333333",
+            "breadcrumb_font_size": 14
           },
           "blocks": {}
         }
@@ -431,91 +423,6 @@
         "ai_gen_block_29a7689_3CaMWe"
       ],
       "settings": {}
-    },
-    "16593247592f08dc83": {
-      "type": "section-image-accordions",
-      "blocks": {
-        "1659324758980b651c-1": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/DESKTOP_CREAMS.png",
-            "image_mobile": "shopify://shop_images/MOBILE_CREAMS.png",
-            "overlay_type": "disabled",
-            "text_width": "full",
-            "text_position": "bottom-left",
-            "title": "Heavy on moisture, lightweight on your skin.",
-            "text": "Luxuriate in the most hydrating, antioxidant-rich Pili and Elemi Oils and hardworking botanicals that target every skin concern.",
-            "button_1_text": "",
-            "button_1_link": "",
-            "button_1_color": "btn--white",
-            "button_1_style": "btn--solid-border",
-            "button_1_size": "btn--medium",
-            "button_2_text": "",
-            "button_2_link": "",
-            "button_2_color": "btn--black",
-            "button_2_style": "btn--solid",
-            "button_2_size": "btn--medium"
-          }
-        },
-        "10d3297c-9d3d-4a16-ba17-f9e7bcb01f64": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/CNT_BANNER_1.png",
-            "overlay_type": "disabled",
-            "text_width": "full",
-            "text_position": "bottom-left",
-            "title": "Your Best Skin Starts Here.",
-            "text": "Refresh with our Gentle Facial Cleanser & Purifying Toner.",
-            "button_1_text": "",
-            "button_1_link": "",
-            "button_1_color": "btn--white",
-            "button_1_style": "btn--solid-border",
-            "button_1_size": "btn--medium",
-            "button_2_text": "",
-            "button_2_link": "",
-            "button_2_color": "btn--black",
-            "button_2_style": "btn--solid",
-            "button_2_size": "btn--medium"
-          }
-        },
-        "2e7f90f9-7e8e-45ba-a8f0-93c42e4e13d5": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/Accordion-Slider-SCNRO.png",
-            "overlay_type": "disabled",
-            "text_width": "normal",
-            "text_position": "bottom-left",
-            "title": "Mini in size. Mighty in overnight skin recovery.",
-            "text": "Supercharged with antioxidant-rich Pili Oil and a skin-loving blend of botanical extracts. Now in a 15ml bottle!",
-            "button_1_text": "",
-            "button_1_link": "",
-            "button_1_color": "btn--white",
-            "button_1_style": "btn--solid-border",
-            "button_1_size": "btn--medium",
-            "button_2_text": "",
-            "button_2_link": "",
-            "button_2_color": "btn--black",
-            "button_2_style": "btn--solid",
-            "button_2_size": "btn--medium"
-          }
-        }
-      },
-      "block_order": [
-        "1659324758980b651c-1",
-        "10d3297c-9d3d-4a16-ba17-f9e7bcb01f64",
-        "2e7f90f9-7e8e-45ba-a8f0-93c42e4e13d5"
-      ],
-      "disabled": true,
-      "settings": {
-        "accordion_height": "five-fifty-height",
-        "enable_mobile_height": false,
-        "mobile_section_height": "five-fifty-height-mobile",
-        "heading_size": 75,
-        "color_scheme": "",
-        "width": "wrapper--full",
-        "padding_top": 0,
-        "padding_bottom": 0
-      }
     },
     "166088552470924e52": {
       "type": "section-press",
@@ -637,116 +544,6 @@
         "padding_bottom": 32
       }
     },
-    "1659331412e92e9982": {
-      "type": "section-image-with-text",
-      "disabled": true,
-      "settings": {
-        "show_accordion_divider": true,
-        "increase_border_radius": false,
-        "section_height": "six-fifty-height",
-        "enable_mobile_height": false,
-        "mobile_height": "four-fifty-height-mobile",
-        "layout": "inline",
-        "image_location": "left",
-        "image_width": "standard",
-        "image": "shopify://shop_images/PAStory.png",
-        "block_bg_color": "",
-        "color_scheme": "",
-        "section_width": "wrapper",
-        "add_gutter": true,
-        "padding_top": 60,
-        "padding_bottom": 60
-      }
-    },
-    "16593319187b25d871": {
-      "type": "section-tab-collections",
-      "blocks": {
-        "16593319175013cc88-0": {
-          "type": "collection",
-          "settings": {
-            "title": "Bestsellers",
-            "tab_collection": "best-sellers",
-            "number_of_products": 6,
-            "show_image": true,
-            "image": "shopify://shop_images/Tab-Collection1.png",
-            "overlay_type": "disabled",
-            "heading": "",
-            "heading_size": 100,
-            "text_color": "",
-            "button_text": "View All",
-            "button_link": "",
-            "button_color": "btn--white",
-            "button_style": "primary btn--small",
-            "button_size": "btn--medium"
-          }
-        },
-        "16593319175013cc88-1": {
-          "type": "collection",
-          "settings": {
-            "title": "Fresh Picks",
-            "tab_collection": "fresh-picks",
-            "number_of_products": 7,
-            "show_image": true,
-            "image": "shopify://shop_images/Tab-Collection2_90e8b13a-54be-4c11-980a-d247ff53ddc6.png",
-            "overlay_type": "disabled",
-            "heading": "",
-            "heading_size": 100,
-            "text_color": "",
-            "button_text": "View All",
-            "button_link": "",
-            "button_color": "btn--white",
-            "button_style": "primary btn--small",
-            "button_size": "btn--medium"
-          }
-        },
-        "5a9aeeea-ae3e-4a67-89c5-b9b1d09d5bf2": {
-          "type": "collection",
-          "settings": {
-            "title": "Our Faves",
-            "tab_collection": "our-faves",
-            "number_of_products": 6,
-            "show_image": true,
-            "image": "shopify://shop_images/Tab-Collection3.png",
-            "overlay_type": "disabled",
-            "heading": "",
-            "heading_size": 100,
-            "text_color": "",
-            "button_text": "View All",
-            "button_link": "",
-            "button_color": "btn--white",
-            "button_style": "primary btn--small",
-            "button_size": "btn--medium"
-          }
-        }
-      },
-      "block_order": [
-        "16593319175013cc88-0",
-        "16593319175013cc88-1",
-        "5a9aeeea-ae3e-4a67-89c5-b9b1d09d5bf2"
-      ],
-      "disabled": true,
-      "settings": {
-        "columns_mobile": "1",
-        "image_aspect_ratio": 1.3,
-        "text_alignment": "text-center",
-        "title": "Explore our Harvest",
-        "heading_size": 100,
-        "text": "Our favorite picks for the season",
-        "text_size": 100,
-        "type_style": "subheading-text",
-        "tab_heading_size": 100,
-        "button_position": "top",
-        "show_buttons": true,
-        "collection_button_text": "Shop Now",
-        "collection_button_color": "btn--black",
-        "collection_button_style": "btn--solid",
-        "collection_button_size": "btn--medium",
-        "color_scheme": "",
-        "width": "wrapper--full-padded",
-        "padding_top": 60,
-        "padding_bottom": 60
-      }
-    },
     "1659332056dfbb5a2d": {
       "type": "apps",
       "blocks": {
@@ -784,348 +581,6 @@
         "padding_top": 60,
         "padding_bottom": 60
       }
-    },
-    "1659332360d2fd47e7": {
-      "type": "section-shoppable-blog",
-      "blocks": {
-        "16593323606309dafe-2": {
-          "type": "article",
-          "settings": {
-            "article": "news/essential-oil-infused-alco-santizers",
-            "product_list": [
-              "pili-ani-clean-green-alco-sanitizer-rise-shine-50ml",
-              "pili-ani-clean-green-alco-sanitizer-stress-away-50ml",
-              "pili-ani-clean-green-alco-sanitizer-sweet-dreams-50ml"
-            ]
-          }
-        },
-        "16593323606309dafe-3": {
-          "type": "article",
-          "settings": {
-            "article": "news/lips-are-better-with-butter-get-more-moisturized-lips-in-3-days-with-pili-ani-s-multi-tasking-lip-butters",
-            "product_list": [
-              "pili-ani-moisturizing-pili-lip-butter-color-kit-1",
-              "pili-ani-moisturizing-tinted-pili-lip-butter"
-            ]
-          }
-        },
-        "16593323606309dafe-0": {
-          "type": "article",
-          "settings": {
-            "article": "news/face-oils-101-what-they-are-how-to-use-them-and-how-to-pick-what-s-right-for-you",
-            "product_list": [
-              "pili-ani-ageless-concentrate",
-              "pili-ani-self-care-night-recovery-oil-antioxidant-rich-facial-oil"
-            ]
-          }
-        },
-        "16593323606309dafe-1": {
-          "type": "article",
-          "settings": {
-            "article": "news/why-we-re-ditching-our-other-skincare-items-for-this-multitasking-face-cream",
-            "product_list": [
-              "pili-ani-intense-hydrating-cream",
-              "pili-ani-natural-radiance-cream",
-              "pili-ani-youthful-glow-facial-cream"
-            ]
-          }
-        }
-      },
-      "block_order": [
-        "16593323606309dafe-2",
-        "16593323606309dafe-3",
-        "16593323606309dafe-0",
-        "16593323606309dafe-1"
-      ],
-      "disabled": true,
-      "settings": {
-        "columns_mobile": "1",
-        "title": "Read our Blog",
-        "show_tags": true,
-        "overlay_type": "disabled",
-        "color_scheme": "",
-        "width": "wrapper",
-        "padding_top": 60,
-        "padding_bottom": 60
-      }
-    },
-    "1659368106d6f5d880": {
-      "type": "section-custom-content",
-      "blocks": {
-        "1659368106275a5820-0": {
-          "type": "image",
-          "settings": {
-            "text_position": "middle-center",
-            "image": "shopify://shop_images/Pili_Ani_Self-care_Night_Recovery_Oil_40ml_1.jpg",
-            "overlay_type": "disabled",
-            "title": "",
-            "heading_size": 100,
-            "image_text": "",
-            "text_size": 100,
-            "show_text_background": false,
-            "bg_color": "",
-            "text_color": "",
-            "button_text": "",
-            "button_link": "https://www.youtube.com/watch?v=BF0W9yRbsUI",
-            "button_color": "btn--white",
-            "button_style": "primary",
-            "button_size": "btn--medium"
-          }
-        },
-        "1659368106275a5820-1": {
-          "type": "text",
-          "settings": {
-            "text_position": "left",
-            "top_image_width": 500,
-            "subheading": "",
-            "title": "Boost your skin’s radiance while you sleep",
-            "heading_size": 100,
-            "text": "<p>Just two to three drops of our Self-care Night Recovery Oil is all it takes to wake up to visibly youthful, luminous skin in the morning.</p><p>Infused with Pili oil, Elemi oil, Philippine jasmine, evening primrose, and lavender, this Self-care Night Recovery Oil works overtime, overnight.</p>",
-            "text_size": 100,
-            "button_text": "Shop Now",
-            "button_link": "shopify://products/pili-ani-self-care-night-recovery-oil-antioxidant-rich-facial-oil",
-            "button_color": "btn--black",
-            "button_style": "primary",
-            "button_size": "btn--medium",
-            "button_2_text": "",
-            "button_2_link": "",
-            "button_2_color": "btn--white",
-            "button_2_style": "btn--solid-border",
-            "button_2_size": "btn--medium",
-            "bg_color": ""
-          }
-        }
-      },
-      "block_order": [
-        "1659368106275a5820-0",
-        "1659368106275a5820-1"
-      ],
-      "disabled": true,
-      "settings": {
-        "height": "four-fifty-height",
-        "enable_mobile_height": false,
-        "mobile_height": "six-fifty-height-mobile",
-        "color_scheme": "",
-        "reverse_blocks": false,
-        "width": "wrapper",
-        "add_gutter": false,
-        "padding_top": 60,
-        "padding_bottom": 60
-      }
-    },
-    "section_banner_text_columns_6bbkJf": {
-      "type": "section-banner-text-columns",
-      "blocks": {
-        "column_q6ezGV": {
-          "type": "column",
-          "settings": {
-            "image": "shopify://shop_images/012724_Web_Banneer_-_Cleanser_Toner_1920x600px.jpg",
-            "overlay_type": "disabled",
-            "subheading": "",
-            "heading": "",
-            "text": "",
-            "button_text": "Cleanser & Toner",
-            "button_link": ""
-          }
-        },
-        "column_6eqgKq": {
-          "type": "column",
-          "settings": {
-            "overlay_type": "disabled",
-            "subheading": "Add a subheading",
-            "heading": "Add a heading",
-            "text": "",
-            "button_text": "",
-            "button_link": ""
-          }
-        },
-        "column_giXwbW": {
-          "type": "column",
-          "settings": {
-            "overlay_type": "disabled",
-            "subheading": "Add a subheading",
-            "heading": "Add a heading",
-            "text": "",
-            "button_text": "",
-            "button_link": ""
-          }
-        },
-        "column_f9wbPT": {
-          "type": "column",
-          "settings": {
-            "overlay_type": "disabled",
-            "subheading": "Add a subheading",
-            "heading": "Add a heading",
-            "text": "",
-            "button_text": "",
-            "button_link": ""
-          }
-        }
-      },
-      "block_order": [
-        "column_q6ezGV",
-        "column_6eqgKq",
-        "column_giXwbW",
-        "column_f9wbPT"
-      ],
-      "disabled": true,
-      "name": "Banner with text columns",
-      "settings": {
-        "appearance": "columns",
-        "content_alignment": "center",
-        "text_alignment": "text-center",
-        "section_height": "six-fifty-height",
-        "enable_mobile_height": false,
-        "mobile_section_height": "five-fifty-height-mobile",
-        "color_scheme": "",
-        "button_color": "btn--white",
-        "button_style": "btn--text",
-        "button_size": "btn--medium",
-        "show_single_image": false,
-        "heading_size": 100,
-        "width": "wrapper",
-        "padding_top": 0,
-        "padding_bottom": 0
-      }
-    },
-    "section_hero_scrolling_wkByXN": {
-      "type": "section-hero-scrolling",
-      "blocks": {
-        "text_z96FNc": {
-          "type": "text",
-          "settings": {
-            "text": "<p>Share information about your brand, describe a product, share announcements, or welcome customers to your store.</p>",
-            "size": 100
-          }
-        },
-        "button_Y9qmwk": {
-          "type": "button",
-          "settings": {
-            "stacked_button": false,
-            "button_1_text": "Shop All",
-            "button_1_link": "shopify://collections/all",
-            "button_1_color": "btn--white",
-            "button_1_style": "btn--solid-border",
-            "button_1_size": "btn--medium",
-            "button_2_text": "",
-            "button_2_link": "",
-            "button_2_color": "btn--black",
-            "button_2_style": "btn--solid",
-            "button_2_size": "btn--medium"
-          }
-        },
-        "scrolling_text_BnBirD": {
-          "type": "scrolling_text",
-          "settings": {
-            "text": "<p><strong>Make an announcement</strong> | More info</p>"
-          }
-        }
-      },
-      "block_order": [
-        "text_z96FNc",
-        "button_Y9qmwk",
-        "scrolling_text_BnBirD"
-      ],
-      "disabled": true,
-      "name": "Image with scrolling text",
-      "settings": {
-        "overlay_type": "disabled",
-        "message_spacing": 10,
-        "marquee_speed": 75,
-        "height": "six-fifty-height",
-        "enable_mobile_height": false,
-        "mobile_height": "four-fifty-height-mobile",
-        "transition": "zoom-out",
-        "enable_zoom_animation": true,
-        "enable_card_scrolling": false,
-        "increase_border_radius": true,
-        "text_align": "align--middle",
-        "scrolling_text_color": "#ffffff",
-        "text_caps": false,
-        "type_font": "space_mono_n4",
-        "size": 100,
-        "size_mobile": 80,
-        "letter_spacing": 0,
-        "scrolling_align": "align--middle",
-        "direction": "ticker-ltr",
-        "color_scheme": "scheme-3",
-        "padding_top": 0,
-        "padding_bottom": 0
-      }
-    },
-    "section_banner_text_columns_HcgkB7": {
-      "type": "section-banner-text-columns",
-      "blocks": {
-        "column_mtHPRY": {
-          "type": "column",
-          "settings": {
-            "overlay_type": "disabled",
-            "subheading": "Add a subheading",
-            "heading": "Add a heading",
-            "text": "",
-            "button_text": "",
-            "button_link": ""
-          }
-        },
-        "column_JXTDMx": {
-          "type": "column",
-          "settings": {
-            "overlay_type": "disabled",
-            "subheading": "Add a subheading",
-            "heading": "Add a heading",
-            "text": "",
-            "button_text": "",
-            "button_link": ""
-          }
-        },
-        "column_UjanXd": {
-          "type": "column",
-          "settings": {
-            "overlay_type": "disabled",
-            "subheading": "Add a subheading",
-            "heading": "Add a heading",
-            "text": "",
-            "button_text": "",
-            "button_link": ""
-          }
-        },
-        "column_BHYFiN": {
-          "type": "column",
-          "settings": {
-            "overlay_type": "disabled",
-            "subheading": "Add a subheading",
-            "heading": "Add a heading",
-            "text": "",
-            "button_text": "",
-            "button_link": ""
-          }
-        }
-      },
-      "block_order": [
-        "column_mtHPRY",
-        "column_JXTDMx",
-        "column_UjanXd",
-        "column_BHYFiN"
-      ],
-      "disabled": true,
-      "name": "Banner with text columns",
-      "settings": {
-        "appearance": "columns",
-        "content_alignment": "center",
-        "text_alignment": "text-center",
-        "section_height": "six-fifty-height",
-        "enable_mobile_height": false,
-        "mobile_section_height": "five-fifty-height-mobile",
-        "color_scheme": "",
-        "button_color": "btn--white",
-        "button_style": "btn--text",
-        "button_size": "btn--medium",
-        "show_single_image": false,
-        "heading_size": 100,
-        "width": "wrapper",
-        "padding_top": 0,
-        "padding_bottom": 0
-      }
     }
   },
   "order": [
@@ -1136,15 +591,7 @@
     "section_banner_image_UH3iw9",
     "section_custom_html_CPgtHE",
     "1759263469a009fc97",
-    "16593247592f08dc83",
     "166088552470924e52",
-    "1659331412e92e9982",
-    "16593319187b25d871",
-    "1659332056dfbb5a2d",
-    "1659332360d2fd47e7",
-    "1659368106d6f5d880",
-    "section_banner_text_columns_6bbkJf",
-    "section_hero_scrolling_wkByXN",
-    "section_banner_text_columns_HcgkB7"
+    "1659332056dfbb5a2d"
   ]
 }
