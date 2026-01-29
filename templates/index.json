@@ -112,6 +112,7 @@
           "type": "collection",
           "settings": {
             "collection": "skin-care",
+            "custom_collection_image": "shopify://shop_images/AC.jpg",
             "heading": "Skincare",
             "block_text_color": "",
             "bg_color": "",
@@ -122,6 +123,7 @@
           "type": "collection",
           "settings": {
             "collection": "beauty",
+            "custom_collection_image": "shopify://shop_images/Pili-Ani-Moisturizing-Tinted-Lip-Butter.jpg",
             "heading": "Beauty",
             "block_text_color": "",
             "bg_color": "",
@@ -132,7 +134,8 @@
           "type": "collection",
           "settings": {
             "collection": "hair",
-            "heading": "Hair Care",
+            "custom_collection_image": "shopify://shop_images/Pili_Ani_Essential_Oil_Blends_Travel_Kit_10ml_Image_4.jpg",
+            "heading": "Wellness",
             "block_text_color": "",
             "bg_color": "",
             "overlay_type": "disabled"
@@ -142,6 +145,7 @@
           "type": "collection",
           "settings": {
             "collection": "daily-essentials",
+            "custom_collection_image": "shopify://shop_images/AC.jpg",
             "heading": "Body Care",
             "block_text_color": "",
             "bg_color": "",
