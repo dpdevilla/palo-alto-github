@@ -111,7 +111,7 @@
         "collection_EfTjj9": {
           "type": "collection",
           "settings": {
-            "collection": "",
+            "collection": "skin-care",
             "heading": "Skincare",
             "block_text_color": "",
             "bg_color": "",
@@ -121,7 +121,7 @@
         "collection_GhnaNg": {
           "type": "collection",
           "settings": {
-            "collection": "",
+            "collection": "beauty",
             "heading": "Beauty",
             "block_text_color": "",
             "bg_color": "",
@@ -131,7 +131,7 @@
         "collection_yaUjp9": {
           "type": "collection",
           "settings": {
-            "collection": "",
+            "collection": "hair",
             "heading": "Hair Care",
             "block_text_color": "",
             "bg_color": "",
@@ -141,8 +141,8 @@
         "collection_VLT7PX": {
           "type": "collection",
           "settings": {
-            "collection": "",
-            "heading": "Lifestyle",
+            "collection": "daily-essentials",
+            "heading": "Body Care",
             "block_text_color": "",
             "bg_color": "",
             "overlay_type": "disabled"
