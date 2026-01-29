@@ -181,6 +181,7 @@
       "blocks": {
         "text_zYkjaQ": {
           "type": "text",
+          "disabled": true,
           "settings": {
             "text": "<p>Share information about your brand, describe a product, share announcements, or welcome customers to your store.</p>",
             "size": 100
@@ -188,6 +189,7 @@
         },
         "button_E9K9fK": {
           "type": "button",
+          "disabled": true,
           "settings": {
             "stacked_button": false,
             "button_1_text": "Shop All",
@@ -230,26 +232,28 @@
       ],
       "name": "Image with scrolling text",
       "settings": {
+        "image": "shopify://shop_images/glow-starts-here-desktop.jpg",
+        "image_mobile": "shopify://shop_images/glow-starts-here-mobile.jpg",
         "overlay_type": "disabled",
         "message_spacing": 10,
         "marquee_speed": 100,
-        "height": "five-fifty-height",
+        "height": "six-fifty-height",
         "enable_mobile_height": false,
         "mobile_height": "four-fifty-height-mobile",
         "transition": "zoom-out",
-        "enable_zoom_animation": true,
+        "enable_zoom_animation": false,
         "enable_card_scrolling": false,
         "increase_border_radius": true,
         "text_align": "align--middle",
-        "scrolling_text_color": "#ffffff",
+        "scrolling_text_color": "#0f0f0f",
         "text_caps": false,
         "type_font": "space_mono_n4",
         "size": 100,
         "size_mobile": 80,
         "letter_spacing": 0,
         "scrolling_align": "align--top",
-        "direction": "ticker-ltr",
-        "color_scheme": "",
+        "direction": "ticker-rtl",
+        "color_scheme": "scheme-7",
         "padding_top": 0,
         "padding_bottom": 0
       }
