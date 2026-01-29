@@ -241,7 +241,7 @@
         "overlay_type": "disabled",
         "message_spacing": 10,
         "marquee_speed": 100,
-        "height": "six-fifty-height",
+        "height": "original-height",
         "enable_mobile_height": false,
         "mobile_height": "four-fifty-height-mobile",
         "transition": "zoom-out",
