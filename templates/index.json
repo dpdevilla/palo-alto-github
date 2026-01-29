@@ -185,9 +185,8 @@
       "blocks": {
         "text_zYkjaQ": {
           "type": "text",
-          "disabled": true,
           "settings": {
-            "text": "<p>Share information about your brand, describe a product, share announcements, or welcome customers to your store.</p>",
+            "text": "",
             "size": 100
           }
         },
