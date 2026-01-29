@@ -16,7 +16,6 @@
       "blocks": {
         "announcement-0": {
           "type": "text",
-          "disabled": true,
           "settings": {
             "text": "<p>New customers save 10% with code WELCOME10</p>",
             "text_color": "",
