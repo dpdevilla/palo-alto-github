@@ -66,14 +66,14 @@
         ".navlink--toplevel > .navtext:before {background: #1e8693;}"
       ],
       "settings": {
-        "sticky_header": false,
+        "sticky_header": true,
         "link_hover_effect": "line",
         "header_border": false,
         "header_border_color": "#1e8693",
         "border_opacity": 50,
         "logo_not_home": "shopify://shop_images/Pili-ani-Logo.png",
         "logo_max_width": 120,
-        "main-menu": "2025-header-menu",
+        "main-menu": "2023-header-menu",
         "main_menu_secondary": "",
         "show_images": true,
         "image_aspect_ratio": 0.5,
