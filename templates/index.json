@@ -344,6 +344,7 @@
         "text_EFMYnM",
         "button_TgLMJG"
       ],
+      "disabled": true,
       "name": "Banner image",
       "settings": {
         "height": "five-fifty-height",
