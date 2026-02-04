@@ -88,6 +88,7 @@
         "image_Edybwy",
         "image_Nar9Ep"
       ],
+      "disabled": true,
       "name": "Slideshow",
       "settings": {
         "slide_height": "six-fifty-height",
@@ -103,6 +104,24 @@
         "enable_card_scrolling": false,
         "increase_border_radius": true,
         "color_scheme": ""
+      }
+    },
+    "homepage_banner_NweJ4c": {
+      "type": "homepage-banner",
+      "name": "Homepage Banner",
+      "settings": {
+        "desktop_image": "shopify://shop_images/Pili_Ani_x_Iza_Calzado_-_Desktop_Banner.jpg",
+        "mobile_image": "shopify://shop_images/Pili_Ani_x_Iza_Calzado_-_Mobile_Banner.jpg",
+        "image_fit": "cover",
+        "banner_height_desktop": 600,
+        "banner_height_mobile": 400,
+        "enable_overlay": true,
+        "overlay_opacity": 0,
+        "heading": "",
+        "subheading": "",
+        "button_label": "",
+        "button_link": "",
+        "content_alignment": "center"
       }
     },
     "section_list_collection_ygrE8X": {
@@ -594,6 +613,7 @@
   },
   "order": [
     "section_slideshow_wjdEGR",
+    "homepage_banner_NweJ4c",
     "section_list_collection_ygrE8X",
     "section_hero_scrolling_DPzhNr",
     "section_products_with_image_UYk9gq",
