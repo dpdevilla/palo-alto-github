@@ -115,6 +115,7 @@
   inset: 0;
   background-position: center;
   background-repeat: no-repeat;
+  width: 100%;
 }
 .homepage-banner__overlay {
   position: absolute;
@@ -141,13 +142,17 @@
 </style>
 
 <div class="homepage-banner">
-  <div
-    class="homepage-banner__image"
-    style="
-      background-image: url({{ section.settings.desktop_image | image_url: width: 2000 }});
-      background-size: {{ section.settings.image_fit }};
-    ">
-  </div>
+ <div
+  class="homepage-banner__image"
+  style="
+    background-image: url({{ section.settings.desktop_image | image_url: width: 2400 }});
+    {% if section.settings.image_fit == 'contain' %}
+      background-size: 100% auto;
+    {% else %}
+      background-size: cover;
+    {% endif %}
+  ">
+</div>
 
   {% if section.settings.enable_overlay %}
     <div class="homepage-banner__overlay"></div>
