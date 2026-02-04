@@ -112,7 +112,7 @@
       "settings": {
         "desktop_image": "shopify://shop_images/Website_Banner.jpg",
         "mobile_image": "shopify://shop_images/Mobile_Banner.jpg",
-        "image_fit": "cover",
+        "image_fit": "contain",
         "banner_height_desktop": 700,
         "banner_height_mobile": 400,
         "enable_overlay": true,
