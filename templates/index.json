@@ -112,8 +112,8 @@
       "settings": {
         "desktop_image": "shopify://shop_images/Pili_Ani_x_Iza_Calzado_-_Desktop_Banner.jpg",
         "mobile_image": "shopify://shop_images/Pili_Ani_x_Iza_Calzado_-_Mobile_Banner.jpg",
-        "image_fit": "cover",
-        "banner_height_desktop": 500,
+        "image_fit": "contain",
+        "banner_height_desktop": 600,
         "banner_height_mobile": 400,
         "enable_overlay": true,
         "overlay_opacity": 0,
