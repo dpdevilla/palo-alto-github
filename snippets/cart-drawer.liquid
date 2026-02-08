@@ -180,9 +180,23 @@
             {%- assign animation_delay = animation_delay | plus: 50 -%}
           {% endif %}
         >
-          {% assign product_a_id = 7613101113582 %}
+{% assign product_a = all_products['self-care-night-recovery-oil-40ml'] %}
+{% assign product_b = all_products['ageless-concentrate-40ml'] %}
 
-{% assign has_product_a = false %}
+{% if product_a %}
+  <div class="cart-gwp-product">
+    <img src="{{ product_a.featured_image | image_url: width:160 }}" alt="{{ product_a.title }}" loading="lazy">
+    <p class="cart-gwp-title">{{ product_a.title }}</p>
+  </div>
+{% endif %}
+
+{% if product_b %}
+  <div class="cart-gwp-product">
+    <img src="{{ product_b.featured_image | image_url: width:160 }}" alt="{{ product_b.title }}" loading="lazy">
+    <p class="cart-gwp-title">{{ product_b.title }}</p>
+  </div>
+{% endif %}
+
 
 {% for item in cart.items %}
   {% if item.product.id == product_a_id %}
