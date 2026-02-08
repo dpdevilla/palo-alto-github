@@ -193,6 +193,18 @@
 {% assign threshold = 150000 %}
 {% assign remaining = threshold | minus: cart.total_price %}
 
+{% assign product_a = all_products['self-care-night-recovery-oil-40ml'] %}
+{% assign has_product_a = false %}
+
+{% for item in cart.items %}
+  {% if item.product.handle == product_a.handle %}
+    {% assign has_product_a = true %}
+  {% endif %}
+{% endfor %}
+
+{% assign threshold = 150000 %}
+{% assign remaining = threshold | minus: cart.total_price %}
+
 {% if has_product_a == false and cart.item_count > 0 %}
   <div class="cart-message cart-message--promo">
     {% if remaining > 0 %}
@@ -208,8 +220,16 @@
         to unlock your <strong>FREE Beauty Roller</strong>
       </p>
     {% endif %}
+
+    {% if product_a %}
+      <div class="cart-gwp-product">
+        <img src="{{ product_a.featured_image | image_url: width:160 }}" alt="{{ product_a.title }}" loading="lazy">
+        <p class="cart-gwp-title">{{ product_a.title }}</p>
+      </div>
+    {% endif %}
   </div>
 {% endif %}
+
 
           {%- render 'cart-line-items', part: 'upsell-items', aos_anchor: '#cartUpsellHolder' -%}
         </div>
