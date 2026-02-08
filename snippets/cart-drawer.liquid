@@ -193,23 +193,86 @@
 {% assign threshold = 150000 %}
 {% assign remaining = threshold | minus: cart.total_price %}
 
-{% if has_product_a == false and cart.item_count > 0 %}
+{% if has_product_a_or_b == false and cart.item_count > 0 %}
   <div class="cart-message cart-message--promo">
     {% if remaining > 0 %}
       <p>
         🎁 Add
         <strong>{{ remaining | money_without_trailing_zeros }}</strong>
-        + <strong>Selfcare Night Recovery Oil 40ml or 15ml</strong>
+        + <strong>Selfcare Night Recovery Oil 40ml/15ml or Ageless Concentrate 40ml/15ml</strong>
         to get a <strong>FREE Beauty Roller</strong>
       </p>
     {% else %}
       <p>
-        🎁 Add <strong>Self Care Night Recovery Oil</strong>
+        🎁 Add <strong>Self Care Night Recovery Oil or Ageless Concentrate</strong>
         to unlock your <strong>FREE Beauty Roller</strong>
       </p>
     {% endif %}
+
+    <div class="cart-gwp-products">
+      {% comment %}
+        Fetch products by handle.
+        Make sure these handles match the actual products in your store.
+      {% endcomment %}
+      {% assign product_a = all_products['self-care-night-recovery-oil'] %}
+      {% assign product_b = all_products['ageless-concentrate'] %}
+
+      {% if product_a and product_a.selected_or_first_available_variant %}
+        <div class="cart-gwp-product">
+          <img src="{{ product_a.featured_image | image_url: width:160 }}" alt="{{ product_a.title }}" loading="lazy">
+          <p class="cart-gwp-title">{{ product_a.title }}</p>
+          <button class="cart-gwp-btn" type="button" 
+                  onclick="addToCart({{ product_a.selected_or_first_available_variant.id }}, 1, this)">
+            Add to cart
+          </button>
+        </div>
+      {% endif %}
+
+      {% if product_b and product_b.selected_or_first_available_variant %}
+        <div class="cart-gwp-product">
+          <img src="{{ product_b.featured_image | image_url: width:160 }}" alt="{{ product_b.title }}" loading="lazy">
+          <p class="cart-gwp-title">{{ product_b.title }}</p>
+          <button class="cart-gwp-btn" type="button" 
+                  onclick="addToCart({{ product_b.selected_or_first_available_variant.id }}, 1, this)">
+            Add to cart
+          </button>
+        </div>
+      {% endif %}
+    </div>
   </div>
 {% endif %}
+
+    <div class="cart-gwp-products">
+      {% comment %}
+        Fetch products by handle.
+        Make sure these handles match the actual products in your store.
+      {% endcomment %}
+      {% assign product_a = all_products['self-care-night-recovery-oil'] %}
+      {% assign product_b = all_products['ageless-concentrate'] %}
+
+      {% if product_a and product_a.selected_or_first_available_variant %}
+        <div class="cart-gwp-product">
+          <img src="{{ product_a.featured_image | image_url: width:160 }}" alt="{{ product_a.title }}" loading="lazy">
+          <p class="cart-gwp-title">{{ product_a.title }}</p>
+          <button class="cart-gwp-btn" type="button" 
+                  onclick="addToCart({{ product_a.selected_or_first_available_variant.id }}, 1, this)">
+            Add to cart
+          </button>
+        </div>
+      {% endif %}
+
+      {% if product_b and product_b.selected_or_first_available_variant %}
+        <div class="cart-gwp-product">
+          <img src="{{ product_b.featured_image | image_url: width:160 }}" alt="{{ product_b.title }}" loading="lazy">
+          <p class="cart-gwp-title">{{ product_b.title }}</p>
+          <button class="cart-gwp-btn" type="button" 
+                  onclick="addToCart({{ product_b.selected_or_first_available_variant.id }}, 1, this)">
+            Add to cart
+          </button>
+        </div>
+      {% endif %}
+    </div>
+
 
           {%- render 'cart-line-items', part: 'upsell-items', aos_anchor: '#cartUpsellHolder' -%}
         </div>
