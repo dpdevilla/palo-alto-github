@@ -211,24 +211,30 @@
     {% endif %}
 
     <div class="cart-gwp-products">
+      {% comment %}
+        Fetch products by handle.
+        Make sure these handles match the actual products in your store.
+      {% endcomment %}
       {% assign product_a = all_products['self-care-night-recovery-oil'] %}
       {% assign product_b = all_products['ageless-concentrate'] %}
 
-      {% if product_a %}
+      {% if product_a and product_a.selected_or_first_available_variant %}
         <div class="cart-gwp-product">
           <img src="{{ product_a.featured_image | image_url: width:160 }}" alt="{{ product_a.title }}" loading="lazy">
           <p class="cart-gwp-title">{{ product_a.title }}</p>
-          <button class="cart-gwp-btn" onclick="addToCart({{ product_a.selected_or_first_available_variant.id }}, 1, this)">
+          <button class="cart-gwp-btn" type="button" 
+                  onclick="addToCart({{ product_a.selected_or_first_available_variant.id }}, 1, this)">
             Add to cart
           </button>
         </div>
       {% endif %}
 
-      {% if product_b %}
+      {% if product_b and product_b.selected_or_first_available_variant %}
         <div class="cart-gwp-product">
           <img src="{{ product_b.featured_image | image_url: width:160 }}" alt="{{ product_b.title }}" loading="lazy">
           <p class="cart-gwp-title">{{ product_b.title }}</p>
-          <button class="cart-gwp-btn" onclick="addToCart({{ product_b.selected_or_first_available_variant.id }}, 1, this)">
+          <button class="cart-gwp-btn" type="button" 
+                  onclick="addToCart({{ product_b.selected_or_first_available_variant.id }}, 1, this)">
             Add to cart
           </button>
         </div>
@@ -236,6 +242,47 @@
     </div>
   </div>
 {% endif %}
+
+<script>
+  async function addToCart(variantId, quantity = 1, button) {
+    const originalText = button.textContent;
+    button.disabled = true;
+
+    try {
+      const response = await fetch('/cart/add.js', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ id: variantId, quantity })
+      });
+
+      if (!response.ok) throw new Error('Failed to add item');
+      const item = await response.json();
+      console.log('Item added:', item);
+
+      button.textContent = 'Added!';
+
+      // Refresh cart
+      const cartResponse = await fetch('/cart.js');
+      const cart = await cartResponse.json();
+
+      if (window.CartDrawer && typeof window.CartDrawer.renderContents === 'function') {
+        window.CartDrawer.renderContents(cart);
+        window.CartDrawer.open();
+      } else {
+        document.dispatchEvent(new CustomEvent('cart:refresh', { detail: { cart } }));
+        document.body.classList.add('js-drawer-open', 'js-drawer-open-cart');
+      }
+    } catch (error) {
+      console.error(error);
+      alert('Something went wrong, please try again.');
+    } finally {
+      setTimeout(() => {
+        button.textContent = originalText;
+        button.disabled = false;
+      }, 2000);
+    }
+  }
+</script>
 
           {%- render 'cart-line-items', part: 'upsell-items', aos_anchor: '#cartUpsellHolder' -%}
         </div>
