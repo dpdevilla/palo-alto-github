@@ -178,6 +178,36 @@
             {%- assign animation_delay = animation_delay | plus: 50 -%}
           {% endif %}
         >
+          {% assign product_a_id = 1234567890 %} {# replace with real Product A ID #}
+
+{% assign has_product_a = false %}
+
+{% for item in cart.items %}
+  {% if item.product.id == product_a_id %}
+    {% assign has_product_a = true %}
+  {% endif %}
+{% endfor %}
+{% assign threshold = 150000 %}
+{% assign remaining = threshold | minus: cart.total_price %}
+
+{% if has_product_a == false and cart.item_count > 0 %}
+  <div class="cart-message cart-message--promo">
+    {% if remaining > 0 %}
+      <p>
+        🎁 Add
+        <strong>{{ remaining | money_without_trailing_zeros }}</strong>
+        + <strong>Product A</strong>
+        to get a <strong>FREE Beauty Roller</strong>
+      </p>
+    {% else %}
+      <p>
+        🎁 Add <strong>Product A</strong>
+        to unlock your <strong>FREE Beauty Roller</strong>
+      </p>
+    {% endif %}
+  </div>
+{% endif %}
+
           {%- render 'cart-line-items', part: 'upsell-items', aos_anchor: '#cartUpsellHolder' -%}
         </div>
 
