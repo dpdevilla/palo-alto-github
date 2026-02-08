@@ -316,6 +316,174 @@ template-{{ template | replace: '.', ' ' | truncatewords: 1, '' | handle }}
 
   <!-- And above this comment line ================================================== -->
 
+<!-- EXIT INTENT POPUP - FREE BEAUTY ROLLER PROMO -->
+<style>
+  #exit-popup-overlay {
+    display: none;
+    position: fixed;
+    z-index: 99999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.65);
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+  }
+
+  #exit-popup-box {
+    background: #ffffff;
+    max-width: 400px;
+    width: 100%;
+    padding: 25px;
+    text-align: center;
+    border-radius: 14px;
+    box-shadow: 0 10px 35px rgba(0,0,0,0.25);
+    position: relative;
+  }
+
+  #exit-popup-close {
+    position: absolute;
+    top: 12px;
+    right: 15px;
+    font-size: 22px;
+    cursor: pointer;
+  }
+
+  #promo-img {
+    width: 140px;
+    height: auto;
+    margin: 15px;
+  }
+
+  .exit-popup-btn {
+    background: #1E8693;
+    color: #fff;
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-size: 18px;
+    cursor: pointer;
+    border: none;
+    width: 100%;
+    margin-top: 15px;
+  }
+
+  #countdown-timer {
+    font-weight: bold;
+    color: #1E8693;
+    margin-top: 10px;
+    font-size: 20px;
+  }
+</style>
+
+<div id="exit-popup-overlay">
+  <div id="exit-popup-box">
+    <span id="exit-popup-close">&times;</span>
+
+    <!-- Product Images -->
+    <div style="display:flex; justify-content:center; gap:10px;">
+      <img id="promo-img" src="{{ all_products['self-care-night-recovery-oil'].featured_image | img_url: 'medium' }}" alt="Self Care Night Recovery Oil">
+      <img id="promo-img" src="{{ all_products['ageless-concentrate'].featured_image | img_url: 'medium' }}" alt="Ageless Concentrate">
+    </div>
+
+    <!-- Headline -->
+    <h2>🎁 Get a FREE Beauty Roller!</h2>
+
+    <!-- Subtext -->
+    <p>Add <strong>Self Care Night Recovery Oil</strong> or <strong>Ageless Concentrate</strong> to unlock your FREE Beauty Roller. Don’t miss out!</p>
+
+    <!-- CTA Button -->
+    <button id="claim-offer-btn" class="exit-popup-btn">Shop Now</button>
+
+    <!-- Countdown Timer -->
+    <div id="countdown-timer">10:00</div>
+  </div>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+  const popup = document.getElementById("exit-popup-overlay");
+  const closeBtn = document.getElementById("exit-popup-close");
+  const claimBtn = document.getElementById("claim-offer-btn");
+
+  let exitPopupShown = false;
+  let countdownSeconds = 10 * 60;
+  let countdownInterval;
+
+  if (sessionStorage.getItem("exitPopupShown")) return;
+
+  function showPopup() {
+    if (exitPopupShown) return;
+
+    popup.style.display = "flex";
+    exitPopupShown = true;
+    sessionStorage.setItem("exitPopupShown", "true");
+
+    // Countdown
+    countdownInterval = setInterval(() => {
+      let minutes = Math.floor(countdownSeconds / 60);
+      let seconds = countdownSeconds % 60;
+      document.getElementById("countdown-timer").textContent =
+        (minutes < 10 ? '0' : '') + minutes + ":" + (seconds < 10 ? '0' : '') + seconds;
+      countdownSeconds--;
+      if (countdownSeconds < 0) clearInterval(countdownInterval);
+    }, 1000);
+
+    // GA4 view event
+    if (typeof gtag === 'function') {
+      gtag('event', 'exit_popup_view', {
+        event_category: 'Popup',
+        event_label: 'Free Beauty Roller Exit Popup'
+      });
+    }
+  }
+
+  /* DESKTOP EXIT INTENT */
+  document.addEventListener("mouseleave", function(e) {
+    if (e.clientY <= 50) {
+      showPopup();
+    }
+  });
+
+  /* MOBILE EXIT INTENT */
+  history.pushState(null, null, location.href);
+  window.addEventListener("popstate", function () {
+    showPopup();
+    history.pushState(null, null, location.href);
+  });
+
+  let lastScroll = window.scrollY;
+  window.addEventListener("scroll", function () {
+    let currentScroll = window.scrollY;
+    if (currentScroll < lastScroll - 120) {
+      showPopup();
+    }
+    lastScroll = currentScroll;
+  });
+
+  /* CLOSE POPUP */
+  closeBtn.onclick = function () {
+    popup.style.display = "none";
+    clearInterval(countdownInterval);
+  };
+
+  /* CTA CLICK */
+  claimBtn.onclick = function () {
+    if (typeof gtag === 'function') {
+      gtag('event', 'exit_popup_click', {
+        event_category: 'Popup',
+        event_label: 'Free Beauty Roller Exit Popup - Claim'
+      });
+    }
+    window.location.href = "/collections/free-beauty-roller-promo"; // redirect to your promo collection or product
+  };
+
+});
+</script>
+
+<!-- END EXIT POPUP -->
 
 </body>
 </html>
