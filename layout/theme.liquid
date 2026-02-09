@@ -381,10 +381,9 @@ template-{{ template | replace: '.', ' ' | truncatewords: 1, '' | handle }}
   <div id="exit-popup-box">
     <span id="exit-popup-close">&times;</span>
 
-    <!-- Product Images -->
-    <div style="display:flex; justify-content:center; gap:10px;">
-      <img id="promo-img" src="{{ all_products['self-care-night-recovery-oil'].featured_image | img_url: 'medium' }}" alt="Self Care Night Recovery Oil">
-      <img id="promo-img" src="{{ all_products['pili-ani-ageless-concentrate-with-vitamin-c-and-phyto-retinol-40ml.png'].featured_image | img_url: 'medium' }}" alt="Ageless Concentrate">
+    <!-- Promo Image -->
+    <div style="display:flex; justify-content:center;">
+      <img id="promo-img" src="https://cdn.shopify.com/s/files/1/0633/7786/6990/files/exit-intent-popup.png?v=1770626622" alt="Free Beauty Roller Promo">
     </div>
 
     <!-- Headline -->
@@ -482,7 +481,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 });
 </script>
-
 <!-- END EXIT POPUP -->
 
 </body>
