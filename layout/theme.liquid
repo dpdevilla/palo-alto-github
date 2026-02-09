@@ -318,6 +318,14 @@ template-{{ template | replace: '.', ' ' | truncatewords: 1, '' | handle }}
 
 <!-- EXIT INTENT POPUP - FREE BEAUTY ROLLER PROMO -->
 <style>
+   /* Banner image */
+  #exit-popup-banner {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    display: block;
+  }
   #exit-popup-overlay {
     display: none;
     position: fixed;
@@ -382,10 +390,11 @@ template-{{ template | replace: '.', ' ' | truncatewords: 1, '' | handle }}
     <span id="exit-popup-close">&times;</span>
 
     <!-- Product Images -->
-    <div style="display:flex; justify-content:center; gap:10px;">
-      <img id="promo-img" src="{{ all_products['self-care-night-recovery-oil'].featured_image | img_url: 'medium' }}" alt="Self Care Night Recovery Oil">
-      <img id="promo-img" src="{{ all_products['pili-ani-ageless-concentrate-with-vitamin-c-and-phyto-retinol-40ml.png'].featured_image | img_url: 'medium' }}" alt="Ageless Concentrate">
-    </div>
+<img 
+  id="exit-popup-banner"
+  src="https://cdn.shopify.com/s/files/1/0633/7786/6990/files/Website_Banners_-_Mobile.png?v=1770618829"
+  alt="Free Beauty Roller Promo">
+
 
     <!-- Headline -->
     <h2>🎁 Get a FREE Beauty Roller!</h2>
