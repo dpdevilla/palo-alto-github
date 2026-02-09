@@ -334,7 +334,7 @@ template-{{ template | replace: '.', ' ' | truncatewords: 1, '' | handle }}
 
   #exit-popup-box {
     background: #ffffff;
-    max-width: 450px; /* slightly bigger popup */
+    max-width: 450px;
     width: 100%;
     padding: 25px;
     text-align: center;
@@ -352,10 +352,10 @@ template-{{ template | replace: '.', ' ' | truncatewords: 1, '' | handle }}
   }
 
   #promo-img {
-    width: 220px; /* larger image */
-    max-width: 90%; /* responsive on smaller screens */
-    height: auto;
-    margin: 15px auto;
+    width: 100%;       /* fill the container */
+    max-width: 100%;   /* ensure it doesn’t overflow */
+    height: auto;      /* maintain aspect ratio */
+    margin: 15px 0;
     display: block;
   }
 
@@ -382,9 +382,6 @@ template-{{ template | replace: '.', ' ' | truncatewords: 1, '' | handle }}
     #exit-popup-box {
       max-width: 90%;
       padding: 20px;
-    }
-    #promo-img {
-      width: 180px; /* smaller on mobile */
     }
   }
 </style>
@@ -494,6 +491,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 </script>
 <!-- END EXIT POPUP -->
+
 
 </body>
 </html>
