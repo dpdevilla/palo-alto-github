@@ -87,7 +87,9 @@
         "upsell": {
           "type": "upsell",
           "settings": {
-            "product_list": [],
+            "product_list": [
+              "deep-detox-volcanic-exfoliating-mask-powerful-detoxification"
+            ],
             "padding_bottom": 20
           }
         },
