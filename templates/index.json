@@ -604,6 +604,7 @@
       "block_order": [
         "6b879faf-367d-47b0-ae30-4f09ae553609"
       ],
+      "disabled": true,
       "settings": {
         "color_scheme": "",
         "width": "wrapper",
