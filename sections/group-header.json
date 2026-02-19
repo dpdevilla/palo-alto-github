@@ -39,7 +39,7 @@
       ],
       "settings": {
         "width": "wrapper--full",
-        "layout": "slider",
+        "layout": "marquee",
         "show_top_border": false,
         "show_bottom_border": true,
         "padding": 10,
