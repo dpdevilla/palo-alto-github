@@ -59,11 +59,11 @@
             "promo_bg_color": "#0000004d",
             "show_text_background": true,
             "bg_color": "",
-            "text_color": "",
+            "text_color": "#2fabbc",
             "button_text": "SHOP NOW",
-            "button_link": "",
-            "button_color": "btn--white",
-            "button_style": "btn--solid-border",
+            "button_link": "shopify://collections/best-sellers",
+            "button_color": "btn--secondary",
+            "button_style": "btn--text",
             "button_size": "btn--medium"
           }
         }
