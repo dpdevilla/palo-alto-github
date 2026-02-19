@@ -28,7 +28,7 @@
     "variants_style": "boxes",
     "show_quantity": true,
     "show_remaining": true,
-    "show_payment_button": true,
+    "show_payment_button": false,
     "enable_subscriptions_selectors": false,
     "cart_type": "drawer",
     "enable_cart_animation": true,
