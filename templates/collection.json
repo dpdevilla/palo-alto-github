@@ -48,7 +48,7 @@
             "width": "half",
             "title": "",
             "heading_size": 100,
-            "heading_highlight_type": "underline",
+            "heading_highlight_type": "stroke",
             "highlight_color": "#000000",
             "highlight_text_color": "",
             "content": "",
