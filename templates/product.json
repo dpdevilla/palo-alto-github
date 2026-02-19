@@ -112,6 +112,7 @@
         "upsell",
         "share-button"
       ],
+      "custom_css": [],
       "settings": {
         "product_sticky_enable": true,
         "image_layout": "carousel",
