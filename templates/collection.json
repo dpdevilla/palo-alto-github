@@ -38,6 +38,39 @@
     },
     "main": {
       "type": "collection",
+      "blocks": {
+        "promo_KPWpRj": {
+          "type": "promo",
+          "settings": {
+            "collection": "",
+            "image": "shopify://shop_images/exit-intent-popup.jpg",
+            "promo_position": 5,
+            "width": "half",
+            "title": "",
+            "heading_size": 100,
+            "heading_highlight_type": "underline-hand-drawn",
+            "highlight_color": "#000000",
+            "highlight_text_color": "",
+            "content": "",
+            "text_size": 100,
+            "text_position": "bottom-left",
+            "layout": "stacked",
+            "overlay_type": "disabled",
+            "promo_bg_color": "#d3d3d3",
+            "show_text_background": false,
+            "bg_color": "",
+            "text_color": "",
+            "button_text": "",
+            "button_link": "",
+            "button_color": "btn--white",
+            "button_style": "btn--solid-border",
+            "button_size": "btn--medium"
+          }
+        }
+      },
+      "block_order": [
+        "promo_KPWpRj"
+      ],
       "settings": {
         "show_breadcrumbs": false,
         "products_per_page": 24,
