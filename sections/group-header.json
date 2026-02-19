@@ -42,8 +42,8 @@
         "layout": "marquee",
         "show_top_border": false,
         "show_bottom_border": true,
-        "padding": 10,
-        "slider_speed": 7,
+        "padding": 5,
+        "slider_speed": 6,
         "show_arrows": false,
         "marquee_speed": 100,
         "direction": "ticker-ltr",
@@ -52,8 +52,8 @@
         "text_size": 100,
         "letter_spacing": 0,
         "message_spacing": 25,
-        "color_scheme": "",
-        "color": "#545454",
+        "color_scheme": "scheme-35de9e34-bd2b-4262-9f97-890b13319c9b",
+        "color": "#ffffff",
         "border_color": ""
       }
     },
