@@ -205,31 +205,6 @@
 {% assign threshold = 150000 %}
 {% assign remaining = threshold | minus: cart.total_price %}
 
-{% if has_product_a == false and cart.item_count > 0 %}
-  <div class="cart-message cart-message--promo">
-    {% if remaining > 0 %}
-      <p>
-        🎁 Add
-        <strong>{{ remaining | money_without_trailing_zeros }}</strong>
-        + <strong>Selfcare Night Recovery Oil 40ml or 15ml</strong>
-        to get a <strong>FREE Beauty Roller</strong>
-      </p>
-    {% else %}
-      <p>
-        🎁 Add <strong>Self Care Night Recovery Oil</strong>
-        to unlock your <strong>FREE Beauty Roller</strong>
-      </p>
-    {% endif %}
-
-    {% if product_a %}
-      <div class="cart-gwp-product">
-        <img src="{{ product_a.featured_image | image_url: width:160 }}" alt="{{ product_a.title }}" loading="lazy">
-        <p class="cart-gwp-title">{{ product_a.title }}</p>
-      </div>
-    {% endif %}
-  </div>
-{% endif %}
-
 
           {%- render 'cart-line-items', part: 'upsell-items', aos_anchor: '#cartUpsellHolder' -%}
         </div>
