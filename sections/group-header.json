@@ -14,8 +14,21 @@
     "announcement-bar": {
       "type": "announcement-bar",
       "blocks": {
+        "message_W3jBNm": {
+          "type": "message",
+          "settings": {
+            "message": "Spend ||amount|| more for FREE shipping.",
+            "target_url_enabled": false,
+            "target_url": "",
+            "target_referrer_enabled": false,
+            "target_referrer": "",
+            "target_device_enabled": false,
+            "target_device": "mobile"
+          }
+        },
         "announcement-0": {
           "type": "text",
+          "disabled": true,
           "settings": {
             "text": "<p>Spend ||amount|| more for FREE shipping.</p>",
             "text_color": "",
@@ -35,6 +48,7 @@
         }
       },
       "block_order": [
+        "message_W3jBNm",
         "announcement-0"
       ],
       "settings": {
