@@ -72,7 +72,7 @@
         "promo_KPWpRj"
       ],
       "settings": {
-        "show_breadcrumbs": false,
+        "show_breadcrumbs": true,
         "products_per_page": 24,
         "enable_sorting": true,
         "enable_filters": true,
