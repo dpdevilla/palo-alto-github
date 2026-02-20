@@ -79,7 +79,7 @@
         "filters_layout": "open",
         "show_more": true,
         "filter_mode": "default",
-        "color_scheme": "",
+        "color_scheme": "scheme-1",
         "padding_top": 30,
         "padding_bottom": 60
       }
