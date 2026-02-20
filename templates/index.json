@@ -627,15 +627,21 @@
         "article_pb844J": {
           "type": "article",
           "settings": {
-            "article": "",
-            "product_list": []
+            "article": "news/is-this-the-future-of-cleansing-why-refillable-beauty-is-more-than-just-a-trend",
+            "product_list": [
+              "cleansing-butter-cleansing-oil"
+            ]
           }
         },
         "article_9RKLiz": {
           "type": "article",
           "settings": {
-            "article": "",
-            "product_list": []
+            "article": "news/the-7-rules-of-face-washing-according-to-dermatologists",
+            "product_list": [
+              "pili-ani-natural-radiance-cream",
+              "pili-ani-intense-hydrating-cream",
+              "pili-ani-youthful-glow-facial-cream"
+            ]
           }
         },
         "article_aJNGTQ": {
