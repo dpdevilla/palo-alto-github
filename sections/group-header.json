@@ -28,14 +28,13 @@
         },
         "announcement-0": {
           "type": "text",
-          "disabled": true,
           "settings": {
-            "text": "<p>Spend ||amount|| more for FREE shipping.</p>",
+            "text": "<p>🎁 Get a FREE Amethyst Roller when you buy any Ageless Concentrate or Self-Care Night Recovery Oil</p>",
             "text_color": "",
             "heading_highlight_type": "underline-hand-drawn",
             "highlight_color": "#000000",
             "highlight_text_color": "",
-            "icon_name": "truck",
+            "icon_name": "none",
             "icon_color": "",
             "icon_width": 20,
             "target_url_enabled": false,
