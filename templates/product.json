@@ -150,11 +150,23 @@
         "color_scheme": "",
         "width": "wrapper",
         "padding_top": 60,
-        "padding_bottom": 60
+        "padding_bottom": 26
       }
     },
     "related": {
       "type": "related-products",
+      "blocks": {
+        "recent_rAJha9": {
+          "type": "recent",
+          "settings": {
+            "title": "Recently viewed",
+            "product_recently_limit": 4
+          }
+        }
+      },
+      "block_order": [
+        "recent_rAJha9"
+      ],
       "settings": {
         "enable_tabs": true,
         "layout": "carousel",
