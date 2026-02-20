@@ -667,8 +667,12 @@
         "article_HhygDc": {
           "type": "article",
           "settings": {
-            "article": "",
-            "product_list": []
+            "article": "news/essential-oil-infused-alco-santizers",
+            "product_list": [
+              "pili-ani-clean-green-alco-sanitizer-rise-shine-50ml",
+              "pili-ani-clean-green-alco-sanitizer-stress-away-50ml",
+              "pili-ani-clean-green-alco-sanitizer-sweet-dreams-50ml"
+            ]
           }
         }
       },
