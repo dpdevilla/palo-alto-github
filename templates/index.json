@@ -611,6 +611,74 @@
         "padding_top": 60,
         "padding_bottom": 60
       }
+    },
+    "section_shoppable_blog_NWmkEz": {
+      "type": "section-shoppable-blog",
+      "blocks": {
+        "article_3jb3N9": {
+          "type": "article",
+          "settings": {
+            "article": "news/from-the-forests-of-bicol-to-the-pages-of-forbes",
+            "product_list": [
+              "essential-oil-travel-kit-set"
+            ]
+          }
+        },
+        "article_pb844J": {
+          "type": "article",
+          "settings": {
+            "article": "",
+            "product_list": []
+          }
+        },
+        "article_9RKLiz": {
+          "type": "article",
+          "settings": {
+            "article": "",
+            "product_list": []
+          }
+        },
+        "article_aJNGTQ": {
+          "type": "article",
+          "settings": {
+            "article": "",
+            "product_list": []
+          }
+        },
+        "article_fP6QdX": {
+          "type": "article",
+          "settings": {
+            "article": "",
+            "product_list": []
+          }
+        },
+        "article_HhygDc": {
+          "type": "article",
+          "settings": {
+            "article": "",
+            "product_list": []
+          }
+        }
+      },
+      "block_order": [
+        "article_3jb3N9",
+        "article_pb844J",
+        "article_9RKLiz",
+        "article_aJNGTQ",
+        "article_fP6QdX",
+        "article_HhygDc"
+      ],
+      "name": "Shoppable blog posts",
+      "settings": {
+        "columns_mobile": "1",
+        "title": "",
+        "show_tags": false,
+        "overlay_type": "disabled",
+        "color_scheme": "",
+        "width": "wrapper",
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
     }
   },
   "order": [
@@ -623,6 +691,7 @@
     "section_custom_html_CPgtHE",
     "1759263469a009fc97",
     "166088552470924e52",
-    "1659332056dfbb5a2d"
+    "1659332056dfbb5a2d",
+    "section_shoppable_blog_NWmkEz"
   ]
 }
