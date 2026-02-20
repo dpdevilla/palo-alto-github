@@ -402,6 +402,72 @@
         "padding_bottom": 0
       }
     },
+    "section_custom_content_FEqN8C": {
+      "type": "section-custom-content",
+      "blocks": {
+        "video_PzJjtH": {
+          "type": "video",
+          "settings": {
+            "text_position": "middle-center",
+            "video_link_bg": "https://cdn.shopify.com/videos/c/o/v/2212f1419aa44b8380fc8198535ad45a.mp4",
+            "video_link": "",
+            "overlay_type": "disabled",
+            "video_size": "video-cover",
+            "title": "",
+            "heading_size": 100,
+            "video_text": "",
+            "text_size": 100,
+            "show_text_background": false,
+            "bg_color": "",
+            "text_color": "",
+            "button_text": "",
+            "button_link": "",
+            "button_color": "btn--white",
+            "button_style": "btn--solid-border",
+            "button_size": "btn--medium"
+          }
+        },
+        "text_7a4Q6M": {
+          "type": "text",
+          "settings": {
+            "text_position": "center",
+            "top_image_width": 100,
+            "subheading": "Subheading",
+            "title": "Our Story",
+            "heading_size": 100,
+            "text": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>",
+            "text_size": 100,
+            "button_text": "Learn More",
+            "button_link": "",
+            "button_color": "btn--black",
+            "button_style": "btn--solid",
+            "button_size": "btn--medium",
+            "button_2_text": "",
+            "button_2_link": "",
+            "button_2_color": "btn--white",
+            "button_2_style": "btn--solid-border",
+            "button_2_size": "btn--medium",
+            "bg_color": ""
+          }
+        }
+      },
+      "block_order": [
+        "video_PzJjtH",
+        "text_7a4Q6M"
+      ],
+      "name": "Custom section",
+      "settings": {
+        "height": "full-height",
+        "enable_mobile_height": true,
+        "mobile_height": "two-fifty-height-mobile",
+        "color_scheme": "",
+        "reverse_blocks": false,
+        "width": "wrapper",
+        "add_gutter": false,
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
     "1759263469a009fc97": {
       "type": "_blocks",
       "blocks": {
@@ -705,6 +771,7 @@
     "section_hero_scrolling_DPzhNr",
     "section_banner_image_UH3iw9",
     "section_custom_html_CPgtHE",
+    "section_custom_content_FEqN8C",
     "1759263469a009fc97",
     "166088552470924e52",
     "1659332056dfbb5a2d",
