@@ -157,9 +157,9 @@
       "type": "related-products",
       "settings": {
         "enable_tabs": true,
-        "layout": "grid",
+        "layout": "carousel",
         "columns_mobile": "1",
-        "type_style": "subheading-text",
+        "type_style": "font-heading",
         "tab_heading_size": 120,
         "color_scheme": "",
         "width": "wrapper",
