@@ -459,10 +459,10 @@
       "settings": {
         "height": "full-height",
         "enable_mobile_height": true,
-        "mobile_height": "two-fifty-height-mobile",
+        "mobile_height": "three-fifty-height-mobile",
         "color_scheme": "",
         "reverse_blocks": false,
-        "width": "wrapper",
+        "width": "wrapper--full-padded",
         "add_gutter": false,
         "padding_top": 60,
         "padding_bottom": 60
