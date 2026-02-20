@@ -63,7 +63,7 @@
         "0edc674a-1469-4767-b7a2-393fd9dcb885"
       ],
       "settings": {
-        "show_footer_wave": true,
+        "show_footer_wave": false,
         "enable_footer_parallax": false,
         "increase_border_radius": true,
         "bottom_bar_alignment": "text-center",
