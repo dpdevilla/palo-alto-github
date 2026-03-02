@@ -52,7 +52,7 @@
     "show_spacer_lines": false,
     "animations_enabled": false,
     "show_saving_badge": true,
-    "color_swatches_type": "disabled",
+    "color_swatches_type": "native",
     "color_swatches_product_style": "rectangle",
     "show_siblings_images": false,
     "show_scroll_to_top": true,
