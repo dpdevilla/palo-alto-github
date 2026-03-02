@@ -8370,7 +8370,7 @@ body:not(.no-outline) .slide__link:focus {
 }
 @media only screen and (min-width: 768px) {
   .footer-bottom {
-    display: grid;
+    /*display: grid;*/
     grid-template-columns: repeat(var(--grid-columns), 1fr);
     column-gap: 10px;
     align-items: center;
