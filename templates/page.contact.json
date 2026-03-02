@@ -70,7 +70,7 @@
         "contact-form-3"
       ],
       "settings": {
-        "button_color": "btn--black",
+        "button_color": "btn--primary",
         "button_style": "btn--solid",
         "button_size": "btn--medium",
         "color_scheme": "",
