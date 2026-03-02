@@ -32,7 +32,7 @@
     "show_variant_image": false,
     "variant_image_style": "inline",
     "enable_half_width_btn": true,
-    "atc_show_product_price": false,
+    "atc_show_product_price": true,
     "quantity_style": "standard",
     "show_quantity": true,
     "show_remaining": true,
