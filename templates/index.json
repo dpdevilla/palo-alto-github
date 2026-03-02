@@ -444,7 +444,7 @@
             "button_size": "btn--medium",
             "button_2_text": "",
             "button_2_link": "",
-            "button_2_color": "btn--white",
+            "button_2_color": "btn--primary",
             "button_2_style": "btn--solid-border",
             "button_2_size": "btn--medium",
             "bg_color": ""
