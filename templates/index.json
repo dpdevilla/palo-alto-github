@@ -439,7 +439,7 @@
             "text_size": 100,
             "button_text": "Shop Now",
             "button_link": "shopify://products/pili-ani-self-care-night-recovery-oil-antioxidant-rich-facial-oil",
-            "button_color": "btn--black",
+            "button_color": "btn--primary",
             "button_style": "btn--solid",
             "button_size": "btn--medium",
             "button_2_text": "",
