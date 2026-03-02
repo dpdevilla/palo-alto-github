@@ -34,6 +34,8 @@
     "enable_half_width_btn": true,
     "atc_show_product_price": true,
     "atc_button_color": "btn--primary",
+    "atc_button_size": "btn--large",
+    "buynow_btn_color": "btn--primary",
     "quantity_style": "standard",
     "show_quantity": true,
     "show_remaining": true,
