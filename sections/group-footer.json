@@ -62,6 +62,9 @@
         "cef08380-0a13-474b-91ec-6e7d8e8c9d80",
         "0edc674a-1469-4767-b7a2-393fd9dcb885"
       ],
+      "custom_css": [
+        ".needsclick kl-teaser-WMMmZU kl-private-reset-css-Xuajs1 {bottom: 40px; left: 100px; width: 100px; height: 40px;}"
+      ],
       "settings": {
         "show_footer_wave": false,
         "enable_footer_parallax": false,
