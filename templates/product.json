@@ -92,13 +92,6 @@
             ],
             "padding_bottom": 20
           }
-        },
-        "share-button": {
-          "type": "share-button",
-          "settings": {
-            "text": "Share",
-            "padding_bottom": 20
-          }
         }
       },
       "block_order": [
@@ -109,8 +102,7 @@
         "icon",
         "6fde644f-bb89-424d-93a0-03bf7164d65a",
         "description",
-        "upsell",
-        "share-button"
+        "upsell"
       ],
       "custom_css": [],
       "settings": {
