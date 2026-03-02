@@ -42,7 +42,7 @@
         "promo_KPWpRj": {
           "type": "promo",
           "settings": {
-            "collection": "",
+            "collection": "best-sellers",
             "image": "shopify://shop_images/exit-intent-popup.jpg",
             "promo_position": 5,
             "width": "half",
