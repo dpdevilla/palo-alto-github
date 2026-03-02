@@ -8219,6 +8219,13 @@ body:not(.no-outline) .slide__link:focus {
   align-items: center;
   justify-content: center;
 }
+.social-sharing-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    line-height: 0;
+  }
 
 .footer-title {
   color: var(--text);
