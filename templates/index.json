@@ -765,10 +765,10 @@
       ],
       "name": "Shoppable blog posts",
       "settings": {
-        "columns_mobile": "1",
+        "columns_mobile": "2",
         "title": "",
         "show_tags": false,
-        "overlay_type": "disabled",
+        "overlay_type": "opacity",
         "color_scheme": "scheme-1",
         "width": "wrapper",
         "padding_top": 60,
