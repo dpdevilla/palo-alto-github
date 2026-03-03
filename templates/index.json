@@ -765,7 +765,7 @@
       ],
       "name": "Shoppable blog posts",
       "settings": {
-        "columns_mobile": "2",
+        "columns_mobile": "1",
         "title": "",
         "show_tags": false,
         "overlay_type": "disabled",
