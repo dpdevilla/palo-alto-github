@@ -768,7 +768,7 @@
         "columns_mobile": "2",
         "title": "",
         "show_tags": false,
-        "overlay_type": "opacity",
+        "overlay_type": "disabled",
         "color_scheme": "scheme-1",
         "width": "wrapper",
         "padding_top": 60,
